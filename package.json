@@ -1,0 +1,13 @@
+{
+  "name": "viewsource",
+  "version": "0.1.0",
+  "devDependencies": {
+    "axis": "^0.3.0",
+    "gulp": "^3.8.11",
+    "gulp-coffee": "^2.3.1",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-stylus": "^2.0.1",
+    "gulp-watch": "^4.1.1",
+    "gulp-plumber": "^1.0.0"
+  }
+}
