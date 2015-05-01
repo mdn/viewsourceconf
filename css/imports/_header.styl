@@ -1,18 +1,39 @@
 header
-	height: 18rem
-	&:before
-		content: ' '
-		absolute: top 0 left 0
-		width: 32%
-		max-width: 508px
-		min-width: 40rem
-		height: 448px
-		bg('../images/logo.png', no-repeat top right)
-	&:after
-		content: ' '
-		absolute: top 0 right 0
-		width: 54%
-		max-width: 732px
-		height: 476px
-		bg('../images/documents.png', no-repeat top left)
-		z-index: -1
+    height: 43rem
+    position: relative
+    #logo
+        absolute: top 0 left 0
+        width: 40%
+        max-width: 508px
+        height: 430px
+        bg('../images/logo_background.png', no-repeat bottom right)
+        img
+            absolute: bottom 16rem right 14rem
+    .when
+        absolute: bottom 16rem right -20rem
+
+    &:after
+        content: ' '
+        absolute: top 0 right 0
+        width: 64%
+        max-width: 732px
+        height: 476px
+        bg('../images/documents.png', no-repeat top left)
+        z-index: -1
+    @media screen and (max-width: $medium)
+        width: 808px
+        relative: left 50%
+        margin-left: -542px
+        height: 33rem
+        #logo
+            width: 100%
+            height: 34rem
+            background-position: center bottom
+            max-width: none
+            img
+                top: 4rem
+                right: 50%
+                margin-right: -248px
+                display: block
+        &:after
+            content: none
