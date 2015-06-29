@@ -7,6 +7,15 @@
         <link rel="stylesheet" href="css/vendor/foundation.min.css">
         <link rel="stylesheet" href="css/app.css">
         <meta name="viewport" content="initial-scale=1.0" />
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-49796218-27', 'auto');
+        ga('send', 'pageview');
+        </script>
     </head>
     <body>
         <header>
@@ -44,7 +53,7 @@
                         <p class="small">IF YOU'D LIKE MOZILLA TO EMAIL YOU WHEN REGISTRATION IS AVAILABLE FOR THE VIEW SOURCE CONFERENCE, LET US KNOW YOUR EMAIL.</p>
                         <form action="https://sendto.mozilla.org/page/signup/view-source-save-the-date" method="post" style="margin-top: 1rem;">
                             <label for="email">Email*</label>
-                            <input class="text" size="48" id="email" name="email" type="email">
+                            <input required class="text" size="48" id="email" name="email" type="email">
                             <label for="custom-3525" class="has-checkbox">
                                 <input required id="custom-3525" name="custom-3525" value="1" type="checkbox">
                                 I want to receive email updates about the View Source and Mozilla's other projects and campaigns and I'm okay with you handling this info as you explain in your <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Notice</a>.
