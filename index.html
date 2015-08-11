@@ -36,6 +36,7 @@
                 <h5 class="hide-for-medium-down">Join us to view the source of the modern Web, build the Web we want and explore the best ways to apply Web technologies today.</h5>
                 <h1>BUILD FOR THE WEB OF TOMORROW, TODAY</h1>
                 <h5 class="show-for-medium-down">Join us to view the source of the modern Web, build the Web we want and explore the best ways to apply Web technologies today.</h5>
+                <div class="show-for-medium-down"><tito-button event="mdn/view-source-2015">Register now!</tito-button></div>
                 <p>At View Source Conference, you’ll be inspired by what’s to come and learn how to create powerful, convenient and easy-to-use apps and websites using modern techniques that not only work today but will thrive in the future.</p>
                 <p>We learn best from each other. That's why View Source will provide plenty of time and space for interacting with other participants. In addition to awesome talks, there will be an on-going hacking space (hallway track) with demos, discussion, fun and comfy seating!</p>
                 <p>Join us in Portland in November!</p>
@@ -45,7 +46,7 @@
             <div class="columns large-5 small-12" id="sidebar">
                 <div class="row">
                     <div class="columns small-12">
-                        <tito-button event="mdn/view-source-2015">Register now!</tito-button>
+                      <div class="hide-for-medium-down"><tito-button event="mdn/view-source-2015">Register now!</tito-button></div>
                     </div>
                 </div>
                 <div class="row">
@@ -62,7 +63,8 @@
                         <p class="small">MOZILLA WILL EMAIL YOU WITH NEWS ABOUT THE EVENT.</p>
                         <form action="https://sendto.mozilla.org/page/signup/view-source-save-the-date" method="post" style="margin-top: 1rem;">
                             <label for="email">Email*</label>
-                            <input required class="text" size="48" id="email" name="email" type="email">
+                            <input required class="text" size="48" id="email" name="email" type="email" onfocus="document.getElementById('signup-extra').style.display='';">
+                            <div id="signup-extra" style="display: none;">
                             <label for="custom-3525" class="has-checkbox">
                                 <input required id="custom-3525" name="custom-3525" value="1" type="checkbox">
                                 I want to receive email updates about the View Source and Mozilla's other projects and campaigns and I'm okay with you handling this info as you explain in your <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Notice</a>.
@@ -71,6 +73,7 @@
                             <input name="submit-btn" value="Submit Form" type="submit">
                             <input name="redirect_url" value="" type="hidden">
                             <input id="_guid" name="_guid" value="" type="hidden">
+                            </div>
                         </form>
                     </div>
                 </div>
