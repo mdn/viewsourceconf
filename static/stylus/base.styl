@@ -1,0 +1,588 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+// Global styling and layout
+
+@require 'fonts.styl';
+@require 'reset.styl';
+@require 'lib.styl';
+
+
+
+//*----------------------------------------------------------------*/
+// @General elements
+html {
+    background: #fff;
+    font-size: $base-font-size;
+    line-height: 1.5;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: 'Montserrat Light', sans-serif;
+    color: $primary-text-color;
+    background: #fff;
+    height: 100%;
+}
+
+ul,
+ol {
+    margin-left: 40px;
+}
+
+
+
+//*----------------------------------------------------------------*/
+// @Headings
+h1, h2 {
+    font-family: 'Moon Light', sans-serif;
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0 0 .5em;
+}
+
+h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0 0 .5em;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h4,
+legend {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 14px;
+}
+
+.page-title,
+.section-title {
+    text-transform: uppercase;
+}
+
+
+//*----------------------------------------------------------------*/
+// @Links
+a:link {
+    color: $link-color;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: desaturate($link-color, 30%);
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: darken($link-color, 30%);
+}
+
+.go:after {
+    content: " »";
+    white-space: nowrap;
+}
+
+
+.button {
+    background: $green;
+    border-box();
+    border-radius: 1px;
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+    color: $light-text-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    padding: .5em 20px;
+    text-transform: uppercase;
+    transition(background-color .15s ease);
+
+    &:hover,
+    &:focus {
+        background: $light-green;
+    }
+}
+
+
+//*----------------------------------------------------------------*/
+// @Layout containers
+.section {
+    padding: 20px 0;
+    position: relative;
+    clearfix();
+}
+
+.section:last-child {
+    border-bottom: 0;
+}
+
+.content {
+    margin: 0 auto;
+    min-width: $width-mobile;
+    padding: 0 $grid-gutter-width;
+    position: relative;
+    clearfix();
+}
+
+.video-embed {
+    display: block;
+    margin: 0 auto 30px;
+    border: 10px solid #fff;
+    max-width: 100%;
+    width: $width-mobile - 20px;
+    height: 187px;
+}
+
+//*----------------------------------------------------------------*/
+// @Header
+.masthead {
+    {light-links}
+    color: $light-text-color;
+    background: url(../img/header-mask.png) center top no-repeat,
+                $dark-blue url(../img/header-bg.jpg) center top no-repeat;
+    background-size: auto 100%;
+    padding-top: 20px;
+    min-height: 420px;
+
+    .content {
+        padding-bottom: 60px;
+    }
+
+    .logo {
+        height: 55px;
+        margin-top: -5px;
+        margin-bottom: 20px;
+        text-indent: 200%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        background: url(../img/vs-logo-white.svg) left top no-repeat;
+        background-size: auto 55px;
+
+        @media $media-query-tablet {
+            span_narrow(6);
+        }
+
+        @media $media-query-desktop {
+            span(6);
+        }
+    }
+
+    .social {
+        list-style: none;
+        text-align: right;
+
+        li {
+            display: inline;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .twitter:before {
+            display: inline-block;
+            margin: 0 8px -.3em 0;
+            width: 18px;
+            height: 18px;
+            content: '';
+            background: url(../img/icon-twitter.svg) center center no-repeat;
+            background-size: 16px 16px;
+        }
+
+        @media $media-query-tablet {
+            span_narrow(6);
+        }
+
+        @media $media-query-desktop {
+            span(6);
+        }
+    }
+
+    .tagline {
+        clear: both;
+        font-family: 'Moon Light', sans-serif;
+        font-size: 24px;
+        font-weight: normal;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0 auto .5em;
+        max-width: $width-mobile;
+
+        @media $media-query-tablet {
+            max-width: $grid-column-width * 6;
+        }
+    }
+}
+
+.masthead-simple {
+    min-height: 0;
+    background: $blue url(../img/header-bg.jpg) center top no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 20px;
+
+    .content {
+        padding-bottom: 0;
+    }
+}
+
+//*----------------------------------------------------------------*/
+// @Subscribe form
+.subscribe-form {
+    clear: both;
+
+    h2 {
+        font-size: 26px;
+        font-weight: bold;
+        font-family: 'Montserrat Light', sans-serif;
+        text-align: center;
+    }
+
+    .stay-tuned {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    fieldset {
+        max-width: $width-mobile;
+        margin: 20px auto;
+        padding: 10px 0;
+
+        @media $media-query-tablet {
+            max-width: $grid-column-width * 6;
+        }
+    }
+
+    legend {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    li {
+        margin: 0 0 .5em;
+    }
+
+    label {
+        display: block;
+        margin: 0 0 .25em;
+    }
+
+    input[type='text'],
+    input[type='email'] {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 3px 10px;
+        border-box();
+        width: 100%;
+        transition(border-color .1s ease);
+
+        &:focus {
+            border-color: darken(#ccc, 10%);
+        }
+    }
+
+    .form-fine-print {
+        font-size: 12px;
+    }
+
+    .form-submit {
+        text-align: center;
+        margin-top: 20px;
+
+        .button {
+            width: 100%;
+            background: $blue;
+
+            &:hover,
+            &:focus {
+                background: $dark-blue;
+            }
+        }
+    }
+
+    .note {
+        font-size(11px);
+    }
+}
+
+.archive-title {
+    text-align: center;
+}
+
+
+//*----------------------------------------------------------------*/
+// @Intro
+#intro {
+    padding-bottom: 240px;
+    background: url(../img/photo-strip.jpg) 0 bottom repeat-x;
+    -webkit-animation: slide 120s linear infinite forwards;
+            animation: slide 120s linear infinite forwards;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+
+    &:hover {
+        -webkit-animation-play-state: running;
+                animation-play-state: running;
+    }
+}
+
+@-webkit-keyframes slide {
+    0%   { background-position: 0 bottom; }
+    100% { background-position: -4800px bottom; }
+}
+
+@keyframes slide {
+    0%   { background-position: 0 bottom; }
+    100% { background-position: -4800px bottom; }
+}
+
+
+//*----------------------------------------------------------------*/
+// @Sessions
+#sessions {
+    background: $light-beige;
+}
+
+.session-block {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 5px solid $dark-beige;
+    clearfix();
+}
+
+.session {
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid $dark-beige;
+}
+
+.photo {
+    float: right;
+    margin: 0 0 20px 20px;
+    border: 5px solid $beige;
+}
+
+.speaker {
+    font-size: 20px;
+}
+
+.bio {
+    font-size: 14px;
+
+    .bio-title {
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        margin: 0 0 .5em;
+        position: relative;
+        padding-left: 25px;
+
+        &:before {
+            color: $green;
+            display: block;
+            font-size: 20px;
+            text-align: center;
+            content: '\25b8'; // right triangle
+            width: 20px;
+            height: 100%;
+            line-height: .8;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &.open {
+        .bio-title:before {
+            content: '\25BE'; // down triangle
+        }
+
+        .bio-content {
+            display: block;
+        }
+    }
+}
+
+.js .bio-content {
+    display: none;
+}
+
+
+
+//*----------------------------------------------------------------*/
+// @Sponsors
+#sponsors {
+    background: $light-beige;
+}
+
+.sponsor-list {
+    width: 100%;
+    margin: 0 -5px;
+    list-style: none;
+
+    li {
+        border-box();
+        border: 5px solid $beige;
+        display: block;
+        padding: 20px;
+        width: 100%;
+        height: 110px;
+        margin: 0 5px 10px;
+        position: relative;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: auto;
+            max-height: 100%;
+        }
+    }
+}
+
+@media $media-query-tablet {
+    .sponsor-list {
+        li {
+            display: inline-block;
+            width: 23%;
+        }
+
+        .platinum {
+            width: 49%;
+        }
+    }
+}
+
+#venue {
+    .venue-pic {
+        max-width: 50%;
+        float: right;
+        margin: 0 0 20px 20px;
+        border: 5px solid $beige;
+    }
+}
+
+
+//*----------------------------------------------------------------*/
+// @Footer
+.nav-footer ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+        display: inline;
+        margin: 0 10px .5em;
+    }
+}
+
+
+
+//*----------------------------------------------------------------*/
+// @Mobile @Landscape layout: 480px
+
+@media $media-query-mobile-wide {
+
+    .video-embed {
+        width: $width-mobile-wide;
+        height: 275px;
+    }
+
+}
+
+
+
+//*----------------------------------------------------------------*/
+// @Tablet layout: 760px
+
+@media $media-query-tablet {
+
+    h1,
+    .page-title {
+        font-size: 48px;
+    }
+
+    h2,
+    .section-title  {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    h4,
+    legend,
+    dl.faq dt {
+        font-size: 24px;
+    }
+
+    .content {
+        width: $width-tablet - ($grid-gutter-width * 2);
+    }
+
+    .video-embed {
+        width: $width-tablet - ($grid-gutter-width * 3);
+        height: 410px;
+    }
+
+}
+
+
+
+//*----------------------------------------------------------------*/
+// @Desktop layout: 1000px
+
+@media $media-query-desktop {
+
+    .content {
+        width: $width-desktop - ($grid-gutter-width * 2);
+    }
+
+    .video-embed {
+        width: $width-desktop - ($grid-gutter-width * 3);
+        height: 550px;
+    }
+
+}
+
+
+
+//*----------------------------------------------------------------*/
+// More height for tall viewports
+
+@media screen and (min-height: 600px) {
+
+    .section,
+    .masthead {
+        padding: 40px 0;
+    }
+
+    .masthead-simple {
+        padding: 20px 0;
+    }
+
+}
