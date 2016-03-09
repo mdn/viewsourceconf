@@ -360,6 +360,9 @@ a:active {
 .subscribe-form {
   clear: both;
 }
+.subscribe-form form {
+  min-height: 400px;
+}
 .subscribe-form h2 {
   font-size: 26px;
   font-size: 1.625rem;
@@ -414,6 +417,13 @@ a:active {
   font-size: 12px;
   font-size: 0.75rem;
 }
+.subscribe-form .radio h3 {
+  font-size: 16px;
+  font-size: 1rem;
+}
+.subscribe-form .radio label {
+  display: inline;
+}
 .subscribe-form .form-submit {
   text-align: center;
   margin-top: 20px;
@@ -429,6 +439,33 @@ a:active {
 .subscribe-form .note {
   font-size: 11px;
   font-size: 0.6875rem;
+}
+.subscribe-form .thanks {
+  max-width: 320px;
+  min-height: 400px;
+  margin: 20px auto 0 auto;
+  display: none;
+}
+@media screen and (min-width: 760px) {
+  .subscribe-form .thanks {
+    max-width: 360px;
+  }
+}
+.subscribe-form .thanks h2 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: normal;
+}
+.subscribe-form .error,
+.subscribe-form .invalid {
+  border: solid 2px #ae1c34;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.15);
+}
+.subscribe-form .error {
+  display: none;
 }
 .archive-title {
   text-align: center;
