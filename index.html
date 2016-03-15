@@ -24,13 +24,13 @@
     <![endif]-->
 
     <!--[if lt IE 9]>
-      <script type="text/javascript" src="/static/js/libs/html5shiv.js"></script>
+      <script type="text/javascript" src="static/js/libs/html5shiv.js"></script>
     <![endif]-->
 
-      <link rel="icon" type="image/png" sizes="196x196" href="/static/img/icon.png">
-      <link rel="shortcut icon" href="/static/img/favicon.png">
+      <link rel="icon" type="image/png" sizes="196x196" href="static/img/icon.png">
+      <link rel="shortcut icon" href="static/img/favicon.png">
 
-      <link rel="stylesheet" href="/static/css/base.css">
+      <link rel="stylesheet" href="static/css/base.css">
 
     </head>
 
@@ -48,35 +48,46 @@
 
           <div class="subscribe-form">
             <h2>Coming to Seattle and Berlin in 2016</h2>
-            <p class="stay-tuned">Stay tuned for more info!</p>
 
-<!--
-             <form>
+             <form id="newsletter-signup" name="newsletter-signup">
               <fieldset>
                 <legend><span>Subscribe for updates</span></legend>
                 <ol>
-                  <li>
-                    <label for="subscribe-email">E-mail</label>
-                    <input type="email" id="subscribe-email" name="email" required placeholder="you@example.com">
+                  <li class="error"></li>
+                  <li id="li_email">
+                    <label for="id_email">E-mail
+                      <input type="email" id="newsletter-email" name="email" required placeholder="you@example.com">
+                    </label>
                   </li>
-                  <li class="form-fine-print">
-                    <label for="subscribe-agree">
-                      <input type="checkbox" id="subscribe-agree" name="agree" required>
-                      I’m okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>
+                  <li id="li_newsletters" class="radio">
+                    <h3>I want to hear about...</h3>
+                    <label for="view-source-conference-global">
+                      <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required />
+                      Berlin
+                    </label>
+                    <label for="view-source-conference-north-america">
+                      <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required />
+                      Seattle
+                    </label>
+                  </li>
+                  <li class="form-fine-print" id="li_agree">
+                    <label for="agree">
+                      <input type="checkbox" id="agree" name="agree" required>
+                      I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>
                     </label>
                   </li>
                   <li class="form-submit">
-                    <button type="submit" class="button">Subscribe</button>
+                    <button id="newsletter-submit" type="submit" class="button">Subscribe</button>
                     <span class="note">We will only send you information about View Source.</span>
                   </li>
-                </ul>
+                </ol>
               </fieldset>
             </form>
- -->
+            <div id="newsletter-thanks" class="thanks">
+              <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+              <p>You'll receive an email from mozilla@e.mozilla.org to confirm your subscription. If you don't see it, check your spam filter. You must confirm your subscription to receive updates about the View Source Conference.</p>
+            </div>
           </div>
-
-          <h3 class="tagline">Build the Web<br> of Tomorrow, <br>Today.</h3>
-
         </div>
       </header>
 
@@ -124,7 +135,7 @@
               <iframe class="video-embed" src="https://air.mozilla.org/view-source-tuesday-am-session/video/" width="896" height="524" frameborder="0" allowfullscreen></iframe>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/paul-ford.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/paul-ford.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/paul-ford-keynote-the-web-today/" rel="external">Keynote: The Web Today</a></h4>
                 <h5 class="speaker">Paul Ford</h5>
 
@@ -157,7 +168,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/inayaili-deleon-persson.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/inayaili-deleon-persson.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/inayaili-de-leon-persson-realistic-responsive-design-20151124/" rel="external">Realistic Responsive Design</a></h4>
                 <h5 class="speaker">Inayaili de León Persson</h5>
 
@@ -194,7 +205,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/stephanie-hobson.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/stephanie-hobson.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/stephanie-hobson-web-accessibility-making-websites-better-for-everyone/" rel="external">Web Accessibility:  Making Websites Better for Everyone</a></h4>
                 <h5 class="speaker">Stephanie Hobson</h5>
 
@@ -231,7 +242,7 @@
               <iframe class="video-embed" src="https://air.mozilla.org/view-source-tuesday-mid-morning-session/video/" width="896" height="524" frameborder="0" allowfullscreen></iframe>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/kate-hudson.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/kate-hudson.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/kate-hudson-advanced-front-end-automation-with-npm-scripts/" rel="external">Advanced Front-end Automation with npm Scripts</a></h4>
                 <h5 class="speaker">Kate Hudson</h5>
 
@@ -253,7 +264,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/albert-yu.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/albert-yu.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/albert-yu-web-security-made-easy/" rel="external">Web Security Made Easy</a></h4>
                 <h5 class="speaker">Albert Yu</h5>
 
@@ -285,7 +296,7 @@
               <iframe class="video-embed" src="https://air.mozilla.org/view-source-tuesday-pm-session/video/" width="896" height="524" frameborder="0" allowfullscreen></iframe>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/jarrod-overson.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/jarrod-overson.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/jarrod-overson-graphics-for-web-devs/" rel="external">Graphics for Web Devs</a></h4>
                 <h5 class="speaker">Jarrod Overson</h5>
 
@@ -314,7 +325,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/sara-soueidan.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/sara-soueidan.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/sara-soueidan-svg-for-web-designers-and-developers/" rel="external">SVG For Web Designers (and Developers)</a></h4>
                 <h5 class="speaker">Sara Soueidan</h5>
 
@@ -340,7 +351,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/lea-verou.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/lea-verou.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/lea-verou-the-missing-slice/" rel="external">The Missing Slice</a></h4>
                 <h5 class="speaker">Lea Verou</h5>
 
@@ -389,7 +400,7 @@
               <iframe class="video-embed" src="https://air.mozilla.org/view-source-wednesday-am-session/video/" width="896" height="524" frameborder="0" allowfullscreen></iframe>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/lyza-danger-gardner.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/lyza-danger-gardner.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/lyza-danger-gardner-keynote-the-triumph-of-generalism/" rel="external">Keynote: The Triumph of Generalism</a></h4>
                 <h5 class="speaker">Lyza Danger Gardner</h5>
 
@@ -420,7 +431,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/myles-borins.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/myles-borins.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/myles-borins-signal-processing-perceptual-audio-and-the-web-audio-api/" rel="external">Signal Processing, Perceptual Audio, and the Web Audio API</a></h4>
                 <h5 class="speaker">Myles Borins</h5>
 
@@ -440,7 +451,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/rachel-nabors.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/rachel-nabors.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/rachel-nabors-state-of-the-animation-2015/" rel="external">State of the Animation, 2015</a></h4>
                 <h5 class="speaker">Rachel Nabors</h5>
 
@@ -481,7 +492,7 @@
               <iframe class="video-embed" src="https://air.mozilla.org/view-source-wednesday-mid-day-session/video/" width="896" height="524" frameborder="0" allowfullscreen></iframe>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/josh-carpenter.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/josh-carpenter.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/josh-carpenter-building-a-virtual-reality-web-experience/" rel="external">Building a Virtual Reality Web Experience</a></h4>
                 <h5 class="speaker">Josh Carpenter</h5>
 
@@ -509,7 +520,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/tom-wesselman.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/tom-wesselman.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/tom-wesselman-web-apps-iot-and-wearable-tech-connecting-the-dots/" rel="external">Web Apps, IoT, and Wearable Tech: Connecting the Dots</a></h4>
                 <h5 class="speaker">Tom Wesselman</h5>
 
@@ -552,7 +563,7 @@
               <iframe class="video-embed" src="https://air.mozilla.org/view-source-wednesday-pm-session/video/" width="640" height="380" frameborder="0" allowfullscreen></iframe>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/allen-wirfs-brock.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/allen-wirfs-brock.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/allen-wirfs-brock-ecmascript-2015-what-took-it-so-long/" rel="external">ECMAScript 2015: Why It Took So Long</a></h4>
                 <h5 class="speaker">Allen Wirfs-Brock</h5>
 
@@ -582,7 +593,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/chris-wilson.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/chris-wilson.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/chris-wilson-the-web-reborn/" rel="external">The Web, Reborn</a></h4>
                 <h5 class="speaker">Chris Wilson</h5>
 
@@ -618,7 +629,7 @@
               </section>
 
               <section class="session">
-                <img class="photo" src="/static/img/speakers/david-bryant.jpg" width="150" height="150" alt="">
+                <img class="photo" src="static/img/speakers/david-bryant.jpg" width="150" height="150" alt="">
                 <h4 class="title"><a href="https://air.mozilla.org/david-bryant-the-future-of-the-web/" rel="external">Closing Keynote: The Future of the Web</a></h4>
                 <h5 class="speaker">David Bryant</h5>
 
@@ -671,7 +682,7 @@
           <div class="content">
             <h2 class="section-title">Venue</h2>
 
-            <img src="/static/img/venue-gerding-theater.jpg" class="venue-pic" width="600" height="400" alt="">
+            <img src="static/img/venue-gerding-theater.jpg" class="venue-pic" width="600" height="400" alt="">
 
             <p>View Source 2015 was held at the historic Gerding Theater at the
               Armory in Portland’s revitalized Pearl/River District. Widely noted
@@ -694,22 +705,22 @@
 
             <ul class="sponsor-list">
               <li class="platinum">
-                <a href="https://yahoo.com"><img width="214" height="50" src="/static/img/sponsors/yahoo.png" alt="Platinum Sponsor: Yahoo!"></a>
+                <a href="https://yahoo.com"><img width="214" height="50" src="static/img/sponsors/yahoo.png" alt="Platinum Sponsor: Yahoo!"></a>
               </li>
               <li class="silver">
-                <a href="https://intel.com"><img width="180" height="97" src="/static/img/sponsors/intel.png" alt="Silver Sponsor: Intel"></a>
+                <a href="https://intel.com"><img width="180" height="97" src="static/img/sponsors/intel.png" alt="Silver Sponsor: Intel"></a>
               </li>
               <li class="silver">
-                <a href="https://jquery.org"><img width="180" height="47" src="/static/img/sponsors/jquery-foundation.png" alt="Silver Sponsor: jQuery Foundation"></a>
+                <a href="https://jquery.org"><img width="180" height="47" src="static/img/sponsors/jquery-foundation.png" alt="Silver Sponsor: jQuery Foundation"></a>
               </li>
               <li class="other">
-                <a href="https://github.com"><img width="150" height="81" src="/static/img/sponsors/github.png" alt="Sponsor: GitHub"></a>
+                <a href="https://github.com"><img width="150" height="81" src="static/img/sponsors/github.png" alt="Sponsor: GitHub"></a>
               </li>
               <li class="other">
-                <a href="https://plantronics.com"><img width="150" height="81" src="/static/img/sponsors/plantronics.png" alt="Sponsor: Plantronics"></a>
+                <a href="https://plantronics.com"><img width="150" height="81" src="static/img/sponsors/plantronics.png" alt="Sponsor: Plantronics"></a>
               </li>
               <li class="other">
-                <a href="https://knowbility.com"><img width="150" height="33" src="/static/img/sponsors/knowbility.png" alt="Sponsor: Knowbility"></a>
+                <a href="https://knowbility.com"><img width="150" height="33" src="static/img/sponsors/knowbility.png" alt="Sponsor: Knowbility"></a>
               </li>
             </ul>
           </div>
@@ -730,6 +741,7 @@
         </div>
       </footer>
 
-      <script src="/static/js/main.js"></script>
+      <script src="static/js/main.js"></script>
+      <script src="static/js/newsletter_signup.js"></script>
     </body>
 </html>
