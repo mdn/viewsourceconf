@@ -2,8 +2,8 @@
   "name": "viewsource-build",
   "version": "1.0.0",
   "scripts": {
-    "stylus": "stylus -r static/stylus/base.styl -o static/css/",
-    "eslint": "eslint static/js/main.js static/js/newsletter_signup.js",
+    "stylus": "./node_modules/.bin/stylus -r static/stylus/base.styl -o static/css/",
+    "eslint": "./node_modules/.bin/eslint static/js/main.js static/js/newsletter_signup.js",
     "build:all": "npm run stylus && npm run eslint"
   },
   "devDependencies": {
