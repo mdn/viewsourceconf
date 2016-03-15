@@ -227,7 +227,7 @@ a:active {
 }
 .content {
   margin: 0 auto;
-  min-width: 320px;
+  min-width: 280px;
   padding: 0 20px;
   position: relative;
 }
@@ -278,7 +278,7 @@ a:active {
   white-space: nowrap;
   overflow: hidden;
   background: url("../img/vs-logo-white.svg") left top no-repeat;
-  background-size: auto 55px;
+  background-size: contain;
 }
 @media screen and (min-width: 760px) {
   .masthead .logo {

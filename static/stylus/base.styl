@@ -141,7 +141,7 @@ a:active {
 
 .content {
     margin: 0 auto;
-    min-width: $width-mobile;
+    min-width: ($width-mobile - $grid-gutter-width * 2) ;
     padding: 0 $grid-gutter-width;
     position: relative;
     clearfix();
@@ -180,7 +180,7 @@ a:active {
         white-space: nowrap;
         overflow: hidden;
         background: url(../img/vs-logo-white.svg) left top no-repeat;
-        background-size: auto 55px;
+        background-size: contain;
 
         @media $media-query-tablet {
             span_narrow(6);
