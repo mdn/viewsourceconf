@@ -1,0 +1,11 @@
+<html>
+  <head>
+    <title>{{title}} {{venue}}</title>
+  </head>
+  <body>
+  dave: {{model.speakers.dave.first}}
+    {% block body %}
+      {{ contents | safe }}
+    {% endblock %}
+  </body>
+</html>

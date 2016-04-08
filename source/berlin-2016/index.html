@@ -1,0 +1,33 @@
+---
+title: View Source 2016 &middot; Berlin &middot; September 12-14, 2016
+top_blurb: foo bar bat
+layout: default.html
+model:
+  speakers: berlin_speakers
+  sessions: berlin_sessions
+---
+
+  <h2>Top Blurb</h2>
+  <p>{{ top_blurb }}</p>
+
+  <ul>
+  {% for speaker in model.speakers %}
+    <li>
+      {{speaker.first}} {{ speaker.last }}:
+      {% for talk in speaker.talks %}
+        <a href="/#{{ talk.slug }}">{{ talk.name }}</a>{% if not loop.last %},{% endif %}
+      {% endfor %}
+    </li>
+  {% endfor %}
+  </ul>
+
+  <ul>
+  {% for session in model.sessions %}
+    <li>
+      {% for speaker in session.speakers %}
+        <a href="/#{{ speaker.slug }}">{{ speaker.name }}</a>{% if not loop.last %},{% endif %}{% if loop.last %}:{% endif %}
+      {% endfor %}
+      {{ session.title }}
+    </li>
+  {% endfor %}
+  </ul>
