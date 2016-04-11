@@ -1,11 +1,14 @@
 <html>
   <head>
     <title>{{title}} {{venue}}</title>
+    {% for style in styles %}
+      <link rel="stylesheet" href="/stylesheets/{{ style }}.css">
+    {% endfor %}
   </head>
   <body>
-  dave: {{model.speakers.dave.first}}
     {% block body %}
       {{ contents | safe }}
     {% endblock %}
   </body>
+  <script src="/js/main.js"></script>
 </html>

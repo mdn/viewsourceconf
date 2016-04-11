@@ -1,26 +1,27 @@
 {
   "name": "viewsourceconf-build",
-  "version": "1.0.0",
-  "private": "true",
+  "version": "2016.0.1",
   "scripts": {
-    "stylus": "./node_modules/.bin/stylus -r static/stylus/base.styl -o static/css/",
-    "eslint": "./node_modules/.bin/eslint static/js/main.js static/js/newsletter_signup.js",
     "build": "node build"
   },
   "devDependencies": {
     "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.3.0",
     "metalsmith": "^2.1.0",
     "metalsmith-branch": "0.0.4",
-    "metalsmith-collections": "^0.7.0",
     "metalsmith-debug": "0.0.2",
+    "metalsmith-ignore": "^0.1.2",
     "metalsmith-in-place": "^1.4.3",
     "metalsmith-layouts": "^1.6.4",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-models": "0.0.1",
     "metalsmith-serve": "0.0.7",
+    "metalsmith-stylus": "^2.0.0",
+    "metalsmith-uglify": "^1.2.1",
     "metalsmith-watch": "^1.0.1",
-    "nunjucks": "^2.4.1",
     "stylus": "^0.54.2",
     "swig": "^1.4.2"
-  }
+  },
+  "private": true
 }

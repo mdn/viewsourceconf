@@ -1,49 +1,61 @@
-var Metalsmith = require('metalsmith'),
-  layouts = require('metalsmith-layouts'),
-  inplace = require('metalsmith-in-place'),
-  models = require('metalsmith-models'),
-  branch = require('metalsmith-branch'),
-  debug = require('metalsmith-debug');
+const metalsmith = require('metalsmith');
+const layouts = require('metalsmith-layouts');
+const inplace = require('metalsmith-in-place');
+const models = require('metalsmith-models');
+const stylus = require('metalsmith-stylus');
+const uglify = require('metalsmith-uglify');
+const branch = require('metalsmith-branch');
+const ignore = require('metalsmith-ignore');
+const debug = require('metalsmith-debug');
+const serve = require('metalsmith-serve');
+const watch = require('metalsmith-watch');
 
-Metalsmith(__dirname)
-  .source('source')
-  // don't run 2015 through our pipeline
-  .use(branch('!2015/*')
+metalsmith(__dirname)
+    .source('source')
     .use(debug())
-    .use(models({
-      directory: 'data'
+    .use(ignore([
+        '*swp',
+    ]))
+    // don't run 2015 through our conversions
+    .use(branch('!2015/*')
+        .use(models({
+            directory: 'data',
+        }))
+        .use(inplace({
+            engine: 'swig',
+            pattern: '**/*.html',
+        }))
+        .use(layouts({
+            engine: 'swig',
+            pattern: '**/*.html',
+            directory: 'layouts',
+        }))
+        .use(stylus({}))
+        .use(uglify({
+            pattern: 'js/*',
+            sourceMap: true,
+            concat: 'js/main.js',
+        }))
+        .use(function(files, metalsmith, done) {
+            console.log(metalsmith);
+            console.log(models);
+            done();
+        })
+    )
+    .destination('build')
+    .use(watch({
+        pattern: '**/*',
+        livereload: true,
     }))
-    .use(inplace({
-      engine: 'swig',
-      pattern: '**/*.html'
+    .use(serve({
+        port: 8080,
+        verbose: true,
     }))
-    .use(layouts({
-      engine: 'swig',
-      pattern: '**/*.html',
-      directory: 'layouts'
-    }))
-    .use(function(files, metalsmith, done) {
-      console.log(metalsmith);
-      console.log(models);
-      done();
-    })
-  )
-  .destination('build')
-  .build(function(err) {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      console.info('✫ Built it. ✫');
-    }
-  });
-
-//  .use(serve({
-//    port: 8080,
-//    verbose: true
-//  }))
-//  .use(watch({
-//    pattern: '**/*',
-//    livereload: true
-//  }))
-
+    .build(function(err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.info('✫ Built it. ✫');
+        }
+    });

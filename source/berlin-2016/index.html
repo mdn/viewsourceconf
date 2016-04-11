@@ -1,15 +1,19 @@
 ---
 title: View Source 2016 &middot; Berlin &middot; September 12-14, 2016
-top_blurb: foo bar bat
+top_blurb: Berlin is gonna be amazing.
 layout: default.html
 model:
   speakers: berlin_speakers
   sessions: berlin_sessions
+styles:
+  - berlin-2016
 ---
 
-  <h2>Top Blurb</h2>
+  <h2>Berlin!</h2>
   <p>{{ top_blurb }}</p>
 
+
+  <h3>Speakers</h3>
   <ul>
   {% for speaker in model.speakers %}
     <li>
@@ -21,6 +25,7 @@ model:
   {% endfor %}
   </ul>
 
+  <h3>Sessions</h3>
   <ul>
   {% for session in model.sessions %}
     <li>
