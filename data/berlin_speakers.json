@@ -1,0 +1,23 @@
+{
+  "dave": {
+    "first": "Dave",
+    "last": "Chaucerfingol-Wap",
+    "twitter": "davechaucerfingol-wap",
+    "pic": "dave.jpg",
+    "bio": "Dave is a Meatloaf meatball cow pork chop turkey pastrami. Sirloin chuck doner leberkas swine ribeye tenderloin beef ribs turducken ground round jowl. Meatball andouille ground round tongue jowl. Chicken ham hock jerky, ground round shoulder bresaola ham turkey landjaeger shankle filet mignon. Swine meatloaf pork loin sirloin andouille biltong ham hock tail meatball leberkas tenderloin.",
+    "talks": [
+      {"slug": "park", "name": "A walk in the park"}
+    ]
+  },
+  "pam": {
+    "first": "Pam",
+    "last": "Chaucerfingol-Wap",
+    "twitter": "pamchaucerfingol-wap",
+    "pic": "pam.jpg",
+    "bio": "Pam is a Meatloaf meatball cow pork chop turkey pastrami. Sirloin chuck doner leberkas swine ribeye tenderloin beef ribs turducken ground round jowl. Meatball andouille ground round tongue jowl. Chicken ham hock jerky, ground round shoulder bresaola ham turkey landjaeger shankle filet mignon. Swine meatloaf pork loin sirloin andouille biltong ham hock tail meatball leberkas tenderloin.",
+    "talks": [
+      {"slug": "kite", "name": "A kite and its string"},
+      {"slug": "park", "name": "A walk in the park"}
+    ]
+  }
+}

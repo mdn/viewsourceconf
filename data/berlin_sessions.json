@@ -1,0 +1,21 @@
+{
+  "1_1": {
+    "title": "A walk in the park",
+    "time": "9:30 a.m.",
+    "date": "11/3/2016",
+    "place": "Ballroom A",
+    "speakers": [
+      {"slug": "pam", "name": "Pam Chaucerfingol-Wap"},
+      {"slug": "dave", "name": "Dave Chaucerfingol-Wap"}
+    ]
+  },
+  "3_4": {
+    "title": "A kite and its string",
+    "time": "12:30 p.m.",
+    "date": "11/6/2016",
+    "place": "The Xander Tallemash Memorial Fountain Amphitheatre (North)",
+    "speakers": [
+      {"slug": "pam", "name": "Pam Chaucerfingol-Wap"}
+    ]
+  }
+}

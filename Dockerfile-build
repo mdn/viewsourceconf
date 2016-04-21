@@ -1,0 +1,4 @@
+FROM mhart/alpine-node:5.10.1
+
+COPY package.json /
+RUN npm install
