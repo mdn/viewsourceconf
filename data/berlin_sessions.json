@@ -1,21 +1,24 @@
-{
-  "1_1": {
-    "title": "A walk in the park",
-    "time": "9:30 a.m.",
-    "date": "11/3/2016",
-    "place": "Ballroom A",
-    "speakers": [
-      {"slug": "pam", "name": "Pam Chaucerfingol-Wap"},
-      {"slug": "dave", "name": "Dave Chaucerfingol-Wap"}
+[
+  {
+    "slug" : "the-web-today",
+    "title" : "The Web Today",
+    "keynote" : true,
+    "time" : "9 :30 a.m.",
+    "date" : "11/3/2016",
+    "place" : "Ballroom A",
+    "speakers" : [
+      { "slug" : "paul" }
     ]
   },
-  "3_4": {
-    "title": "A kite and its string",
-    "time": "12:30 p.m.",
-    "date": "11/6/2016",
-    "place": "The Xander Tallemash Memorial Fountain Amphitheatre (North)",
-    "speakers": [
-      {"slug": "pam", "name": "Pam Chaucerfingol-Wap"}
+  {
+    "slug" : "realistic-responsive-design",
+    "title" : "Realistic Responsive Design",
+    "keynote" : false,
+    "time" : "12 :30 p.m.",
+    "date" : "11/6/2016",
+    "place" : "The Xander Tallemash Memorial Fountain Amphitheatre (North)",
+    "speakers" : [
+      { "slug" : "inayaili" }
     ]
   }
-}
+]

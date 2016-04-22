@@ -1,0 +1,108 @@
+/*
+colors
+====================================================================== */
+$default-text = #4D4E54;
+$default-border = #d2d3d5;
+
+$default-light = #c0c0c0;
+$default-dark = #717171;
+$default-secondary = #cfcfcf;
+
+$seattle-light = #72C0B0;
+$seattle-dark = #106671;
+$seattle-secondary = #63C8CF;
+
+$berlin-light = #F05556;
+$berlin-dark = #B93C5A;
+$berlin-secondary = #F79B72;
+
+$default-gradient = linear-gradient(90deg, $default-dark, $default-light);
+$seattle-gradient = linear-gradient(90deg, $seattle-dark, $seattle-light);
+$berlin-gradient = linear-gradient(90deg, $berlin-dark, $berlin-light);
+
+// list of theme prefixes
+$themes = {
+    'default': '',
+    'seattle': '.seattle',
+    'berlin': '.berlin'
+};
+
+/* colour lists
+---------------------------------------------------------------------- */
+$theme-light = {
+    'default': $default-light,
+    'seattle': $seattle-light,
+    'berlin': $berlin-light
+};
+
+$theme-dark = {
+    'default': $default-dark,
+    'seattle': $seattle-dark,
+    'berlin': $berlin-dark
+};
+
+$theme-dark-darkend = {
+    'default': darken($default-dark, 20%),
+    'seattle': darken($seattle-dark, 20%),
+    'berlin': darken($berlin-dark, 20%)
+};
+
+$theme-secondary = {
+    'default': $default-secondary,
+    'seattle': $seattle-secondary,
+    'berlin': $berlin-secondary
+};
+
+$theme-gradient = {
+    'default': $default-gradient,
+    'seattle': $seattle-gradient,
+    'berlin': $berlin-gradient
+};
+
+/*
+typography
+====================================================================== */
+$heading-font-family = 'Moon Light', sans-serif;
+$body-font-family = 'Montserrat Light', sans-serif;
+
+/*
+breakpoints & media queries
+====================================================================== */
+$320  = unit(320 / 16, 'em')
+$480 = unit(480 / 16, 'em')
+$680  = unit(680 / 16, 'em')
+$960  = unit(960 / 16, 'em')
+
+$320-starts = $320 + 0.001em;
+$480-starts  = $480 + 0.001em;
+$680-starts  = $680 + 0.001em;
+$960-starts  = $960 + 0.001em;
+
+$media-query-320-and-up = 'all and (min-width: $320-starts)';
+$media-query-480-and-up  = 'all and (min-width: $480-starts)';
+$media-query-680-and-up  = 'all and (min-width: $680-starts)';
+$media-query-960-and-up  = 'all and (min-width: $960-starts)';
+
+/*
+grid units
+====================================================================== */
+$grid-column-width = 60px;
+$grid-gutter-width = 20px;
+
+
+/*
+animation
+====================================================================== */
+
+
+/*
+selectors
+====================================================================== */
+$selector-icon = 'i[class^="icon-"]';
+
+
+/*
+paths
+====================================================================== */
+$path-to-assets = '/assets/';
+$path-to-fonts = '/assets/fonts/';

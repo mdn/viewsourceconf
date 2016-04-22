@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body class="{{conference_slug}}">
+
+    {% include "./partials/header.html" %}
+
+    <section class="section">
+        <div class="section_body">
+            <h1>{{ title }}</h1>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section_body">
+            {% block body %}
+              {{ contents | safe }}
+            {% endblock %}
+        </div>
+    </section>
+
+
+    {% include "./partials/footer.html" %}
+
+  </body>
+  <script src="/js/main.js"></script>
+</html>

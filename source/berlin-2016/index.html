@@ -1,38 +1,61 @@
 ---
-title: View Source 2016 &middot; Berlin &middot; September 12-14, 2016
-top_blurb: Berlin is gonna be amazing.
-layout: default.html
+title: TODO
+layout: landing_conference.html
 model:
+  conferences: conferences
   speakers: berlin_speakers
   sessions: berlin_sessions
-styles:
-  - berlin-2016
+conference_slug:
+  - berlin
 ---
 
-  <h2>Berlin!</h2>
-  <p>{{ top_blurb }}</p>
+<p>Let&rsquo;s come together to view the source of the modern Web, build the Web we want, and explore the best ways to apply emerging Web technologies today.</p>
 
+<p>View Source is an event by developers, for developers, with emphasis on exposing best practices and practical development techniques. Sessions will dive into the code, analyze the web experience across browsers and devices, explore ready-to-use new technologies, and share best practices for improving how modern websites and applications are built.</p>
 
-  <h3>Speakers</h3>
-  <ul>
-  {% for speaker in model.speakers %}
+<p>Since communication encourages innovation &mdash; and makes things more fun &mdash; facilitated, interactive discussions will encourage group conversations between attendees, speakers, and subject matter experts on a range of topics. Showcased demos will focus on products that help developers create powerful, convenient, and easy-to-use apps and websites with a minimum of frustration and headache.</p>
+
+<p><a href="todo.html" class="button">Register</a></p>
+
+<h2>Call for Proposals</h2>
+
+<p>View Source Berlin is currently accepting proposals for talks. <a href="">Submit your proposal.</a></p>
+
+<h2>Speakers</h2>
+
+<p>View Source features a world-class group of speakers whose talks will expose best practices and practical, innovative development techniques. In addition, we will have a daily set of group discussions with experts on a variety of hot topics.</p>
+
+<ul>
+{% for speaker in model.speakers %}
+<li id="{{ speaker.slug }}">
+    Name:{{ speaker.first }} {{ speaker.last }}<br>
+    Photo: <br>
+    Bio: {{ speaker.bio }}<br>
+    Talks: <br>
+    {% for speaker_sessions in speaker.sessions %}
+    {% for session in model.sessions %}
+        {% if speaker_sessions.slug == session.slug %}
+            Title: {{ session.title }}<br>
+            Description: {{ session.title }}<br>
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
+</li>
+{% endfor %}
+</ul>
+
+<h3>Sessions</h3>
+<ul>
+{% for session in model.sessions %}
     <li>
-      {{speaker.first}} {{ speaker.last }}:
-      {% for talk in speaker.talks %}
-        <a href="/#{{ talk.slug }}">{{ talk.name }}</a>{% if not loop.last %},{% endif %}
-      {% endfor %}
+        {{ session.title }} &mdash;
+        {% for session_speaker in session.speakers %}
+            {% for speaker in model.speakers %}
+                {% if session_speaker.slug == speaker.slug %}
+                    {{ speaker.first }} {{ speaker.last }}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
     </li>
-  {% endfor %}
-  </ul>
-
-  <h3>Sessions</h3>
-  <ul>
-  {% for session in model.sessions %}
-    <li>
-      {% for speaker in session.speakers %}
-        <a href="/#{{ speaker.slug }}">{{ speaker.name }}</a>{% if not loop.last %},{% endif %}{% if loop.last %}:{% endif %}
-      {% endfor %}
-      {{ session.title }}
-    </li>
-  {% endfor %}
-  </ul>
+{% endfor %}
+</ul>

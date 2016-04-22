@@ -1,0 +1,78 @@
+@require 'variables';
+/*
+sidecol
+====================================================================== */
+/*  sidecol block
+    for use when you want an item of defined width on the left and some stuff on the right of it
+    http://www.stubbornella.org/body/2010/06/25/the-media_object-saves-hundreds-of-lines-of-code/
+    add .sidecol-reverse to .sidecol if you want the defined width stuff on the right (it still has to come first in the source)
+    add .sidecol_mobile-stack or .sidecol_smallmobile-stack to stack the stuff on mobile */
+
+.sidecol,
+.sidecol_body {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+}
+
+.sidecol-reverse {
+    display: table;
+    caption-side: top;
+    width: 100%;
+
+    .sidecol_side {
+        display: table-cell;
+    }
+    .sidecol_body {
+        display: table-caption;
+    }
+}
+
+/* declaration for putting the two items in a line */
+sidecol-line() {
+
+    .sidecol_body,
+    .sidecol_side {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+
+        .sidecol-reverse & {
+            display: block;
+        }
+    }
+
+    .sidecol_side {
+        float: left;
+        margin-right: $grid-gutter-width;
+
+        img {
+            display: block;
+        }
+
+        .sidecol-reverse & {
+            float: right;
+            margin-left: $grid-gutter-width;
+            margin-right: 0;
+        }
+    }
+
+    .sidecol-reverse {
+        display: block;
+    }
+}
+
+/* triggers for stacking */
+.sidecol-line {
+    sidecol-line();
+}
+
+.sidecol-480-line {
+    @media $media-query-480-and-up {
+        sidecol-line();
+    }
+}
+
+@media $media-query-680-and-up {
+    sidecol-line();
+}

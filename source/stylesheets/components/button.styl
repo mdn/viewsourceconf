@@ -1,0 +1,35 @@
+/*
+button
+====================================================================== */
+
+.button {
+    display: inline-block;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+    border-radius: 1px;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    text-decoration: none;
+    transition(background-color .15s ease);
+
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+
+        theme({
+            color: #fff
+            background: $theme-secondary
+            text-decoration: none
+        })
+    }
+
+    &:hover,
+    &:focus {
+        //TODO
+        text-decoration: underline;
+    }
+}

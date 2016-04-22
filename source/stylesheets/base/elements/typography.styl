@@ -1,0 +1,86 @@
+/*
+Headings
+====================================================================== */
+
+h1, h2 {
+    margin: 0 0 .5em;
+    font-family: $heading-font-family;
+    font-weight: normal;
+    line-height: 1.2;
+
+    theme({
+        color: $theme-dark
+    })
+}
+
+h3, h4, h5, h6 {
+    margin: 0 0 .5em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h1 {
+    set-font-size(30px);
+}
+
+h2 {
+    set-font-size(24px);
+}
+
+h3 {
+    set-font-size(22px);
+}
+
+h4 {
+    set-font-size(18px);
+}
+
+h5 {
+    set-font-size(16px);
+}
+
+h6 {
+    set-font-size(14px);
+}
+
+
+/*
+Links
+====================================================================== */
+a:link {
+    text-decoration: none;
+
+    theme({
+        color: $theme-light
+    })
+}
+
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: underline overline;
+
+    theme({
+        color: $theme-dark
+    })
+}
+
+/*
+sub and sup
+====================================================================== */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}

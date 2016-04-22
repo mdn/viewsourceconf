@@ -1,0 +1,70 @@
+@require 'includes/variables'
+/*
+sections
+====================================================================== */
+
+.section {
+    position: relative;
+    border-bottom: 1px solid $default-border;
+    padding: $grid-gutter-width 10px;
+
+    clearfix()
+}
+
+.section_body {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.section-hardstart {
+    padding-top: ($grid-gutter-width * 2);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $grid-gutter-width;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.section-softend {
+    padding-bottom: ($grid-gutter-width * 2);
+    border-bottom: none;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: $grid-gutter-width;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.section-gradient {
+    border-bottom: none;
+    invert-text()
+
+    theme({
+        background: $theme-gradient
+    })
+}
+
+.section-invert {
+    border-bottom: none;
+    invert-text()
+
+    theme({
+        background: $theme-dark
+    })
+}
+
+.section-grid {
+    background: linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.08) 1px, transparent 1px, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 11px, transparent 11px, transparent 20px, rgba(0,0,0,0.03) 20px, rgba(0,0,0,0.03) 21px, transparent 21px),
+                linear-gradient(90deg, rgba(0,0,0,0.08), rgba(0,0,0,0.08) 1px, transparent 1px, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 11px, transparent 11px, transparent 20px, rgba(0,0,0,0.03) 20px, rgba(0,0,0,0.03) 21px, transparent 21px);
+    background-size: 30px 30px, 30px 30px;
+}
