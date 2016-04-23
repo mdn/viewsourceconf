@@ -12,6 +12,7 @@ const watch = require('metalsmith-watch');
 
 metalsmith(__dirname)
     .source('source')
+    .use(debug())
     .use(ignore([
         '*swp',
     ]))
@@ -42,6 +43,15 @@ metalsmith(__dirname)
         })
     )
     .destination('build')
+    .use(watch({
+        pattern: '**/*',
+        livereload: true,
+    }))
+    .use(serve({
+        host: '0.0.0.0',
+        port: 8080,
+        verbose: true,
+    }))
     .build(function(err) {
         if (err) {
             console.log(err);
