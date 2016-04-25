@@ -10,7 +10,7 @@
 
     <section class="section">
         <div class="section_body">
-            <h1>{{ title }}</h1>
+            <h1>{% block title %}{{ contents | safe }}{% endblock %}</h1>
         </div>
     </section>
 

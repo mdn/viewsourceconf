@@ -5,11 +5,21 @@ model:
   speakers: berlin_speakers
   sessions: berlin_sessions
   nav: header_nav
-conference_slug:
-  - berlin
+conference_slug: berlin
 ---
 
 {% extends "../layouts/landing_conference.html" %}
+
+{% block title %}
+  {# Choose which conference data to load up this template with #}
+  {% if path == "berlin-2016" %}
+    {% set conf = model.conferences.berlin %}
+  {% endif %}
+  {% if path == "seattle-2016" %}
+    {% set conf = model.conferences.seattle %}
+  {% endif %}
+  View Source {{ conf.location }} | {{ conf.date }}
+{% endblock %}
 
 {% block body %}
 
