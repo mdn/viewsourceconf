@@ -6,9 +6,6 @@ const stylus = require('metalsmith-stylus');
 const uglify = require('metalsmith-uglify');
 const branch = require('metalsmith-branch');
 const ignore = require('metalsmith-ignore');
-const debug = require('metalsmith-debug');
-const serve = require('metalsmith-serve');
-const watch = require('metalsmith-watch');
 
 metalsmith(__dirname)
     .source('source')
