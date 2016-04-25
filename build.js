@@ -23,11 +23,13 @@ metalsmith(__dirname)
         .use(inplace({
             engine: 'swig',
             pattern: '**/*.html',
+            autoescape: false,
         }))
         .use(layouts({
             engine: 'swig',
             pattern: '**/*.html',
             directory: 'layouts',
+            autoescape: false,
         }))
         .use(stylus({}))
         .use(uglify({
