@@ -1,7 +1,8 @@
 const metalsmith = require('metalsmith');
-const layouts = require('metalsmith-layouts');
+const filenames = require('metalsmith-filenames');
 const inplace = require('metalsmith-in-place');
 const models = require('metalsmith-models');
+const permalinks = require('metalsmith-permalinks');
 const stylus = require('metalsmith-stylus');
 const uglify = require('metalsmith-uglify');
 const branch = require('metalsmith-branch');
@@ -16,20 +17,18 @@ metalsmith(__dirname)
     .use(ignore([
         '*swp',
     ]))
+    .use(filenames())
     // don't run 2015 through our conversions
     .use(branch('!2015/*')
+        .use(permalinks({
+          relative: false,
+        }))
         .use(models({
             directory: 'data',
         }))
         .use(inplace({
             engine: 'swig',
             pattern: '**/*.html',
-            autoescape: false,
-        }))
-        .use(layouts({
-            engine: 'swig',
-            pattern: '**/*.html',
-            directory: 'layouts',
             autoescape: false,
         }))
         .use(stylus({}))

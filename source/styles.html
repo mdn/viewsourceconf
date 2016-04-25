@@ -1,7 +1,12 @@
 ---
 title: Style Guide
-layout: common.html
+model:
+  nav: header_nav
 ---
+
+{% extends "layouts/common.html" %}
+
+{% block body %}
 
 {% for style in ['default', 'berlin', 'seattle'] %}
 
@@ -205,3 +210,4 @@ layout: common.html
 
 {% endfor %}
 
+{% endblock %}

@@ -1,10 +1,13 @@
 ---
 title: View Source 2016 Landing Page
-layout: landing.html
-test: test
 model:
   conferences: conferences
+  nav: header_nav
 ---
+
+{% extends "layouts/landing.html" %}
+
+{% block body %}
 
 <ul>
   {% for conference in model.conferences %}
@@ -34,3 +37,4 @@ model:
 
 <p>Read our <a href="https://www.mozilla.org/en-US/about/manifesto/">Manifesto</a> to learn more about the principles that guide our mission.</p>
 
+{% endblock %}

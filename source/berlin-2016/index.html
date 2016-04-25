@@ -1,13 +1,17 @@
 ---
 title: TODO
-layout: landing_conference.html
 model:
   conferences: conferences
   speakers: berlin_speakers
   sessions: berlin_sessions
+  nav: header_nav
 conference_slug:
   - berlin
 ---
+
+{% extends "../layouts/landing_conference.html" %}
+
+{% block body %}
 
 <p>Let&rsquo;s come together to view the source of the modern Web, build the Web we want, and explore the best ways to apply emerging Web technologies today.</p>
 
@@ -59,3 +63,5 @@ conference_slug:
     </li>
 {% endfor %}
 </ul>
+
+{% endblock %}

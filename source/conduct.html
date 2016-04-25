@@ -1,8 +1,14 @@
 ---
 title: Code of Conduct
-layout: common.html
 model:
   footer_menu: footer_menu
+  nav: header_nav
 ---
 
-{{title}}
+{% extends "layouts/common.html" %}
+
+{% block body %}
+
+  {{ title }}
+
+{% endblock %}

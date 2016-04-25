@@ -1,0 +1,18 @@
+{
+  "home": {
+    "url": "/",
+    "text": "Home"
+  },
+  "coc": {
+    "url": "/conduct",
+    "text": "Code of Conduct"
+  },
+  "berlin": {
+    "url": "/berlin-2016",
+    "text": "Berlin"
+  },
+  "styles": {
+    "url": "/styles",
+    "text": "Styles"
+  }
+}
