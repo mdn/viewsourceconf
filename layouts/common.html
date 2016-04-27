@@ -1,7 +1,7 @@
 <html>
     <head>
     <title>{{title}}</title>
-        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
         <!-- TODO: meta data, social graph and images -->
     </head>
     <body>
@@ -21,5 +21,5 @@
     {% include "footer.html" %}
 
     </body>
-    <script src="/js/main.js"></script>
+    <script src="/{{ fingerprint['js/main.js'] }}"></script>
 </html>

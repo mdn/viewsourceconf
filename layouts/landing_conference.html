@@ -2,7 +2,7 @@
   <head>
     <title>{{ title }}</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
   </head>
   <body class="{{conference_slug}}">
 
@@ -26,5 +26,5 @@
     {% include "footer.html" %}
 
   </body>
-  <script src="/js/main.js"></script>
+  <script src="/{{ fingerprint['js/main.js'] }}"></script>
 </html>
