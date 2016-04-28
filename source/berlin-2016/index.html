@@ -1,11 +1,10 @@
 ---
-title: TODO
+conference_slug: berlin
 model:
   conferences: conferences
   speakers: berlin_speakers
   sessions: berlin_sessions
   nav: header_nav
-conference_slug: berlin
 ---
 
 {% extends "../layouts/landing_conference.html" %}
@@ -42,8 +41,8 @@ conference_slug: berlin
 <ul>
 {% for speaker in model.speakers %}
 <li id="{{ speaker.slug }}">
-    Name:<a href="speakers/{{ speaker.slug }}">{{ speaker.first }} {{ speaker.last }}</a><br>
-    Photo: <br>
+    Name: <a href="speakers/{{ speaker.slug }}">{{ speaker.first }} {{ speaker.last }}</a><br>
+    Photo: <img src="/assets/images/{{ speaker.pic }}"><br>
     Bio: {{ speaker.bio }}<br>
     Talks: <br>
     {% for speaker_sessions in speaker.sessions %}

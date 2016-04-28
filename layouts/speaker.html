@@ -6,15 +6,41 @@
   </head>
   <body class="{{conference_slug}}">
 
-    {% include "header.html" %}
+    {% include "includes/header.html" %}
 
     <section class="section">
         <div class="section_body">
-            <h1>{{ data.first }}{{ data.last }}</h1>
+            <div class="cols">
+                <div class="col col-3"><img src="/assets/images/{{ data.pic }}"></div>
+                <div class="col col-9">
+                    <h1>{{ data.first }} {{ data.last }}</h1>
+                    <p>{{ data.bio }}</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    {% include "footer.html" %}
+    <section class="section section-grid">
+        <div class="section_body">
+            {% for session in model.sessions %}
+                {% for session_speaker in session.speakers %}
+                    {% if session_speaker.slug == data.slug %}
+                        <h2>{{ session.title }}</h2>
+                        <p><strong>
+                            {{ session.date }}<br>
+                            @ {{ session.place }}, {{session.time}}
+                            </strong>
+                        </p>
+                        <p>
+                            {{ session.summary }}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </section>
+
+    {% include "includes/footer.html" %}
 
   </body>
   <script src="/{{ fingerprint['js/main.js'] }}"></script>

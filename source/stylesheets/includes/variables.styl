@@ -1,24 +1,43 @@
+@require 'mixins';
+
 /*
 colors
 ====================================================================== */
-$default-text = #4D4E54;
 $default-border = #d2d3d5;
 
-$default-light = #c0c0c0;
-$default-dark = #717171;
-$default-secondary = #cfcfcf;
-
+/* seattle needs to be before default because default relies on it */
+$seattle-text = #4D4E54;
+$seattle-background = #FFFFFF;
 $seattle-light = #72C0B0;
 $seattle-dark = #106671;
 $seattle-secondary = #63C8CF;
+$seattle-headings = $seattle-dark;
 
+$default-text = #FFFFFF;
+$default-background = #313131;
+$default-light = saturation($seattle-light, 0%);
+$default-dark = saturation($seattle-dark, 0%);
+$default-secondary = saturation($seattle-secondary, 0%);
+$default-headings = $default-text;
+
+$berlin-text = #4D4E54;
+$berlin-background = #FFFFFF;
 $berlin-light = #F05556;
 $berlin-dark = #B93C5A;
 $berlin-secondary = #F79B72;
+$berlin-headings = $berlin-dark;
 
-$default-gradient = linear-gradient(90deg, $default-dark, $default-light);
-$seattle-gradient = linear-gradient(90deg, $seattle-dark, $seattle-light);
-$berlin-gradient = linear-gradient(90deg, $berlin-dark, $berlin-light);
+$default-gradient = linear-gradient(55deg, $default-light, $default-dark);
+$seattle-gradient = linear-gradient(55deg, $seattle-light, $seattle-dark);
+$berlin-gradient = linear-gradient(55deg, $berlin-light, $berlin-dark);
+
+// can't combine grid and grid background because stylus treats the background shorthand declaration as math
+$grid-size = 30px;
+$light-grid = linear-gradient(#ffffff, #ffffff 1px, transparent 1px, transparent 10px, #fdfdfd 10px, #fdfdfd 11px, transparent 11px, transparent 20px, #fdfdfd 20px, #fdfdfd 21px, transparent 21px), linear-gradient(90deg, #ffffff, #ffffff 1px, transparent 1px, transparent 10px, #fdfdfd 10px, #fdfdfd 11px, transparent 11px, transparent 20px, #fdfdfd 20px, #fdfdfd 21px, transparent 21px);
+$dark-grid = linear-gradient(#323232, #323232 1px, transparent 1px, transparent 10px, #1d1d1d 10px, #1d1d1d 11px, transparent 11px, transparent 20px, #1d1d1d 20px, #1d1d1d 21px, transparent 21px), linear-gradient(90deg, #323232, #323232 1px, transparent 1px, transparent 10px, #1d1d1d 10px, #1d1d1d 11px, transparent 11px, transparent 20px, #1d1d1d 20px, #1d1d1d 21px, transparent 21px);
+
+$light-grid-background = #f9f9fb;
+$dark-grid-background = #000000;
 
 // list of theme prefixes
 $themes = {
@@ -29,6 +48,30 @@ $themes = {
 
 /* colour lists
 ---------------------------------------------------------------------- */
+$theme-text = {
+    'default': $default-text,
+    'seattle': $seattle-text,
+    'berlin': $berlin-text
+};
+
+$theme-links = {
+    'default': $seattle-secondary,
+    'seattle': $seattle-dark,
+    'berlin': $berlin-dark
+};
+
+$theme-buttons = {
+    'default': $seattle-secondary,
+    'seattle': $seattle-secondary,
+    'berlin': $berlin-secondary
+};
+
+$theme-background = {
+    'default': $default-background,
+    'seattle': $seattle-background,
+    'berlin': $berlin-background
+};
+
 $theme-light = {
     'default': $default-light,
     'seattle': $seattle-light,
@@ -53,10 +96,28 @@ $theme-secondary = {
     'berlin': $berlin-secondary
 };
 
+$theme-headings = {
+    'default': $default-headings,
+    'seattle': $seattle-headings,
+    'berlin': $berlin-headings
+};
+
 $theme-gradient = {
     'default': $default-gradient,
     'seattle': $seattle-gradient,
     'berlin': $berlin-gradient
+};
+
+$theme-grid = {
+    'default': $dark-grid,
+    'seattle': $light-grid,
+    'berlin': $light-grid
+};
+
+$theme-grid-background = {
+    'default': $dark-grid-background,
+    'seattle': $light-grid-background,
+    'berlin': $light-grid-background
 };
 
 /*
@@ -72,23 +133,27 @@ $320  = unit(320 / 16, 'em')
 $480 = unit(480 / 16, 'em')
 $680  = unit(680 / 16, 'em')
 $960  = unit(960 / 16, 'em')
+$1200  = unit(1200 / 16, 'em')
 
 $320-starts = $320 + 0.001em;
 $480-starts  = $480 + 0.001em;
 $680-starts  = $680 + 0.001em;
 $960-starts  = $960 + 0.001em;
+$1200-starts  = $1200 + 0.001em;
 
 $media-query-320-and-up = 'all and (min-width: $320-starts)';
 $media-query-480-and-up  = 'all and (min-width: $480-starts)';
 $media-query-680-and-up  = 'all and (min-width: $680-starts)';
 $media-query-960-and-up  = 'all and (min-width: $960-starts)';
+$media-query-1200-and-up  = 'all and (min-width: $1200-starts)';
 
 /*
 grid units
 ====================================================================== */
 $grid-column-width = 60px;
 $grid-gutter-width = 20px;
-
+$grid-column-total = 12;
+$grid-max-width = $grid-column-width * $grid-column-total + $grid-gutter-width * ($grid-column-total - 1);
 
 /*
 animation

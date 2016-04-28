@@ -5,34 +5,33 @@ sections
 
 .section {
     position: relative;
-    border-bottom: 1px solid $default-border;
-    padding: $grid-gutter-width 10px;
 
     clearfix()
+
+    theme({
+        background: $theme-background
+        color: $theme-text
+    })
 }
 
 .section_body {
-    max-width: 680px;
+    max-width: $grid-max-width;
     margin: 0 auto;
+    padding: ($grid-gutter-width * 2)  $grid-gutter-width;
 }
 
-.section-hardstart {
-    padding-top: ($grid-gutter-width * 2);
+.section-fadeend {
+    padding-bottom: ($grid-gutter-width * 2);
 
     &::before {
         content: '';
         position: absolute;
-        top: 0;
+        bottom: $grid-gutter-width;
         left: 0;
         height: $grid-gutter-width;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.2);
     }
-}
-
-.section-softend {
-    padding-bottom: ($grid-gutter-width * 2);
-    border-bottom: none;
 
     &::after {
         content: '';
@@ -41,13 +40,12 @@ sections
         left: 0;
         height: $grid-gutter-width;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.5);
     }
 }
 
 .section-gradient {
-    border-bottom: none;
-    invert-text()
+    white-text()
 
     theme({
         background: $theme-gradient
@@ -55,16 +53,19 @@ sections
 }
 
 .section-invert {
-    border-bottom: none;
-    invert-text()
+    white-text()
 
     theme({
         background: $theme-dark
     })
 }
 
-.section-grid {
-    background: linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.08) 1px, transparent 1px, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 11px, transparent 11px, transparent 20px, rgba(0,0,0,0.03) 20px, rgba(0,0,0,0.03) 21px, transparent 21px),
-                linear-gradient(90deg, rgba(0,0,0,0.08), rgba(0,0,0,0.08) 1px, transparent 1px, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 11px, transparent 11px, transparent 20px, rgba(0,0,0,0.03) 20px, rgba(0,0,0,0.03) 21px, transparent 21px);
-    background-size: 30px 30px, 30px 30px;
+.section.section-grid { // needs increased specificity, because reasons
+    background-position: 0 0, 0 0;
+    background-size: $grid-size $grid-size, $grid-size $grid-size;
+
+    theme({
+        background-image: $theme-grid
+        background-color: $theme-grid-background
+    })
 }

@@ -1,11 +1,11 @@
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
   </head>
   <body>
 
-    {% include "header.html" %}
+    {% include "includes/header.html" %}
 
     <section class="section">
         <div class="section_body">
@@ -15,7 +15,7 @@
         </div>
     </section>
 
-    {% include "footer.html" %}
+    {% include "includes/footer.html" %}
 
   </body>
   <script src="/{{ fingerprint['js/main.js'] }}"></script>

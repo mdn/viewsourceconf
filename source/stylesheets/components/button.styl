@@ -5,13 +5,13 @@ button
 .button {
     display: inline-block;
     box-sizing: border-box;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
-    border-radius: 1px;
-    border: none;
-    padding: 0;
+    min-width: 200px;
+    border: 3px solid transparent;
+    padding: 3px 15px;
+    background: transparent;
     font-size: inherit;
+    text-align: center;
     text-decoration: none;
-    transition(background-color .15s ease);
 
     &,
     &:link,
@@ -21,8 +21,8 @@ button
     &:active {
 
         theme({
-            color: #fff
-            background: $theme-secondary
+            color: $theme-buttons
+            border-color: $theme-buttons
             text-decoration: none
         })
     }
@@ -30,6 +30,5 @@ button
     &:hover,
     &:focus {
         //TODO
-        text-decoration: underline;
     }
 }

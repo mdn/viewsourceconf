@@ -9,14 +9,14 @@ h1, h2 {
     line-height: 1.2;
 
     theme({
-        color: $theme-dark
+        color: $theme-headings
     })
 }
 
 h3, h4, h5, h6 {
     margin: 0 0 .5em;
     font-weight: bold;
-    line-height: 1.2;
+    line-height: 2.1;
 }
 
 h1 {
@@ -47,23 +47,22 @@ h6 {
 /*
 Links
 ====================================================================== */
-a:link {
-    text-decoration: none;
-
-    theme({
-        color: $theme-light
-    })
-}
-
+a:link,
 a:visited,
 a:hover,
 a:focus,
 a:active {
-    text-decoration: underline overline;
+    text-decoration: none;
 
     theme({
-        color: $theme-dark
+        color: $theme-links
     })
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: underline;
 }
 
 /*

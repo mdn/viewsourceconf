@@ -1,0 +1,44 @@
+<div class="session">
+    <div class="cols">
+        <div class="col col-3"><strong>{{ session.time }}</strong></div>
+
+        <div class="col col-2">
+            {% if session.speakers %}
+                {% for session_speaker in session.speakers %}
+                    {% for speaker in model.speakers %}
+                        {% if session_speaker.slug == speaker.slug %}
+                            <a href="{{speaker.first}}"><img src="/assets/images/{{ speaker.pic }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="col col-7">
+            {% if session.summary == '' %}
+                <h4 class=>{{ session.title }}</h4>
+            {% else %}
+                <details>
+                    <summary>
+                        <h4>
+                            {% if session.speakers %}
+                                {% for session_speaker in session.speakers %}
+                                    {% for speaker in model.speakers %}
+                                        {% if session_speaker.slug == speaker.slug %}
+                                            <a href="../speakers/{{ speaker.slug }}">{{ speaker.first }} {{ speaker.last }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                                <br>
+                            {% endif %}
+                            {{ session.title }} | <button>More...</button>
+                        </h4>
+                    </summary>
+                    <div>
+                        <p>{{ session.summary }} </p>
+                    </div>
+                </details>
+            {% endif %}
+        </div>
+    </div>
+</div>

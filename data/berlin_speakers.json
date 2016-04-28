@@ -20,5 +20,16 @@
     "sessions" : [
       { "slug" : "realistic-responsive-design" }
     ]
+  },
+  {
+    "slug" : "stephanie",
+    "first" : "Stephanie",
+    "last" : "Hobson",
+    "twitter" : "stephaniehobson",
+    "pic" : "stephanie.jpg",
+    "bio" : "Stephanie has been coding since 1998 for websites as large as bcit.ca, and as popular as careers.mozilla.org. HTML, CSS, and JavaScript have always been her passion so her interests naturally extend to web standards, progressive enhancement, performance, analytics, and accessibility. She’s currently working as front-end dev for the Mozilla Developer Network.",
+    "sessions" : [
+      { "slug" : "better-for-everyone" }
+    ]
   }
 ]

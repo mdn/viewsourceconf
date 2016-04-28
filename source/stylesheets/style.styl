@@ -8,19 +8,29 @@ BEM inspired naming please:
 
 
 /* includes
+- files that everything else builds on
 ====================================================================== */
 @require 'includes/variables';
 @require 'includes/mixins';
 
 
 /* base elements
+- modified HTML with no classes
 ====================================================================== */
 @require 'base/fonts';
 @require 'base/elements';
-@require 'base/utilities';
+
+
+/* utilities
+- re-usable classes
+- think OOCSS
+- mostly page structure (columns and stuff)
+====================================================================== */
+@require 'utilities/utilities';
 
 
 /* components
+- specific purpose blocks with sub elements and modifiers
 ====================================================================== */
 
 @require 'components/header';
@@ -28,9 +38,11 @@ BEM inspired naming please:
 
 /*
 ---------------------------------------------------------------------- */
+@require 'components/session';
 @require 'components/frame';
 @require 'components/section';
 @require 'components/button';
+@require 'components/solo';
 
 
 /*

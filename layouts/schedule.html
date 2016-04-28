@@ -1,27 +1,27 @@
 <html>
   <head>
     <title>{% block title %}{% endblock %}</title>
-    <meta charset="utf-8" />
     <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
   </head>
-  <body class="{{conference_slug}}">
+  <body class="{{ conference_slug }}">
 
     {% include "includes/header.html" %}
 
-    <section class="section">
+    <section class="section section-grid">
         <div class="section_body">
             <h1>{% block title %}{% endblock %}</h1>
+
+            <h3>Monday, September 12 Day 1</h3>
+            <div>
+            {% for session in model.sessions %}
+
+                {% include "includes/session.html" with session %}
+
+            {% endfor %}
+            </div>
+
         </div>
     </section>
-
-    <section class="section">
-        <div class="section_body">
-            {% block body %}
-              {{ contents | safe }}
-            {% endblock %}
-        </div>
-    </section>
-
 
     {% include "includes/footer.html" %}
 

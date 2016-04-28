@@ -1,0 +1,67 @@
+@require 'variables';
+/*
+cols
+====================================================================== */
+
+cols($gutter) {
+    .cols {
+        margin: 0 ($gutter * -1) 0 0;
+
+        &::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    .col {
+        box-sizing: border-box;
+        float: left;
+        min-height: 1;
+        padding-right: $gutter;
+    }
+
+    .cols-half {
+        > .col {
+            width: cols-wide(6);
+        }
+    }
+
+    .cols-third {
+        > .col {
+            width: cols-wide(4);
+        }
+
+        > .col-x2 {
+            width: cols-wide(8);
+        }
+    }
+
+    .cols-quarter {
+        > .col {
+            width: cols-wide(3);
+        }
+        > .col-x2 {
+            width: cols-wide(6);
+        }
+    }
+}
+
+@media $media-query-680-and-up {
+    cols($grid-gutter-width);
+
+
+    for $num in (1..$grid-column-total) {
+        .col-{$num}{
+            width: cols-wide($num)
+        }
+    }
+
+}
+
+.cols-test .col:before {
+    content: '';
+    display: block;
+    background-color: #aaa;
+    height: 10px;
+}

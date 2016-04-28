@@ -1,24 +1,52 @@
 [
   {
+    "slug" : "monday-breakfast",
+    "title" : "Breakfast",
+    "keynote" : true,
+    "time" : "8:00am - 9:00am",
+    "date" : "11/3/2016",
+    "place" : "Lobby",
+    "speakers" : [],
+    "summary" : ""
+
+  },
+  {
     "slug" : "the-web-today",
     "title" : "The Web Today",
     "keynote" : true,
-    "time" : "9 :30 a.m.",
+    "time" : "9:00am - 10:00am",
     "date" : "11/3/2016",
     "place" : "Ballroom A",
     "speakers" : [
       { "slug" : "paul" }
-    ]
+    ],
+    "summary" : "I will talk about the web today. Drawing on personal experience, a study of the industry, and an awful lot of time spent reading standards documents, I will talk about what makes a person a web person."
+
   },
   {
     "slug" : "realistic-responsive-design",
     "title" : "Realistic Responsive Design",
     "keynote" : false,
-    "time" : "12 :30 p.m.",
+    "time" : "10:00am - 11:00am",
     "date" : "11/6/2016",
     "place" : "The Xander Tallemash Memorial Fountain Amphitheatre (North)",
     "speakers" : [
       { "slug" : "inayaili" }
     ]
+    ,
+    "summary" : "In an ideal scenario, when you’re going to convert a non-responsive site into a responsive one, you start from scratch and do everything right and perfectly from the beginning. But in reality, starting from scratch is simply not practical or possible for many (or even most) projects. So what can we do to overcome some of the most common obstacles and still get to that elusive, mobile-first, responsive site? In this talk, I’ll go behind the scenes through the nitty-gritty of a real world responsive retrofitting project, and provide useful tips that can be put in practice by other teams facing similar challenges."
+  },
+  {
+    "slug" : "better-for-everyone",
+    "title" : "Web Accessibility:  Making Websites Better for Everyone",
+    "keynote" : false,
+    "time" : "11:00am - 12:00am",
+    "date" : "11/6/2016",
+    "place" : "Ballroom A)",
+    "speakers" : [
+      { "slug" : "stephanie" }
+    ]
+    ,
+    "summary" : "Making our sites easier to use for users who face vision or mobility challenges makes them easier for everyone to use. From larger hit areas to clear indications of state, we’ll cover a few simple things we can start and stop doing with CSS to make websites faster to navigate with a keyboard, easier to use with a coarse pointer, and usable even without visual formatting."
   }
 ]

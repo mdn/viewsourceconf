@@ -67,26 +67,48 @@ inline-list() {
     }
 }
 
+
 /*
 ====================================================================== */
-invert-text() {
-    color: #fff;
-
-    h1, h2, h3, h4, h5, h6 {
+cols-wide($cols) {
+    $width = $cols / $grid-column-total * 100;
+    if($width > 100) {
+        $width = 100;
+    }
+    $width = unit($width, unquote('%'));
+    $width = round($width, 3);
+    return $width;
+}
+/*
+====================================================================== */
+white-text() {
+    theme({
         color: #fff
+    })
+
+    h1, h2, h3, h4 {
+        theme({
+            color: #fff
+        })
     }
 
-    a:link {
-        color: #fff;
+    a:not(.button):link,
+    a:not(.button):visited {
         text-decoration: underline;
+
+        theme({
+            color: #fff
+        })
     }
 
-    a:link
-    a:visited,
-    a:hover,
-    a:focus,
-    a:active {
-        color: #fff;
+    a:not(.button):hover,
+    a:not(.button):focus,
+    a:not(.button):active {
+        text-decoration: none;
+
+        theme({
+            color: #fff
+        })
     }
 }
 
@@ -124,27 +146,34 @@ Example output:
 ====================================================================== */
 theme(hash) {
     // loop through all themes
-    for theme_name, theme_class in $themes {
+    for $theme_name, $theme_class in $themes {
         // if this is the default theme we don't need a new selector
-        if(theme_class == '') {
-            for hash_property, hash_color_list in hash {
-                if(hash_color_list[theme_name]) {
-                    {hash_property}: hash_color_list[theme_name];
-                } else {
-                    {hash_property}: hash_color_list
-                }
+        if($theme_class == '') {
+            for $property, $value in hash {
+                {$property}: theme-color($theme_name, $value);
             }
         } else {
             // not default, nest our work under the theme's selector
-            {theme_class} & {
-                for hash_property, hash_color_list in hash {
-                    if(hash_color_list[theme_name]) {
-                        {hash_property}: hash_color_list[theme_name];
-                    } else {
-                        {hash_property}: hash_color_list
-                    }
+            {$theme_class} & {
+                for $property, $value in hash {
+                    {$property}: theme-color($theme_name, $value);
                 }
             }
         }
+    }
+}
+
+// them names are listed in $themes.
+// value may be the name of a theme color list
+theme-color($theme_name, $value){
+    // see if $value is a theme colour list
+    if($value[$theme_name]) {
+        // if there is a corresponding value, use it
+        return $value[$theme_name];
+    } else {
+        // if it's not in the list, return the value for use
+        // could be annother styuls variable
+        // could be a straight up colour name
+        return $value
     }
 }
