@@ -22,22 +22,41 @@ model:
 
 {% block body %}
 
-<p>Let&rsquo;s come together to view the source of the modern Web, build the Web we want, and explore the best ways to apply emerging Web technologies today.</p>
+<div class="section section-gradient">
+    <div class="section_body">
 
-<p>View Source is an event by developers, for developers, with emphasis on exposing best practices and practical development techniques. Sessions will dive into the code, analyze the web experience across browsers and devices, explore ready-to-use new technologies, and share best practices for improving how modern websites and applications are built.</p>
+        <div class="solo">
+            <h1>View Source Berlin 2016</h1>
 
-<p>Since communication encourages innovation &mdash; and makes things more fun &mdash; facilitated, interactive discussions will encourage group conversations between attendees, speakers, and subject matter experts on a range of topics. Showcased demos will focus on products that help developers create powerful, convenient, and easy-to-use apps and websites with a minimum of frustration and headache.</p>
+            <p><strong>Let’s come together to build the Web we want!</strong></p>
 
-<p><a href="todo.html" class="button">Register</a></p>
+            <p>View Source is an event by developers, for developers, exploring best practices and exciting new techniques.</p>
 
-<h2>Call for Proposals</h2>
+            <p>Sessions will dive into the code, analyze the web experience across browsers and devices, and explore ready-to-use new technologies. Demos will focus on products that create powerful, convenient, and easy-to-use apps and websites. </p>
 
-<p>View Source Berlin is currently accepting proposals for talks. <a href="">Submit your proposal.</a></p>
+            <p><a href="todo.html" class="button button-invert">Register</a></p>
+        </div>
 
-<h2>Speakers</h2>
+    </div>
+</div>
 
-<p>View Source features a world-class group of speakers whose talks will expose best practices and practical, innovative development techniques. In addition, we will have a daily set of group discussions with experts on a variety of hot topics.</p>
+<div class="section section-grid">
+    <div class="section_body">
+        <div class="solo">
+            <h2>Call for Proposals</h2>
+            <p>View Source Berlin is currently accepting proposals for talks.</p>
+            <p><a href="TODO" class="button">Submit your proposal.</a></p>
+        </div>
+    </div>
+</div>
 
+<div class="section">
+<div class="section_body">
+    <h2>Speakers</h2>
+
+    <p>View Source features a world-class group of speakers whose talks will expose best practices and practical, innovative development techniques. In addition, we will have a daily set of group discussions with experts on a variety of hot topics.</p>
+
+<!--
 <ul>
 {% for speaker in model.speakers %}
 <li id="{{ speaker.slug }}">
@@ -56,21 +75,180 @@ model:
 </li>
 {% endfor %}
 </ul>
+-->
 
-<h3>Sessions</h3>
-<ul>
-{% for session in model.sessions %}
-    <li>
-        {{ session.title }} &mdash;
-        {% for session_speaker in session.speakers %}
-            {% for speaker in model.speakers %}
-                {% if session_speaker.slug == speaker.slug %}
-                    {{ speaker.first }} {{ speaker.last }}
-                {% endif %}
+</div>
+
+<div class="section section-grid">
+    <div class="section_body">
+        <div class="solo">
+            <h2>Sessions</h2>
+            <p>Our speakers are awesome, but there’s more to View Source—it’s equal parts sharing, learning, and meeting new people. Discuss and collaborate in an on-going hacking space, chill in comfy hangout spots, see some great demos, and participate in engaging discussions. Evening activities will provide a fun, friendly space to continue the conversation and start new ones.</p>
+        </div>
+        <div class="cols cols-third">
+            <div class="col">
+                <p><strong>September 12</strong><br>
+                Ignite talks<br>
+                Welcome Reception</p>
+            </div>
+            <div class="col">
+                <p><strong>September 13</strong><br>
+                Day 1 Conference Sessions<br>
+                Conference Social Event</p>
+            </div>
+            <div class="col">
+                <p><strong>September 14th</strong><br>
+                Day 2 Conference Sessions<br>
+                Conference After Party</p>
+            </div>
+        </div>
+        <div class="solo">
+            <p><a href="schedule" class="button">See full schedule</a></p>
+        </div>
+
+    <!--
+    <ul>
+    {% for session in model.sessions %}
+        <li>
+            {{ session.title }} &mdash;
+            {% for session_speaker in session.speakers %}
+                {% for speaker in model.speakers %}
+                    {% if session_speaker.slug == speaker.slug %}
+                        {{ speaker.first }} {{ speaker.last }}
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-    </li>
-{% endfor %}
-</ul>
+        </li>
+    {% endfor %}
+    </ul>
+
+    -->
+
+    </div>
+</div>
+
+<div class="section">
+    <div class="section_body">
+        <h2>Venue</h2>
+        <p><strong>RADIALSYSTEM V<br>
+        Holzmarktstraße 33, 10243 Berlin, Germany</strong>
+        </p>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.2786856721473!2d13.426430615483964!3d52.510295444701235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e3900263f87%3A0xf3893f5141a5c0fc!2sRADIALSYSTEM+V!5e0!3m2!1sen!2sus!4v1458849251146" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        <p>Formerly a turn of the century pumping station for the Berlin Wasserwerke (Berlin Water Services), RADIALSYSTEM V – situated in the urban centre of Berlin between Friedrichshain, Mitte and Kreuzberg – currently functions as a cultural centre where new ideas radiate out in all directions, attracting artists and the public from within as well as beyond the city limits of Berlin.</p>
+
+    </div>
+</div>
+
+<div class="section section-grid">
+    <div class="section_body">
+        <h2>Travel and Accommodation</h2>
+
+        <p>Radialsystem V is located on the Spree River bank, just across the street from the Ostbahnhof train station. A five-minute walk away from the station, the venue can also be easily reached by S-Bahn, by bus, and by local and express trains.</p>
+
+        <h3>Berlin Tegel airport</h3>
+        <p>There is no direct subway or train connection to Tegel Airport.  Various buses and express buses operated by BVG (Berlin Transport Services) have stops located right outside Terminal A and B.  Take TXL Bus / TXL JetExpressBus to Hauptbahnhof. From Hauptbahnhof S+U station take the S-Bahn S75 (direction S Wartenberg ) to Berlin Ostbahnhof. It is a short 5-minute walk to the venue.</p>
+
+        <h3>Berlin Schönefeld airport </h3>
+        <p>TTake the Airport Express (RE7 & RB14) regional train to Berlin Ostbahnhof. Travel Time: 15 minutes, trains run between 4:40am - 11:00pm. It is a short 5-minute walk to the venue.</p>
+
+
+        <h3>Berlin Subway (tube)</h3>
+        <p>TThe closest subway station to the venue is Berlin Ostbahnhof.<br>
+        Metro: S-Bahn lines: S3, S5, S7, S75 and S9<br>
+        Warschauer Strasse lines:U1, U15 and U12<br>
+        Alexanderplatz lines: U2, U5, U8  </p>
+
+
+        <h3>Rail</h3>
+        <p>TFrom Berlin Hauptbahnhof (main station) trains leave frequently to Berlin Ostbahnhof. It’s a 7-minute ride and from there a short 5-minute walk to the venue.</p>
+
+        <h3>Bus</h3>
+        <p>Berlin Ostbahnhof is served by bus lines 140, 147, 347. </p>
+
+
+        <h3>Car</h3>
+        <p>TWe strongly advise against coming to the venue by car, as parking is very difficult. We encourage you to take advantage of the comprehensive public transport system.</p>
+
+        <h3>Suggested Hotels</h3>
+        <p>TODO</p>
+        <!--
+        (include website link directly to hotel - new window)
+        Attendee Hotel Options for the Website
+
+        IBIS HOTEL
+        Name of hotel: Ibis Berlin Ostbahnhof
+        Hotel rating: **
+        Preferential rate: €94,00 for a single room - preferential rate can only be guaranteed until 18 July 2016 -  rooms subject to availability
+        Address: An der Schillingbrücke 2, 10243 Berlin
+        How to book:
+        Contact Daniela Schneider
+        Email address: h3108@accor.com
+        Telephone number: +49 30 257600
+        Reference: View Source 2016
+        Website: http://www.hotel.info/en/ibis-berlin-ostbahnhof/hotel-118587/
+        A credit card will be necessary to secure a booking.
+
+        AMANO GRAND CENTRAL
+        Name of hotel: reservationsberlin@amanogroup.de
+        Hotel rating: ***
+        Preferential rate: €105 for a single room - preferential rate can only be guaranteed until 29 July 2016 -  rooms subject to availability
+        Addresses: Heidestraße 62, 10557 Berlin
+        How to book:
+        Contact main hotel reservation desk or Mrs Addo
+        Email address: reservationsberlin@amanogroup.de
+        Telephone number: +49 30 80 94 15 2221
+        Booking reference: View Source 2016
+        Website: http://www.amanogroup.de/en/hotels/hotel-amano-grand-central/
+        A credit card will be necessary to secure a booking.
+
+        MANI HOTEL
+        Name of hotel: reservationsberlin@amanogroup.de
+        Hotel rating: ***
+        Preferential rate: €102 for a single room - preferential rate can only be guaranteed until 29 July 2016 - rooms subject to availability
+        Addresses: Torstrasse 136, 10119 Berlin
+        How to book:
+        Contact main hotel reservation or ask for Mrs Addo
+        Email address: reservationsberlin@amanogroup.de
+        Telephone number: +49 30 80 94 15 2221
+        Reference: View Source 2016
+        Website: http://www.amanogroup.de/en/hotels/mani/
+        A credit card will be necessary to secure a booking.
+        -->
+
+    </div>
+</div>
+
+<div class="section">
+    <div class="section_body">
+        <h2>Premier Sponsors</h2>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section_body">
+        <h2>Gold Sponsors</h2>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section_body">
+        <h2>Silver Sponsors</h2>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section_body">
+        <h2>Other Sponsors and Partners</h2>
+    </div>
+</div>
+
+<div class="section section-gradient">
+    <div class="section_body">
+        <h2>Sponsor the Event</h2>
+        <p>Want to sponsor View Source? We're always open for sponsorship and partnerships, please <a href="mailto:spersing@mozilla.com">contact us</a> for details. You can also check out our <a href="https://drive.google.com/a/mozilla.com/file/d/0B4TyDaJ_7v4KWEhWT2VGbGo1N1hIczBQR2hMbDF5Vzlyai1v/view?usp=sharing">Sponsorship Prospectus</a>. If you don’t see what you are looking for, please <a href="spersing@mozilla.com">contact us</a>, we’re happy to discuss additional options.</p>
+    </div>
+</div>
 
 {% endblock %}

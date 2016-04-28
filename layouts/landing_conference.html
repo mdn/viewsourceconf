@@ -8,19 +8,10 @@
 
     {% include "includes/header.html" %}
 
-    <section class="section">
-        <div class="section_body">
-            <h1>{% block title %}{% endblock %}</h1>
-        </div>
-    </section>
 
-    <section class="section">
-        <div class="section_body">
-            {% block body %}
-              {{ contents | safe }}
-            {% endblock %}
-        </div>
-    </section>
+    {% block body %}
+      {{ contents | safe }}
+    {% endblock %}
 
 
     {% include "includes/footer.html" %}

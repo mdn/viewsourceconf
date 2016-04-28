@@ -32,3 +32,19 @@ button
         //TODO
     }
 }
+
+.button-invert {
+
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+        theme({
+            background-color: $theme-buttons
+            border-color: transparent
+            color: #fff
+        })
+    }
+}
