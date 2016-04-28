@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>{{ data.first }} {{ data.last }}</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
+  </head>
+  <body class="{{conference_slug}}">
+
+    {% include "header.html" %}
+
+    <section class="section">
+        <div class="section_body">
+            <h1>{{ data.first }}{{ data.last }}</h1>
+        </div>
+    </section>
+
+    {% include "footer.html" %}
+
+  </body>
+  <script src="/{{ fingerprint['js/main.js'] }}"></script>
+</html>

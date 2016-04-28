@@ -12,10 +12,10 @@ conference_slug: berlin
 
 {% block title %}
   {# Choose which conference data to load up this template with #}
-  {% if path == "berlin-2016" %}
+  {% if conference_slug == "berlin" %}
     {% set conf = model.conferences.berlin %}
   {% endif %}
-  {% if path == "seattle-2016" %}
+  {% if conference_slug == "seattle" %}
     {% set conf = model.conferences.seattle %}
   {% endif %}
   View Source {{ conf.location }} | {{ conf.date }}
@@ -42,7 +42,7 @@ conference_slug: berlin
 <ul>
 {% for speaker in model.speakers %}
 <li id="{{ speaker.slug }}">
-    Name:{{ speaker.first }} {{ speaker.last }}<br>
+    Name:<a href="speakers/{{ speaker.slug }}">{{ speaker.first }} {{ speaker.last }}</a><br>
     Photo: <br>
     Bio: {{ speaker.bio }}<br>
     Talks: <br>

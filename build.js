@@ -1,17 +1,20 @@
 "use strict";
 
 const metalsmith = require('metalsmith');
-const fingerprint = require('metalsmith-fingerprint-ignore');
+const collections = require('metalsmith-collections');
+const branch = require('metalsmith-branch');
+const debug = require('metalsmith-debug');
 const filenames = require('metalsmith-filenames');
+const fingerprint = require('metalsmith-fingerprint-ignore');
+const ignore = require('metalsmith-ignore');
 const inplace = require('metalsmith-in-place');
+const json_to_files = require('metalsmith-json-to-files');
+const layouts = require('metalsmith-layouts');
 const models = require('metalsmith-models');
 const permalinks = require('metalsmith-permalinks');
+const serve = require('metalsmith-serve');
 const stylus = require('metalsmith-stylus');
 const uglify = require('metalsmith-uglify');
-const branch = require('metalsmith-branch');
-const ignore = require('metalsmith-ignore');
-const debug = require('metalsmith-debug');
-const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 
 // This is a plugin.
@@ -43,24 +46,31 @@ metalsmith(__dirname)
     .source('source')
     // Add debug messages to terminal.
     .use(devonly(debug, {}))
-    // Ignore files in source directory that we don't want to copy to build dir.
-    .use(ignore([
-        '*swp',
-    ]))
     // Give each file processed a name during conversion, which is required for
     // template inheritance in swig. Conflicts with branch so run it out here.
     // https://github.com/MoOx/metalsmith-filenames/issues/1
     .use(filenames())
     // Restrict the files we transform to a pattern; don't transform 2015.
     .use(branch('!2015/**/*')
+    .use(branch('!assets/**/*')
+        // Also put json from /data into collections.
+        .use(json_to_files({
+            source_path: 'data/',
+        }))
+        // Ignore files that we don't want to copy to build dir.
+        // Must follow json_to_files
+        .use(ignore([
+            '**/_*',
+            '**/*swp'
+        ]))
+        // Put json from /data into global metadata. Must be above inplace.
+        .use(models({
+            directory: 'data',
+        }))
         // Make pretty urls by moving foo.html to /foo/index.html.
         // Also, add a 'path' to global metadata for each file.
         .use(permalinks({
             relative: false,
-        }))
-        // Put json from /data into global metadata. Must be above inplace.
-        .use(models({
-            directory: 'data',
         }))
         // Minimize and concatenate js files. Must be above fingerprint.
         .use(uglify({
@@ -81,9 +91,16 @@ metalsmith(__dirname)
             pattern: '**/*.html',
             autoescape: false,
         }))
+        // Apply layouts to (certain) source files using specified engine.
+        // We only use this to support json_to_files.
+        .use(layouts({
+            engine: 'swig',
+            pattern: '**/*.html',
+            autoescape: false,
+        }))
         // Log global metadata, etc., to terminal.
         .use(devonly(dump))
-    )
+    ))
     // Output files to build dir.
     .destination('build')
     // Automatically rebuild things in the source directory when they change.
