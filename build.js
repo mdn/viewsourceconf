@@ -4,6 +4,7 @@ const metalsmith = require('metalsmith');
 const collections = require('metalsmith-collections');
 const branch = require('metalsmith-branch');
 const debug = require('metalsmith-debug');
+const define = require('metalsmith-define');
 const filenames = require('metalsmith-filenames');
 const fingerprint = require('metalsmith-fingerprint-ignore');
 const ignore = require('metalsmith-ignore');
@@ -44,7 +45,11 @@ const dump = function(options) {
 metalsmith(__dirname)
     // Input files from source directory.
     .source('source')
-    // Add debug messages to terminal.
+    // Define some global values that will be accessible in metadata anywhere.
+    .use(define({
+        date_format: 'F j, Y',
+    }))
+    // Add debug messages to terminal. Dev-only.
     .use(devonly(debug, {}))
     // Give each file processed a name during conversion, which is required for
     // template inheritance in swig. Conflicts with branch so run it out here.

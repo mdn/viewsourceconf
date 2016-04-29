@@ -27,7 +27,7 @@
                     {% if session_speaker.slug == data.slug %}
                         <h2>{{ session.title }}</h2>
                         <p><strong>
-                            {{ session.date }}<br>
+                            {{ session.date|date(date_format) }}<br>
                             @ {{ session.place }}, {{session.time}}
                             </strong>
                         </p>

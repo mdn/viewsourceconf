@@ -13,6 +13,7 @@
     "metalsmith-branch": "0.0.4",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-debug": "0.0.2",
+    "metalsmith-define": "^2.0.1",
     "metalsmith-filenames": "^1.0.0",
     "metalsmith-fingerprint-ignore": "^1.1.2",
     "metalsmith-ignore": "^0.1.2",
