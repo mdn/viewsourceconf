@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>{% block title %}{% endblock %}</title>
-    <meta charset="utf-8" />
+    {% include "includes/meta.html" %}
     <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
   </head>
   <body class="{{conference_slug}}">

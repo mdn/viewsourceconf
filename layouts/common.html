@@ -1,6 +1,7 @@
 <html>
     <head>
     <title>{% block title %}{% endblock %}</title>
+        {% include "includes/meta.html" %}
         <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
         <!-- TODO: meta data, social graph and images -->
     </head>

@@ -9,32 +9,59 @@ model:
 
 {% block body %}
 
-<ul>
-  {% for conference in model.conferences %}
-    <li>
-        <a href="/{{ conference.folder }}">{{ conference.location }} - {{conference.date}}</a>
-    </li>
-  {% endfor %}
-</ul>
 
-<h2>The Web of Tomorrow, Today</h2>
+<div class="split">
+    {% for conference in model.conferences %}
+    <div class="split_conference {{conference.slug}}">
+        <a href="/{{ conference.folder }}" class="">
+            <div class="split_location">{{ conference.location }}</div>
+            <div class="split_date">{{conference.date}}</div>
+            <button class="button button-invert">Learn more</button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
 
-<p>View Source is a conference for front-end web developers. This event will  provide an in-depth, practical look at current and on-the-horizon technologies, with plenty of opportunities for conversation. We’ll share best practices for improving how websites are built across platforms and devices, with technical talks that expose practical development techniques.</p>
+<section class="section">
+    <div class="section_body">
+        <div class="solo">
+            <h2>The Web of Tomorrow, Today</h2>
 
-<p>By exploring the web of today, we can pave the way for the web of tomorrow.</p>
+            <p>View Source is a conference for front-end web developers. This event will  provide an in-depth, practical look at current and on-the-horizon technologies, with plenty of opportunities for conversation. We&rsquo;ll share best practices for improving how websites are built across platforms and devices, with technical talks that expose practical development techniques.</p>
 
-<p>Want to sponsor? Get the prospectus for our <a href="https://drive.google.com/a/mozilla.com/file/d/0B4TyDaJ_7v4KUExJV1paSEpFMjBzLWVZR1FKXzlBSWR3YkpV/view?usp=sharing">Seattle</a> or <a href="https://drive.google.com/a/mozilla.com/file/d/0B4TyDaJ_7v4KWEhWT2VGbGo1N1hIczBQR2hMbDF5Vzlyai1v/view?usp=sharing">Berlin</a> events.</p>
+            <p><strong>By exploring the web of today, we can pave the way for the web of tomorrow.</strong></p>
+        </div>
+    </div>
+</section>
 
-<h2>Previous Events</h2>
 
-<p>Our first View Source was held in Portland, Oregon, November 1-3, 2015. More than 400 front-end developers, designers, and industry leaders came together to discuss the web of today and explore the possibilities of the web of tomorrow. Check out the videos and photos from  <a href="/2015">View Source 2015</a> or discover it for the first time).
+<section class="section section-invert">
+    <div class="section_body">
+        <div class="cols cols-third">
+            <div class="col">
+                <p><img src="/assets/images/test.jpg"></p>
+            </div>
+            <div class="col col-x2">
+                <h2>Previous Events</h2>
+                <p>Our first View Source was held in Portland, Oregon, November 1-3, 2015. More than 400 front-end developers, designers, and industry leaders came together to discuss the web of today and explore the possibilities of the web of tomorrow.</p>
+                <p><a href="TODO" class="button">See View Source 2015</a></p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<h2>About Mozilla</h2>
 
-<p>Founded in 1998, Mozilla is best known for the Firefox browser, used by hundreds of millions of Internet citizens globally, across various devices and platforms.</p>
+<section class="section">
+    <div class="section_body">
+        <div class="solo">
+            <h2>About Mozilla</h2>
 
-<p>As a non-profit, Mozilla works to empower all Internet consumers to also be producers, equipping them with tools, platforms, documentation, community and other resources. We also care deeply about open standards and platforms that are accessible to everyone, no matter where they are or what browser they choose.</p>
+            <p>Founded in 1998, Mozilla is best known for the Firefox browser, used by hundreds of millions of Internet citizens globally, across various devices and platforms.</p>
 
-<p>Read our <a href="https://www.mozilla.org/en-US/about/manifesto/">Manifesto</a> to learn more about the principles that guide our mission.</p>
+            <p>As a non-profit, Mozilla works to empower all Internet consumers to also be producers, equipping them with tools, platforms, documentation, community and other resources. We also care deeply about open standards and platforms that are accessible to everyone, no matter where they are or what browser they choose.</p>
 
+            <p>Read our <a href="https://www.mozilla.org/en-US/about/manifesto/">Manifesto</a> to learn more about the principles that guide our mission.</p>
+        </div>
+    </div>
+</section>
 {% endblock %}

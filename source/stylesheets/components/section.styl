@@ -26,21 +26,11 @@ sections
     &::before {
         content: '';
         position: absolute;
-        bottom: $grid-gutter-width;
-        left: 0;
-        height: $grid-gutter-width;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
         bottom: 0;
         left: 0;
-        height: $grid-gutter-width;
+        height: $grid-gutter-width * 2;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.5);
+        background: linear-gradient(rgba(255, 255, 255, 0.2) $grid-gutter-width, rgba(255, 255, 255, 0.5) $grid-gutter-width );
     }
 }
 

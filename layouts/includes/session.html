@@ -18,8 +18,8 @@
             {% if session.summary == '' %}
                 <h4 class=>{{ session.title }}</h4>
             {% else %}
-                <details>
-                    <summary>
+                <details class="session_details">
+                    <summary class="session_summary">
                         <h4>
                             {% if session.speakers %}
                                 {% for session_speaker in session.speakers %}
@@ -31,7 +31,7 @@
                                 {% endfor %}
                                 <br>
                             {% endif %}
-                            {{ session.title }} | <button>More...</button>
+                            {{ session.title }}
                         </h4>
                     </summary>
                     <div>

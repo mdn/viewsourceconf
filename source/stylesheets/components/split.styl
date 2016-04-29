@@ -1,0 +1,112 @@
+/*
+split
+====================================================================== */
+
+.split {
+    position: relative;
+    clearfix()
+
+    &::before {
+        content: '';
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        z-index: 2;
+        background: url(/assets/images/tech-greeble.svg);
+        background-size: 741px 684px;
+        background-position: 50% 160px;
+    }
+}
+
+.split_conference {
+    flex-grow: 1;
+
+    box-sizing: border-box;
+    padding: $grid-gutter-width;
+    text-align: center;
+
+    a {
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        text-align: center;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:focus,
+    a:active {
+        color: #fff;
+    }
+
+    &.seattle {
+        background: $seattle-gradient;
+
+        &::before {
+            right: 0;
+            background: linear-gradient(125deg, transparent 115px, #106671 115px, #72C0B0);
+        }
+    }
+
+    &.berlin {
+        background: $berlin-gradient;
+
+        &::before {
+            left: 0;
+            background: linear-gradient(-55deg, #F05556, #F05556 115px, #B93C5A);
+        }
+
+    }
+
+}
+
+.split_location,
+.split_date {
+    font-family: $heading-font-family;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.split_location {
+    font-weight: bold;
+}
+
+.split_date {
+    margin-bottom: 10px;
+}
+
+@media $media-query-680-and-up {
+
+    .split {
+        display: flex;
+        align-items: stretch;
+    }
+
+     @media $media-query-680-and-up {
+
+        .split_conference {
+
+            &.seattle {
+                padding-left: 150px;
+                text-align: left;
+            }
+
+            &.berlin {
+                padding-right: 150px;
+                text-align: right;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: calc(50vw + 77px);
+                z-index: 1;
+            }
+        }
+    }
+}

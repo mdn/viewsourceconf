@@ -1,19 +1,16 @@
 <html>
   <head>
     <title>{% block title %}{% endblock %}</title>
+    {% include "includes/meta.html" %}
     <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
   </head>
   <body>
 
     {% include "includes/header.html" %}
 
-    <section class="section">
-        <div class="section_body">
-            {% block body %}
-              {{ contents | safe }}
-            {% endblock %}
-        </div>
-    </section>
+    {% block body %}
+      {{ contents | safe }}
+    {% endblock %}
 
     {% include "includes/footer.html" %}
 
