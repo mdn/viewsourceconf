@@ -1,3 +1,4 @@
+{% include "includes/conference_switcher.html" %}
 <html>
     <head>
     <title>{% block title %}{% endblock %}</title>
@@ -5,7 +6,7 @@
         <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
         <!-- TODO: meta data, social graph and images -->
     </head>
-    <body class="{{ conference_slug }}">
+    <body class="{{ conference_data.slug }}">
 
     {% include "includes/header.html" %}
 

@@ -66,7 +66,7 @@ metalsmith(__dirname)
         // Must follow json_to_files
         .use(ignore([
             '**/_*',
-            '**/*swp'
+            '**/*swp',
         ]))
         // Put json from /data into global metadata. Must be above inplace.
         .use(models({

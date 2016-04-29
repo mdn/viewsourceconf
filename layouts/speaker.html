@@ -1,10 +1,12 @@
+{% include "includes/conference_switcher.html" %}
 <html>
   <head>
     <title>{{ data.first }} {{ data.last }}</title>
     {% include "includes/meta.html" %}
     <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
   </head>
-  <body class="{{conference_slug}}">
+  <body class="{{conference_data.slug}}">
+
 
     {% include "includes/header.html" %}
 
