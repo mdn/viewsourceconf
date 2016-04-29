@@ -10,11 +10,13 @@
 
     {% include "includes/header.html" %}
 
+    {% if title %}
     <div class="section">
         <div class="section_body">
             <h1>{% block title %}{% endblock %}</h1>
         </div>
     </div>
+    {% endif %}
 
     {% block body %}
         {{ contents | safe }}

@@ -1,0 +1,95 @@
+{% extends "../layouts/common.html" %}
+{% block body %}
+<div class="section section-gradient">
+    <div class="section_body">
+        <div class="solo">
+            <h1>Call for Proposals</h1>
+            <h2>View Source {{ conference_data.location }}, 2016</h2>
+
+            {% block top_blurb %}
+                   {{ contents | safe }}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+<div class="section section-grid">
+    <div class="section_body">
+        <h2>Submit your proposal that includes an abstract, details, and pitch</h2>
+        <p><strong>Abstract</strong> will be included on the website program.
+        This is for audience and includes a high-level overview of the talk.
+        This section is limited to 600 characters.</p>
+
+        <p><strong>Details</strong> section gives us more insight into the talk. Please
+        include an outline of the talk, any demonstrations that you plan on
+        doing, etc. This will not be public if your talk is accepted,
+        allowing edits within reason until the day of the talk.
+        No character limitation.</p>
+
+        <p><strong>Pitch</strong> section is where we want to hear about
+        why you think this talk is important. What makes you excited about
+        this topic? Why does the audience need to hear about this?</p>
+    </div>
+    <div class="solo">
+        <p>
+            <a class="button" href="TKTKTK">Submit Now</a>
+        </p>
+    </div>
+    <div class="section_body"</div>
+        <h2>How it works</h2>
+
+        <p>You can edit your proposal after submission. Please submit your
+        proposal as early as possible to allow us to provide feedback if
+        necessary. Everything is considered a draft until the call for
+        proposals closes. Not all submissions will receive feedback.
+
+        <p>The first few rounds of the process are blind. During the blind
+        process, we will only see the following information:</p>
+
+        <ul>
+            <li>The title of your talk</li>
+            <li>The abstract that will be shown to the public if your talk is accepted</li>
+            <li>The details you provide about the content and flow of your talk</li>
+            <li>The pitch you provide speaking to why it's important</li>
+            <li>The date and time your proposal was first submitted</li>
+            <li>The date and time you last updated your proposal</li>
+        </ul>
+
+        <p>To help us with the blind process, please do not include any
+        identifying information in your proposals or in any of the comments.
+        Please respect this process.</p>
+
+        <p>The entire process will be blind until we have reviewed and rated
+        every single proposal. After the call for proposals closes, we'll
+        tally up the ratings and do our final selection based on all of the
+        information you provided in the proposal. We will then proceed with
+        a full review of the speaker profile to make sure there is no
+        unintentional bias and skew in our selection process. We want
+        to select the best topics for our View Source audience.</p>
+
+        <p>If your talk is selected, you'll receive:
+        <ul>
+            <li>A free ticket for you and your companion to the conference</li>
+            <li>An invitation to the speakers’ meetup</li>
+            <li>Travel stipend to and from the conference</li>
+            <li>A two-night accomodation</li>
+        </ul>
+
+        <p>If you've already purchased a ticket by the time you are
+        selected as a speaker, we will refund your purchase completely—so,
+        don't wait to buy a ticket. Also, if your company or employer is able
+        to cover your travel and lodging, we'll happily list them as a
+        speaker sponsor on our conference website.</p>
+
+        <p>View Source abides by our <a href="conduct">Code of Conduct</a> and
+        expects all speakers and attendees to do the same.</p>
+
+        <p>Questions? <a href="mailto:spersing@mozilla.com">Email Sandra
+        Persing (spersing@mozilla.com)</a><p>
+
+
+
+
+
+    </div>
+</div>
+{% endblock %}
