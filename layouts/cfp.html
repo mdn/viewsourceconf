@@ -1,14 +1,12 @@
 {% extends "../layouts/common.html" %}
+{% block title %}{% parent %}Call for Proposals{% endblock %}
 {% block body %}
 <div class="section section-gradient">
     <div class="section_body">
         <div class="solo">
             <h1>Call for Proposals</h1>
             <h2>View Source {{ conference_data.location }}, 2016</h2>
-
-            {% block top_blurb %}
-                   {{ contents | safe }}
-            {% endblock %}
+            {% block top_blurb %}{% endblock %}
         </div>
     </div>
 </div>
