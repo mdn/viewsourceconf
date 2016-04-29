@@ -1,43 +1,50 @@
-<div class="session">
+<div class="session" id="{{ session.slug }}">
     <div class="cols">
         <div class="col col-3"><strong>{{ session.time }}</strong></div>
 
         <div class="col col-2">
             {% if session.speakers %}
-                {% for session_speaker in session.speakers %}
-                    {% for speaker in model.speakers %}
-                        {% if session_speaker.slug == speaker.slug %}
-                            <a href="{{speaker.first}}"><img src="/assets/images/{{ speaker.pic }}"></a>
-                        {% endif %}
+                <div class="session_pic">
+                    {% for session_speaker in session.speakers %}
+                        {% for speaker in model.speakers %}
+                            {% if session_speaker == speaker.slug %}
+                                {% if speaker.pic %}
+                                <a href="../speakers/{{speaker.slug}}"><img src="/assets/images/{{ speaker.pic }}" height="400" width="400"></a>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     {% endfor %}
-                {% endfor %}
+                </div>
             {% endif %}
         </div>
 
         <div class="col col-7">
             {% if session.summary == '' %}
-                <h4 class=>{{ session.title }}</h4>
+                <h4 class="session_head">{{ session.title }}</h4>
             {% else %}
-                <details class="session_details">
-                    <summary class="session_summary">
-                        <h4>
+                <div class="session_details">
+                        <h4 class="session_head">
                             {% if session.speakers %}
-                                {% for session_speaker in session.speakers %}
-                                    {% for speaker in model.speakers %}
-                                        {% if session_speaker.slug == speaker.slug %}
-                                            <a href="../speakers/{{ speaker.slug }}">{{ speaker.first }} {{ speaker.last }}</a>
-                                        {% endif %}
+                                <div class="session_speakers">
+                                    {% for session_speaker in session.speakers %}
+                                        {% for speaker in model.speakers %}
+                                            {% if session_speaker == speaker.slug %}
+                                                <a href="../speakers/{{ speaker.slug }}" class="session_speaker">{{ speaker.first }} {{ speaker.last }}</a>
+                                            {% endif %}
+                                        {% endfor %}
                                     {% endfor %}
-                                {% endfor %}
-                                <br>
+                                </div>
                             {% endif %}
-                            {{ session.title }}
+                            {{ session.title }} • <a href="#{{ session.slug }}">More&nbsp;&hellip;</a>
                         </h4>
-                    </summary>
-                    <div>
-                        <p>{{ session.summary }} </p>
+                    <div class="session_summary">
+                        {% if session.summary.indexOf('<p>') === 0 %}
+                            {{ session.summary }}
+                        {% else %}
+                            <p>{{ session.summary }}</p>
+                        {% endif %}
                     </div>
-                </details>
+                </div>
             {% endif %}
         </div>
     </div>

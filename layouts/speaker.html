@@ -16,7 +16,11 @@
                 <div class="col col-3"><img src="/assets/images/{{ data.pic }}"></div>
                 <div class="col col-9">
                     <h1>{{ data.first }} {{ data.last }}</h1>
-                    <p>{{ data.bio }}</p>
+                    {% if data.bio.indexOf('<p>') === 0 %}
+                        {{ data.bio }}
+                    {% else %}
+                        <p>{{ data.bio }}</p>
+                    {% endif %}
                 </div>
             </div>
         </div>

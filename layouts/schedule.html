@@ -1,7 +1,7 @@
 {% include "includes/conference_switcher.html" %}
 <html>
   <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{{ conference_data.location }} • Full Schedule</title>
     {% include "includes/meta.html" %}
     <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
   </head>
@@ -11,16 +11,20 @@
 
     <section class="section section-grid">
         <div class="section_body">
-            <h1>{% block title %}{% endblock %}</h1>
+            <h1>Full Schedule</h1>
 
-            <h3>Monday, September 12 Day 1</h3>
-            <div>
-            {% for session in model.sessions %}
+            {% for day in conference_data.days %}
 
-                {% include "includes/session.html" with session %}
+                <h3 id="{{day}}">{{day}} • Day {{loop.index}}</h3>
+                <div>
+                {% for session in model.sessions %}
+                    {% if session.date == day %}
+                        {% include "includes/session.html" with session %}
+                    {% endif %}
+                {% endfor %}
+                </div>
 
             {% endfor %}
-            </div>
 
         </div>
     </section>

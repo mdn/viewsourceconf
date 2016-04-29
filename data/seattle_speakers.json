@@ -6,9 +6,7 @@
     "twitter" : "paulford",
     "pic" : "paul.jpg",
     "bio" : "Paul Ford is a writer, programmer, and co-founder of <a href='https ://postlight.com/'>Postlight</a>, a 35-person New York City software agency that creates Internet platforms and designs and builds web and mobile products. He has in the past been an editor and archivist at Harper’s Magazine, an essayist and novelist, and a radio commentator, and is most often found building content management systems. He writes regularly for Medium’s The Message and has a column in The New Republic about databases, called Big Data. In June 2015 he wrote an entire issue of Bloomberg Businessweek to explain “What Is Code?” In addition to managing Postlight, he is writing a book about web pages for the publisher FSG, to be published in 2016.",
-    "sessions" : [
-      { "slug" : "the-web-today" }
-    ]
+    "sessions" : [ "the-web-today" ]
   },
   {
     "slug" : "inayaili",
@@ -17,8 +15,6 @@
     "twitter" : "inayaili",
     "pic" : "inayaili.jpg",
     "bio" : "Inayaili de León Persson is Lead Web Designer at <a href='https ://www.canonical.com/'>Canonical</a> — the company behind Ubuntu — where she focuses on establishing and evangelising the brands’ visual direction online. Through her blog Web Designer Notebook and articles for sites like 24 Ways and Smashing Magazine, she has established herself as an advocate of clean, semantic HTML and CSS. Inayaili is a member of .net Magazine and Smashing Magazine’s Expert Panel, and the author of Pro CSS for High Traffic Websites (Apress, 2011), a book that explores the challenges of working in large teams on websites that receive considerable traffic. She’s Panamanian Portuguese, born in the USSR, and has been living in London since 2008 — her favourite city in the world. She loves cats and naps.",
-    "sessions" : [
-      { "slug" : "realistic-responsive-design" }
-    ]
+    "sessions" : [ "realistic-responsive-design" ]
   }
 ]
