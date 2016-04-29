@@ -1,3 +1,5 @@
+@require '../includes/variables';
+
 /*
 button
 ====================================================================== */
@@ -12,6 +14,7 @@ button
     font-size: inherit;
     text-align: center;
     text-decoration: none;
+    transition: all $transition-duration $transition-timing;
 
     &,
     &:link,
@@ -21,15 +24,19 @@ button
     &:active {
 
         theme({
-            color: $theme-buttons
             border-color: $theme-buttons
+            color: $theme-buttons
             text-decoration: none
         })
     }
 
     &:hover,
-    &:focus {
-        //TODO
+    &:focus,
+    &:active {
+        transform: scale(1.05);
+        theme({
+            background-color: $theme-background
+        })
     }
 
     &::after{
@@ -46,8 +53,8 @@ button
     &:focus,
     &:active {
         theme({
-            background-color: $theme-buttons
             border-color: transparent
+            background-color: $theme-buttons
             color: #fff
         })
     }

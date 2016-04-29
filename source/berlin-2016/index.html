@@ -14,31 +14,45 @@ model:
 
 <div class="section">
 <div class="section_body">
-    <h2>Speakers</h2>
+    <div class="solo">
+        <h2>Speakers</h2>
 
-    <p>View Source features a world-class group of speakers whose talks will expose best practices and practical, innovative development techniques. In addition, we will have a daily set of group discussions with experts on a variety of hot topics.</p>
+        <p>View Source features a world-class group of speakers whose talks will expose best practices and practical, innovative development techniques. In addition, we will have a daily set of group discussions with experts on a variety of hot topics.</p>
+    </div>
+</div>
+</div>
 
-<!--
-<ul>
+<div class="section section-invert">
+<ul class="speaker_list">
 {% for speaker in model.speakers %}
-<li id="{{ speaker.slug }}">
-    Name: <a href="speakers/{{ speaker.slug }}">{{ speaker.first }} {{ speaker.last }}</a><br>
-    Photo: <img src="/assets/images/{{ speaker.pic }}"><br>
-    Bio: {{ speaker.bio }}<br>
-    Talks: <br>
-    {% for speaker_sessions in speaker.sessions %}
-    {% for session in model.sessions %}
-        {% if speaker_sessions.slug == session.slug %}
-            Title: {{ session.title }}<br>
-            Description: {{ session.title }}<br>
-        {% endif %}
-    {% endfor %}
-    {% endfor %}
-</li>
+    {% if speaker.pic && speaker.feature %}
+        <li class="speaker" id="{{ speaker.slug }}">
+            <a href="speakers/{{ speaker.slug }}">
+
+
+                <img src="/assets/images/{{ speaker.pic }}">
+
+
+            </a>
+
+        <!--
+            Name: <a href="speakers/{{ speaker.slug }}">{{ speaker.first }} {{ speaker.last }}</a><br>
+            Photo: <br>
+            Bio: {% if speaker.bio %}{{ speaker.bio }}{% endif %}<br>
+            Talks: <br>
+            {% for speaker_sessions in speaker.sessions %}
+            {% for session in model.sessions %}
+                {% if speaker_sessions == session.slug %}
+                    Title: {{ session.title }}<br>
+                    Description: {{ session.summary }}<br>
+                {% endif %}
+            {% endfor %}
+            {% endfor %}
+            -->
+        </li>
+    {% endif %}
 {% endfor %}
 </ul>
--->
-
 </div>
 
 <div class="section section-grid">
@@ -95,9 +109,9 @@ model:
         <p><strong>RADIALSYSTEM V<br>
         Holzmarktstraße 33, 10243 Berlin, Germany</strong>
         </p>
-
+<!--
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.2786856721473!2d13.426430615483964!3d52.510295444701235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e3900263f87%3A0xf3893f5141a5c0fc!2sRADIALSYSTEM+V!5e0!3m2!1sen!2sus!4v1458849251146" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
+-->
         <p>Formerly a turn of the century pumping station for the Berlin Wasserwerke (Berlin Water Services), RADIALSYSTEM V – situated in the urban centre of Berlin between Friedrichshain, Mitte and Kreuzberg – currently functions as a cultural centre where new ideas radiate out in all directions, attracting artists and the public from within as well as beyond the city limits of Berlin.</p>
 
     </div>

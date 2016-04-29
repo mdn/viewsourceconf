@@ -34,7 +34,9 @@
                         <h2>{{ session.title }}</h2>
                         <p><strong>
                             {{ session.date|date(date_format) }}<br>
-                            @ {{ session.place }}, {{session.time}}
+                            {% if session.place || session.time %}
+                                @ {{ session.place }}{% if session.place && session.time %},{% endif %} {{session.time}}
+                            {% endif %}
                             </strong>
                         </p>
                         <p>
