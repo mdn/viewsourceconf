@@ -30,7 +30,7 @@
         <div class="section_body">
             {% for session in model.sessions %}
                 {% for session_speaker in session.speakers %}
-                    {% if session_speaker.slug == data.slug %}
+                    {% if session_speaker == data.slug %}
                         <h2>{{ session.title }}</h2>
                         <p><strong>
                             {{ session.date|date(date_format) }}<br>
