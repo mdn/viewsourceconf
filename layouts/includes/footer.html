@@ -1,8 +1,20 @@
 <footer class="section section-invert">
     <div class="section_body">
         <ul class="footer_links">
-            <li><a href="http://developer.mozilla.org">link</a></li>
-            <li><a href="dontclickthis">link</a></li>
+
+            {% macro link(nav_item) %}
+                {% if nav_item.offsite %}
+                    <a href="{{ nav_item.url }}">{{ nav_item.text }}</a>
+                {% else %}
+                    <a href="{{ conference_data.folder}}{{ nav_item.url }}">{{ nav_item.text }}</a>
+                {% endif %}
+            {% endmacro %}
+
+            {% for item in model.nav.footer %}
+                {% set item.url = loop.key %}
+                <li>{{ link(item) }}</li>
+            {% endfor %}
+
         </ul>
     </div>
     {{ livereload|safe }}

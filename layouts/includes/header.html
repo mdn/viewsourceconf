@@ -1,31 +1,27 @@
 <header class="section section-gradient section-fadeend">
     <div class="section_body">
 
-        <img class="header_logo" src="/assets/images/vs-logo-white.svg" width="300" height="50">
+        <a href="/"><img class="header_logo" src="/assets/images/vs-logo-white.svg" width="300" height="50"></a>
 
-        <ul class="header_links">
+        {# only show nav if we're on a subpage #}
+        {% if path.length > 0 %}
+            <ul class="header_links">
 
-        {# this is totally optional, just putting it here to demo #}
-        {% macro link(nav_item) %}
-          {% if nav_item.url != "/"+path %}
-            {% if nav_item.absolute %}
-                <a href="{{ nav_item.url }}">
-            {% else %}
-                <a href="{{ conference_data.folder }}{{ nav_item.url }}">
+            {# this is totally optional, just putting it here to demo #}
+            {% macro link(nav_item) %}
+                <a href="{{ conference_data.folder}}{{ nav_item.url }}">{{ nav_item.text }}</a>
+            {% endmacro %}
+
+            {% for item in model.nav.header %}
+                {% set item.url = loop.key %}
+                <li>{{ link(item) }}</li>
+            {% endfor %}
+
+            {# Add a breadcrumb to the conference landing if the path has > 1 node #}
+            {% if path.split('/').length > 1 %}
+                <li class="breadcrumb"><a href="{{ conference_data.folder }}">&laquo; View Source {{ conference_data.location }}</a></li>
             {% endif %}
-          {% endif %}
-            {{ nav_item.text }}
-          {% if nav_item.url != "/"+path %}
-            </a>
-          {% endif %}
-        {% endmacro %}
-
-        {% for item in model.nav %}
-            {% set klass="" %}
-            {% if item.url == "/"+path %}{% set klass="active" %}{% endif %}
-            <li class="{{ klass }}">{{ link(item) }}</li>
-        {% endfor %}
-        </ul>
-
+            </ul>
+        {% endif %}
     </div>
 </header>
