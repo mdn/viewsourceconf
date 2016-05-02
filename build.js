@@ -1,7 +1,6 @@
 "use strict";
 
 const metalsmith = require('metalsmith');
-const collections = require('metalsmith-collections');
 const branch = require('metalsmith-branch');
 const debug = require('metalsmith-debug');
 const define = require('metalsmith-define');
@@ -110,7 +109,15 @@ metalsmith(__dirname)
     .destination('build')
     // Automatically rebuild things in the source directory when they change.
     .use(devonly(watch, {
-        pattern: '**/*',
+        paths: {
+            'source/assets/**/*': true,
+            'source/*2016/**/*': true,
+            'source/js/**/*': true,
+            'source/stylesheets/**/*': true,
+            'source/*': true,
+            'data/**/*': '**/*',
+            'layouts/**/*': '**/*',
+        },
         livereload: true,
     }))
     // Start a server on localhost.
@@ -118,6 +125,9 @@ metalsmith(__dirname)
         host: '0.0.0.0',
         port: 8080,
         verbose: true,
+    }))
+    .use(devonly(define, {
+        livereload: '<script src="http://localhost:35729/livereload.js"></script>',
     }))
     // Do it!
     .build(function(err) {
