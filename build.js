@@ -2,6 +2,7 @@
 
 const metalsmith = require('metalsmith');
 const branch = require('metalsmith-branch');
+const data_markdown = require('metalsmith-data-markdown');
 const debug = require('metalsmith-debug');
 const define = require('metalsmith-define');
 const filenames = require('metalsmith-filenames');
@@ -101,6 +102,18 @@ metalsmith(__dirname)
             engine: 'swig',
             pattern: '**/*.html',
             autoescape: false,
+        }))
+        // Convert GFM content inside tags with "data-markdown" attribute.
+        // Should be after all swig stuff.
+        .use(data_markdown({
+            marked: {
+                gfm: true,
+                breaks: false,
+                tables: false,
+                smartlists: true,
+                smartypants: true,
+            },
+            removeAttributeAfterwards: true,
         }))
         // Log global metadata, etc., to terminal.
         .use(devonly(dump))
