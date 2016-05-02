@@ -76,3 +76,13 @@ sidecol-line() {
 @media $media-query-680-and-up {
     sidecol-line();
 }
+
+@media $media-query-960-and-up {
+    .sidecol_side {
+        margin-right: $grid-gutter-width-wide;
+
+        .sidecol-reverse & {
+            margin-left: $grid-gutter-width-wide;
+        }
+    }
+}

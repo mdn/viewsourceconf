@@ -15,7 +15,7 @@ sections
 }
 
 .section_body {
-    max-width: $grid-max-width;
+    max-width: grid-max($grid-gutter-width);
     margin: 0 auto;
     padding: ($grid-gutter-width * 2)  $grid-gutter-width;
 }
@@ -58,4 +58,11 @@ sections
         background-image: $theme-grid
         background-color: $theme-grid-background
     })
+}
+
+@media $media-query-960-and-up {
+    .section_body {
+        max-width: grid-max($grid-gutter-width-wide);
+        padding: $grid-gutter-width-wide;
+    }
 }

@@ -1,8 +1,8 @@
 <div class="session" id="{{ session.slug }}">
     <div class="cols">
-        <div class="col col-3"><strong>{{ session.time }}</strong></div>
+        <div class="col col-1"><strong>{{ session.time }}</strong></div>
 
-        <div class="col col-2">
+        <div class="col col-1">
             {% if session.speakers %}
                 <div class="session_pic">
                     {% for session_speaker in session.speakers %}
@@ -18,7 +18,7 @@
             {% endif %}
         </div>
 
-        <div class="col col-7">
+        <div class="col col-4">
             {% if session.summary == '' %}
                 <h4 class="session_head">{{ session.title }}</h4>
             {% else %}
