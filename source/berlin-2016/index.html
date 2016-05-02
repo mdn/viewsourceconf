@@ -12,6 +12,7 @@ model:
 
 {% block body %}
 
+<section id="speakers">
 <div class="section">
 <div class="section_body">
     <div class="solo">
@@ -54,8 +55,9 @@ model:
 {% endfor %}
 </ul>
 </div>
+</section>
 
-<div class="section section-grid">
+<section class="section section-grid" id="sessions">
     <div class="section_body">
         <div class="solo">
             <h2>Sessions</h2>
@@ -101,9 +103,9 @@ model:
     -->
 
     </div>
-</div>
+</section>
 
-<div class="section">
+<section class="section" id="venue">
     <div class="section_body">
         <h2>Venue</h2>
         <p><strong>RADIALSYSTEM V<br>
@@ -115,9 +117,9 @@ model:
         <p>Formerly a turn of the century pumping station for the Berlin Wasserwerke (Berlin Water Services), RADIALSYSTEM V – situated in the urban centre of Berlin between Friedrichshain, Mitte and Kreuzberg – currently functions as a cultural centre where new ideas radiate out in all directions, attracting artists and the public from within as well as beyond the city limits of Berlin.</p>
 
     </div>
-</div>
+</section>
 
-<div class="section section-grid">
+<section class="section section-grid" id="travel">
     <div class="section_body">
         <h2>Travel and Accommodation</h2>
 
@@ -194,37 +196,39 @@ model:
         -->
 
     </div>
-</div>
+</section>
 
-<div class="section">
-    <div class="section_body">
-        <h2>Premier Sponsors</h2>
+<section id="sponsors">
+    <div class="section">
+        <div class="section_body">
+            <h2>Premier Sponsors</h2>
+        </div>
     </div>
-</div>
 
-<div class="section">
-    <div class="section_body">
-        <h2>Gold Sponsors</h2>
+    <div class="section">
+        <div class="section_body">
+            <h2>Gold Sponsors</h2>
+        </div>
     </div>
-</div>
 
-<div class="section">
-    <div class="section_body">
-        <h2>Silver Sponsors</h2>
+    <div class="section">
+        <div class="section_body">
+            <h2>Silver Sponsors</h2>
+        </div>
     </div>
-</div>
 
-<div class="section">
-    <div class="section_body">
-        <h2>Other Sponsors and Partners</h2>
+    <div class="section">
+        <div class="section_body">
+            <h2>Other Sponsors and Partners</h2>
+        </div>
     </div>
-</div>
 
-<div class="section section-gradient">
-    <div class="section_body">
-        <h2>Sponsor the Event</h2>
-        <p>Want to sponsor View Source? We're always open for sponsorship and partnerships, please <a href="mailto:spersing@mozilla.com">contact us</a> for details. You can also check out our <a href="{{ conference_data.sponsor_prospectus }}">Sponsorship Prospectus</a>. If you don’t see what you are looking for, please <a href="spersing@mozilla.com">contact us</a>, we’re happy to discuss additional options.</p>
+    <div class="section section-gradient" id="sponsor">
+        <div class="section_body">
+            <h2>Sponsor the Event</h2>
+            <p>Want to sponsor View Source? We're always open for sponsorship and partnerships, please <a href="mailto:spersing@mozilla.com">contact us</a> for details. You can also check out our <a href="{{ conference_data.sponsor_prospectus }}">Sponsorship Prospectus</a>. If you don’t see what you are looking for, please <a href="spersing@mozilla.com">contact us</a>, we’re happy to discuss additional options.</p>
+        </div>
     </div>
-</div>
+</section>
 
 {% endblock %}

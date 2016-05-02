@@ -8,7 +8,7 @@ model:
 
 {% block body %}
 
-<div class="split">
+<section class="split">
     {% for conference in model.conferences %}
     <div class="split_conference {{conference.slug}}">
         <a href="{{ conference.folder }}" class="">
@@ -18,7 +18,7 @@ model:
         </a>
     </div>
     {% endfor %}
-</div>
+</section>
 
 <section class="section">
     <div class="section_body">
