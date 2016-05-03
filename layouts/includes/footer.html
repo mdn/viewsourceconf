@@ -6,7 +6,7 @@
                 {% if nav_item.offsite %}
                     <a href="{{ nav_item.url }}">{{ nav_item.text }}</a>
                 {% else %}
-                    <a href="{{ conference_data.folder}}{{ nav_item.url }}">{{ nav_item.text }}</a>
+                    <a href="{{ conference_data.folder }}{{ nav_item.url }}">{{ nav_item.text }}</a>
                 {% endif %}
             {% endmacro %}
 
