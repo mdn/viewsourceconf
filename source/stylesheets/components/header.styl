@@ -1,25 +1,35 @@
 @require '../includes/variables';
 /*
 header
+- default: logo left, list right, home link left
+- >680: list pops up to same height as logo
+- >960: logo and list pop out into section margins, home link goes right
 ====================================================================== */
 
 .header_body {
+    position: relative;
     max-width: grid-max($grid-gutter-width);
     margin: 0 auto;
     padding: $grid-gutter-width;
     text-align: right;
+    clearfix()
 }
 
 .header_logo {
-    float: left;
-    margin: 0 $grid-gutter-width $grid-gutter-width 0;
+    display: block;
+    margin-bottom: $grid-gutter-width;
+    text-align: left;
 }
 
 .header_links {
     margin: 0;
-    inline-list()
-
+    list-style-type: none;
     font-family: $heading-font-family;
+
+    li {
+        display: inline-block;
+        padding-left: $grid-gutter-width;
+    }
 
     a:not(.button) {
         theme({
@@ -36,15 +46,63 @@ header
     }
 }
 
-.header_crumb {
+li.header_crumb {
+    display: block;
+    padding-left: 0;
+    margin: 0 0 ($grid-gutter-width / 2 * -1);
+    text-align: left;
 
     ::before {
         content: '\00ab\A';
     }
 }
 
+@media $media-query-680-and-up {
+    .header_logo {
+        float: left;
+    }
+
+    .header_links {
+        display: inline;
+        line-height: 1.4; /* to be even with logo */
+
+        li {
+            margin-bottom: 10px; /* to keep their distance from each other */
+        }
+    }
+
+    li.header_crumb {
+        margin-bottom: 0;
+        text-align: right;
+    }
+
+}
 
 @media $media-query-960-and-up {
+
+    .header_body {
+        max-width: grid-max($grid-gutter-width-wide);
+        padding: $grid-gutter-width-wide;
+    }
+
+    .header_logo {
+        margin-bottom: 0;
+    }
+
+    .header_links {
+        display: table;
+        float: right;
+        margin-bottom: -10px; /* to account for margin-bottom */
+    }
+
+    li.header_crumb {
+        position: absolute;
+        bottom: $grid-gutter-width;
+        right: $grid-gutter-width-wide;
+    }
+}
+
+@media $media-query-1200-and-up {
     .header_logo {
         margin-left: $grid-gutter-width-wide * -1;
     }
@@ -52,4 +110,26 @@ header
     .header_links {
         margin-right: $grid-gutter-width-wide * -1;
     }
+
+    li.header_crumb {
+        right: 0;
+    }
 }
+
+
+/*
+
+.header_links .header_crumb {
+  float: left;
+  margin-left: -10px;
+}
+
+.header_links li:not(.header_crumb){
+  display: block;
+}
+
+.header_links::before {
+  content: "menu ^";
+  float: right;
+}
+*/

@@ -7,12 +7,6 @@
         {% if conference_subpage %}
             <ul class="header_links">
 
-            {# Add a breadcrumb to the conference landing if the path has > 1 node #}
-            {% if path.split('/').length > 1 %}
-                <li class="header_crumb"><a href="{{ conference_data.folder }}">View Source {{ conference_data.location }}</a></li>
-            {% endif %}
-
-
             {# this is totally optional, just putting it here to demo #}
             {% macro link(nav_item) %}
                 <a href="{{ conference_data.folder}}{{ nav_item.url }}">{{ nav_item.text }}</a>
@@ -22,6 +16,11 @@
                 {% set item.url = loop.key %}
                 <li>{{ link(item) }}</li>
             {% endfor %}
+
+            {# Add a breadcrumb to the conference landing if the path has > 1 node #}
+            {% if path.split('/').length > 1 %}
+                <li class="header_crumb"><a href="{{ conference_data.folder }}">View Source {{ conference_data.location }}</a></li>
+            {% endif %}
 
             </ul>
         {% endif %}
