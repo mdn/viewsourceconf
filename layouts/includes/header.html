@@ -4,7 +4,7 @@
         <a href="/"><img class="header_logo" src="/assets/images/vs-logo-white.svg" width="300" height="50"></a>
 
         {# only show nav if we're on a subpage #}
-        {% if path.length > 0 %}
+        {% if conference_subpage %}
             <ul class="header_links">
 
             {# this is totally optional, just putting it here to demo #}
