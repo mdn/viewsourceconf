@@ -10,6 +10,7 @@
         </div>
     </div>
 </section>
+{% if !thanks %}
 <section class="section section-grid">
     <div class="section_body">
         <h2>Submit your proposal that includes an abstract, details, and pitch</h2>
@@ -29,7 +30,7 @@
     </div>
     <div class="solo">
         <p>
-            <a class="button" href="TKTKTK">Submit Now</a>
+            <a class="button" href="https://qsurvey.mozilla.com/s3/Viewsource-2016-{{conference_data.location}}-CFP">Submit Now</a>
         </p>
     </div>
     <div class="section_body"</div>
@@ -83,11 +84,7 @@
 
         <p>Questions? <a href="mailto:spersing@mozilla.com">Email Sandra
         Persing (spersing@mozilla.com)</a><p>
-
-
-
-
-
     </div>
 </section>
+{% endif %}
 {% endblock %}
