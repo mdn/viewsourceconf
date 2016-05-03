@@ -63,11 +63,15 @@ li.header_crumb {
     }
 
     .header_links {
-        display: inline;
+        display: table;
+        float: right;
+        max-width: 450px;
+        margin-bottom: -10px;
+        margin-top: -10px; /* to account for margin-top on <li>s */
         line-height: 1.4; /* to be even with logo */
 
         li {
-            margin-bottom: 10px; /* to keep their distance from each other */
+            margin-top: 10px; /* to keep their distance from each other */
         }
     }
 
@@ -90,9 +94,7 @@ li.header_crumb {
     }
 
     .header_links {
-        display: table;
-        float: right;
-        margin-bottom: -10px; /* to account for margin-bottom */
+
     }
 
     li.header_crumb {
@@ -109,6 +111,7 @@ li.header_crumb {
 
     .header_links {
         margin-right: $grid-gutter-width-wide * -1;
+        max-width: 100%;
     }
 
     li.header_crumb {
