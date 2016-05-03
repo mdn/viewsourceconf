@@ -1,13 +1,55 @@
+@require '../includes/variables';
 /*
 header
 ====================================================================== */
 
-.header_logo{
+.header_body {
+    max-width: grid-max($grid-gutter-width);
+    margin: 0 auto;
+    padding: $grid-gutter-width;
+    text-align: right;
+}
+
+.header_logo {
     float: left;
+    margin: 0 $grid-gutter-width $grid-gutter-width 0;
 }
 
 .header_links {
-    float: right;
-
+    margin: 0;
     inline-list()
+
+    font-family: $heading-font-family;
+
+    a:not(.button) {
+        theme({
+            text-decoration: none
+        })
+    }
+
+    a:not(.button):hover,
+    a:not(.button):focus,
+    a:not(.button):active {
+        theme({
+            text-decoration: underline
+        })
+    }
+}
+
+.header_crumb {
+
+    ::before {
+        content: '\00ab\A';
+    }
+}
+
+
+@media $media-query-960-and-up {
+    .header_logo {
+        margin-left: $grid-gutter-width-wide * -1;
+    }
+
+    .header_links {
+        margin-right: $grid-gutter-width-wide * -1;
+    }
 }

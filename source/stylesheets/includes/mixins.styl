@@ -55,14 +55,15 @@ clearfix() {
 /*
 ====================================================================== */
 inline-list() {
-    display: flex;
+    display: inline;
 
     li {
+        display: inline-block;
         margin-left: $grid-gutter-width;
         list-style-type: none;
 
-        &:first-child {
-            margin-left: 0;
+        &:last-child {
+            margin-right: 0;
         }
     }
 }
@@ -98,8 +99,7 @@ white-text() {
         })
     }
 
-    a:not(.button):link,
-    a:not(.button):visited {
+    a:not(.button) {
         text-decoration: underline;
 
         theme({

@@ -4,6 +4,11 @@ solo
 
 .solo {
     margin: 0 auto;
-    max-width: cols-wide(4);
     text-align: center;
+}
+
+@media $media-query-680-and-up {
+    .solo {
+        max-width: cols-wide(4);
+    }
 }

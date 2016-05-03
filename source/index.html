@@ -8,19 +8,27 @@ model:
 
 {% block body %}
 
-<section class="split">
-    {% for conference in model.conferences %}
-    <div class="split_conference {{conference.slug}}">
-        <a href="{{ conference.folder }}" class="">
-            <div class="split_location">{{ conference.location }}</div>
-            <div class="split_date">{{conference.date}}</div>
-            <button class="button button-invert">Learn more</button>
-        </a>
-    </div>
-    {% endfor %}
-</section>
+<div class="section section-grid">
 
-<section class="section">
+    <div class="solo">
+    <h1>Logo</h1>
+    </div>
+
+    <section class="split">
+        {% for conference in model.conferences %}
+        <div class="split_conference {{conference.slug}}">
+            <a href="{{ conference.folder }}" class="">
+                <div class="split_location">{{ conference.location }}</div>
+                <div class="split_date">{{conference.date}}</div>
+                <button class="button button-invert">Learn more</button>
+            </a>
+        </div>
+        {% endfor %}
+    </section>
+
+</div>
+
+<section class="section section-fadestart">
     <div class="section_body">
         <div class="solo">
             <h2>The Web of Tomorrow, Today</h2>

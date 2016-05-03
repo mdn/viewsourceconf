@@ -16,19 +16,11 @@ button
     text-decoration: none;
     transition: all $transition-duration $transition-timing;
 
-    &,
-    &:link,
-    &:visited,
-    &:hover,
-    &:focus,
-    &:active {
-
-        theme({
-            border-color: $theme-buttons
-            color: $theme-buttons
-            text-decoration: none
-        })
-    }
+    theme({
+        border-color: $theme-buttons
+        color: $theme-buttons
+        text-decoration: none
+    })
 
     &:hover,
     &:focus,
@@ -47,8 +39,6 @@ button
 .button-invert {
 
     &,
-    &:link,
-    &:visited,
     &:hover,
     &:focus,
     &:active {

@@ -17,7 +17,21 @@ sections
 .section_body {
     max-width: grid-max($grid-gutter-width);
     margin: 0 auto;
-    padding: ($grid-gutter-width * 2)  $grid-gutter-width;
+    padding: ($grid-gutter-width * 2) $grid-gutter-width;
+}
+
+.section-fadestart {
+    padding-top: ($grid-gutter-width * 2);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $grid-gutter-width * 2;
+        width: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.2) $grid-gutter-width, rgba(255, 255, 255, 0.5) $grid-gutter-width );
+    }
 }
 
 .section-fadeend {

@@ -1,9 +1,13 @@
+@require 'includes/variables'
+
 /*
 split
 ====================================================================== */
 
 .split {
     position: relative;
+    margin-bottom: ($grid-gutter-width * 2);
+
     clearfix()
 
     &::before {
@@ -34,8 +38,7 @@ split
         text-align: center;
     }
 
-    a:link,
-    a:visited,
+    a
     a:hover,
     a:focus,
     a:active {
@@ -111,8 +114,3 @@ split
     }
 }
 
-@media $media-query-960-and-up {
-    .split_conference {
-        padding: $grid-gutter-width-wide;
-    }
-}
