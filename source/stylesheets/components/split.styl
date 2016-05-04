@@ -88,29 +88,31 @@ split
         align-items: stretch;
     }
 
-     @media $media-query-680-and-up {
+    .split_conference {
 
-        .split_conference {
+        &.seattle {
+            padding-left: 150px;
+            text-align: left;
+        }
 
-            &.seattle {
-                padding-left: 150px;
-                text-align: left;
-            }
+        &.berlin {
+            padding-right: 150px;
+            text-align: right;
+        }
 
-            &.berlin {
-                padding-right: 150px;
-                text-align: right;
-            }
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                width: calc(50vw + 77px);
-                z-index: 1;
-            }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: calc(50vw + 77px);
+            z-index: 1;
         }
     }
 }
 
+@media $media-query-960-and-up {
+    .split {
+        margin-bottom: $grid-gutter-width-wide;
+    }
+}
