@@ -2,7 +2,6 @@
 {% block title %}{% parent %}{{ data.first }} {{ data.last }}{% endblock %}
 {% block body %}
 
-
     <section class="section">
         <div class="section_body">
             <div class="cols">
@@ -40,9 +39,4 @@
             {% endfor %}
         </div>
     </section>
-
-    {% include "includes/footer.html" %}
-
-  </body>
-  <script src="/{{ fingerprint['js/bottom.js'] }}"></script>
-</html>
+{% endblock %}
