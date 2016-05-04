@@ -14,13 +14,13 @@
   "seattle": {
     "slug": "seattle",
     "location": "Seattle",
-    "date": "November 1-3, 2016",
+    "date": "More Information<br/>Coming Soon!",
     "days" : [
         "2016-11-1",
         "2016-11-2",
         "2016-11-3"
     ],
-    "folder": "/seattle-2016",
+    "folder": "#",
     "sponsor_prospectus": "assets/viewsource_seattle_sponsorship.pdf"
   }
 }

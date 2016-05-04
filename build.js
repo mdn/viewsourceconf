@@ -67,6 +67,8 @@ metalsmith(__dirname)
         .use(ignore([
             '**/_*',
             '**/*swp',
+            // until we have a seattle event, don't build seattle stuff
+            '**/seattle-2016/*',
         ]))
         // Put json from /data into global metadata. Must be above inplace.
         .use(models({
@@ -79,14 +81,9 @@ metalsmith(__dirname)
         }))
         // Minimize and concatenate js files. Must be above fingerprint.
         .use(uglify({
-            pattern: 'js/top/*',
+            pattern: 'js/*.js',
             sourceMap: true,
-            concat: 'js/top.js',
-        }))
-        .use(uglify({
-            pattern: 'js/bottom/*',
-            sourceMap: true,
-            concat: 'js/bottom.js',
+            concat: 'js/main.js',
         }))
         // Convert stylus files to css. Must be above fingerprint.
         .use(stylus({
@@ -95,7 +92,7 @@ metalsmith(__dirname)
         // Change asset filenames to unique strings per build for cachebusting.
         // Must be above inplace.
         .use(fingerprint({
-            pattern: ['stylesheets/style.css', 'js/**/*.js'],
+            pattern: ['stylesheets/style.css', 'js/*.js'],
         }))
         // Process template files in the source dir using specified engine.
         .use(inplace({
