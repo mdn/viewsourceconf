@@ -84,7 +84,9 @@ metalsmith(__dirname)
             concat: 'js/main.js',
         }))
         // Convert stylus files to css. Must be above fingerprint.
-        .use(stylus({}))
+        .use(stylus({
+            compress: true
+        }))
         // Change asset filenames to unique strings per build for cachebusting.
         // Must be above inplace.
         .use(fingerprint({
