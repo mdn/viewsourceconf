@@ -76,7 +76,13 @@ sections
 
 @media $media-query-960-and-up {
     .section_body {
-        max-width: grid-max($grid-gutter-width-wide);
+        max-width: 960px;
         padding: $grid-gutter-width-wide;
+    }
+}
+
+@media $media-query-tall {
+    .section_body {
+        padding: ($grid-gutter-width-wide * 2) $grid-gutter-width-wide;
     }
 }
