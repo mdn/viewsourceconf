@@ -36,6 +36,9 @@ $grid-size = 30px;
 $light-grid = linear-gradient(#ffffff, #ffffff 1px, transparent 1px, transparent 10px, #f7f7fa 10px, #f7f7fa 11px, transparent 11px, transparent 20px, #f7f7fa 20px, #f7f7fa 21px, transparent 21px), linear-gradient(90deg, #ffffff, #ffffff 1px, transparent 1px, transparent 10px, #f7f7fa 10px, #f7f7fa 11px, transparent 11px, transparent 20px, #f7f7fa 20px, #f7f7fa 21px, transparent 21px);
 $dark-grid = linear-gradient(#323232, #323232 1px, transparent 1px, transparent 10px, #1d1d1d 10px, #1d1d1d 11px, transparent 11px, transparent 20px, #1d1d1d 20px, #1d1d1d 21px, transparent 21px), linear-gradient(90deg, #323232, #323232 1px, transparent 1px, transparent 10px, #1d1d1d 10px, #1d1d1d 11px, transparent 11px, transparent 20px, #1d1d1d 20px, #1d1d1d 21px, transparent 21px);
 
+$light-fade = linear-gradient(rgba(255, 255, 255, 0.2) $grid-gutter-width, rgba(255, 255, 255, 0.5) $grid-gutter-width )
+$dark-fade = linear-gradient(#201e1f $grid-gutter-width, #2e2c2d $grid-gutter-width )
+
 $light-grid-background = #f2f2f5;
 $dark-grid-background = #000000;
 
@@ -112,6 +115,12 @@ $theme-grid-background = {
     'default': $dark-grid-background,
     'seattle': $light-grid-background,
     'berlin': $light-grid-background
+};
+
+$theme-fade = {
+    'default': $dark-fade,
+    'seattle': $light-fade,
+    'berlin': $light-fade
 };
 
 /*

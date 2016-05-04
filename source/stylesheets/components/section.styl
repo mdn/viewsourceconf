@@ -20,8 +20,10 @@ sections
     padding: ($grid-gutter-width * 2) $grid-gutter-width;
 }
 
-.section-fadestart {
-    padding-top: ($grid-gutter-width * 2);
+/*
+---------------------------------------------------------------------- */
+.section-fadestart,
+.section-fadeend {
 
     &::before {
         content: '';
@@ -30,24 +32,28 @@ sections
         left: 0;
         height: $grid-gutter-width * 2;
         width: 100%;
-        background: linear-gradient(rgba(255, 255, 255, 0.2) $grid-gutter-width, rgba(255, 255, 255, 0.5) $grid-gutter-width );
+
+        theme({
+            background: $theme-fade
+        })
     }
+}
+
+.section-fadestart {
+    padding-top: ($grid-gutter-width * 2);
 }
 
 .section-fadeend {
     padding-bottom: ($grid-gutter-width * 2);
 
     &::before {
-        content: '';
-        position: absolute;
+        top: auto;
         bottom: 0;
-        left: 0;
-        height: $grid-gutter-width * 2;
-        width: 100%;
-        background: linear-gradient(rgba(255, 255, 255, 0.2) $grid-gutter-width, rgba(255, 255, 255, 0.5) $grid-gutter-width );
     }
 }
 
+/*
+---------------------------------------------------------------------- */
 .section-gradient {
     white-text()
 
@@ -56,6 +62,8 @@ sections
     })
 }
 
+/*
+---------------------------------------------------------------------- */
 .section-invert {
     white-text()
 
@@ -64,6 +72,8 @@ sections
     })
 }
 
+/*
+---------------------------------------------------------------------- */
 .section.section-grid { // needs increased specificity, because reasons
     background-position: 0 0, 0 0;
     background-size: $grid-size $grid-size, $grid-size $grid-size;
@@ -73,6 +83,9 @@ sections
         background-color: $theme-grid-background
     })
 }
+
+/*
+====================================================================== */
 
 @media $media-query-960-and-up {
     .section_body {
