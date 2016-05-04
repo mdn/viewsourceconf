@@ -1,5 +1,5 @@
-<footer class="section section-invert">
-    <div class="section_body">
+<footer class="section {% if conference_data.slug %}section-invert{% else %} section-grid{% endif %}">
+    <div class="footer_body">
         <ul class="footer_links">
 
             {% macro link(nav_item) %}
@@ -15,6 +15,52 @@
                 <li>{{ link(item) }}</li>
             {% endfor %}
 
+        </ul>
+        <ul class="footer_social">
+            <li><a href="twitter.com/viewsourceconf">@ViewSourceConf</a></li>
+            <li class="footer_newsletter">
+                <div class="newsletter">
+                    <form id="newsletter_signup" name="newsletter_signup">
+                        <fieldset>
+                            <legend><span>Newsletter</span></legend>
+                            <ol>
+                                <li class="newsletter_error"></li>
+                                <li>
+                                    <label for="newsletter_email">E-mail
+                                    <input type="email" id="newsletter_email" name="email" required placeholder="you@example.com">
+                                    </label>
+                                </li>
+                                <li class="newsletter_radio">
+                                    <fieldset>
+                                        <legend><span>I want to hear about...</span></legend>
+                                        <label for="view-source-conference-global">
+                                        <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required />
+                                        Berlin
+                                        </label>
+                                        <label for="view-source-conference-north-america">
+                                        <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required />
+                                        Seattle
+                                        </label>
+                                    </fieldset>
+                                </li>
+                                <li class="newsletter_fineprint">
+                                    <label for="agree">
+                                    <input type="checkbox" id="agree" name="agree" required>
+                                    I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>
+                                    </label>
+                                </li>
+                                <li class="newsletter_submit">
+                                    <button id="newsletter_submit" type="submit" class="button">Subscribe</button>
+                                    <span>We will only send you information about View Source.</span>
+                                </li>
+                            </ol>
+                        </fieldset>
+                    </form>
+                <div id="newsletter_thanks" class="newsletter_thanks">
+                    <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+                    <p>You'll receive an email from mozilla@e.mozilla.org to confirm your subscription. If you don't see it, check your spam filter. You must confirm your subscription to receive updates about the View Source Conference.</p>
+                </div>
+            </li>
         </ul>
     </div>
     {{ livereload|safe }}

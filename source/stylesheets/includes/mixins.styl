@@ -54,23 +54,6 @@ clearfix() {
 
 /*
 ====================================================================== */
-inline-list() {
-    display: inline;
-
-    li {
-        display: inline-block;
-        margin-left: $grid-gutter-width;
-        list-style-type: none;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-}
-
-
-/*
-====================================================================== */
 cols-wide($cols) {
     $width = $cols / $grid-column-total * 100;
     if($width > 100) {
