@@ -4,7 +4,7 @@
     <title>View Source {{ conference_data.location }}{% block title %} | {% endblock %}</title>
         {% include "includes/meta.html" %}
         <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
-        <!-- TODO: meta data, social graph and images -->
+        {# TODO: meta data, social graph and images #}
     </head>
     <body class="{{ conference_data.slug }}">
 
@@ -17,5 +17,5 @@
     {% include "includes/footer.html" %}
 
     </body>
-    <script src="/{{ fingerprint['js/main.js'] }}"></script>
+    <script src="/{{ fingerprint['js/bottom.js'] }}"></script>
 </html>

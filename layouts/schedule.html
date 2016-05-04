@@ -1,13 +1,6 @@
-{% include "includes/conference_switcher.html" %}
-<html lang="en-US" class="js-no">
-  <head>
-    <title>{{ conference_data.location }} • Full Schedule</title>
-    {% include "includes/meta.html" %}
-    <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
-  </head>
-  <body class="{{ conference_data.slug }}">
-
-    {% include "includes/header.html" %}
+{% extends "common.html" %}
+{% block title %}{% parent %}2016 Schedule{% endblock %}
+{% block body %}
 
     <div class="section section-grid">
         <div class="section_body">
@@ -29,9 +22,4 @@
 
         </div>
     </div>
-
-    {% include "includes/footer.html" %}
-
-  </body>
-  <script src="/{{ fingerprint['js/main.js'] }}"></script>
-</html>
+{% endblock %}

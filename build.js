@@ -79,9 +79,14 @@ metalsmith(__dirname)
         }))
         // Minimize and concatenate js files. Must be above fingerprint.
         .use(uglify({
-            pattern: 'js/*',
+            pattern: 'js/top/*',
             sourceMap: true,
-            concat: 'js/main.js',
+            concat: 'js/top.js',
+        }))
+        .use(uglify({
+            pattern: 'js/bottom/*',
+            sourceMap: true,
+            concat: 'js/bottom.js',
         }))
         // Convert stylus files to css. Must be above fingerprint.
         .use(stylus({
@@ -90,7 +95,7 @@ metalsmith(__dirname)
         // Change asset filenames to unique strings per build for cachebusting.
         // Must be above inplace.
         .use(fingerprint({
-            pattern: ['stylesheets/style.css', 'js/main.js'],
+            pattern: ['stylesheets/style.css', 'js/**/*.js'],
         }))
         // Process template files in the source dir using specified engine.
         .use(inplace({
