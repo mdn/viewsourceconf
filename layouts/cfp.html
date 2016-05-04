@@ -1,17 +1,15 @@
 {% extends "../layouts/common.html" %}
 {% block title %}{% parent %}Call for Proposals{% endblock %}
 {% block body %}
-<section class="section section-gradient">
+<section class="section">
     <div class="section_body">
-        <div class="solo">
             <h1>Call for Proposals</h1>
             <h2>View Source {{ conference_data.location }}, 2016</h2>
             {% block top_blurb %}{% endblock %}
-        </div>
     </div>
 </section>
 {% if !thanks %}
-<section class="section section-grid">
+<section class="section section-invert">
     <div class="section_body">
         <h2>Submit your proposal that includes an abstract, details, and pitch</h2>
         <p><strong>Abstract</strong> will be included on the website program.
@@ -33,7 +31,9 @@
             <a class="button" href="https://qsurvey.mozilla.com/s3/Viewsource-2016-{{conference_data.location}}-CFP">Submit Now</a>
         </p>
     </div>
-    <div class="section_body"</div>
+</section>
+<section class="section">
+    <div class="section_body">
         <h2>How it works</h2>
 
         <p>You can edit your proposal after submission. Please submit your
