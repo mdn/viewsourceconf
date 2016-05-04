@@ -29,10 +29,6 @@ header
     li {
         display: inline-block;
         padding-left: $grid-gutter-width;
-
-        li:nth-child(3)::after {
-            content: 'd';
-        }
     }
 
     a:not(.button) {
@@ -69,7 +65,6 @@ li.header_crumb {
     .header_links {
         display: table;
         float: right;
-        max-width: 480px; /* totally arbitrary, to avoid orphans */
         margin-bottom: -10px;
         margin-top: -10px; /* to account for margin-top on <li>s */
         line-height: 1.4; /* to be even with logo */
@@ -115,7 +110,6 @@ li.header_crumb {
 
     .header_links {
         margin-right: $grid-gutter-width-wide * -1;
-        max-width: 100%;
     }
 
     li.header_crumb {
