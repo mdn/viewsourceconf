@@ -27,23 +27,17 @@ session
 
 .session_pic {
     display: flex;
+    width: 100px;
     margin-bottom: 10px;
-
-    img {
-        width: 100px;
-    }
 }
 
 @media $media-query-320-and-up {
     .session_pic {
         float: right;
+        width: 60px;
         flex-direction: column;
         margin-top: -2.1em;
         margin-left: $grid-gutter-width;
-
-        img {
-            width: 60px;
-        }
     }
 }
 
@@ -62,22 +56,16 @@ session
     }
 
     .session_pic {
-        img {
-            width: 100px;
-        }
+        width: 100px;
     }
 }
 
 @media $media-query-680-and-up {
     .session_pic {
         float: none;
+        width: auto;
         flex-direction: row;
         margin: 0;
-
-        img {
-            width: auto;
-            max-width: 100%;
-        }
     }
 }
 
