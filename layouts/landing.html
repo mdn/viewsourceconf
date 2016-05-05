@@ -12,15 +12,19 @@
         </h1>
 
         <section class="split">
-            {% for conference in model.conferences %}
-            <div class="split_conference {{conference.slug}}">
-                <a href="{{ conference.folder }}" class="">
-                    <div class="split_location">{{ conference.location }}</div>
-                    <div class="split_date">{{conference.date}}</div>
+            <div class="split_conference berlin">
+                <a href="/berlin-2016" class="">
+                    <div class="split_location">Berlin</div>
+                    <div class="split_date">September 12-14, 2016</div>
                     <button class="button button-invert">Learn more</button>
                 </a>
             </div>
-            {% endfor %}
+            <div class="split_conference seattle">
+                <a name="seattle">
+                    <div class="split_location">Seattle</div>
+                    <div class="split_date">More information<br />coming soon!</div>
+                </a>
+            </div>
         </section>
 
     </div>
