@@ -36,11 +36,14 @@ session
 
 @media $media-query-320-and-up {
     .session_pic {
-        width: 60px;
         float: right;
         flex-direction: column;
         margin-top: -2.1em;
         margin-left: $grid-gutter-width;
+
+        img {
+            width: 60px;
+        }
     }
 }
 
@@ -59,7 +62,9 @@ session
     }
 
     .session_pic {
-        width: 100%;
+        img {
+            width: 100px;
+        }
     }
 }
 
@@ -71,6 +76,7 @@ session
 
         img {
             width: auto;
+            max-width: 100%;
         }
     }
 }
