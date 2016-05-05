@@ -142,6 +142,9 @@ metalsmith(__dirname)
         host: '0.0.0.0',
         port: 8080,
         verbose: true,
+        http_error_files: {
+          404: "/404.html",
+        },
     }))
     .use(devonly(define, {
         livereload: '<script src="http://localhost:35729/livereload.js"></script>',

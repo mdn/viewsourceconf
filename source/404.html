@@ -1,0 +1,24 @@
+---
+model:
+  conferences: conferences
+  nav: navigation
+permalink: false
+---
+{% extends "layouts/common.html" %}
+{% block title %}{% parent %}404{% endblock %}
+{% block body %}
+<div class="section section">
+    <div class="section_body">
+        <div class="cols cols-third">
+            <div class="col">
+                <h1>Four Oh Four good buddy!</h1>
+            </div>
+            <div class="col col-x2"
+                <p>Looks like something went wrong. If you're feeling adventurous, maybe you can <a href="https://github.com/mdn/viewsourceconf">view the source</a> and <a href="https://github.com/mdn/viewsourceconf/issues">let us know
+                how to fix it</a>?</p>
+                <p>Or, just <a href="/">start over at the beginning</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
