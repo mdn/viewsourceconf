@@ -1,0 +1,31 @@
+@require '../includes/variables';
+
+.newsletter {
+    margin: 0 auto;
+    padding: $grid-gutter-width;
+    font-family: $body-font-family;
+    text-align: left;
+
+    theme({
+        background-color: $theme-background
+    })
+
+    label {
+        display: inline-block;
+        margin-bottom: $grid-gutter-width;
+    }
+}
+
+.newsletter_radio label {
+    padding-left: $grid-gutter-width;
+}
+
+.newsletter_thanks {
+    display: none;
+}
+
+@media $media-query-680-and-up {
+    .newsletter {
+        max-width: cols-wide(3);
+    }
+}
