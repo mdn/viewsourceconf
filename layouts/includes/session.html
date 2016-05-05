@@ -39,9 +39,9 @@
                         </h4>
                     <div class="session_summary">
                         {% if session.summary.indexOf('<p>') === 0 %}
-                            {{ session.summary }}
+                            {% autoescape false %}{{ session.summary }}{% endautoescape %}
                         {% else %}
-                            <p>{{ session.summary }}</p>
+                            {% autoescape false %}<p>{{ session.summary }}</p>{% endautoescape %}
                         {% endif %}
                     </div>
                 </div>
