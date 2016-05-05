@@ -67,8 +67,8 @@ metalsmith(__dirname)
         .use(ignore([
             '**/_*',
             '**/*swp',
-            // until we have a seattle event, don't build seattle stuff
-            '**/seattle-2016/*',
+            // At launch we may not have a seattle event. This prevents building its pages.
+            // '**/seattle-2016/*',
         ]))
         // Put json from /data into global metadata. Must be above inplace.
         .use(models({
