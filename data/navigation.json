@@ -1,9 +1,5 @@
 {
     "header": {
-        "/#register": {
-            "text": "Register",
-            "anchor": true
-        },
         "/cfp": {
             "text": "Call for Proposals"
         },

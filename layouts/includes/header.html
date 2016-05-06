@@ -9,8 +9,11 @@
 
             {# this is totally optional, just putting it here to demo #}
             {% macro link(nav_item) %}
-                <a href="{{ conference_data.folder}}{{ nav_item.url }}">{{ nav_item.text }}</a>
+                <a href="{{ conference_data.folder }}{{ nav_item.url }}">{{ nav_item.text }}</a>
             {% endmacro %}
+
+            {# registration is a special case #}
+            <li><a href="{{ conference_data.register_url }}">Register</a></li>
 
             {% for item in model.nav.header %}
                 {% set item.url = loop.key %}

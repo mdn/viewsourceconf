@@ -9,7 +9,8 @@
         "2016-09-14"
     ],
     "folder": "/berlin-2016",
-    "sponsor_prospectus": "assets/viewsource_berlin_sponsorship.pdf"
+    "sponsor_prospectus": "assets/viewsource_berlin_sponsorship.pdf",
+    "register_url": "https://ti.to/mdn/view-source-berlin-2016"
   },
   "seattle": {
     "slug": "seattle",
@@ -21,6 +22,7 @@
         "2016-11-3"
     ],
     "folder": "/seattle-2016",
-    "sponsor_prospectus": "assets/viewsource_seattle_sponsorship.pdf"
+    "sponsor_prospectus": "assets/viewsource_seattle_sponsorship.pdf",
+    "register_url": "#TKTKTK"
   }
 }
