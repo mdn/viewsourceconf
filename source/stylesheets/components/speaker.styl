@@ -4,36 +4,111 @@
 speakers
 ====================================================================== */
 
+.speakers {
+    position: relative;
+
+    clearfix()
+
+    theme({
+        background: $theme-dark
+    })
+}
+
 .speaker_list {
-    max-width: 400px * 4;
+    position: relative;
+    max-width: grid-max($grid-gutter-width);
     margin: 0 auto;
+    background-color: #fff;
     list-style-type: none;
     clearfix();
+
+    &.js-active,
+    &.js-focus,
+    &:hover {
+        img {
+            opacity: 0.4;
+        }
+    }
 }
 
 .speaker {
     float: left;
     width: 50%;
-    margin: 0;
-}
+    min-height: 0;
 
-.speaker a {
-    display: block;
-    overflow: hidden;
+    &:nth-child(2n+1){
+        clear: left;
+    }
 
     img {
-        transition: all $transition-duration $transition-timing;
+        display: block;
+        transition: opacity 0.15s ease;
     }
 
-    &:hover img,
-    &:focus img,
-    &:active img {
-        transform: scale(1.05);
+    &.js-active img,
+    & a:focus img,
+    &:hover img {
+        opacity: 1;
     }
 }
 
-@media $media-query-480-and-up {
+.speaker_pic {
+    position: relative;
+    background-color: #fff; /* duplication needed to cover speaker_info while expending */
+}
+
+.speaker_info {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.15s, opacity 0.15s;
+
+    .speaker.js-active & {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.speaker_name,
+.speaker_title {
+    font-family: $heading-font-family;
+    set-font-size(28px);
+    line-height: 1.2;
+}
+
+.speaker_name {
+    margin-bottom: 0;
+}
+
+.speaker_title {
+    font-weight: normal;
+}
+
+.speaker_close {
+    position: absolute;
+    top: $grid-gutter-width;
+    right: $grid-gutter-width;
+}
+
+@media $media-query-680-and-up {
+    .speaker_list {
+        max-width: 400px * 4;
+    }
+
     .speaker {
         width: 25%;
+
+        &:nth-child(2n+1){
+            clear: none;
+        }
+        &:nth-child(4n+1){
+            clear: left;
+        }
+    }
+
+    .speaker_name {
+        text-align: right;
     }
 }
