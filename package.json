@@ -2,7 +2,8 @@
   "name": "viewsourceconf-build",
   "version": "2016.0.1",
   "scripts": {
-    "build": "node build"
+    "build": "node build",
+    "blc": "./node_modules/broken-link-checker/bin/blc http://localhost:8080 -ro"
   },
   "devDependencies": {
     "debug": "^2.2.0",
