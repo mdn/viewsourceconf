@@ -39,7 +39,7 @@ const dump = function(options) {
     return function(files, metalsmith, done) {
         console.log(metalsmith);
         done();
-    }
+    };
 };
 
 metalsmith(__dirname)
