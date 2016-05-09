@@ -30,7 +30,7 @@ model:
         </div>
 
         <div class="speakers">
-            <ul id="speaker_list" class="speaker_list">
+            <ul id="speakers_list" class="speakers_list">
             {% for speaker in model.speakers %}
                 {% if speaker.pic && speaker.feature %}
                     <li class="speaker" id="{{ speaker.slug }}">

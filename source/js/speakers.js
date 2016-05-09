@@ -1,26 +1,22 @@
 (function() {
     'use strict';
-    var html = document.documentElement;
-    // remove js-no if its still there
-    html.classList.remove('js-no');
-    // signal site js loaded
-    html.classList.add('js-site');
-})();
+    var speakers_list = document.getElementById('speakers_list');
+    var speakers;
+    if(speakers_list !== null) {
+        speakers = speakers_list.querySelectorAll('.speaker');
+    } else {
+        return;
+    }
 
-(function(win, doc) {
-    'use strict';
-    var speaker_list = doc.getElementById('speaker_list');
-    var speakers = speaker_list.querySelectorAll('.speaker');
-
-    Array.prototype.forEach.call(speakers, function(element, i){
+    Array.prototype.forEach.call(speakers, function(element, i) {
         var speaker_id = element.id;
         // create button to close speaker_info
-        var button = doc.createElement('button');
+        var button = document.createElement('button');
         button.setAttribute('type', 'button');
         button.setAttribute('aria-controls', speaker_id + '_info');
         button.setAttribute('aria-expanded', 'false');
         button.classList.add('speaker_close');
-        button.appendChild(doc.createTextNode('Close.'));
+        button.appendChild(document.createTextNode('Return to speaker list.'));
         //add listenter
         button.addEventListener('click', function() {
             speaker_close(speaker_id);
@@ -44,14 +40,14 @@
     });
 
     function speaker_toggle(event, speaker_id) {
-        var speaker = doc.getElementById(speaker_id);
+        var speaker = document.getElementById(speaker_id);
         var is_active = speaker.classList.contains('js-active');
         if(is_active) {
             // if open, close it
             speaker_close(speaker_id);
         } else {
             // otherwise close all others
-            var active_speakers = speaker_list.querySelectorAll('.js-active');
+            var active_speakers = speakers_list.querySelectorAll('.js-active');
             Array.prototype.forEach.call(active_speakers, function(element, i) {
                 var element_id = element.id;
                 speaker_close(element_id);
@@ -63,8 +59,8 @@
 
     function speaker_open(speaker_id) {
         // add active class to list
-        speaker_list.classList.add('js-active');
-        var speaker = doc.getElementById(speaker_id);
+        speakers_list.classList.add('js-active');
+        var speaker = document.getElementById(speaker_id);
         // get minHeight (.speaker_pic + .speaker_info)
         var pic = speaker.querySelectorAll('.speaker_pic');
         var pic_height = pic[0].offsetHeight;
@@ -81,13 +77,20 @@
         Array.prototype.forEach.call(controls, function(element, i) {
             element.setAttribute('aria-expanded', 'true');
         });
+
+        if(window.vs.analytics) {
+            window.vs.analytics.trackEvent({
+                category: 'speaker-open',
+                action: speaker_id
+            });
+        }
     }
 
     function speaker_close(speaker_id) {
         // remove active class from parent
-        speaker_list.classList.remove('js-active');
+        speakers_list.classList.remove('js-active');
         // remove active class from speaker
-        var speaker = doc.getElementById(speaker_id);
+        var speaker = document.getElementById(speaker_id);
         speaker.classList.remove('js-active');
         speaker.style.minHeight = '0px';
         // set aria-expanded to false
@@ -97,4 +100,4 @@
         });
     }
 
-})(window, document);
+})();

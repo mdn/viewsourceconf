@@ -74,6 +74,16 @@
 
     {% include "includes/footer.html" %}
 
+    <!--[if gt IE 10]> <!-- -->
+    <script>
+        (function() {
+            'use strict';
+            window.vs = {};
+        })();
+    </script>
+
+    <script src="/{{ fingerprint['js/main.js'] }}"></script>
+    <!-- <![endif]-->
+
   </body>
-  <script src="/{{ fingerprint['js/main.js'] }}"></script>
 </html>
