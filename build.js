@@ -112,7 +112,7 @@ metalsmith(__dirname)
         .use(data_markdown({
             marked: {
                 gfm: true,
-                breaks: false,
+                breaks: true,
                 tables: false,
                 smartlists: true,
                 smartypants: true,
