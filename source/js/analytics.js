@@ -63,9 +63,11 @@
 
 
         trackClicks: function() {
-            console.log('trackLinks executed');
+
+            //console.log('trackLinks executed');
             // capture all click events
             document.addEventListener('click', function (event) {
+                /*
             console.log('click detected');
 // TODO: don't do anything if default was prevented, hijax will handle that
 
@@ -189,7 +191,7 @@
                     console.log('trackEvent', category, action, label);
                 }
 
-
+*/
 
                 // anchor
                 // file

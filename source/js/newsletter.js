@@ -71,6 +71,9 @@
                 if (response.status === 'ok') {
                     form.style.display = 'none';
                     thanks.style.display = 'block';
+                    if(window.vs.analytics) {
+                        window.vs.analytics.trackEvent({ category: 'signup', action: newsletter});
+                    }
                 }
                 else {
                     err(new Error(response.desc));
