@@ -1,0 +1,21 @@
+.hero {
+    min-height: 536px;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.hero_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    height: 536px;
+}
+
+@media $media-query-680-and-up {
+    .hero_body {
+        width: cols-wide(4);
+        max-width: 640px;
+    }
+}
