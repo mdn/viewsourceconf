@@ -1,21 +1,38 @@
 .hero {
-    min-height: 536px;
+    background-size: cover;
     background-position: 50% 0;
     background-repeat: no-repeat;
     text-align: center;
+
+    .berlin & {
+        background-image: url('/assets/images/berlin_hero_1400x600.jpg');
+    }
+
+    .seattle & {
+        background-image: url('/assets/images/seattle_hero_1400x600.jpg');
+    }
 }
 
 .hero_body {
+    box-sizing: border-box;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    height: 536px;
+    padding: $grid-gutter-width;
+    text-shadow: 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000;
 }
 
 @media $media-query-680-and-up {
     .hero_body {
         width: cols-wide(4);
         max-width: 640px;
+    }
+}
+
+@media $media-query-960-and-up {
+    .hero {
+        background-size: auto auto;
     }
 }
