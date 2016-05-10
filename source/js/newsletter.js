@@ -104,5 +104,7 @@
     }
 
     var button = document.getElementById('newsletter-submit');
-    button.addEventListener('click', subscribe, false);
+    if(button){
+        button.addEventListener('click', subscribe, false);
+    }
 })();

@@ -1,11 +1,12 @@
 .hero {
+    position: relative;
     background-size: cover;
     background-position: 50% 0;
     background-repeat: no-repeat;
     text-align: center;
 
     .berlin & {
-        background-image: url('/assets/images/berlin_hero_1400x600.jpg');
+        background-image: url('/assets/images/berlin_hero_320x600.jpg');
     }
 
     .seattle & {
@@ -14,6 +15,8 @@
 }
 
 .hero_body {
+    position: relative;
+    z-index: 1;
     box-sizing: border-box;
     min-height: 600px;
     display: flex;
@@ -24,15 +27,81 @@
     text-shadow: 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000;
 }
 
+@media $media-query-320-and-up {
+    .berlin .hero {
+        background-image: url('/assets/images/berlin_hero_480x600.jpg');
+    }
+
+    @media $media-query-append-retina-dpr {
+        .berlin .hero {
+            background-image: url('/assets/images/berlin_hero_960x1200.jpg');
+        }
+    }
+    @media $media-query-append-retina-resolution {
+        .berlin .hero {
+            background-image: url('/assets/images/berlin_hero_960x1200.jpg');
+        }
+    }
+}
+
+@media $media-query-480-and-up {
+    .berlin .hero {
+        background-image: url('/assets/images/berlin_hero_680x600.jpg');
+    }
+
+    @media $media-query-append-retina-dpr {
+        .berlin .hero {
+            background-image: url('/assets/images/berlin_hero_1360x1200.jpg');
+        }
+    }
+    @media $media-query-append-retina-resolution {
+        .berlin .hero {
+            background-image: url('/assets/images/berlin_hero_1360x1200.jpg');
+        }
+    }
+}
+
+
+
 @media $media-query-680-and-up {
+    .berlin .hero {
+        background-image: url('/assets/images/berlin_hero_960x600.jpg');
+    }
+
     .hero_body {
         width: cols-wide(4);
         max-width: 640px;
+    }
+
+    @media $media-query-append-retina-dpr {
+        .berlin .hero {
+            background-image: url('/assets/images/berlin_hero_1920x1200.jpg');
+        }
+    }
+    @media $media-query-append-retina-resolution {
+        .berlin .hero {
+            background-image: url('/assets/images/berlin_hero_1920x1200.jpg');
+        }
     }
 }
 
 @media $media-query-960-and-up {
     .hero {
         background-size: auto auto;
+
+        .berlin & {
+            background-image: url('/assets/images/berlin_hero_1400x600.jpg');
+        }
+    }
+
+    @media $media-query-append-retina-dpr {
+        .berlin .hero {
+            background-image: url('/assets/images/berlin_hero_2800x1200.jpg');
+        }
+    }
+    @media $media-query-append-retina-resolution {
+        .berlin .hero {
+            background-image: url('/assets/images/berlin_hero_2800x1200.jpg');
+        }
     }
 }
