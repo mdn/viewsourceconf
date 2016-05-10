@@ -19,41 +19,151 @@
         </div>
     </section>
 
+    <section class="section section-grid">
+        <div class="section_body">
+            <div class="solo">
+                <h2>Call for Proposals</h2>
+                <p>View Source {{ conference_data.location }} is currently accepting proposals for talks.</p>
+                <p><a href="cfp" class="button">Submit your proposal.</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers">
+        <div class="section">
+            <div class="section_body">
+                <div class="solo">
+                    <h2>Speakers</h2>
+
+                    <p>View Source features a world-class group of speakers whose talks will expose best practices and practical, innovative development techniques. In addition, we will have a daily set of group discussions with experts on a variety of hot topics.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="speakers">
+            <ul id="speakers_list" class="speakers_list">
+            {% for speaker in model.speakers %}
+                {% if speaker.pic && speaker.feature %}
+                    <li class="speaker" id="{{ speaker.slug }}">
+
+                        <div class="speaker_pic">
+                            <a href="speakers/{{ speaker.slug }}">
+                                <img src="/assets/images/{{ speaker.pic }}" alt="{{ speaker.first }} {{ speaker.last }}">
+                            </a>
+                        </div>
+
+                        <div class="section speaker_info" id="{{ speaker.slug }}_info">
+                            <div class="section_body">
+                                <div class="cols cols-half">
+                                    <div class="col">
+                                        <h3 class="speaker_name">{{ speaker.first }} {{ speaker.last }}</h3>
+                                    </div>
+
+                                    <div class="col speaker_text">
+                                        {% if speaker.sessions.length > 0 %}
+                                            {% for session in model.sessions %}
+                                                {% for session_speaker in session.speakers %}
+                                                    {% if session_speaker == speaker.slug %}
+                                                        <h4 class="speaker_title">{{ session.title }}</h4>
+                                                        {% if session.summary.indexOf('<p>') === 0 %}
+                                                            {{ session.summary }}
+                                                        {% else %}
+                                                            <p>{{ session.summary }}</p>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endfor %}
+                                            <a href="speakers/{{ speaker.slug }}">Read more about {{ speaker.first }}</a>
+                                        {% else %}
+                                            {% if speaker.bio.indexOf('<p>') === 0 %}
+                                                {{ speaker.bio }}
+                                            {% else %}
+                                                <p>{{ speaker.bio }}</p>
+                                            {% endif %}
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+    </section>
+
     {% block conference_details %}
+        {# we probably do not need this. everything can live in this file. #}
     {% endblock %}
 
+    <section class="section" id="venue">
+        <div class="section_body">
+            <h2>Venue</h2>
+            <p><strong>{{ model.venue.meta.name }}<br>
+            {{ model.venue.meta.address }}</strong>
+            </p>
+
+            <div class="intrinsic">
+                <iframe src="{{ model.venue.meta.map_url }}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+
+            <p>{{ model.venue.meta.blurb }}</p>
+        </div>
+    </section>
+
+    <section class="section section-grid" id="travel">
+        <div class="section_body">
+            <h2>Travel and Accommodation</h2>
+
+            <p>{{ model.venue.travel.blurb }}</p>
+
+            {% for mode in model.venue.travel.modes %}
+                <h3>{{ loop.key }}</h3>
+                <p>{{ mode }}</h3>
+            {% endfor %}
+
+            <h3>Suggested Hotels</h3>
+            {% for hotel in model.venue.hotels %}
+                <div class="cols cols-half">
+                    <h4><a href="{{ hotel.url }}">{{ loop.key }}</a></h4>
+                    <div class="col">
+                        <strong>Hotel rating: </strong><span title="{{hotel.stars.length}}-star rating">{% for star in hotel.stars %}&star;{% endfor %}</span><br>
+                        <strong>Preferential rate:</strong> {{ hotel.rate }}<br>
+                        <strong>Address:</strong> <a href="{{ hotel.map_link }}" target="_blank">{{ hotel.address }}</a><br>
+                    </div>
+                    <div class="col">
+                        <strong>How to book</strong><br>
+                        {{ hotel.how_to_book }}<br>
+                        {% if hotel.email %}<strong>Email address: </strong><a href="mailto:{{ hotel.email }}">{{ hotel.email }}</a><br>{% endif %}
+                        {% if hotel.phone %}<strong>Telephone number: </strong>{{ hotel.phone }}<br>{% endif %}
+                        {% if hotel.reference %}<strong>Booking reference: </strong>{{ hotel.reference }}<br>{% endif %}
+                        <em>A credit card will be necessary to secure a booking.</em>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
     <section id="sponsors">
-        <div class="section">
-            <div class="section_body">
-                <div class="solo">
-                    <h2>Premier Sponsors</h2>
+        {% if model.sponsors %}
+            {% macro sponsor_block(title, sponsors) %}
+                <div class="section">
+                    <div class="section_body">
+                        <div class="solo">
+                            <h2>{{ title }}</h2>
+                            {% for sponsor in sponsors %}
+                                <a href="{{ sponsor.url }}"><img title="{{ loop.key }}" src="/assets/images/sponsors/{{ sponsor.image }}"></a>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section_body">
-                <div class="solo">
-                    <h2>Gold Sponsors</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section_body">
-                <div class="solo">
-                    <h2>Silver Sponsors</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section_body">
-                <div class="solo">
-                    <h2>Other Sponsors and Partners</h2>
-                </div>
-            </div>
-        </div>
+            {% endmacro %}
+            {{ sponsor_block("Premier Sponsors", model.sponsors.premier) }}
+            {{ sponsor_block("Gold Sponsors", model.sponsors.gold) }}
+            {{ sponsor_block("Silver Sponsors", model.sponsors.silver) }}
+            {{ sponsor_block("Other Sponsors and Partners", model.sponsors.other) }}
+        {% endif %}
 
         <div class="section section-uncommon" id="sponsor">
             <div class="section_body">
