@@ -1,0 +1,35 @@
+{
+    "Ibis Hotel (Ibis Berlin Ostbahnhof)": {
+        "url": "http://www.hotel.info/en/ibis-berlin-ostbahnhof/hotel-118587/",
+        "stars": [1,1],
+        "rate": "€94,00 for a single room - preferential rate can only be guaranteed until 18 July 2016 - rooms subject to availability",
+        "address": "An der Schillingbrücke 2, 10243 Berlin",
+        "map_link": "https://goo.gl/maps/rZ8DNBCG2Hu",
+        "how_to_book": "Contact Daniela Schneider",
+        "email": "h3108@accor.com",
+        "phone": "+49 30 257600",
+        "reference": "View Source 2016"
+    },
+    "Amano Grand Central": {
+        "url": "http://www.amanogroup.de/en/hotels/hotel-amano-grand-central/",
+        "stars": [1,1,1],
+        "rate": "€105 for a single room - preferential rate can only be guaranteed until 29 July 2016 - rooms subject to availability",
+        "address": "Heidestraße 62, 10557 Berlin",
+        "map_link": "https://goo.gl/maps/PPuaLVe9JnD2",
+        "how_to_book": "Contact main hotel reservation or ask for Mrs. Addo",
+        "email": "reservationsberlin@amanogroup.de",
+        "phone": "+49 30 80 94 15 2221",
+        "reference": "View Source 2016"
+    },
+    "Mani Hotel": {
+        "url": "http://www.amanogroup.de/en/hotels/mani/",
+        "stars": [1,1,1],
+        "rate": "€102 for a single room - preferential rate can only be guaranteed until 29 July 2016 - rooms subject to availability",
+        "address": "Torstrasse 136, 10119 Berlin",
+        "map_link": "https://goo.gl/maps/yfJEDBN6FNx",
+        "how_to_book": "Contact main hotel reservation or ask for Mrs. Addo",
+        "email": "reservationsberlin@amanogroup.de",
+        "phone": "+49 30 80 94 15 2221",
+        "reference": "View Source 2016"
+    }
+}
