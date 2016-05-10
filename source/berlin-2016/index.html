@@ -3,6 +3,7 @@ model:
   conferences: conferences
   speakers: berlin_speakers
   sessions: berlin_sessions
+  hotels: berlin_hotels
   nav: navigation
 ---
 {% extends "../layouts/conference.html" %}
@@ -180,56 +181,24 @@ model:
 
             <h3>Suggested Hotels</h3>
 
-            <div class="cols cols-half">
-                <h4><a href="http://www.hotel.info/en/ibis-berlin-ostbahnhof/hotel-118587/">Ibis Hotel (Ibis Berlin Ostbahnhof)</a></h4>
-                <div class="col" data-markdown>
-**Hotel rating**: &#10029;&#10029;
-**Preferential rate**: €94,00 for a single room - preferential rate can only be guaranteed until 18 July 2016 -  rooms subject to availability
-**Address**: [An der Schillingbrücke 2, 10243 Berlin](https://goo.gl/maps/rZ8DNBCG2Hu)
+            {% for hotel in model.hotels %}
+                <div class="cols cols-half">
+                    <h4><a href="{{ hotel.url }}">{{ loop.key }}</a></h4>
+                    <div class="col">
+                        <strong>Hotel rating: </strong><span title="{{hotel.stars.length}}-star rating">{% for star in hotel.stars %}&star;{% endfor %}</span><br>
+                        <strong>Preferential rate:</strong> {{ hotel.rate }}<br>
+                        <strong>Address:</strong> <a href="{{ hotel.map_link }}" target="_blank">{{ hotel.address }}</a><br>
+                    </div>
+                    <div class="col">
+                        <strong>How to book</strong><br>
+                        {{ hotel.how_to_book }}<br>
+                        {% if hotel.email %}<strong>Email address: </strong><a href="mailto:{{ hotel.email }}">{{ hotel.email }}</a><br>{% endif %}
+                        {% if hotel.phone %}<strong>Telephone number: </strong>{{ hotel.phone }}<br>{% endif %}
+                        {% if hotel.reference %}<strong>Booking reference: </strong>{{ hotel.reference }}<br>{% endif %}
+                        <em>A credit card will be necessary to secure a booking.</em>
+                    </div>
                 </div>
-                <div class="col" data-markdown>
-**How to book:**
-Contact Daniela Schneider
-**Email address**: h3108@accor.com
-**Telephone number**: +49 30 257600
-**Reference**: View Source 2016
-*A credit card will be necessary to secure a booking.*
-                </div>
-            </div>
-
-            <div class="cols cols-half">
-                <h4><a href="http://www.amanogroup.de/en/hotels/hotel-amano-grand-central/">Amano Grand Central</a></h4>
-                <div class="col" data-markdown>
-**Hotel rating**: &#10029;&#10029;&#10029;
-**Preferential rate**: €105 for a single room - preferential rate can only be guaranteed until 29 July 2016 -  rooms subject to availability
-**Address**: [Heidestraße 62, 10557 Berlin](https://goo.gl/maps/PPuaLVe9JnD2)
-                </div>
-                <div class="col" data-markdown>
-**How to book**:
-Contact main hotel reservation desk or Mrs Addo
-**Email address**: reservationsberlin@amanogroup.de
-**Telephone number**: +49 30 80 94 15 2221
-**Booking reference**: View Source 2016
-*A credit card will be necessary to secure a booking.*
-                </div>
-            </div>
-
-            <div class="cols cols-half">
-                <h4><a href="http://www.amanogroup.de/en/hotels/mani/">Mani Hotel</a></h4>
-                <div class="col" data-markdown>
-**Hotel rating**: &#10029;&#10029;&#10029;
-**Preferential rate**: €102 for a single room - preferential rate can only be guaranteed until 29 July 2016 - rooms subject to availability
-**Address**: [Torstrasse 136, 10119 Berlin](https://goo.gl/maps/yfJEDBN6FNx)
-                </div>
-                <div class="col" data-markdown>
-**How to book**:
-Contact main hotel reservation or ask for Mrs Addo
-**Email address**: reservationsberlin@amanogroup.de
-**Telephone number**: +49 30 80 94 15 2221
-**Reference**: View Source 2016
-*A credit card will be necessary to secure a booking.*
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 {% endblock %}
