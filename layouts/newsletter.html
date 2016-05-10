@@ -5,164 +5,52 @@
 <div class="section section">
     <div class="section_body">
 
-    <h1>Email Newsletter</h1>
+        <h1>Email Newsletter</h1>
 
-<div class="subscribe-form">
-    <form id="newsletter-signup" name="newsletter-signup">
-        <noscript>
-            <div class="error">
-                <p>Heya, it looks like you have JavaScript disabled. You'll have to turn it on to subscribe.</p>
+        <div class="subscribe-form">
+            <form id="newsletter-signup" name="newsletter-signup">
+                <noscript>
+                    <div class="error">
+                        <p>Heya, it looks like you have JavaScript disabled. You'll have to turn it on to subscribe.</p>
+                    </div>
+                </noscript>
+                <ol>
+                    <li class="error"></li>
+                    <li id="li_email">
+                        <label for="id_email">E-mail<br>
+                            <input type="email" id="newsletter-email" name="email" required placeholder="you@example.com">
+                        </label>
+                    </li>
+                    <li id="li_newsletters" class="radio">
+                        <fieldset>
+                            <legend>I want to hear about...</legend>
+                            <label for="view-source-conference-global">
+                                <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required />
+                                Berlin
+                            </label>
+                            <label for="view-source-conference-north-america">
+                                <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required />
+                                Seattle
+                            </label>
+                        </fieldset>
+                    </li>
+                    <li class="form-fine-print" id="li_agree">
+                        <label for="agree">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+                            <em>We will only send you information about View Source.</em>
+                        </label>
+                    </li>
+                    <li class="form-submit">
+                        <button id="newsletter-submit" type="submit" class="button button-invert">Subscribe</button>
+                    </li>
+                </ol>
+            </form>
+            <div id="newsletter-thanks" class="thanks">
+                <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+                <p>You'll receive an email from mozilla@e.mozilla.org to confirm your subscription. If you don't see it, check your spam filter. You must confirm your subscription to receive updates about the View Source Conference.</p>
             </div>
-        </noscript>
-        <ol>
-            <li class="error"></li>
-            <li id="li_email">
-                <label for="id_email">E-mail<br>
-                    <input type="email" id="newsletter-email" name="email" required placeholder="you@example.com">
-                </label>
-            </li>
-            <li id="li_newsletters" class="radio">
-                <fieldset>
-                    <legend>I want to hear about...</legend>
-                    <label for="view-source-conference-global">
-                        <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required />
-                        Berlin
-                    </label>
-                    <label for="view-source-conference-north-america">
-                        <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required />
-                        Seattle
-                    </label>
-                </fieldset>
-            </li>
-            <li class="form-fine-print" id="li_agree">
-                <label for="agree">
-                    <input type="checkbox" id="agree" name="agree" required>
-                    I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
-                    <em>We will only send you information about View Source.</em>
-                </label>
-            </li>
-            <li class="form-submit">
-                <button id="newsletter-submit" type="submit" class="button button-invert">Subscribe</button>
-            </li>
-        </ol>
-    </form>
-    <div id="newsletter-thanks" class="thanks">
-        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
-        <p>You'll receive an email from mozilla@e.mozilla.org to confirm your subscription. If you don't see it, check your spam filter. You must confirm your subscription to receive updates about the View Source Conference.</p>
+        </div>
     </div>
 </div>
-
-
-    </div>
-</div>
-<script>
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
-;(function() {
-    'use strict';
-
-    // Use staging if not in prod
-    var basketUrl = 'https://basket.allizom.org/news/subscribe/';
-    if (window.location.hostname === 'viewsourceconf.org') {
-        basketUrl = 'https://basket.mozilla.org/news/subscribe/';
-    }
-
-    // All errors should go here
-    function err(e) {
-        var msg = 'An unknown error occurred. Please try again later.';
-        if (e.message !== '' && e.message !== undefined) {
-            msg = e.message;
-        }
-        var error = document.querySelector('.subscribe-form .error');
-        error.textContent = msg;
-        error.style.display = 'block';
-
-        if (msg === 'Invalid email address') {
-            document.getElementById('newsletter-email').parentNode.parentNode.className += ' invalid';
-        }
-    }
-
-    /* HTML5 "required" validation feedback is not cross-browser compatible
-     * so we have to roll our own.
-     * Add .invalid class to :invalid elements; remove on submit.
-     */
-    function validate(form) {
-        var already_invalid = form.querySelectorAll('.invalid');
-        for (var i = 0; i < already_invalid.length; ++i) {
-            var element = already_invalid[i];
-            element.className = element.className.replace(/ *invalid/g, '');
-        }
-        var invalid = form.querySelectorAll('input:invalid');
-        for (i = 0; i < invalid.length; ++i) {
-            invalid[i].parentNode.parentNode.className += ' invalid';
-        }
-        if (invalid.length > 0) {
-            err(new Error('Please complete the form below.'));
-            return false;
-        }
-        return true;
-    }
-
-    // XHR subscribe; handle errors; display thanks message on success.
-    function subscribe(evt) {
-        console.log('subscribe');
-        evt.preventDefault();
-        evt.stopPropagation();
-
-        var form = document.getElementById('newsletter-signup');
-        if (!validate(form)) {
-            return false;
-        }
-
-        var email = document.getElementById('newsletter-email').value;
-        var newsletter = document.querySelector('input[name="newsletters"]:checked').value;
-        var thanks = document.getElementById('newsletter-thanks');
-        var params = 'email=' + encodeURIComponent(email) +
-                     '&newsletters=' + newsletter;
-
-        var xhr = new XMLHttpRequest();
-
-        xhr.onload = function(r) {
-            if (r.target.status >= 200 && r.target.status < 300) {
-                var response = r.target.response;
-                if (response.status === 'ok') {
-                    form.style.display = 'none';
-                    thanks.style.display = 'block';
-                }
-                else {
-                    err(new Error(response.desc));
-                }
-            }
-            else if (r.target.status !== null) {
-                err(new Error(r.target.response.desc));
-            }
-            else {
-                err(new Error());
-            }
-        };
-
-        xhr.onerror = function(e) {
-            err(e);
-        };
-
-        xhr.open('POST', basketUrl, true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.setRequestHeader('Connection', 'close');
-        xhr.timeout = 5000;
-        xhr.ontimeout = err;
-        xhr.responseType = 'json';
-        xhr.setRequestHeader('Content-length', params.length);
-        xhr.send(params);
-
-        return false;
-    }
-
-    var button = document.getElementById('newsletter-submit');
-    button.addEventListener('click', subscribe, false);
-})();
-
-</script>
-
 {% endblock %}
