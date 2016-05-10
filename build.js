@@ -9,6 +9,7 @@ const filenames = require('metalsmith-filenames');
 const fingerprint = require('metalsmith-fingerprint-ignore');
 const ignore = require('metalsmith-ignore');
 const inplace = require('metalsmith-in-place');
+const html_minifier = require('metalsmith-html-minifier');
 const json_to_files = require('metalsmith-json-to-files');
 const layouts = require('metalsmith-layouts');
 const models = require('metalsmith-models');
@@ -119,6 +120,7 @@ metalsmith(__dirname)
             },
             removeAttributeAfterwards: true,
         }))
+        .use(html_minifier())
         // Log global metadata, etc., to terminal.
         .use(devonly(dump))
     ))
