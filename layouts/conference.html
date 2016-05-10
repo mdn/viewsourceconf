@@ -116,7 +116,7 @@
         <div class="section_body">
             <h2>Travel and Accommodation</h2>
 
-            <p>{{ model.venue.travel.blurb }}</p>
+            {% if model.venue.travel.blurb %}<p>{{ model.venue.travel.blurb }}</p>{% endif %}
 
             {% for mode in model.venue.travel.modes %}
                 <h3>{{ loop.key }}</h3>
