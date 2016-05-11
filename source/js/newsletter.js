@@ -4,12 +4,7 @@
 
 ;(function() {
     'use strict';
-
-    // Use staging if not in prod
-    var basketUrl = 'https://basket.allizom.org/news/subscribe/';
-    if (window.location.hostname === 'viewsourceconf.org') {
-        basketUrl = 'https://basket.mozilla.org/news/subscribe/';
-    }
+    var basketUrl = 'https://basket.mozilla.org/news/subscribe/';
 
     // All errors should go here
     function err(e) {
