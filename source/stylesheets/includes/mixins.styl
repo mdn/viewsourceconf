@@ -152,7 +152,7 @@ theme(hash) {
     }
 }
 
-// them names are listed in $themes.
+// theme names are listed in $themes.
 // value may be the name of a theme color list
 theme-color($theme_name, $value){
     // see if $value is a theme colour list
@@ -162,7 +162,7 @@ theme-color($theme_name, $value){
     } else {
         // if it's not in the list, return the value for use
         // could be annother styuls variable
-        // could be a straight up colour name
+        // could be a straight up property value
         return $value
     }
 }
