@@ -50,20 +50,22 @@ split
     }
 
     &.seattle {
+        background-color: $seattle-dark;
         background: $seattle-gradient;
 
         &::before {
             right: 0;
-            background: linear-gradient(125deg, transparent 115px, #106671 115px, #72C0B0);
+            background-image: linear-gradient(125deg, transparent 115px, #106671 115px, #72C0B0);
         }
     }
 
     &.berlin {
+        background-color: $seattle-dark;
         background: $berlin-gradient;
 
         &::before {
             left: 0;
-            background: linear-gradient(-55deg, #F05556, #F05556 115px, #B93C5A);
+            background-image: linear-gradient(-55deg, #F05556, #F05556 115px, #B93C5A);
         }
 
     }
