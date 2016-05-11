@@ -85,7 +85,7 @@ li.header_crumb {
 
     .header_body {
         max-width: grid-max($grid-gutter-width-wide);
-        padding: $grid-gutter-width-wide;
+        padding: $grid-gutter-width $grid-gutter-width-wide;
     }
 
     .header_logo {
@@ -100,6 +100,12 @@ li.header_crumb {
         position: absolute;
         bottom: $grid-gutter-width;
         right: $grid-gutter-width-wide;
+    }
+}
+
+@media $media-query-tall {
+    .header_body {
+        padding: $grid-gutter-width-wide;
     }
 }
 
