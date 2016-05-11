@@ -126,7 +126,7 @@
             <h3>Suggested Hotels</h3>
             {% for hotel in model.venue.hotels %}
                 <div class="cols cols-half">
-                    <h4><a href="{{ hotel.url }}">{{ loop.key }}</a></h4>
+                    <h4><a href="{{ hotel.url }}" target="_blank">{{ loop.key }}</a></h4>
                     <div class="col">
                         <strong>Hotel rating: </strong><span title="{{hotel.stars.length}}-star rating">{% for star in hotel.stars %}&star;{% endfor %}</span><br>
                         <strong>Preferential rate:</strong> {{ hotel.rate }}<br>
