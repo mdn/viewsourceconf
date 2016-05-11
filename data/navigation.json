@@ -14,9 +14,6 @@
         "/#sponsor": {
             "text": "Sponsor",
             "anchor": true
-        },
-        "/schedule": {
-            "text": "Schedule"
         }
     },
     "footer": {
