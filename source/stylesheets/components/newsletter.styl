@@ -40,6 +40,10 @@ I didn't want to alter the javascript that relies on them */
     margin-bottom: $grid-gutter-width;
     padding: $grid-gutter-width;
     background-color: rgba(0, 0, 0, 0.1);
+
+    > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 .error:empty {
