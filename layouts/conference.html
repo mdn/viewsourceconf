@@ -146,15 +146,16 @@
     </section>
 
     <section id="sponsors">
-        <div class="section">
-            <div class="section_body">
-                {% if model.sponsors %}
+
+        {% if model.sponsors %}
+            <div class="section">
+                <div class="section_body">
                     {% macro sponsor_block(title, sponsors) %}
 
                         <div class="sponsors">
                             <h2 class="sponsors_title">{{ title }}</h2>
                             {% for sponsor in sponsors %}
-                                <a class="sponsor" href="{{ sponsor.url }}"><img title="{{ loop.key }}" src="/assets/images/sponsors/{{ sponsor.image }}"></a>
+                                <a class="sponsor" href="{{ sponsor.url }}"><img alt="{{ loop.key }}" src="/assets/images/sponsors/{{ sponsor.image }}"></a>
                             {% endfor %}
                         </div>
 
@@ -163,9 +164,9 @@
                     {{ sponsor_block("Gold Sponsors", model.sponsors.gold) }}
                     {{ sponsor_block("Silver Sponsors", model.sponsors.silver) }}
                     {{ sponsor_block("Other Sponsors and Partners", model.sponsors.other) }}
-                {% endif %}
+                </div>
             </div>
-        </div>
+        {% endif %}
 
         <div class="section section-uncommon" id="sponsor">
             <div class="section_body">
