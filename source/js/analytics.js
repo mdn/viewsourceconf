@@ -41,6 +41,7 @@
             // Checking for ".create" due to Ghostery mocking of ga
             if(ga && ga.create) {
                 // Send event to GA
+                // TODO: callback with timeout
                 ga('send', data);
             }
             else if(ga && !ga.create) {
@@ -63,163 +64,115 @@
 
 
         trackClicks: function() {
-
-            //console.log('trackLinks executed');
             // capture all click events
             document.addEventListener('click', function (event) {
-                /*
-            console.log('click detected');
-// TODO: don't do anything if default was prevented, hijax will handle that
-
                 // was it a link?
                 event = event || window.event;
                 var local = window.location.protocol + '//' + window.location.host;
                 var trigger = event.target.tagName;
                 var parent = event.target.parentNode.tagName;
-                console.log('event', event);
                 if(trigger == 'A' || parent == 'A') {
                     var link = (trigger == 'A') ? event.target : event.target.parentNode;
                     var href;
+                    // no really, was it a link?
                     if (link.href) {
                         href = link.href;
                     } else {
                         // no href, abort, abort
                         return;
                     }
-                    console.log('link detected', link);
-                    console.log('link href', link.href);
-                    console.log('link href attr', link.getAttribute('href'));
-                    console.log('local', local);
-                    var category = 'link';
-                    var action;
-                    var label;
-                    var callback;
 
-                    // TODO: callback with timeout if leaving page
+                    // what's our label?
+                    var label = link.href.replace(local, '');
 
-                    // link away from site
-                    if(href.indexOf(local) == -1) {
-                        console.log('link away from site');
-                    }
-
-                    // email link
-                    if(href.indexOf('mailto:') == -1) {
-                        console.log('email link');
-                    }
-
-                    // link stays on current page
-                    if(path == path) {
-                        console.log('link leads to current page');
-                    }
-
-                    // check if in header or footer
+                    // track header/footer click
                     var headerNode = document.getElementById('header');
                     var footerNode = document.getElementById('footer');
                     // header/footer
                     var inHeader = false;
                     var inFooter = false;
-                    if(headerNode) {
-                        inHeader = headerNode.contains(link);
-                    }
-                    if(footerNode) {
-                        inFooter = footerNode.contains(link);
-                    }
-
+                    if(headerNode) { inHeader = headerNode.contains(link); }
+                    if(footerNode) { inFooter = footerNode.contains(link); }
                     if(inHeader || inFooter) {
                         var which = inHeader ? 'header' : 'footer';
-                        //trackEvent('nav', which, label);
-                        console.log('trackEvent','nav', which, link.href);
+                        analytics.trackEvent({
+                            'category' :  'nav',
+                            'action' : which,
+                            'label' : label
+                        });
                     }
 
+                    // variables to populate as we check tracking posabilities
+                    var category = 'link';
+                    var action = '';
+                    var needsCallback = false;
 
-                    var filetypes = /\.(zip|exe|dmg|pdf|doc.*|xls.*|ppt.*|mp3|txt|rar|wma|mov|avi|wmv|flv|wav)$/i;
-                    var baseHref = '';
-
-                    var track = true;
-                    var isThisDomain = href.indexOf(local);
-                    if (!href.match(/^javascript:/i)) {
-                        var elEv = []; elEv.value=0, elEv.non_i=false;
-                        if (href.match(/^mailto\:/i)) {
-                            elEv.category = "email";
-                            elEv.action = "click";
-                            elEv.label = href.replace(/^mailto\:/i, '');
-                            elEv.loc = href;
-                        }
-                        else if (href.match(filetypes)) {
-                        var extension = (/[.]/.exec(href)) ? /[^.]+$/.exec(href) : undefined;
-                            elEv.category = "download";
-                            elEv.action = "click-" + extension[0];
-                            elEv.label = href.replace(/ /g,"-");
-                            elEv.loc = baseHref + href;
-                        }
-                        else if (href.match(/^https?\:/i) && !isThisDomain) {
-                            elEv.category = "external";
-                            elEv.action = "click";
-                            elEv.label = href.replace(/^https?\:\/\//i, '');
-                            elEv.non_i = true;
-                            elEv.loc = href;
-                        }
-                        else if (href.match(/^tel\:/i)) {
-                            elEv.category = "telephone";
-                            elEv.action = "click";
-                            elEv.label = href.replace(/^tel\:/i, '');
-                            elEv.loc = href;
-                        }
-                        else {
-                            track = false;
-                        }
-
-                        //track
+                    // link away from site
+                    if(href.indexOf(local) == -1 && href.indexOf('http') === 0) {
+                        action = 'external';
+                        needsCallback = true;
                     }
-                    // what kind of link?
 
-                        // anchor
-                            // anchor
-                            // path + #hash
-                        // file
-                            // file
-                            // href
-                        // email
-                            // email
-                            // email address
-                        // external
-                            // external
-                            // full URL
-                        // else regular page nav?
+                    // link goes to current site and has a '#' in it
+                    var currentNoHash = window.location.href.split("#")[0];
+                    var linkNoHash = link.href.split("#")[0];
+                    if(currentNoHash == linkNoHash && link.href.indexOf('#')) {
+                        action = 'anchor';
+                    }
 
-                    //trackEvent(category, action, label);
-                    console.log('trackEvent', category, action, label);
-                }
+                    // aria-expanded on link - over rides anchor tracking
+                    if(link.getAttribute('aria-expanded') && link.getAttribute('aria-controls')) {
+                        category = 'expand';
+                        // get the class off the object it controls
+                        var controlFor = link.getAttribute('aria-controls');
+                        var controls = document.getElementById(controlFor);
+                        var controlClasses = controls.classList.value;
+                        // remove common utility class
+                        controlClasses = controlClasses.replace('section ','');
+                        action = controlClasses;
+                    }
 
-*/
+                    // file link
+                    var extensions = /\.(zip|exe|dmg|pdf|doc.*|xls.*|ppt.*|mp3|txt|rar|wma|mov|avi|wmv|flv|wav)$/i;
+                    if(href.indexOf(local) === 0 && href.match(extensions)) {
+                        action = 'download';
+                        needsCallback = true;
+                    }
 
-                // anchor
-                // file
-                // email
-                // header or footer nav
-/*
+                    // email link
+                    if(href.indexOf('mailto:') === 0) {
+                        action = 'email';
+                        needsCallback = false;
+                    }
 
-                var host = this.hostname;
-                if(host && host !== location.hostname) {
-                    var newTab = (trigger.target === '_blank' || event.metaKey || event.ctrlKey);
-                    var href = trigger.href;
+                    if(action === '') {
+                        return; // nothing to track, abort, abort
+                    }
+
+                    // link is opening a new tab
+                    var newTab = (link.getAttribute('target') === '_blank' || event.metaKey || event.ctrlKey);
+                    if(newTab){
+                        needsCallback = false;
+                    }
+
                     var callback = function() {
                         window.location = href;
                     };
+
                     var data = {
-                        category: 'Outbound Links',
-                        action: href
+                        'category': category,
+                        'action': action,
+                        'label': label,
                     };
 
-                    if(newTab) {
-                        analytics.trackEvent(data);
-                    } else {
+                    if(needsCallback) {
                         event.preventDefault();
                         data.hitCallback = callback;
                         analytics.trackEvent(data, callback);
+                    } else {
+                        analytics.trackEvent(data);
                     }
                 }
-                            */
             }, false);
         },
 
