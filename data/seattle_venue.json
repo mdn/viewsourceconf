@@ -7,9 +7,8 @@
     },
     "travel": {
         "modes": {
-            "Trains": "<a href='http://www.soundtransit.org/Schedules/Link-light-rail'>Link Light Rail</a> makes trips from the airport station to downtown Seattle between 5am and 1am, Monday through Saturday (the last train departs the airport at 12:10am), and from 5am to midnight on Sunday (the last train departs the airport at 11:05pm). Trains arrive every 7.5 to 15 minutes, depending on the time of day, and take about 40 minutes to travel between Sea-Tac International Airport and Westlake Station in downtown Seattle. One-way fare for adults ranges from $2.25 to $3. Schedules and station maps are available on the Sound Transit website.",
+            "Trains": "<a href='http://www.soundtransit.org/Schedules/Link-light-rail'>Link Light Rail</a> makes trips from the airport station to downtown Seattle between 5am and 1am, Monday through Saturday (the last train departs the airport at 12:10am), and from 5am to midnight on Sunday (the last train departs the airport at 11:05pm). Trains arrive every 7.5 to 15 minutes, depending on the time of day, and take about 40 minutes to travel between Sea-Tac International Airport and University Station in downtown Seattle. One-way fare for adults ranges from $2.25 to $3. Schedules and station maps are available on the Sound Transit website.",
             "Taxi": "At Sea-Tac Airport, taxis are available on the third floor of the parking garage. One-way rides between the airport and downtown range from $40-$55.",
-            "Seattle Center Monorail": "Provides a direct link between downtown Seattle and Seattle Center. Seattle Center Monorail departs approximately every 10 minutes from two stations: Downtown Seattle, Westlake Center Station, at 5th Avenue and Pine Street",
             "Ride Sharing": "In downtown Seattle, ride-sharing companies, such as Uber, Lyft & Sidecar, offer in-city transportation from local drivers. All rides can be scheduled using smartphone apps."
         }
     },
