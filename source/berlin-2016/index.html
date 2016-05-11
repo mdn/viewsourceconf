@@ -35,25 +35,6 @@ model:
 
                 <!--<p><a href="schedule" class="button">See full schedule</a></p>-->
             </div>
-
-        <!--
-        <ul>
-        {% for session in model.sessions %}
-            <li>
-                {{ session.title }} &mdash;
-                {% for session_speaker in session.speakers %}
-                    {% for speaker in model.speakers %}
-                        {% if session_speaker.slug == speaker.slug %}
-                            {{ speaker.first }} {{ speaker.last }}
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
-            </li>
-        {% endfor %}
-        </ul>
-
-        -->
-
         </div>
     </section>
 
