@@ -6,12 +6,12 @@ sections
 .section {
     position: relative;
 
-    clearfix()
-
     theme({
         background: $theme-background
         color: $theme-text
     })
+
+    clearfix()
 
     > *:last-child,
     > *:last-child > *:last-child,
@@ -63,21 +63,22 @@ sections
 /*
 ---------------------------------------------------------------------- */
 .section-gradient {
-    white-text()
-
     theme({
-        background: $theme-gradient
+        background-color: $theme-dark // fallback for older browsers
+        background-image: $theme-gradient
     })
+
+    white-text()
 }
 
 /*
 ---------------------------------------------------------------------- */
 .section-invert {
-    white-text()
-
     theme({
         background: $theme-dark
     })
+
+    white-text()
 }
 
 /*
@@ -87,8 +88,8 @@ sections
     background-size: $grid-size $grid-size, $grid-size $grid-size;
 
     theme({
-        background-image: $theme-grid
         background-color: $theme-grid-background
+        background-image: $theme-grid
     })
 }
 
