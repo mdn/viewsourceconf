@@ -1,0 +1,25 @@
+<footer id="footer" class="section {% if conference_data.slug %}section-invert{% else %} section-grid{% endif %}">
+    <div class="footer_body">
+        <ul class="footer_links">
+
+            {% macro link(nav_item) %}
+                {% if nav_item.offsite %}
+                    <a href="{{ nav_item.url }}" target="_blank">{{ nav_item.text }}</a>
+                {% else %}
+                    <a href="{{ conference_data.folder }}{{ nav_item.url }}">{{ nav_item.text }}</a>
+                {% endif %}
+            {% endmacro %}
+
+            {% for item in model.nav.footer %}
+                {% set item.url = loop.key %}
+                <li>{{ link(item) }}</li>
+            {% endfor %}
+
+        </ul>
+        <ul class="footer_social">
+            <li><a href="http://twitter.com/viewsourceconf" target="_blank">@ViewSourceConf</a></li>
+            <li><a href="{{ conference_data.folder }}/newsletter">Email newsletter</a></li>
+        </ul>
+    </div>
+    {{ livereload|safe }}
+</footer>

@@ -1,0 +1,66 @@
+{% extends "common.html" %}
+{% block title %}{% parent %}Email Newsletter{% endblock %}
+{% block body %}
+
+<div class="section section">
+    <div class="section_body">
+
+        <h1>Email Newsletter</h1>
+
+        <div class="subscribe-form">
+            <form id="newsletter-signup" name="newsletter-signup" action="https://basket.mozilla.org/news/subscribe/" method="post">
+                <noscript>
+                    <div class="error">
+                        <p>Heya, it looks like you have JavaScript disabled. No problem, you can still subscribe. The next page is going to look a little funny though. If it says there's an error use you back button to come back here and fix it.</p>
+                        <p>You'll receive an email from mozilla@e.mozilla.org to confirm your subscription.</p>
+                    </div>
+                </noscript>
+                <ol>
+                    <li class="error"></li>
+                    <li id="li_email">
+                        <label for="id_email">E-mail<br>
+                            <input type="email" id="newsletter-email" name="email" required placeholder="you@example.com">
+                        </label>
+                    </li>
+                    {% if conference_data %}
+                        {% if conference_data.slug == 'berlin' %}
+                            {% set newsletter = 'view-source-conference-global' %}
+                        {% elseif conference_data.slug == 'seattle' %}
+                            {% set newsletter = 'view-source-conference-north-america' %}
+                        {% endif %}
+                        <input type="hidden" name="newsletters" value="{{ newsletter }}" id="{{ newsletter }}" />
+                    {% else %}
+                        <li id="li_newsletters" class="radio">
+                            <fieldset>
+                                <legend>I want to hear about...</legend>
+                                <label for="view-source-conference-global">
+                                    <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required />
+                                    Berlin
+                                </label>
+                                <label for="view-source-conference-north-america">
+                                    <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required />
+                                    Seattle
+                                </label>
+                            </fieldset>
+                        </li>
+                    {% endif %}
+                    <li class="form-fine-print" id="li_agree">
+                        <label for="agree">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+                            <em>We will only send you information about View Source.</em>
+                        </label>
+                    </li>
+                    <li class="form-submit">
+                        <button id="newsletter-submit" type="submit" class="button button-invert">Subscribe</button>
+                    </li>
+                </ol>
+            </form>
+            <div id="newsletter-thanks" class="thanks">
+                <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+                <p>You'll receive an email from mozilla@e.mozilla.org to confirm your subscription. If you don't see it, check your spam filter. You must confirm your subscription to receive updates about the View Source Conference.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

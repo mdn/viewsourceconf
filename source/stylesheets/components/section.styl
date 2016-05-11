@@ -1,0 +1,127 @@
+@require 'includes/variables'
+/*
+sections
+====================================================================== */
+
+.section {
+    position: relative;
+
+    theme({
+        background: $theme-background
+        color: $theme-text
+    })
+
+    clearfix()
+
+    > *:last-child,
+    > *:last-child > *:last-child,
+    > *:last-child > *:last-child > *:last-child,
+    > *:last-child > *:last-child > *:last-child > *:last-child,
+    > *:last-child > *:last-child > *:last-child > *:last-child > *:last-child {
+      margin-bottom: 0;
+    }
+}
+
+.section_body {
+    max-width: grid-max($grid-gutter-width);
+    margin: 0 auto;
+    padding: ($grid-gutter-width * 2) $grid-gutter-width;
+}
+
+/*
+---------------------------------------------------------------------- */
+.section-fadestart,
+.section-fadeend {
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $grid-gutter-width * 2;
+        width: 100%;
+
+        theme({
+            background: $theme-fade
+        })
+    }
+}
+
+.section-fadestart {
+    padding-top: ($grid-gutter-width * 2);
+}
+
+.section-fadeend {
+    padding-bottom: ($grid-gutter-width * 2);
+
+    &::before {
+        top: auto;
+        bottom: 0;
+    }
+}
+
+/*
+---------------------------------------------------------------------- */
+.section-gradient {
+    theme({
+        background-color: $theme-dark // fallback for older browsers
+        background-image: $theme-gradient
+    })
+
+    white-text()
+}
+
+/*
+---------------------------------------------------------------------- */
+.section-invert {
+    theme({
+        background: $theme-dark
+    })
+
+    white-text()
+}
+
+/*
+---------------------------------------------------------------------- */
+.section.section-grid { // needs increased specificity, because reasons
+    background-position: 0 0, 0 0;
+    background-size: $grid-size $grid-size, $grid-size $grid-size;
+
+    theme({
+        background-color: $theme-grid-background
+        background-image: $theme-grid
+    })
+}
+
+
+/*
+---------------------------------------------------------------------- */
+
+.section.section-uncommon {
+    background-position: 0 0, 0 0, 0,0;
+    background-size: cover, $grid-size $grid-size, $grid-size $grid-size;
+    background-image: linear-gradient(120deg, transparent 200px, #201e1f 200px, #201e1f 220px, #2e2c2d 220px, #2e2c2d 240px, $default-background 240px), $dark-grid;
+    background-color: $dark-grid-background;
+    color: #fff;
+
+    h2 {
+        color: #fff;
+    }
+}
+
+
+/*
+====================================================================== */
+
+@media $media-query-960-and-up {
+    .section_body {
+        max-width: 960px;
+        padding: $grid-gutter-width-wide;
+    }
+}
+
+@media $media-query-tall {
+    .section_body {
+        padding: ($grid-gutter-width-wide * 2) $grid-gutter-width-wide;
+    }
+}

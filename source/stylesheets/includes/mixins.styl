@@ -1,0 +1,168 @@
+/*
+Nothing in this file should have output without first being called.
+If we compiled this file as mixins.css it should be empty.
+====================================================================== */
+
+
+
+/*
+Remify()
+Convert font-size units to rems if the unit is in pixels.
+Declare your size in pixels and this function automatically adds the
+equivalent size in rems while leaving the px declaration as the fallback
+for old browsers.
+Based on Aral Balkan's Responsive Pixels - https://github.com/aral/responsive-pixels
+====================================================================== */
+remify(value) {
+    u = unit(value);
+
+    if value is 'inherit' or value is 'smaller' or value is null {
+        value
+    } else if u is 'px' {
+        return unit(value/16, 'rem');
+    } else {
+        return unit(value, u);
+    }
+}
+
+set-font-size(value) {
+    font-size: remify(value);
+}
+
+/*
+====================================================================== */
+a11y-hidden() {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    padding: 0;
+    border: 0;
+}
+
+/*
+====================================================================== */
+clearfix() {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/*
+====================================================================== */
+cols-wide($cols) {
+    $width = $cols / $grid-column-total * 100;
+    if($width > 100) {
+        $width = 100;
+    }
+    $width = unit($width, unquote('%'));
+    $width = round($width, 3);
+    return $width;
+}
+
+
+grid-max($gutter-width) {
+    return 120px * $grid-column-total + $gutter-width * ($grid-column-total - 1);
+}
+
+/*
+====================================================================== */
+white-text() {
+    theme({
+        color: #fff
+    })
+
+    h1, h2, h3, h4 {
+        theme({
+            color: #fff
+        })
+    }
+
+    a:not(.button) {
+        text-decoration: underline;
+
+        theme({
+            color: #fff
+        })
+    }
+
+    a:not(.button):hover,
+    a:not(.button):focus,
+    a:not(.button):active {
+        text-decoration: none;
+
+        theme({
+            color: #fff
+        })
+    }
+}
+
+/*
+- takes a "hash" ie {property: var}
+- if the var is the name of a list on the variables page (ie $theme-light)
+  it will resolve the list item and output a colour
+- if the var is a stylus variable that is not a list it will resolve it
+- if the var is a colour it will output it unaltered
+- iterates over themes and makes the var into a theme colour
+Example usage:
+    .section {
+        theme({
+            background-color: $theme-light
+            border-color: $theme-secondary
+            color: #fff
+        })
+    }
+Example output:
+    .section {
+        background-color: #72C0B0;
+        border-color: #cfcfcf;
+        color: #fff
+    }
+    .seattle .section {
+        background-color: #72C0B0;
+        border-color: #63C8CF;
+        color: #fff
+    }
+    .berlin .section {
+        background-color: #F05556;
+        border-color: #F79B72;
+        color: #fff
+    }
+====================================================================== */
+theme(hash) {
+    // loop through all themes
+    for $theme_name, $theme_class in $themes {
+        // if this is the default theme we don't need a new selector
+        if($theme_class == '') {
+            for $property, $value in hash {
+                {$property}: theme-color($theme_name, $value);
+            }
+        } else {
+            // not default, nest our work under the theme's selector
+            {$theme_class} & {
+                for $property, $value in hash {
+                    {$property}: theme-color($theme_name, $value);
+                }
+            }
+        }
+    }
+}
+
+// them names are listed in $themes.
+// value may be the name of a theme color list
+theme-color($theme_name, $value){
+    // see if $value is a theme colour list
+    if($value[$theme_name]) {
+        // if there is a corresponding value, use it
+        return $value[$theme_name];
+    } else {
+        // if it's not in the list, return the value for use
+        // could be annother styuls variable
+        // could be a straight up colour name
+        return $value
+    }
+}

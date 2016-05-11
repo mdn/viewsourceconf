@@ -1,0 +1,185 @@
+@require 'mixins';
+
+/*
+colors
+====================================================================== */
+$default-border = #d2d3d5;
+
+/* seattle needs to be before default because default relies on it */
+$seattle-text = #4D4E54;
+$seattle-background = #FFFFFF;
+$seattle-light = #72C0B0;
+$seattle-dark = #106671;
+$seattle-secondary = #63C8CF;
+$seattle-headings = $seattle-dark;
+
+$default-text = #FFFFFF;
+$default-background = #313131;
+$default-light = saturation($seattle-light, 0%);
+$default-dark = #272526;
+$default-secondary = saturation($seattle-secondary, 0%);
+$default-headings = $default-text;
+
+$berlin-text = #4D4E54;
+$berlin-background = #FFFFFF;
+$berlin-light = #F05556;
+$berlin-dark = #B93C5A;
+$berlin-secondary = #F79B72;
+$berlin-headings = $berlin-dark;
+
+$default-gradient = linear-gradient(26deg, $default-light, $default-dark 50%);
+$seattle-gradient = linear-gradient(26deg, $seattle-light, $seattle-dark 50%);
+$berlin-gradient = linear-gradient(26deg, $berlin-light, $berlin-dark 50%);
+
+$grid-size = 30px; // can't combine grid and grid background because stylus treats the background shorthand declaration as math
+
+$light-grid-background = #f2f2f5;
+$light-grid-thick = blend(rgba(255, 255, 255, 0.7), $light-grid-background);
+$light-grid-thin = blend(rgba(255, 255, 255, 0.3), $light-grid-background);
+$light-grid = linear-gradient($light-grid-thick, $light-grid-thick 1px, transparent 1px, transparent 10px, $light-grid-thin 10px, $light-grid-thin 11px, transparent 11px, transparent 20px, $light-grid-thin 20px, $light-grid-thin 21px, transparent 21px), linear-gradient(90deg, $light-grid-thick, $light-grid-thick 1px, transparent 1px, transparent 10px, $light-grid-thin 10px, $light-grid-thin 11px, transparent 11px, transparent 20px, $light-grid-thin 20px, $light-grid-thin 21px, transparent 21px);
+
+$dark-grid-background = #000000;
+$dark-grid-thick = blend(rgba(255, 255, 255, 0.15), $dark-grid-background);
+$dark-grid-thin = blend(rgba(255, 255, 255, 0.1), $dark-grid-background);
+$dark-grid = linear-gradient($dark-grid-thick, $dark-grid-thick 1px, transparent 1px, transparent 10px, $dark-grid-thin 10px, $dark-grid-thin 11px, transparent 11px, transparent 20px, $dark-grid-thin 20px, $dark-grid-thin 21px, transparent 21px), linear-gradient(90deg, $dark-grid-thick, $dark-grid-thick 1px, transparent 1px, transparent 10px, $dark-grid-thin 10px, $dark-grid-thin 11px, transparent 11px, transparent 20px, $dark-grid-thin 20px, $dark-grid-thin 21px, transparent 21px);
+
+$light-fade = linear-gradient(rgba(255, 255, 255, 0.2) $grid-gutter-width, rgba(255, 255, 255, 0.5) $grid-gutter-width )
+$dark-fade = linear-gradient(#201e1f $grid-gutter-width, #2e2c2d $grid-gutter-width )
+
+// list of theme prefixes
+$themes = {
+    'default': '',
+    'seattle': '.seattle',
+    'berlin': '.berlin'
+};
+
+/* colour lists
+---------------------------------------------------------------------- */
+$theme-text = {
+    'default': $default-text,
+    'seattle': $seattle-text,
+    'berlin': $berlin-text
+};
+
+$theme-links = {
+    'default': $seattle-secondary,
+    'seattle': $seattle-secondary,
+    'berlin': $berlin-secondary
+};
+
+$theme-buttons = {
+    'default': $seattle-secondary,
+    'seattle': $seattle-secondary,
+    'berlin': $berlin-secondary
+};
+
+$theme-background = {
+    'default': $default-background,
+    'seattle': $seattle-background,
+    'berlin': $berlin-background
+};
+
+$theme-light = {
+    'default': $default-light,
+    'seattle': $seattle-light,
+    'berlin': $berlin-light
+};
+
+$theme-dark = {
+    'default': $default-dark,
+    'seattle': $seattle-dark,
+    'berlin': $berlin-dark
+};
+
+$theme-secondary = {
+    'default': $default-secondary,
+    'seattle': $seattle-secondary,
+    'berlin': $berlin-secondary
+};
+
+$theme-headings = {
+    'default': $default-headings,
+    'seattle': $seattle-headings,
+    'berlin': $berlin-headings
+};
+
+$theme-gradient = {
+    'default': $default-gradient,
+    'seattle': $seattle-gradient,
+    'berlin': $berlin-gradient
+};
+
+$theme-grid = {
+    'default': $dark-grid,
+    'seattle': $light-grid,
+    'berlin': $light-grid
+};
+
+$theme-grid-background = {
+    'default': $dark-grid-background,
+    'seattle': $light-grid-background,
+    'berlin': $light-grid-background
+};
+
+$theme-fade = {
+    'default': $dark-fade,
+    'seattle': $light-fade,
+    'berlin': $light-fade
+};
+
+/*
+typography
+====================================================================== */
+$heading-font-family = 'Moon Light', sans-serif;
+$body-font-family = 'Montserrat Light', sans-serif;
+
+/*
+breakpoints & media queries
+====================================================================== */
+$320  = unit(320 / 16, 'em')
+$480 = unit(480 / 16, 'em')
+$680  = unit(680 / 16, 'em')
+$960  = unit(960 / 16, 'em')
+$1200  = unit(1200 / 16, 'em')
+
+$320-starts = $320;
+$480-starts  = $480;
+$680-starts  = $680;
+$960-starts  = $960;
+$1200-starts  = $1200;
+
+$media-query-320-and-up = 'all and (min-width: $320-starts)';
+$media-query-480-and-up  = 'all and (min-width: $480-starts)';
+$media-query-680-and-up  = 'all and (min-width: $680-starts)';
+$media-query-960-and-up  = 'all and (min-width: $960-starts)';
+$media-query-1200-and-up  = 'all and (min-width: $1200-starts)';
+
+$media-query-tall = 'all and (min-width: $960-starts) and (min-height: $960-starts)'
+
+$media-query-append-retina-dpr = '(-webkit-min-device-pixel-ratio: 1.3)';
+$media-query-append-retina-resolution = '(min-resolution: 124.8dpi)';
+
+/*
+grid units
+====================================================================== */
+$grid-gutter-width = 20px;
+$grid-gutter-width-wide = 60px;
+$grid-column-total = 6;
+
+/*
+animation
+====================================================================== */
+$transition-duration = 0.3s;
+$transition-timing = ease-in;
+
+/*
+selectors
+====================================================================== */
+$selector-icon = 'i[class^="icon-"]';
+
+
+/*
+paths
+====================================================================== */
+$path-to-assets = '/assets/';
+$path-to-fonts = '/assets/fonts/';

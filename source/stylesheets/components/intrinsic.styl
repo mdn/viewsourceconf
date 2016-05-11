@@ -1,0 +1,24 @@
+@require 'includes/variables'
+/*
+Creates container that preserves aspect ratio, and fills container with iframe
+http://alistapart.com/article/creating-intrinsic-ratios-for-video
+https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+====================================================================== */
+
+.intrinsic {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: $grid-gutter-width;
+
+    /* 16x9 Aspect Ratio */
+    padding-bottom: 56.25%;
+
+    iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

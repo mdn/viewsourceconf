@@ -1,0 +1,85 @@
+@require 'includes/variables'
+/*
+session
+====================================================================== */
+
+.session_head {
+    padding: 0 ($grid-gutter-width / 2);
+}
+
+.session {
+    padding: $grid-gutter-width;
+    margin-bottom: $grid-gutter-width / 2;
+    clearfix()
+
+    theme({
+        background-color: $theme-background
+    })
+}
+
+.session_summary {
+    display: none;
+}
+
+.session:target .session_summary {
+    display: block;
+}
+
+.session_speakers a {
+    display: block;
+}
+
+.session_pic {
+    display: flex;
+    width: 100px;
+    margin-bottom: 10px;
+
+    > a {
+        min-width: 0; /* http://stackoverflow.com/questions/31967019/max-width-doesnt-work-in-flexbox  */
+    }
+}
+
+@media $media-query-320-and-up {
+    .session_pic {
+        float: right;
+        width: 60px;
+        flex-direction: column;
+        margin-top: -2.1em;
+        margin-left: $grid-gutter-width;
+    }
+}
+
+@media $media-query-480-and-up {
+
+    .session_speakers a {
+        display: inline;
+
+        &::before {
+            content: "• ";
+        }
+
+        &:first-child::before {
+            content: "";
+        }
+    }
+
+    .session_pic {
+        width: 100px;
+    }
+}
+
+@media $media-query-680-and-up {
+    .session_pic {
+        float: none;
+        width: auto;
+        flex-direction: row;
+        margin: 0;
+    }
+}
+
+@media $media-query-960-and-up {
+    .session {
+        padding: $grid-gutter-width;
+    }
+}
+

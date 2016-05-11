@@ -1,0 +1,137 @@
+@require '../includes/variables';
+
+/*
+speakers
+====================================================================== */
+
+.speakers {
+    position: relative;
+
+    clearfix()
+
+    theme({
+        background: $theme-dark
+    })
+}
+
+.speakers_list {
+    position: relative;
+    max-width: grid-max($grid-gutter-width);
+    margin: 0 auto;
+    background-color: #fff;
+    list-style-type: none;
+    clearfix();
+
+    &.js-active,
+    &.js-focus,
+    &:hover {
+        img {
+            opacity: 0.2;
+        }
+    }
+}
+
+.speaker {
+    float: left;
+    width: 50%;
+    min-height: 0;
+
+    &:nth-child(2n+1){
+        clear: left;
+    }
+
+    img {
+        display: block;
+        transition: opacity 0.15s ease;
+    }
+
+    &.js-active img,
+    & a:focus img,
+    &:hover img {
+        opacity: 1;
+    }
+}
+
+.speaker_pic {
+    position: relative;
+    background-color: #fff; /* duplication needed to cover speaker_info while expending */
+}
+
+.speaker_info {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.15s, opacity 0.15s ease;
+
+    .speaker.js-active & {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.speaker_name,
+.speaker_title {
+    font-family: $heading-font-family;
+    set-font-size(28px);
+    line-height: 1.2;
+}
+
+.speaker_name {
+    margin-bottom: 0;
+}
+
+.speaker_title {
+    font-weight: normal;
+}
+
+.speaker_close {
+    position: absolute;
+    top: $grid-gutter-width;
+    right: $grid-gutter-width;
+    height: 40px;
+    width: 0px;
+    overflow: hidden;
+    border: 1px solid $seattle-text;
+    border-radius: 100%;
+    padding: 0 0 0 40px;
+    background-color: $seattle-background;
+    color: $seattle-text;
+    opacity: 0.4;
+    transition: opacity 0.15s ease;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+
+    &::after {
+        content: '\D7';
+        position: absolute;
+        top: 1px;
+        left: 5px;
+        font-size: 60px;
+    }
+}
+
+@media $media-query-680-and-up {
+    .speakers_list {
+        max-width: 400px * 4;
+    }
+
+    .speaker {
+        width: 25%;
+
+        &:nth-child(2n+1){
+            clear: none;
+        }
+        &:nth-child(4n+1){
+            clear: left;
+        }
+    }
+
+    .speaker_name {
+        text-align: right;
+    }
+}

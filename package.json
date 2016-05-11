@@ -1,13 +1,42 @@
 {
-  "name": "viewsource-build",
-  "version": "1.0.0",
+  "name": "viewsourceconf-build",
+  "version": "2016.0.1",
   "scripts": {
-    "stylus": "./node_modules/.bin/stylus -r static/stylus/base.styl -o static/css/",
-    "eslint": "./node_modules/.bin/eslint static/js/main.js static/js/newsletter_signup.js",
-    "build:all": "npm run stylus && npm run eslint"
+    "build": "node build",
+    "build_dev": "node build dev",
+    "check_links": "./node_modules/.bin/blc http://localhost:8080 --filter-level 3 --exclude /2015 -ro",
+    "validate_json": "for FILE in data/*; do tput setaf 3; echo validating $FILE; tput setaf 1; ./node_modules/.bin/jsonlint -q $FILE; echo; tput sgr0; done",
+    "tests": "npm run check_links && npm run validate_json"
   },
   "devDependencies": {
-    "eslint": "^2.4.0",
-    "stylus": "^0.54.2"
-  }
+    "broken-link-checker": "^0.7.0",
+    "debug": "^2.2.0",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.3.0",
+    "jsonlint": "^1.6.2",
+    "metalsmith": "^2.1.0",
+    "metalsmith-branch": "0.0.4",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-data-markdown": "0.0.3",
+    "metalsmith-debug": "0.0.2",
+    "metalsmith-define": "^2.0.1",
+    "metalsmith-filenames": "^1.0.0",
+    "metalsmith-fingerprint-ignore": "^1.1.2",
+    "metalsmith-html-minifier": "^2.0.0",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-in-place": "^1.4.3",
+    "metalsmith-json-to-files": "^1.0.0",
+    "metalsmith-layouts": "^1.6.4",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-models": "0.0.1",
+    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-serve": "0.0.7",
+    "metalsmith-stylus": "^2.0.0",
+    "metalsmith-uglify": "^1.2.1",
+    "metalsmith-watch": "^1.0.1",
+    "stylus": "^0.54.2",
+    "swig": "^1.4.2"
+  },
+  "private": true
 }

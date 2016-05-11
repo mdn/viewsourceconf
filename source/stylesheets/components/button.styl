@@ -1,0 +1,52 @@
+@require '../includes/variables';
+
+/*
+button
+====================================================================== */
+
+.button {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 200px;
+    border: 3px solid transparent;
+    padding: 3px 15px;
+    background: transparent;
+    font-size: inherit;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none; /* over-ride text shadow in .hero */
+    transition: all $transition-duration $transition-timing;
+
+    theme({
+        border-color: $theme-buttons
+        color: $theme-buttons
+        text-decoration: none
+    })
+
+    &:hover,
+    &:focus,
+    &:active {
+        transform: scale(1.05);
+        theme({
+            background-color: $theme-background
+        })
+    }
+
+    &::after{
+        content: '\A\BB';
+    }
+}
+
+.button-invert {
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        theme({
+            border-color: transparent
+            background-color: $theme-buttons
+            color: #fff
+        })
+    }
+}

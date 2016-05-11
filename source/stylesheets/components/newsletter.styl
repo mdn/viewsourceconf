@@ -1,0 +1,58 @@
+@require '../includes/variables';
+
+/* classes don't match naming schem for other files because
+I didn't want to alter the javascript that relies on them */
+
+.subscribe-form {
+    label {
+        display: inline-block;
+        margin-bottom: $grid-gutter-width;
+    }
+
+    input[type=email] {
+        width: 270px;
+        box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.05);
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        padding: 4px;
+    }
+}
+
+.newsletter_radio label {
+    padding-left: $grid-gutter-width;
+}
+
+.invalid {
+    margin: auto ($grid-gutter-width * -1) $grid-gutter-width;
+    padding: $grid-gutter-width;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.thanks {
+    display: none;
+}
+
+.error {
+    margin-bottom: $grid-gutter-width;
+    padding: $grid-gutter-width;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.error:empty {
+    display: none;
+}
+
+
+@media $media-query-680-and-up {
+    .form-fine-print em {
+        display: block;
+    }
+}

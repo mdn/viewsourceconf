@@ -1,0 +1,46 @@
+{% extends "common.html" %}
+{% block title %}{% parent %}{{ data.first }} {{ data.last }}{% endblock %}
+{% block body %}
+
+    <section class="section">
+        <div class="section_body">
+            <div class="cols">
+                <div class="col col-2"><img src="/assets/images/{{ data.pic }}"></div>
+                <div class="col col-4">
+                    <h1>{{ data.first }} {{ data.last }}</h1>
+                    {% if data.bio.indexOf('<p>') === 0 %}
+                        {{ data.bio }}
+                    {% else %}
+                        <p>{{ data.bio }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-grid">
+        <div class="section_body">
+            {% if data.sessions.length > 0 %}
+                {% for session in model.sessions %}
+                    {% for session_speaker in session.speakers %}
+                        {% if session_speaker == data.slug %}
+                            <h2>{{ session.title }}</h2>
+                            <p><strong>
+                                {{ session.date|date(date_format) }}<br>
+                                {% if session.place || session.time %}
+                                    @ {{ session.place }}{% if session.place && session.time %},{% endif %} {{session.time}}
+                                {% endif %}
+                                </strong>
+                            </p>
+                            <p>
+                                {{ session.summary }}
+                            </p>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% else %}
+                <p>This speaker has not announced their sessions yet.</p>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}
