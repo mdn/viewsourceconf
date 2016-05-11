@@ -9,7 +9,7 @@
             {% for day in conference_data.days %}
 
                 <section id="{{day}}">
-                    <h3>{{ day|date(date_format) }} • Day {{loop.index}}</h3>
+                    <h3 class="section-invert session_head">{{ day|date(date_format) }} • Day {{loop.index}}</h3>
                     <div>
                     {% if data.sessions.length > 0 %}
                         {% for session in model.sessions %}

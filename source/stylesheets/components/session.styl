@@ -1,16 +1,20 @@
+@require 'includes/variables'
 /*
 session
 ====================================================================== */
 
+.session_head {
+    padding: 0 ($grid-gutter-width / 2);
+}
+
 .session {
     padding: $grid-gutter-width;
-    margin-bottom: 5px;
+    margin-bottom: $grid-gutter-width / 2;
     clearfix()
 
     theme({
         background-color: $theme-background
     })
-
 }
 
 .session_summary {
