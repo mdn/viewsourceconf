@@ -1,0 +1,30 @@
+@require 'includes/variables'
+
+/*
+strip
+====================================================================== */
+
+.strip {
+    height: 190px;
+    background-image: url('/assets/images/strip_480x190.jpg');
+    background-position: 50% 0;
+}
+
+
+@media $media-query-480-and-up {
+    .strip {
+        background-image: url('/assets/images/strip_680x190.jpg');
+    }
+}
+
+@media $media-query-680-and-up {
+    .strip {
+        background-image: url('/assets/images/strip_960x190.jpg');
+    }
+}
+
+@media $media-query-960-and-up {
+    .strip {
+        background-image: url('/assets/images/strip_1200x190.jpg');
+    }
+}

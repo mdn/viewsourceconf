@@ -22,28 +22,19 @@
                             <input type="email" id="newsletter-email" name="email" required placeholder="you@example.com">
                         </label>
                     </li>
-                    {% if conference_data %}
-                        {% if conference_data.slug == 'berlin' %}
-                            {% set newsletter = 'view-source-conference-global' %}
-                        {% elseif conference_data.slug == 'seattle' %}
-                            {% set newsletter = 'view-source-conference-north-america' %}
-                        {% endif %}
-                        <input type="hidden" name="newsletters" value="{{ newsletter }}" id="{{ newsletter }}" />
-                    {% else %}
-                        <li id="li_newsletters" class="radio">
-                            <fieldset>
-                                <legend>I want to hear about...</legend>
-                                <label for="view-source-conference-global">
-                                    <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required />
-                                    Berlin
-                                </label>
-                                <label for="view-source-conference-north-america">
-                                    <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required />
-                                    Seattle
-                                </label>
-                            </fieldset>
-                        </li>
-                    {% endif %}
+                    <li id="li_newsletters" class="radio">
+                        <fieldset>
+                            <legend>I want to hear about...</legend>
+                            <label for="view-source-conference-global">
+                                <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required {% if conference_data.slug == 'berlin' %}checked{% endif %} />
+                                Berlin
+                            </label>
+                            <label for="view-source-conference-north-america">
+                                <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required {% if conference_data.slug == 'seattle' %}checked{% endif %} />
+                                Seattle
+                            </label>
+                        </fieldset>
+                    </li>
                     <li class="form-fine-print" id="li_agree">
                         <label for="agree">
                             <input type="checkbox" id="agree" name="agree" required>

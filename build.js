@@ -9,13 +9,13 @@ const filenames = require('metalsmith-filenames');
 const fingerprint = require('metalsmith-fingerprint-ignore');
 const ignore = require('metalsmith-ignore');
 const inplace = require('metalsmith-in-place');
-const html_minifier = require('metalsmith-html-minifier');
 const json_to_files = require('metalsmith-json-to-files');
 const layouts = require('metalsmith-layouts');
 const models = require('metalsmith-models');
 const permalinks = require('metalsmith-permalinks');
 const serve = require('metalsmith-serve');
 const stylus = require('metalsmith-stylus');
+const tidy = require('metalsmith-html-tidy');
 const uglify = require('metalsmith-uglify');
 const watch = require('metalsmith-watch');
 
@@ -120,7 +120,10 @@ metalsmith(__dirname)
             },
             removeAttributeAfterwards: true,
         }))
-        .use(html_minifier())
+        // Tidy HTML
+        .use(tidy({
+            'indent-spaces': 4,
+        }))
         // Log global metadata, etc., to terminal.
         .use(devonly(dump))
     ))
