@@ -11,11 +11,15 @@
                 <section id="{{day}}">
                     <h3>{{ day|date(date_format) }} • Day {{loop.index}}</h3>
                     <div>
-                    {% for session in model.sessions %}
-                        {% if session.date == day %}
-                            {% include "includes/session.html" with session %}
-                        {% endif %}
-                    {% endfor %}
+                    {% if data.sessions.length > 0 %}
+                        {% for session in model.sessions %}
+                            {% if session.date == day %}
+                                {% include "includes/session.html" with session %}
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <p> Sessions have not been scheduled yet.</p>
+                    {% endif %}
                     </div>
                 </section>
             {% endfor %}
