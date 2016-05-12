@@ -10,7 +10,8 @@
     ],
     "folder": "/berlin-2016",
     "sponsor_prospectus": "/assets/viewsource_berlin_sponsorship.pdf",
-    "register_url": "https://ti.to/mdn/view-source-berlin-2016"
+    "register_url": "https://ti.to/mdn/view-source-berlin-2016",
+    "facebook": "https://www.facebook.com/events/1726468307566424/"
   },
   "seattle": {
     "slug": "seattle",
@@ -23,6 +24,7 @@
     ],
     "folder": "/seattle-2016",
     "sponsor_prospectus": "assets/viewsource_seattle_sponsorship.pdf",
-    "register_url": "#TKTKTK"
+    "register_url": "#TKTKTK",
+    "facebook": "https://www.facebook.com/events/1586766601634364/"
   }
 }
