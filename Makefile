@@ -32,17 +32,14 @@ build-build-image:
 build-deploy-image:
 	docker build -t ${IMAGE} .
 
-tag-latest-build-image:
-	docker tag -f ${IMAGE} ${LATEST_BUILD_IMAGE}
-
-tag-latest-deploy-image:
-	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
-
-push-build-image: tag-latest-build-image
+push-build-image: 
 	docker push ${BUILD_IMAGE}
+	docker tag -f ${IMAGE} ${LATEST_BUILD_IMAGE}
+	docker push ${LATEST_BUILD_IMAGE}
 
 push-deploy-image: tag-latest-deploy-image
 	docker push ${IMAGE}
+	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
 	docker push ${LATEST_DEPLOY_IMAGE}
 
 serve:
