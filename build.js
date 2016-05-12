@@ -122,7 +122,10 @@ metalsmith(__dirname)
         }))
         // Tidy HTML
         .use(tidy({
-            'indent-spaces': 4,
+            tidyOptions: {
+                'indent-spaces': 4,
+                'quote-ampersand': false,
+            },
         }))
         // Log global metadata, etc., to terminal.
         .use(devonly(dump))
