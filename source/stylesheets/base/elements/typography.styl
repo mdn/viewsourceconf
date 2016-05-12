@@ -1,9 +1,10 @@
+@require '../../includes/variables';
 /*
 Headings
 ====================================================================== */
 
 h1, h2 {
-    margin: 0 0 .5em;
+    margin: 0 0 $grid-gutter-width 0;
     font-family: $heading-font-family;
     font-weight: normal;
     line-height: 1.2;
@@ -14,9 +15,10 @@ h1, h2 {
 }
 
 h3, h4, h5, h6 {
-    margin: 0 0 .5em;
+    margin: 0 0 $grid-gutter-width;
+    padding: 0.2em 0; // padding tries to mimic line height on regular text
     font-weight: bold;
-    line-height: 2.1;
+    line-height: 1.5;
 }
 
 h1 {
