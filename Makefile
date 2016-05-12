@@ -53,6 +53,7 @@ build-deploy-image:
 	docker build -t ${IMAGE} .
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 push-build-image: 
 	docker push ${BUILD_IMAGE}
 
@@ -65,11 +66,17 @@ tag-latest-deploy-image:
 	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
 
 push-build-image: tag-latest-build-image
+=======
+push-build-image: 
+>>>>>>> Refactor image push and push latest build image
 	docker push ${BUILD_IMAGE}
+	docker tag -f ${IMAGE} ${LATEST_BUILD_IMAGE}
+	docker push ${LATEST_BUILD_IMAGE}
 
 push-deploy-image: tag-latest-deploy-image
 >>>>>>> Tag and push latest images
 	docker push ${IMAGE}
+	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
 	docker push ${LATEST_DEPLOY_IMAGE}
 
 push-latest-build-image: push-build-image
