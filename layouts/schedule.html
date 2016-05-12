@@ -11,7 +11,7 @@
                 <section id="{{day}}">
                     <h3 class="section-invert session_head">{{ day|date(date_format) }} • Day {{loop.index}}</h3>
                     <div>
-                    {% if data.sessions.length > 0 %}
+                    {% if model.sessions.length > 0 %}
                         {% for session in model.sessions %}
                             {% if session.date == day %}
                                 {% include "includes/session.html" with session %}
