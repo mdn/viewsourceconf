@@ -34,13 +34,19 @@ build-deploy-image:
 
 push-build-image: 
 	docker push ${BUILD_IMAGE}
-	docker tag -f ${IMAGE} ${LATEST_BUILD_IMAGE}
+
+push-deploy-image: 
+	docker push ${IMAGE}
+
+push-latest-build-image: push-build-image
+	docker tag -f ${BUILD_IMAGE} ${LATEST_BUILD_IMAGE}
 	docker push ${LATEST_BUILD_IMAGE}
 
-push-deploy-image: tag-latest-deploy-image
-	docker push ${IMAGE}
+push-latest-deploy-image: push-deploy-image
 	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
 	docker push ${LATEST_DEPLOY_IMAGE}
+
+push-latest: push-build-image push-deploy-image
 
 serve:
 	docker run -p "${SERVE_PORT}:80" ${IMAGE}
