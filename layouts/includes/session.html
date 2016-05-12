@@ -25,7 +25,7 @@
                 <div class="session_details">
                         <h4 class="session_head">
                             {% if session.speakers %}
-                                <div class="session_speakers">
+                                <span class="session_speakers">
                                     {% for session_speaker in session.speakers %}
                                         {% for speaker in model.speakers %}
                                             {% if session_speaker == speaker.slug %}
@@ -33,7 +33,7 @@
                                             {% endif %}
                                         {% endfor %}
                                     {% endfor %}
-                                </div>
+                                </span>
                             {% endif %}
                             {{ session.title }} • <a href="#{{ session.slug }}">More&nbsp;&hellip;</a>
                         </h4>

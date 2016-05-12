@@ -3,13 +3,18 @@
 session
 ====================================================================== */
 
-.session_head {
-    padding: 0 ($grid-gutter-width / 2);
+.session_day {
+    padding-right: ($grid-gutter-width / 2);
+    padding-left: ($grid-gutter-width / 2);
+}
+
+.session_day_day {
+    display: block;
 }
 
 .session {
     padding: $grid-gutter-width;
-    margin-bottom: $grid-gutter-width / 2;
+    margin-bottom: ($grid-gutter-width / 2);
     clearfix()
 
     theme({
@@ -25,7 +30,11 @@ session
     display: block;
 }
 
-.session_speakers a {
+.session_speakers {
+    display: block;
+}
+
+.session_speaker {
     display: block;
 }
 
@@ -50,12 +59,29 @@ session
 }
 
 @media $media-query-480-and-up {
+    .session_pic {
+        width: 100px;
+    }
+}
 
-    .session_speakers a {
+@media $media-query-680-and-up {
+
+    .session_day_day {
         display: inline;
 
         &::before {
             content: "• ";
+        }
+    }
+
+    .session_speaker {
+        display: inline;
+
+        &::before {
+            content: "• ";
+            theme({
+                color: $theme-text
+            })
         }
 
         &:first-child::before {
@@ -63,12 +89,6 @@ session
         }
     }
 
-    .session_pic {
-        width: 100px;
-    }
-}
-
-@media $media-query-680-and-up {
     .session_pic {
         float: none;
         width: auto;
