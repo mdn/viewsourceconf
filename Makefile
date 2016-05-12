@@ -4,12 +4,21 @@ REGISTRY ?= quay.io/
 IMAGE_PREFIX ?= mozmar
 IMAGE_NAME ?= viewsourceconf
 IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${IMAGE_NAME}\:${VERSION}
+<<<<<<< HEAD
 LATEST_DEPLOY_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${IMAGE_NAME}\:latest
 BUILD_IMAGE_NAME ?= ${IMAGE_NAME}_build
 BUILD_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${BUILD_IMAGE_NAME}\:${VERSION}
 LATEST_BUILD_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${BUILD_IMAGE_NAME}\:latest
 SERVE_PORT ?= 8080
 LIVE_RELOAD_PORT ?= 35729
+=======
+LATEST_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${IMAGE_NAME}\:latest
+BUILD_IMAGE_NAME ?= ${IMAGE_NAME}_build
+BUILD_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${BUILD_IMAGE_NAME}\:${VERSION}
+LATEST_BUILD_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${BUILD_IMAGE_NAME}\:latest
+WATCH_PORT ?= 8080
+SERVE_PORT ?= 8000
+>>>>>>> Tag and push latest images
 MOUNT_DIR ?= $(shell pwd)
 APP_DIR ?= /app
 DOCKER_RUN_ARGS ?= -v ${MOUNT_DIR}\:${APP_DIR} -w ${APP_DIR}
@@ -43,11 +52,25 @@ build-build-image:
 build-deploy-image:
 	docker build -t ${IMAGE} .
 
+<<<<<<< HEAD
 push-build-image: 
 	docker push ${BUILD_IMAGE}
 
 push-deploy-image: 
+=======
+tag-latest-build-image:
+	docker tag -f ${IMAGE} ${LATEST_BUILD_IMAGE}
+
+tag-latest-deploy-image:
+	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
+
+push-build-image: tag-latest-build-image
+	docker push ${BUILD_IMAGE}
+
+push-deploy-image: tag-latest-deploy-image
+>>>>>>> Tag and push latest images
 	docker push ${IMAGE}
+	docker push ${LATEST_DEPLOY_IMAGE}
 
 push-latest-build-image: push-build-image
 	docker tag -f ${BUILD_IMAGE} ${LATEST_BUILD_IMAGE}
