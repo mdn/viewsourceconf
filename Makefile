@@ -52,4 +52,4 @@ push-private-registry:
 deis-pull-private: push-private-registry
 	deis pull ${DEIS_APP}:${VERSION} -a ${DEIS_APP}
 
-build-deploy: build-build-image build build-deploy-image push-private-registry deis-pull-private
+build-deploy: build-build-image build build-deploy-image deis-pull-private
