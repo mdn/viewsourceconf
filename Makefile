@@ -46,7 +46,7 @@ deis-pull:
 	deis pull ${IMAGE} -a ${DEIS_APP}
 
 push-private-registry:
-	docker tag ${IMAGE} ${PRIVATE_IMAGE}
+	docker tag -f ${IMAGE} ${PRIVATE_IMAGE}
 	docker push ${PRIVATE_IMAGE}
 
 deis-pull-private: push-private-registry
