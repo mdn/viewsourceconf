@@ -1,4 +1,5 @@
-VERSION ?= $(shell git describe --tags --exact-match 2>/dev/null || git rev-parse --short HEAD)
+GIT_COMMIT ?= HEAD
+VERSION ?= $(shell git rev-parse --short ${GIT_COMMIT})
 REGISTRY ?= quay.io/
 IMAGE_PREFIX ?= mozmar
 IMAGE_NAME ?= viewsourceconf
@@ -48,7 +49,7 @@ push-private-registry:
 	docker tag ${IMAGE} ${PRIVATE_IMAGE}
 	docker push ${PRIVATE_IMAGE}
 
-deis-pull-private:
+deis-pull-private: push-private-registry
 	deis pull ${DEIS_APP}:${VERSION} -a ${DEIS_APP}
 
 build-deploy: build-build-image build build-deploy-image push-private-registry deis-pull-private
