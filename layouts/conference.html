@@ -99,7 +99,7 @@
 
     <section class="section" id="venue">
         <div class="section_body">
-            <h2>Venue</h2>
+            <h2 class="solo">Venue</h2>
             <p><strong>{{ model.venue.meta.name }}<br>
             {{ model.venue.meta.address }}</strong>
             </p>
@@ -114,7 +114,7 @@
 
     <section class="section section-grid" id="travel">
         <div class="section_body">
-            <h2>Travel and Accommodation</h2>
+            <h2 class="solo">Travel and Accommodation</h2>
 
             {% if model.venue.travel.blurb %}<p>{{ model.venue.travel.blurb }}</p>{% endif %}
 
