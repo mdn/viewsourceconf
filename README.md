@@ -24,7 +24,11 @@ In 2016 we're using a static site generator, [metalsmith](http://metalsmith.io),
 
 ### How to build the site
 
-`node build` will build the site, start a web server at http://localhost:8080 (using [metalsmith-serve](https://github.com/mayo/metalsmith-serve)), and "watch" the source directory for changes (using [metalsmith-watch](https://github.com/FWeinb/metalsmith-watch)). The latter two operations can be commented out in build.js if they are in the way.
+#### Local npm install
+`node build` will build the site and then exit. `node build dev` will build the site, start a web server at http://localhost:8080 using [metalsmith-serve](https://github.com/mayo/metalsmith-serve), and watch the source directory for changes using [metalsmith-watch](https://github.com/FWeinb/metalsmith-watch). 
+
+#### Docker 
+`make build` will build the site by running `node build` in a Docker container, eliminating the need to install node or the npm dependencies on the host machine. Similarly `make dev` will run the `node build dev` command described above in a docker container. If you add a new dependency to package.json and/or Dockerfile-build, you can rebuild the "build image" with `make build-build-image`. If you want to test nginx.conf changes locally you can build the "deploy image" with `make build-deploy-image`, and run it with `make serve`. The current nginx.conf redirects http to https unless the "X-Forwarded-Proto: https" header is set. The `make curl` command (which will accept a path argument) sets this header for local testing purposes. Most of the commands will try to use an image based on the local git sha first and then fall back to the 'latest' image when appropriate, which allows you to build and test docker images with local commits when desired, or automatically use the images built by CI in the common case. All of the `make` commands make use of environment variables with defaults; see the Makefile for more details.
 
 ## 2015
 
