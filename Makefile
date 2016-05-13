@@ -14,10 +14,10 @@ MOUNT_DIR ?= $(shell pwd)
 APP_DIR ?= /app
 DOCKER_RUN_ARGS ?= -v ${MOUNT_DIR}\:${APP_DIR} -w ${APP_DIR}
 DEV_ARGS ?= ${DOCKER_RUN_ARGS} -p "${SERVE_PORT}:${SERVE_PORT}" \
-															 -p "${LIVE_RELOAD_PORT}:${LIVE_RELOAD_PORT}"
+                               -p "${LIVE_RELOAD_PORT}:${LIVE_RELOAD_PORT}"
 SERVE_ARGS ?= -v ${MOUNT_DIR}/build:/usr/share/nginx/html \
-						  -v ${MOUNT_DIR}/nginx.conf:/etc/nginx/nginx.conf \
-							-p "${SERVE_PORT}:80" 
+              -v ${MOUNT_DIR}/nginx.conf:/etc/nginx/nginx.conf \
+              -p "${SERVE_PORT}:80" 
 HOST_IP ?= $(shell docker-machine ip || echo 127.0.0.1)
 DEIS_PROFILE ?= usw
 DEIS_APP ?= viewsourceconf-stage
