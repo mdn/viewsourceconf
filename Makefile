@@ -37,6 +37,7 @@ PRIVATE_IMAGE ?= ${PRIVATE_REGISTRY}/${DEIS_APP}\:${VERSION}
 build:
 	docker run ${DOCKER_RUN_ARGS} ${BUILD_IMAGE} node build || \
 	docker run ${DOCKER_RUN_ARGS} ${LATEST_BUILD_IMAGE} node build
+<<<<<<< HEAD
 
 dev:
 	docker run ${DEV_ARGS} ${BUILD_IMAGE} node build dev || \
@@ -45,6 +46,12 @@ dev:
 sh:
 	docker run -it ${DOCKER_RUN_ARGS} ${BUILD_IMAGE} sh || \
 	docker run -it ${DOCKER_RUN_ARGS} ${LATEST_BUILD_IMAGE} sh
+=======
+
+watch:
+	docker run ${DOCKER_RUN_ARGS} -p "${WATCH_PORT}:${WATCH_PORT}" ${BUILD_IMAGE} node watch 
+	docker run ${DOCKER_RUN_ARGS} -p "${WATCH_PORT}:${WATCH_PORT}" ${BUILD_IMAGE} node watch 
+>>>>>>> Fix push-latest
 
 build-build-image:
 	docker build -f Dockerfile-build -t ${BUILD_IMAGE} .
