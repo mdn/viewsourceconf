@@ -4,21 +4,26 @@
 
 ;(function() {
     'use strict';
-    var basketUrl = 'https://basket.mozilla.org/news/subscribe/';
 
-    // All errors should go here
+    // handle errors
+    var errorArray = [];
+    var newsletterErrors = document.getElementById('newsletter-errors');
     function err(e) {
-        var msg = 'An unknown error occurred. Please try again later.';
-        if (e.message !== '' && e.message !== undefined) {
-            msg = e.message;
-        }
-        var error = document.querySelector('.subscribe-form .error');
-        error.textContent = msg;
-        error.style.display = 'block';
+        var errorList = document.createElement('ul');
 
-        if (msg === 'Invalid email address') {
-            document.getElementById('newsletter-email').parentNode.parentNode.className += ' invalid';
+        if(errorArray.length) {
+            for (var i = 0; i < errorArray.length; i++) {
+                var item = document.createElement('li');
+                item.appendChild(document.createTextNode(errorArray[i]));
+                errorList.appendChild(item);
+            }
+        } else {
+            var item = document.createElement('li');
+            item.appendChild(document.createTextNode('An error occurred contacting the server. Please try again later.'));
+            errorList.appendChild(item);
         }
+
+        newsletterErrors.appendChild(errorList);
     }
 
     /* HTML5 "required" validation feedback is not cross-browser compatible
@@ -26,6 +31,7 @@
      * Add .invalid class to :invalid elements; remove on submit.
      */
     function validate(form) {
+
         var already_invalid = form.querySelectorAll('.invalid');
         for (var i = 0; i < already_invalid.length; ++i) {
             var element = already_invalid[i];
@@ -47,38 +53,51 @@
         evt.preventDefault();
         evt.stopPropagation();
 
+        // new submission, clear old errors
+        errorArray = [];
+        while (newsletterErrors.firstChild) newsletterErrors.removeChild(newsletterErrors.firstChild);
+
         var form = document.getElementById('newsletter-signup');
         if (!validate(form)) {
             return false;
         }
 
+        var fmt = document.getElementById('fmt').value;
         var email = document.getElementById('newsletter-email').value;
-        var newsletter = document.querySelector('input[name="newsletters"]:checked').value;
+        var newsletter = document.querySelector('input[name="newsletters"]:checked') ? document.querySelector('input[name="newsletters"]:checked').value : '';
+        var privacy = document.querySelector('input[name="privacy"]:checked') ? '&privacy=true' : '';
         var thanks = document.getElementById('newsletter-thanks');
         var params = 'email=' + encodeURIComponent(email) +
-                     '&newsletters=' + newsletter;
+                     '&newsletters=' + newsletter +
+                     privacy +
+                     '&fmt=' + fmt;
 
         var xhr = new XMLHttpRequest();
 
         xhr.onload = function(r) {
             if (r.target.status >= 200 && r.target.status < 300) {
                 var response = r.target.response;
-                if (response.status === 'ok') {
+                if (response.success === true) {
                     form.style.display = 'none';
                     thanks.style.display = 'block';
                     if(window.vs.analytics) {
-                        window.vs.analytics.trackEvent({ category: 'signup', action: newsletter});
+                        window.vs.analytics.trackEvent({ category: 'signup', action: 'newsletter', label: String(newsletter) });
                     }
                 }
                 else {
-                    err(new Error(response.desc));
+                    if(response.errors) {
+                        for (var i = 0; i < response.errors.length; i++) {
+                            errorArray.push(response.errors[i]);
+                        }
+                    }
+                    err(new Error());
                 }
-            }
-            else if (r.target.status !== null) {
-                err(new Error(r.target.response.desc));
             }
             else {
                 err(new Error());
+                if(window.vs.analytics) {
+                    window.vs.analytics.trackEvent({ category: 'Error', action: 'XMLHttpRequest', label: String(r.target.status) });
+                }
             }
         };
 
@@ -86,20 +105,21 @@
             err(e);
         };
 
-        xhr.open('POST', basketUrl, true);
+        var url = form.getAttribute('action');
+
+        xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.setRequestHeader('Connection', 'close');
+        xhr.setRequestHeader('X-Requested-With','XMLHttpRequest');
         xhr.timeout = 5000;
         xhr.ontimeout = err;
         xhr.responseType = 'json';
-        xhr.setRequestHeader('Content-length', params.length);
         xhr.send(params);
 
         return false;
     }
 
-    var button = document.getElementById('newsletter-submit');
-    if(button){
-        button.addEventListener('click', subscribe, false);
+    var newsletterForm = document.getElementById('newsletter-signup');
+    if(newsletterForm){
+        newsletterForm.addEventListener('submit', subscribe, false);
     }
 })();
