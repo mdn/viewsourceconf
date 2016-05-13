@@ -24,6 +24,7 @@
         }
 
         newsletterErrors.appendChild(errorList);
+        newsletterErrors.style.display = 'block';
     }
 
     /* HTML5 "required" validation feedback is not cross-browser compatible
@@ -55,6 +56,7 @@
 
         // new submission, clear old errors
         errorArray = [];
+        newsletterErrors.style.display = 'none';
         while (newsletterErrors.firstChild) newsletterErrors.removeChild(newsletterErrors.firstChild);
 
         var form = document.getElementById('newsletter-signup');
