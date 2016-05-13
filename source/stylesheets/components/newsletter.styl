@@ -37,6 +37,7 @@ I didn't want to alter the javascript that relies on them */
 }
 
 .error {
+    display: none; /* hide by default */
     margin-bottom: $grid-gutter-width;
     padding: $grid-gutter-width;
     background-color: rgba(0, 0, 0, 0.1);
@@ -44,12 +45,15 @@ I didn't want to alter the javascript that relies on them */
     > :last-child {
         margin-bottom: 0;
     }
-}
 
-.error:empty {
-    display: none;
-}
+    .js-site & {
+        display: block; /* show to browsers which will execute js validation */
 
+        &:empty {
+            display: none; /* hide if no errors */
+        }
+    }
+}
 
 @media $media-query-680-and-up {
     .form-fine-print em {
