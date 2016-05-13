@@ -87,6 +87,13 @@ speakers
     font-weight: normal;
 }
 
+.speaker_text {
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
 .speaker_close {
     position: absolute;
     top: $grid-gutter-width;
@@ -110,9 +117,10 @@ speakers
     &::after {
         content: '\D7';
         position: absolute;
-        top: 1px;
-        left: 5px;
-        font-size: 60px;
+        top: 4px;
+        left: 0;
+        font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+        font-size: 69px;
     }
 }
 
@@ -134,5 +142,25 @@ speakers
 
     .speaker_name {
         text-align: right;
+    }
+
+    .speaker_text {
+
+        &::before {
+            content: '';
+            display: block;
+            height: 60px;
+            width: 60px;
+            float: right;
+        }
+    }
+}
+
+@media $media-query-960-and-up {
+    .speaker_text {
+
+        &::before {
+            display: none;
+        }
     }
 }
