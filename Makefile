@@ -4,29 +4,15 @@ REGISTRY ?= quay.io/
 IMAGE_PREFIX ?= mozmar
 IMAGE_NAME ?= viewsourceconf
 IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${IMAGE_NAME}\:${VERSION}
-<<<<<<< HEAD
 LATEST_DEPLOY_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${IMAGE_NAME}\:latest
-BUILD_IMAGE_NAME ?= ${IMAGE_NAME}_build
-BUILD_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${BUILD_IMAGE_NAME}\:${VERSION}
-LATEST_BUILD_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${BUILD_IMAGE_NAME}\:latest
-SERVE_PORT ?= 8080
-LIVE_RELOAD_PORT ?= 35729
-=======
-LATEST_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${IMAGE_NAME}\:latest
 BUILD_IMAGE_NAME ?= ${IMAGE_NAME}_build
 BUILD_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${BUILD_IMAGE_NAME}\:${VERSION}
 LATEST_BUILD_IMAGE ?= ${REGISTRY}${IMAGE_PREFIX}/${BUILD_IMAGE_NAME}\:latest
 WATCH_PORT ?= 8080
 SERVE_PORT ?= 8000
->>>>>>> Tag and push latest images
 MOUNT_DIR ?= $(shell pwd)
 APP_DIR ?= /app
 DOCKER_RUN_ARGS ?= -v ${MOUNT_DIR}\:${APP_DIR} -w ${APP_DIR}
-DEV_ARGS ?= ${DOCKER_RUN_ARGS} -p "${SERVE_PORT}:${SERVE_PORT}" \
-                               -p "${LIVE_RELOAD_PORT}:${LIVE_RELOAD_PORT}"
-SERVE_ARGS ?= -v ${MOUNT_DIR}/build:/usr/share/nginx/html \
-              -v ${MOUNT_DIR}/nginx.conf:/etc/nginx/nginx.conf \
-              -p "${SERVE_PORT}:80" 
 HOST_IP ?= $(shell docker-machine ip || echo 127.0.0.1)
 DEIS_PROFILE ?= usw
 DEIS_APP ?= viewsourceconf-stage
@@ -37,21 +23,10 @@ PRIVATE_IMAGE ?= ${PRIVATE_REGISTRY}/${DEIS_APP}\:${VERSION}
 build:
 	docker run ${DOCKER_RUN_ARGS} ${BUILD_IMAGE} node build || \
 	docker run ${DOCKER_RUN_ARGS} ${LATEST_BUILD_IMAGE} node build
-<<<<<<< HEAD
-
-dev:
-	docker run ${DEV_ARGS} ${BUILD_IMAGE} node build dev || \
-	docker run ${DEV_ARGS} ${LATEST_BUILD_IMAGE} node build dev
-
-sh:
-	docker run -it ${DOCKER_RUN_ARGS} ${BUILD_IMAGE} sh || \
-	docker run -it ${DOCKER_RUN_ARGS} ${LATEST_BUILD_IMAGE} sh
-=======
 
 watch:
 	docker run ${DOCKER_RUN_ARGS} -p "${WATCH_PORT}:${WATCH_PORT}" ${BUILD_IMAGE} node watch 
 	docker run ${DOCKER_RUN_ARGS} -p "${WATCH_PORT}:${WATCH_PORT}" ${BUILD_IMAGE} node watch 
->>>>>>> Fix push-latest
 
 build-build-image:
 	docker build -f Dockerfile-build -t ${BUILD_IMAGE} .
@@ -59,32 +34,11 @@ build-build-image:
 build-deploy-image:
 	docker build -t ${IMAGE} .
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 push-build-image: 
 	docker push ${BUILD_IMAGE}
 
 push-deploy-image: 
-=======
-tag-latest-build-image:
-	docker tag -f ${IMAGE} ${LATEST_BUILD_IMAGE}
-
-tag-latest-deploy-image:
-	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
-
-push-build-image: tag-latest-build-image
-=======
-push-build-image: 
->>>>>>> Refactor image push and push latest build image
-	docker push ${BUILD_IMAGE}
-	docker tag -f ${IMAGE} ${LATEST_BUILD_IMAGE}
-	docker push ${LATEST_BUILD_IMAGE}
-
-push-deploy-image: tag-latest-deploy-image
->>>>>>> Tag and push latest images
 	docker push ${IMAGE}
-	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
-	docker push ${LATEST_DEPLOY_IMAGE}
 
 push-latest-build-image: push-build-image
 	docker tag -f ${BUILD_IMAGE} ${LATEST_BUILD_IMAGE}
@@ -97,11 +51,10 @@ push-latest-deploy-image: push-deploy-image
 push-latest: push-latest-build-image push-latest-deploy-image
 
 serve:
-	docker run ${SERVE_ARGS} ${IMAGE} || \
-	docker run ${SERVE_ARGS} ${LATEST_DEPLOY_IMAGE}
+	docker run -p "${SERVE_PORT}:80" ${IMAGE}
 
 curl:
-	curl -H "X-Forwarded-Proto: https" ${HOST_IP}:${SERVE_PORT}${path}
+	curl -H "X-Forwarded-Proto: https" ${HOST_IP}:${SERVE_PORT}
 
 deis-pull:
 	deis pull ${IMAGE} -a ${DEIS_APP}
