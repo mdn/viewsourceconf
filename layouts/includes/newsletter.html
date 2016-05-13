@@ -1,13 +1,8 @@
 <div class="subscribe-form">
-    <form id="newsletter-signup" name="newsletter-signup" action="https://basket.mozilla.org/news/subscribe/" method="post">
-        <noscript>
-            <div class="error">
-                <p>Heya, it looks like you have JavaScript disabled. No problem, you can still subscribe. The next page is going to look a little funny though. If it says there's an error use you back button to come back here and fix it.</p>
-                <p>You'll receive an email from mozilla@e.mozilla.org to confirm your subscription.</p>
-            </div>
-        </noscript>
+    <form id="newsletter-signup" name="newsletter-signup" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <input type="hidden" id="fmt" name="fmt" value="H">
         <ol>
-            <li class="error"></li>
+            <li id="newsletter-errors" class="error"></li>
             <li id="li_email">
                 <label for="id_email">E-mail<br>
                     <input type="email" id="newsletter-email" name="email" required placeholder="you@example.com">
@@ -27,8 +22,8 @@
                 </fieldset>
             </li>
             <li class="form-fine-print" id="li_agree">
-                <label for="agree">
-                    <input type="checkbox" id="agree" name="agree" required>
+                <label for="privacy">
+                    <input type="checkbox" id="privacy" name="privacy" required>
                     I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
                     <em>We will only send you information about View Source.</em>
                 </label>
