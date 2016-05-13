@@ -21,9 +21,11 @@ PRIVATE_IMAGE ?= ${PRIVATE_REGISTRY}/${DEIS_APP}\:${VERSION}
 .PHONY: build
 
 build:
-	docker run ${DOCKER_RUN_ARGS} ${BUILD_IMAGE} node build
+	docker run ${DOCKER_RUN_ARGS} ${BUILD_IMAGE} node build || \
+	docker run ${DOCKER_RUN_ARGS} ${LATEST_BUILD_IMAGE} node build
 
 watch:
+	docker run ${DOCKER_RUN_ARGS} -p "${WATCH_PORT}:${WATCH_PORT}" ${BUILD_IMAGE} node watch 
 	docker run ${DOCKER_RUN_ARGS} -p "${WATCH_PORT}:${WATCH_PORT}" ${BUILD_IMAGE} node watch 
 
 build-build-image:
@@ -46,7 +48,7 @@ push-latest-deploy-image: push-deploy-image
 	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
 	docker push ${LATEST_DEPLOY_IMAGE}
 
-push-latest: push-build-image push-deploy-image
+push-latest: push-latest-build-image push-latest-deploy-image
 
 serve:
 	docker run -p "${SERVE_PORT}:80" ${IMAGE}
