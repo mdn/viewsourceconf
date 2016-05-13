@@ -45,14 +45,6 @@ I didn't want to alter the javascript that relies on them */
     > :last-child {
         margin-bottom: 0;
     }
-
-    .js-site & {
-        display: block; /* show to browsers which will execute js validation */
-
-        &:empty {
-            display: none; /* hide if no errors */
-        }
-    }
 }
 
 @media $media-query-680-and-up {
