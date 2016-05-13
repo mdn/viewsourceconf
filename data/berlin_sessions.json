@@ -1,2 +1,56 @@
 [
+  {
+    "slug": "ignite-talks",
+    "title": "Ignite Talks",
+    "time": "",
+    "date": "2016-09-12",
+    "place": "",
+    "summary": "",
+    "feature": true
+  },
+  {
+    "slug": "welcome-reception",
+    "title": "Welcome Reception",
+    "time": "",
+    "date": "2016-09-12",
+    "place": "",
+    "summary": "",
+    "feature": true
+  },
+  {
+    "slug": "day-1-conference-sessions",
+    "title": "Day 1 Conference Sessions",
+    "time": "",
+    "date": "2016-09-13",
+    "place": "",
+    "summary": "",
+    "feature": true
+  },
+  {
+    "slug": "conference-social-event",
+    "title": "Conference Social Event",
+    "time": "",
+    "date": "2016-09-13",
+    "place": "",
+    "summary": "",
+    "feature": true
+  },
+  {
+    "slug": "day-2-conference-sessions",
+    "title": "Day 2 Conference Sessions",
+    "time": "",
+    "date": "2016-09-14",
+    "place": "",
+    "summary": "",
+    "feature": true
+  },
+  {
+    "slug": "conference-after-party",
+    "title": "Conference After Party",
+    "time": "",
+    "date": "2016-09-14",
+    "place": "",
+    "summary": "",
+    "feature": true
+  }
 ]
