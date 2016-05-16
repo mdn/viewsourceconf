@@ -18,7 +18,9 @@
                 errorList.appendChild(item);
             }
         } else {
-            subscribe(false, true);
+            var item = document.createElement('li');
+            item.appendChild(document.createTextNode('An error occurred contacting the server. Please try again later.'));
+            errorList.appendChild(item);
         }
 
         newsletterErrors.appendChild(errorList);
@@ -48,10 +50,7 @@
     }
 
     // XHR subscribe; handle errors; display thanks message on success.
-    function subscribe(evt, skipXHR) {
-        if(skipXHR) {
-            return true;
-        }
+    function subscribe(evt) {
         evt.preventDefault();
         evt.stopPropagation();
 
