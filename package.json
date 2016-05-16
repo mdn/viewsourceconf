@@ -6,7 +6,8 @@
     "build_dev": "node build dev",
     "check_links": "./node_modules/.bin/blc http://localhost:8080 --filter-level 3 --exclude /2015 -ro",
     "validate_json": "for FILE in data/*; do tput setaf 3; echo validating $FILE; tput setaf 1; ./node_modules/.bin/jsonlint -q $FILE; echo; tput sgr0; done",
-    "tests": "npm run check_links && npm run validate_json"
+    "tests": "npm run check_links && npm run validate_json",
+    "test": "node_modules/.bin/mocha test/"
   },
   "devDependencies": {
     "broken-link-checker": "^0.7.0",
@@ -36,6 +37,8 @@
     "metalsmith-stylus": "^2.0.0",
     "metalsmith-uglify": "^1.2.1",
     "metalsmith-watch": "^1.0.1",
+    "mocha": "^2.4.5",
+    "selenium-webdriver": "^2.53.2",
     "stylus": "^0.54.2",
     "swig": "^1.4.2"
   },
