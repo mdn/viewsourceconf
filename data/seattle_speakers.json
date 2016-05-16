@@ -28,5 +28,16 @@
         "pic" : "una_kravets.jpg",
         "bio" : "Una Kravets is a UI Engineer on the Creative Engineering team at <a href='http://digitalocean.com'>DigitalOcean</a>. She’s a <a href='http://una.im'>technical writer</a>, having written for various online publications such as A List Apart and Sitepoint. Una also co-hosts the <a href='http://toolsday.io'>Toolsday</a> podcast and started both the DC and Austin Sass Meetups. She's a performance nerd, loves the open source community and listens to way too many audio books.",
         "sessions" : []
+    },
+    {
+        "slug" : "potch",
+        "first" : "Matt",
+        "last" : "Claypotch",
+        "feature": true,
+        "twitter" : "",
+        "pic" : "potch.jpg",
+        "bio" : "Potch is a Web Developer Advocate at Mozilla. He's also the creator of <a href='http://unmaintained.tech/'>unmaintained.tech</a>, which encourages people to open source their software even when they don't have time to support it. When he's not building dashboards or making stickers, he's probably singing karaoke. Or singing in the car. Or shower.",
+        "sessions" : []
     }
+
 ]
