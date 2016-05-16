@@ -18,7 +18,9 @@
                 errorList.appendChild(item);
             }
         } else {
-            subscribe(false, true);
+            var item = document.createElement('li');
+            item.appendChild(document.createTextNode('An error occurred contacting the server. Please try again later.'));
+            errorList.appendChild(item);
         }
 
         newsletterErrors.appendChild(errorList);
@@ -48,8 +50,10 @@
     }
 
     // XHR subscribe; handle errors; display thanks message on success.
-    function subscribe(evt, skipXHR) {
-        if(skipXHR) {
+    function subscribe(evt) {
+        var form = document.getElementById('newsletter-signup');
+        var skipXHR = form.getAttribute('data-skip-xhr');
+        if (skipXHR) {
             return true;
         }
         evt.preventDefault();
@@ -59,8 +63,6 @@
         errorArray = [];
         newsletterErrors.style.display = 'none';
         while (newsletterErrors.firstChild) newsletterErrors.removeChild(newsletterErrors.firstChild);
-
-        var form = document.getElementById('newsletter-signup');
         if (!validate(form)) {
             return false;
         }
@@ -97,10 +99,8 @@
                 }
             }
             else {
-                err(new Error());
-                if(window.vs.analytics) {
-                    window.vs.analytics.trackEvent({ category: 'Error', action: 'XMLHttpRequest', label: String(r.target.status) });
-                }
+                form.setAttribute('data-skip-xhr', true);
+                form.submit();
             }
         };
 
