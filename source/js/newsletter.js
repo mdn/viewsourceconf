@@ -18,9 +18,9 @@
                 errorList.appendChild(item);
             }
         } else {
-            var item = document.createElement('li');
-            item.appendChild(document.createTextNode('An error occurred contacting the server. Please try again later.'));
-            errorList.appendChild(item);
+            // no error messages, forward to server for better troubleshooting
+            form.setAttribute('data-skip-xhr', true);
+            form.submit();
         }
 
         newsletterErrors.appendChild(errorList);
@@ -99,8 +99,7 @@
                 }
             }
             else {
-                form.setAttribute('data-skip-xhr', true);
-                form.submit();
+                err(new Error());
             }
         };
 
