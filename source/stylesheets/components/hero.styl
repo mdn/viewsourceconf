@@ -1,9 +1,13 @@
 .hero {
     position: relative;
+    display: table;
+    box-sizing: border-box;
+    width: 100%;
+    height: 600px; /* functions like min-width because this is a table */
+    padding: $grid-gutter-width;
     background-size: cover;
     background-position: 50% 0;
     background-repeat: no-repeat;
-    text-align: center;
 
     .berlin & {
         background-image: url('/assets/images/berlin_hero_320x600.jpg');
@@ -18,14 +22,10 @@
 .hero_body {
     position: relative;
     z-index: 1;
-    box-sizing: border-box;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    padding: $grid-gutter-width;
+    display: table-cell
+    text-align: center;
     text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    vertical-align: middle;
 }
 
 @media $media-query-320-and-up {
@@ -49,6 +49,7 @@
             }
         }
     }
+
     @media $media-query-append-retina-resolution {
         .hero {
             .berlin & {
@@ -81,6 +82,7 @@
             }
         }
     }
+
     @media $media-query-append-retina-resolution {
         .hero {
             .berlin & {
@@ -93,8 +95,6 @@
     }
 }
 
-
-
 @media $media-query-680-and-up {
     .hero {
         .berlin & {
@@ -106,8 +106,12 @@
     }
 
     .hero_body {
-        width: cols-wide(4);
-        max-width: 640px;
+        > * {
+            width: cols-wide(4);
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
     @media $media-query-append-retina-dpr {
@@ -120,6 +124,7 @@
             }
         }
     }
+
     @media $media-query-append-retina-resolution {
         .hero {
             .berlin & {
@@ -157,6 +162,7 @@
             }
         }
     }
+
     @media $media-query-append-retina-resolution {
         .hero {
             background-size: 1400px 600px;
