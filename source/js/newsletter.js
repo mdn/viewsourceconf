@@ -19,6 +19,7 @@
             }
         } else {
             // no error messages, forward to server for better troubleshooting
+            var form = document.getElementById('newsletter-signup');
             form.setAttribute('data-skip-xhr', true);
             form.submit();
         }
