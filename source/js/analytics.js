@@ -126,10 +126,11 @@
                         // get the class off the object it controls
                         var controlFor = link.getAttribute('aria-controls');
                         var controls = document.getElementById(controlFor);
-                        var controlClasses = controls.classList.value;
+                        var controlClasses = controls.className;
                         // remove common utility class
                         controlClasses = controlClasses.replace('section ','');
                         action = controlClasses;
+
                     }
 
                     // file link
