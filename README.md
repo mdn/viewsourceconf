@@ -22,16 +22,25 @@ In 2016 we're using a static site generator, [metalsmith](http://metalsmith.io),
 
 `build.js`: This is the node script that does the site build -- the metalsmith controller, sort of.
 
+`test`: A growing body of tests we can run to help us be confident about changes.
+
 ### How to build the site
 
 #### Local npm install
-* `node build` will build the site and then exit 
-* `node build dev` will 
+* `node build` will build the site and then exit
+* `node build dev` will
   * build the site
   * start a web server at http://localhost:8080 using [metalsmith-serve](https://github.com/mayo/metalsmith-serve)
   * watch the source directory for changes using [metalsmith-watch](https://github.com/FWeinb/metalsmith-watch)
 
-#### Docker 
+### Testing
+* `npm run tests` will run...
+  * a link checker against http://localhost:8080 (it assumes the dev server is running)
+  * a JSON validator against everything in /data/
+* `npm test` will run tests in /test/
+  * TODO: unify tests, add more of them, integrate with circleCI
+
+### Docker
 
 The site is deployed using Docker and Deis, and you can also use Docker for local development without installing nodejs or npm dependencies. Most of the commands below will try to use an image based on the local git sha first and then fall back to the 'latest' image when appropriate, which allows you to build and test docker images with local commits when desired, or automatically use the images built by CI in the common case. All of the `make` commands make use of environment variables with defaults; see the Makefile for more details.
 
@@ -46,6 +55,10 @@ The site is deployed using Docker and Deis, and you can also use Docker for loca
 * `make curl`: run curl with the "X-Forwarded-Proto: https" header to bypass the http>https redirect
 * `make sh`: run an interactive shell in a "build" container
   * useful for debugging new build dependencies
+
+## LICENSE
+
+This software is licensed under the MPL-2.0. For more information see `LICENSE`.
 
 ## 2015
 
