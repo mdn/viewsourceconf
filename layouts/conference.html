@@ -98,30 +98,30 @@
             <div class="solo">
                 <h2>Sessions</h2>
                 <p>Our speakers are awesome, but there’s more to View Source—it’s equal parts sharing, learning, and meeting new people. Discuss and collaborate in an on-going hacking space, chill in comfy hangout spots, see some great demos, and participate in engaging discussions. Evening activities will provide a fun, friendly space to continue the conversation and start new ones.</p>
-                <div class="cols cols-third">
-                {% for date in model.sessions|groupBy('date') %}
-                    <div class="col">
-                        <p><strong>{{ loop.key|date(date_format) }}</strong><br>
-                        {% for session in date %}
-                            {% if session.feature %}
-                                {{ session.title }}<br>
-                            {% endif %}
-                        {% endfor %}
-                        </p>
-                    </div>
-                {% endfor %}
-                </div>
-                {# TODO when there is more schedule
-                    <p><a href="{{ conference_data.folder }}/schedule" class="button">See full schedule</a></p>
-                #}
             </div>
+            <div class="cols cols-third">
+            {% for date in model.sessions|groupBy('date') %}
+                <div class="col center">
+                    <p><strong>{{ loop.key|date(date_format) }}</strong><br>
+                    {% for session in date %}
+                        {% if session.feature %}
+                            {{ session.title }}<br>
+                        {% endif %}
+                    {% endfor %}
+                    </p>
+                </div>
+            {% endfor %}
+            </div>
+            {# TODO when there is more schedule
+                <p><a href="{{ conference_data.folder }}/schedule" class="button">See full schedule</a></p>
+            #}
         </div>
     </section>
 
 
     <section class="section" id="venue">
         <div class="section_body">
-            <h2 class="solo">Venue</h2>
+            <h2 class="center">Venue</h2>
             <p><strong>{{ model.venue.meta.name }}<br>
             {{ model.venue.meta.address }}</strong>
             </p>
@@ -136,7 +136,7 @@
 
     <section class="section section-grid" id="travel">
         <div class="section_body">
-            <h2 class="solo">Travel and Accommodation</h2>
+            <h2 class="center">Travel and Accommodation</h2>
 
             {% if model.venue.travel.blurb %}<p>{{ model.venue.travel.blurb }}</p>{% endif %}
 
