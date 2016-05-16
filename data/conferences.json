@@ -23,7 +23,7 @@
         "2016-11-03"
     ],
     "folder": "/seattle-2016",
-    "sponsor_prospectus": "assets/viewsource_seattle_sponsorship.pdf",
+    "sponsor_prospectus": "/assets/viewsource_seattle_sponsorship.pdf",
     "register_url": "https://ti.to/mdn/view-source-seattle-2016",
     "facebook": "https://www.facebook.com/events/1586766601634364/"
   }
