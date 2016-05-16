@@ -18,8 +18,8 @@
     "feature": true
   },
   {
-    "slug": "day-1-conference-sessions",
-    "title": "Day 1 Conference Sessions",
+    "slug": "day-1-sessions",
+    "title": "Sessions",
     "time": "",
     "date": "2016-11-02",
     "place": "",
@@ -27,8 +27,8 @@
     "feature": true
   },
   {
-    "slug": "conference-social-event",
-    "title": "Conference Social Event",
+    "slug": "social-event",
+    "title": "Social Event",
     "time": "",
     "date": "2016-11-02",
     "place": "",
@@ -36,8 +36,8 @@
     "feature": true
   },
   {
-    "slug": "day-2-conference-sessions",
-    "title": "Day 2 Conference Sessions",
+    "slug": "day-2-sessions",
+    "title": "Sessions",
     "time": "",
     "date": "2016-11-03",
     "place": "",
@@ -45,8 +45,8 @@
     "feature": true
   },
   {
-    "slug": "conference-after-party",
-    "title": "Conference After Party",
+    "slug": "after-party",
+    "title": "After Party",
     "time": "",
     "date": "2016-11-03",
     "place": "",
