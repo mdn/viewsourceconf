@@ -51,6 +51,11 @@
 
     // XHR subscribe; handle errors; display thanks message on success.
     function subscribe(evt) {
+        var form = document.getElementById('newsletter-signup');
+        var skipXHR = form.getAttribute('data-skip-xhr');
+        if (skipXHR) {
+            return true;
+        }
         evt.preventDefault();
         evt.stopPropagation();
 
@@ -58,8 +63,6 @@
         errorArray = [];
         newsletterErrors.style.display = 'none';
         while (newsletterErrors.firstChild) newsletterErrors.removeChild(newsletterErrors.firstChild);
-
-        var form = document.getElementById('newsletter-signup');
         if (!validate(form)) {
             return false;
         }
@@ -96,10 +99,8 @@
                 }
             }
             else {
-                err(new Error());
-                if(window.vs.analytics) {
-                    window.vs.analytics.trackEvent({ category: 'Error', action: 'XMLHttpRequest', label: String(r.target.status) });
-                }
+                form.setAttribute('data-skip-xhr', true);
+                form.submit();
             }
         };
 
