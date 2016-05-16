@@ -13,38 +13,5 @@
         }
     },
     "hotels": {
-        "Fake Hotel #1": {
-            "url": "http://tktktktktk.com",
-            "stars": [1,1],
-            "rate": "$500",
-            "address": "Address 432 Street",
-            "map_link": "http://tktktktktktktk.com",
-            "how_to_book": "Something here",
-            "email": "tktktk@tktktktk.com",
-            "phone": "89898989898",
-            "reference": "Reference"
-        },
-        "Make-Believe Inn": {
-            "url": "http://tktktktktk.com",
-            "stars": [1,1],
-            "rate": "$500",
-            "address": "Address 432 Street",
-            "map_link": "http://tktktktktktktk.com",
-            "how_to_book": "Something here",
-            "email": "tktktk@tktktktk.com",
-            "phone": "89898989898",
-            "reference": "Reference"
-        },
-        "Nonexistent Suites": {
-            "url": "http://tktktktktk.com",
-            "stars": [1,1],
-            "rate": "$500",
-            "address": "Address 432 Street",
-            "map_link": "http://tktktktktktktk.com",
-            "how_to_book": "Something here",
-            "email": "tktktk@tktktktk.com",
-            "phone": "89898989898",
-            "reference": "Reference"
-        }
     }
 }
