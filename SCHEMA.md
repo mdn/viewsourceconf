@@ -1,6 +1,8 @@
 # JSON data model reference
 
 ## *sponsors.json ##
+
+```
 {
     "premier": {
         "Premium Sponsor 1": {
@@ -29,9 +31,11 @@
         },
     }
 }
-
+```
 
 ## *venue.json ##
+
+```
 {
     "meta": {
         "name": "RADIALSYSTEM V",
@@ -59,10 +63,12 @@
         },
     }
 }
+```
 
 
 ## *sessions.json ##
 
+```
 [
   {
     "slug": "more-to-come",
@@ -79,8 +85,11 @@
   },
   {...}
 ]
+```
 
 ## *speakers.json ##
+
+```
 [
     {
       "slug" : "lena-reinhard",
@@ -94,3 +103,4 @@
     },
     {...}
 ]
+```
