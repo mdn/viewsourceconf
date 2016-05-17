@@ -147,21 +147,25 @@
             {% endfor %}
 
             {% for hotel in model.venue.hotels %}
-                {% if loop.first %}<h3>Suggested Hotels</h3>{% endif %}
+                {% if loop.first %}<h3 id="hotels">Suggested Hotels</h3>{% endif %}
                 <div class="cols cols-half">
                     <h4><a href="{{ hotel.url }}" target="_blank">{{ loop.key }}</a></h4>
                     <div class="col">
-                        <strong>Hotel rating: </strong><span title="{{hotel.stars.length}}-star rating">{% for star in hotel.stars %}&star;{% endfor %}</span><br>
-                        <strong>Preferential rate:</strong> {{ hotel.rate }}<br>
-                        <strong>Address:</strong> <a href="{{ hotel.map_link }}" target="_blank">{{ hotel.address }}</a><br>
+                        <p>
+                            <strong>Hotel rating: </strong><span title="{{hotel.stars.length}}-star rating">{% for star in hotel.stars %}&star;{% endfor %}</span><br>
+                            <strong>Preferential rate:</strong> {{ hotel.rate }}<br>
+                            <strong>Address:</strong> <a href="{{ hotel.map_link }}" target="_blank">{{ hotel.address }}</a><br>
+                        </p>
                     </div>
                     <div class="col">
-                        <strong>How to book</strong><br>
-                        {{ hotel.how_to_book }}<br>
-                        {% if hotel.email %}<strong>Email address: </strong><a href="mailto:{{ hotel.email }}">{{ hotel.email }}</a><br>{% endif %}
-                        {% if hotel.phone %}<strong>Telephone number: </strong>{{ hotel.phone }}<br>{% endif %}
-                        {% if hotel.reference %}<strong>Booking reference: </strong>{{ hotel.reference }}<br>{% endif %}
-                        <em>A credit card will be necessary to secure a booking.</em>
+                        <p>
+                            <strong>How to book</strong><br>
+                            {{ hotel.how_to_book }}<br>
+                            {% if hotel.email %}<strong>Email address: </strong><a href="mailto:{{ hotel.email }}">{{ hotel.email }}</a><br>{% endif %}
+                            {% if hotel.phone %}<strong>Telephone number: </strong>{{ hotel.phone }}<br>{% endif %}
+                            {% if hotel.reference %}<strong>Booking reference: </strong>{{ hotel.reference }}<br>{% endif %}
+                            <em>A credit card will be necessary to secure a booking.</em>
+                        </p>
                     </div>
                 </div>
             {% endfor %}
