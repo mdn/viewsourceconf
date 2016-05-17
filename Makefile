@@ -43,10 +43,10 @@ build-build-image:
 build-deploy-image:
 	docker build -t ${IMAGE} .
 
-push-build-image: 
+push-build-image:
 	docker push ${BUILD_IMAGE}
 
-push-deploy-image: 
+push-deploy-image:
 	docker push ${IMAGE}
 
 push-latest-build-image: push-build-image
@@ -64,7 +64,7 @@ serve:
 	docker run ${SERVE_ARGS} ${LATEST_DEPLOY_IMAGE}
 
 curl:
-	curl -H "X-Forwarded-Proto: https" ${HOST_IP}:${SERVE_PORT}${path}
+	curl -v -H "X-Forwarded-Proto: https" ${HOST_IP}:${SERVE_PORT}${path}
 
 deis-pull:
 	deis pull ${IMAGE} -a ${DEIS_APP}
