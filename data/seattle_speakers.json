@@ -1,10 +1,9 @@
 [
     {
-        "slug" : "rachel-andrew",
+        "slug" : "marcy-sutton",
         "first" : "Marcy",
         "last" : "Sutton",
         "feature": true,
-        "twitter" : "rachelandrew",
         "pic" : "marcysutton.jpg",
         "bio" : "Marcy Sutton is a Senior Front-End Engineer at Deque Systems, where she works on the aXe-core team focusing on accessibility test integrations. Marcy is passionate about making the web accessible for everyone. She is a core team member and active contributor to Angular, where she regularly brings her accessibility expertise to the table. Her blog, Accessibility Wins, highlights accessible user interfaces and tools, contributing a positive voice to the web development space.",
         "sessions" : []
