@@ -1,4 +1,5 @@
 @require '../../includes/variables';
+@require '../../includes/extends';
 /*
 Headings
 ====================================================================== */
@@ -46,6 +47,11 @@ h6 {
     set-font-size(14px);
 }
 
+@media print {
+    h1, h2, h3, h4, h5, h6 {
+        @extends $print-plain;
+    }
+}
 
 /*
 Links
@@ -62,6 +68,32 @@ a:hover,
 a:focus,
 a:active {
     text-decoration: underline;
+}
+
+@media print {
+    a {
+        @extends $print-plain;
+
+        &[href^='http'] { // print links on page for off site links
+            text-decoration: underline !important;
+            word-wrap: break-word;
+
+            &::after {
+                content:" (" attr(href) ") " !important;
+                //one of our fonts doesn't have lower case characters
+                // turn out URLs are case sensative
+                font-family: sans-serif !important;
+                font-size: 0.8em !important;
+                text-transform: none;
+            }
+        }
+
+        &[href^='mailto'] {
+            // email addresses should still stand out
+            // when writing content we tried to make all mailto links explictly show the address
+            text-decoration: underline !important;
+        }
+    }
 }
 
 /*

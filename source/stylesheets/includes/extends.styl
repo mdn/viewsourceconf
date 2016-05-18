@@ -1,0 +1,33 @@
+/*
+====================================================================== */
+$clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/*
+====================================================================== */
+@media print {
+    $print-no {
+        display: none !important;
+    }
+
+    $print-plain {
+        background: #ffffff !important;
+        color: #000000 !important;
+        text-shadow: none !important;
+    }
+
+    $print-wide {
+        max-width: 100% !important;
+    }
+
+    $print-section {
+        padding: 20px 0 !important;
+        border-bottom: 2px solid #000 !important;
+    }
+}
+

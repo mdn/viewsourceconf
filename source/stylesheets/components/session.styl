@@ -1,4 +1,5 @@
 @require 'includes/variables'
+@require 'includes/extends'
 /*
 session
 ====================================================================== */
@@ -15,7 +16,7 @@ session
 .session {
     padding: $grid-gutter-width;
     margin-bottom: ($grid-gutter-width / 2);
-    clearfix()
+    @extends $clearfix
 
     theme({
         background-color: $theme-background

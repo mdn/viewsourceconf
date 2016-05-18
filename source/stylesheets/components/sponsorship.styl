@@ -1,4 +1,5 @@
 @require 'includes/variables'
+@require 'includes/extends'
 
 .sponsorship_logo {
     display: inline-block;
@@ -6,11 +7,27 @@
     height: 220px;
     width: 220px;
     border-radius: 100%;
-    padding-top: 50px;
     margin: $grid-gutter-width;
+    padding-top: 50px;
+
+    svg {
+        height: 114px;
+        width: 150px;
+        fill: currentColor;
+    }
 
     theme({
         background-color: $theme-dark
-        background: $theme-gradient
+        background-image: $theme-gradient
     })
+}
+
+@media print {
+    .sponsorship_logo {
+        height: auto !important;
+        width: auto !important;
+        padding-top: 0 !important;
+
+        @extends $print-plain;
+    }
 }

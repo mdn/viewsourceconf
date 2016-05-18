@@ -1,7 +1,9 @@
 <header id="header" class="section {% if conference_data.slug %}section-gradient{% else %} section-grid{% endif %} section-fadeend">
     <div class="header_body">
 
-        <a href="/" class="header_logo"><img src="/assets/images/vs-logo-white.svg" width="300" height="50" alt="View Source"></a>
+        <a href="/" class="header_logo">
+            {% include "svg/vs-logo-h.svg" %}
+        </a>
 
         {# only show nav if we're on a subpage #}
         {% if conference_subpage %}

@@ -1,4 +1,5 @@
 @require '../includes/variables';
+@require '../includes/extends';
 /*
 header
 - default: logo left, list right, home link left
@@ -14,7 +15,7 @@ header
     font-family: $heading-font-family;
     text-align: right;
     text-transform: uppercase;
-    clearfix()
+    @extends $clearfix
 }
 
 .header_logo {
@@ -22,8 +23,11 @@ header
     margin-bottom: $grid-gutter-width;
     text-align: left;
 
-    img {
+    svg {
         display: block;
+        height: 50px;
+        width: 300px;
+        fill: currentColor;
     }
 }
 
@@ -122,3 +126,18 @@ li.header_crumb {
     }
 }
 
+@media print {
+    .header_body {
+        max-width: 100%;
+        @extends $print-section
+    }
+
+    .header_logo {
+        margin-bottom: 0 !important;
+    }
+
+    .header_links {
+        @extends $print-no;
+    }
+
+}

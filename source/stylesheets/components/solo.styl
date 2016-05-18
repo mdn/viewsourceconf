@@ -1,3 +1,4 @@
+@require '../includes/extends';
 /*
 solo
 ====================================================================== */
@@ -10,5 +11,11 @@ solo
 @media $media-query-680-and-up {
     .solo {
         max-width: cols-wide(4);
+    }
+}
+
+@media print {
+    .solo {
+        @extends $print-wide;
     }
 }

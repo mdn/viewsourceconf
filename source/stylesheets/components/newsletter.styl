@@ -1,4 +1,5 @@
 @require '../includes/variables';
+@require '../includes/extends';
 @require '../utilities/invisible';
 
 /* classes don't match naming schem for other files because
@@ -69,3 +70,10 @@ I didn't want to alter the javascript that relies on them */
         min-height: 45vh;
     }
 }
+
+@media print {
+    #newsletter {
+        @extends $print-no;
+    }
+}
+

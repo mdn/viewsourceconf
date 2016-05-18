@@ -1,4 +1,5 @@
 @require '../includes/variables';
+@require '../includes/extends';
 /*
 footer
 ====================================================================== */
@@ -37,4 +38,10 @@ footer
 
 li.footer_newsletter {
     display: block;
+}
+
+@media print {
+    .footer_links {
+        @extends $print-no;
+    }
 }
