@@ -22,7 +22,7 @@ In 2016 we're using a static site generator, [metalsmith](http://metalsmith.io),
 
 `build.js`: This is the node script that does the site build -- the metalsmith controller, sort of.
 
-`test`: A growing body of tests we can run to help us be confident about changes.
+`/test`: A growing body of tests we can run to help us be confident about changes.
 
 ### How to build the site
 
@@ -40,9 +40,31 @@ In 2016 we're using a static site generator, [metalsmith](http://metalsmith.io),
 * `npm test` will run tests in /test/
   * TODO: unify tests, add more of them, integrate with circleCI
 
+### Deploying
+* [Build status is in Jenkins](https://ci.us-west.moz.works/view/viewsourceconf/)
+* Code merged to [https://github.com/mdn/viewsourceconf/tree/master](https://github.com/mdn/viewsourceconf/tree/master) will land on [staging](viewsourceconf-stage.us-west.moz.works) automatically, unless it breaks the build.
+* Don't do anything else until your code is merged to master and you have tested it in staging. Srsly.
+* Tags pushed to Mozilla's remote master will trigger a production build. To tag...
+  * (Have permissions to push code to the Mozilla remote master)
+  * Check out the [Mozilla remote master](https://github.com/mdn/viewsourceconf/tree/master)
+  * Set an environment variable containing the name of the remote master: `export MOZ_GIT_REMOTE=upstream` (where 'upstream' is the name of the remote master).
+  * Run the tagging script conveniently located at the root of the repo. It is probably not set to be executable, so `. tag-release.sh --push`
+  * Watch your build in Jenkins. Verify it in production.
+
+### How to contribute
+
+We welcome your help making this code better! Here's how to hack on it:
+
+1. Fork & clone this repository
+2. `cd viewsourceconf && npm install`
+3. `node build dev`
+4. Make a branch for your changes: `git branch my_changes`
+5. Navigate to http://localhost:8080 to develop and test. Some kinds of changes may require forcing a build (ctrl+C + `node build dev` will do it, or `node build` in a separate terminal).
+5. Commit and push your changes, then PR.
+
 ### Docker
 
-The site is deployed using Docker and Deis, and you can also use Docker for local development without installing nodejs or npm dependencies. Most of the commands below will try to use an image based on the local git sha first and then fall back to the 'latest' image when appropriate, which allows you to build and test docker images with local commits when desired, or automatically use the images built by CI in the common case. All of the `make` commands make use of environment variables with defaults; see the Makefile for more details.
+The site is deployed to staging and production using Docker and Deis, and you can also use Docker for local development without installing nodejs or npm dependencies. Most of the commands below will try to use an image based on the local git sha first and then fall back to the 'latest' image when appropriate, which allows you to build and test docker images with local commits when desired, or automatically use the images built by CI in the common case. All of the `make` commands make use of environment variables with defaults; see the Makefile for more details.
 
 * `make build`: build the site by running `node build` in a Docker container
 * `make dev`: run the `node build dev` command described above in a docker container
