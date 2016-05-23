@@ -34,11 +34,10 @@ In 2016 we're using a static site generator, [metalsmith](http://metalsmith.io),
   * watch the source directory for changes using [metalsmith-watch](https://github.com/FWeinb/metalsmith-watch)
 
 ### Testing
-* `npm run tests` will run...
-  * a link checker against http://localhost:8080 (it assumes the dev server is running)
-  * a JSON validator against everything in /data/
 * `npm test` will run tests in /test/
-  * TODO: unify tests, add more of them, integrate with circleCI
+* `npm run unit_test` will run tests resembling unit tests (e.g. JSON validator)
+* `npm run integration_test` will run tests requiring a built site (and will try to use Selenium by way of Firefox for functional tests)
+* adding `VS_TEST_URL=http://some.url.com` to the front of the command (as in `VS_TEST_URL=http://localhost:8080 npm test`) will point integration tests at a specific site. (By default they run against staging.)
 
 ### Deploying
 * [Build status is in Jenkins](https://ci.us-west.moz.works/view/viewsourceconf/)
