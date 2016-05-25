@@ -1,39 +1,39 @@
-<div class="subscribe-form">
-    <form id="newsletter-signup" name="newsletter-signup" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+<div class="newsletter {% if collapse %}newsletter-inline js-collapse{% endif %}">
+    <form id="newsletter_form" name="newsletter_form" action="https://www.mozilla.org/en-US/newsletter/" method="post">
         <input type="hidden" id="fmt" name="fmt" value="H">
-        <ol>
-            <li id="newsletter-errors" class="error"></li>
-            <li id="li_email">
-                <label for="id_email">E-mail<br>
-                    <input type="email" id="newsletter-email" name="email" required placeholder="you@example.com">
-                </label>
-            </li>
-            <li id="li_newsletters" class="radio">
-                <fieldset>
-                    <legend>I want to hear about...</legend>
-                    <label for="view-source-conference-global">
-                        <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required {% if conference_data.slug == 'berlin' %}checked{% endif %} />
-                        Berlin
-                    </label>
-                    <label for="view-source-conference-north-america">
-                        <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required {% if conference_data.slug == 'seattle' %}checked{% endif %} />
-                        Seattle
-                    </label>
-                </fieldset>
-            </li>
-            <li class="form-fine-print" id="li_agree">
-                <label for="privacy">
-                    <input type="checkbox" id="privacy" name="privacy" required>
-                    I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
-                    <em>We will only send you information about View Source.</em>
-                </label>
-            </li>
-            <li class="form-submit">
-                <button id="newsletter-submit" type="submit" class="button button-invert">Subscribe</button>
-            </li>
-        </ol>
+
+        <div id="newsletter_errors" class="newsletter_errors"></div>
+
+        <div id="newsletter_email" class="form_group">
+            <label for="email" class="form_label">E-mail</label>
+            <input type="email" id="email" name="email" class="form_input" required placeholder="you@example.com" size="30">
+        </div>
+
+        <fieldset id="newsletter_options" class="form_group">
+            <legend><span class="form_label">I want to hear about...</span></legend>
+            <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required {% if conference_data.slug == 'berlin' %}checked{% endif %} />
+            <label for="view-source-conference-global" class="form_label form_label-inline">
+                Berlin
+            </label>
+
+            <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required {% if conference_data.slug == 'seattle' %}checked{% endif %} />
+            <label for="view-source-conference-north-america" class="form_label form_label-inline">
+                Seattle
+            </label>
+        </fieldset>
+
+        <div id="newsletter_privacy" class="form_group form_group-agree">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">
+                I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+            </label>
+        </div>
+        <div id="newsletter_submit">
+            <button id="newsletter_submit" type="submit" class="button">Sign up now</button>
+            <em class="newsletter_promise">We will only send you information about View Source.</em>
+        </div>
     </form>
-    <div id="newsletter-thanks" class="thanks">
+    <div id="newsletter_thanks" class="newsletter_thanks">
         <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
         <p>You'll receive an email from mozilla@e.mozilla.org to confirm your subscription. If you don't see it, check your spam filter. You must confirm your subscription to receive updates about the View Source Conference.</p>
     </div>

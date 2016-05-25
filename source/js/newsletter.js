@@ -5,10 +5,32 @@
 ;(function() {
     'use strict';
 
+    // !! this file assumes only one signup form per page !!
+
+    var newsletterForm = document.getElementById('newsletter_form');
+    // only do this if there's a form on the page
+    if(!newsletterForm) { return; }
+    var newsletterWrapper = window.vs.utils.closestByClass(newsletterForm, 'newsletter');
+
+    // add listener if form is collapsed
+    if(newsletterWrapper.classList.contains('js-collapse')) {
+        // get email field
+        var emailField = document.getElementById('email');
+        // add listener for focus
+        emailField.addEventListener('focus', newsletterExpand, false);
+        // expand collapsed fields
+        function newsletterExpand() {
+            // remove .js-collapse class from form
+            newsletterWrapper.classList.remove('js-collapse');
+            // remove listener, we only expand once
+            emailField.removeEventListener('focus', newsletterExpand, false);
+        }
+    }
+
     // handle errors
     var errorArray = [];
-    var newsletterErrors = document.getElementById('newsletter-errors');
-    function err(e) {
+    var newsletterErrors = document.getElementById('newsletter_errors');
+    function newsletterError(e) {
         var errorList = document.createElement('ul');
 
         if(errorArray.length) {
@@ -19,41 +41,38 @@
             }
         } else {
             // no error messages, forward to server for better troubleshooting
-            var form = document.getElementById('newsletter-signup');
-            form.setAttribute('data-skip-xhr', true);
-            form.submit();
+            newsletterForm.setAttribute('data-skip-xhr', true);
+            newsletterForm.submit();
         }
 
         newsletterErrors.appendChild(errorList);
         newsletterErrors.style.display = 'block';
     }
 
-    /* HTML5 "required" validation feedback is not cross-browser compatible
-     * so we have to roll our own.
-     * Add .invalid class to :invalid elements; remove on submit.
-     */
-    function validate(form) {
+    // show sucess message
+    function newsletterThanks() {
+        var thanks = document.getElementById('newsletter_thanks');
 
-        var already_invalid = form.querySelectorAll('.invalid');
-        for (var i = 0; i < already_invalid.length; ++i) {
-            var element = already_invalid[i];
-            element.className = element.className.replace(/ *invalid/g, '');
+        // if this is an inline form
+        if(newsletterWrapper.classList.contains('newsletter-inline')) {
+            var sectionBody = window.vs.utils.closestByClass(newsletterForm, 'section_body');
+            // move the thanks up to the section level
+            sectionBody.insertBefore(thanks, sectionBody.firstChild);
+            // hide the other stuff in the section
+            var sectionChildren = sectionBody.children;
+            console.log(sectionChildren);
+            for (var i = 0; i < sectionChildren.length; i++) {
+                sectionChildren[i].style.display = 'none';
+            }
         }
-        var invalid = form.querySelectorAll('input:invalid');
-        for (i = 0; i < invalid.length; ++i) {
-            invalid[i].parentNode.parentNode.className += ' invalid';
-        }
-        if (invalid.length > 0) {
-            err(new Error('Please complete the form below.'));
-            return false;
-        }
-        return true;
+
+        // show thanks message
+        thanks.style.display = 'block';
     }
 
     // XHR subscribe; handle errors; display thanks message on success.
-    function subscribe(evt) {
-        var form = document.getElementById('newsletter-signup');
-        var skipXHR = form.getAttribute('data-skip-xhr');
+    function newsletterSubscribe(evt) {
+        var skipXHR = newsletterForm.getAttribute('data-skip-xhr');
         if (skipXHR) {
             return true;
         }
@@ -64,15 +83,11 @@
         errorArray = [];
         newsletterErrors.style.display = 'none';
         while (newsletterErrors.firstChild) newsletterErrors.removeChild(newsletterErrors.firstChild);
-        if (!validate(form)) {
-            return false;
-        }
 
         var fmt = document.getElementById('fmt').value;
-        var email = document.getElementById('newsletter-email').value;
+        var email = document.getElementById('email').value;
         var newsletter = document.querySelector('input[name="newsletters"]:checked') ? document.querySelector('input[name="newsletters"]:checked').value : '';
         var privacy = document.querySelector('input[name="privacy"]:checked') ? '&privacy=true' : '';
-        var thanks = document.getElementById('newsletter-thanks');
         var params = 'email=' + encodeURIComponent(email) +
                      '&newsletters=' + newsletter +
                      privacy +
@@ -84,8 +99,8 @@
             if (r.target.status >= 200 && r.target.status < 300) {
                 var response = r.target.response;
                 if (response.success === true) {
-                    form.style.display = 'none';
-                    thanks.style.display = 'block';
+                    newsletterForm.style.display = 'none';
+                    newsletterThanks();
                     if(window.vs.analytics) {
                         window.vs.analytics.trackEvent({ category: 'signup', action: 'newsletter', label: String(newsletter) });
                     }
@@ -96,33 +111,33 @@
                             errorArray.push(response.errors[i]);
                         }
                     }
-                    err(new Error());
+                    newsletterError(new Error());
                 }
             }
             else {
-                err(new Error());
+                newsletterError(new Error());
             }
         };
 
         xhr.onerror = function(e) {
-            err(e);
+            newsletterError(e);
         };
 
-        var url = form.getAttribute('action');
+        var url = newsletterForm.getAttribute('action');
 
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.setRequestHeader('X-Requested-With','XMLHttpRequest');
         xhr.timeout = 5000;
-        xhr.ontimeout = err;
+        xhr.ontimeout = newsletterError;
         xhr.responseType = 'json';
         xhr.send(params);
 
         return false;
     }
 
-    var newsletterForm = document.getElementById('newsletter-signup');
+    var newsletterForm = document.getElementById('newsletter_form');
     if(newsletterForm){
-        newsletterForm.addEventListener('submit', subscribe, false);
+        newsletterForm.addEventListener('submit', newsletterSubscribe, false);
     }
 })();

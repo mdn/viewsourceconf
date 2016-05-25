@@ -1,17 +1,40 @@
+@require '../../includes/variables';
 /*
 form elements
 ====================================================================== */
 
+button,
+input:not([type=radio]):not([type=checkbox])  {
+    box-sizing: border-box;
+    min-width: $input-min-width;
+    max-width: 100%;
+    padding: $input-v-padding $input-h-padding;
+    font-family: inherit;
+    line-height: 1; // IE can't handle any other value, must compensation with padding
+}
+
 button {
     cursor: pointer;
-    font-family: inherit;
-    line-height: inherit;
 }
 
 button::-moz-focus-inner,
 input[type="button"]::-moz-focus-inner,
 input[type="submit"]::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner {
-     padding: 0 !important;
-     border: 0 none !important;
- }
+    padding: 0 !important;
+    border: 0 none !important;
+}
+
+$placeholder-color = #B1B1B1;
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $placeholder-color;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $placeholder-color;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $placeholder-color;
+}
+::placeholder {
+    color: $placeholder-color;
+}

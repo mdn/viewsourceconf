@@ -15,7 +15,29 @@
                 <p>Sessions will dive into the code, analyze the web experience across browsers and devices, and explore ready-to-use new technologies. Demos will focus on products that create powerful, convenient, and easy-to-use apps and websites. </p>
 
                 <p><a href="{{ conference_data.register_url }}" class="button button-bright">Register</a></p>
-                <p><a href="{{ conference_data.folder }}/newsletter">Get Updates by Email</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section section-dark">
+        <div class="section_body">
+            <div class="cols cols-half">
+                <div class="col">
+                    <div class="sidecol sidecol-line">
+                        <div class="sidecol_side">
+                            {% set class_names = 'newsletter_icon' %}
+                            {% include "includes/svg/email.svg" %}
+                        </div>
+                        <div class="sidecol_body">
+                            <h2>Get updates by email</h2>
+                            <p>Join our mailing list to get updates and more information about View Source.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    {% set collapse = true %}
+                    {% include "includes/newsletter.html" with collapse %}
+                </div>
             </div>
         </div>
     </section>

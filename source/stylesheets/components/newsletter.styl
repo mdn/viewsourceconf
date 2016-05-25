@@ -1,65 +1,71 @@
 @require '../includes/variables';
+@require '../utilities/invisible';
 
 /* classes don't match naming schem for other files because
 I didn't want to alter the javascript that relies on them */
 
-.subscribe-form {
+.newsletter_icon {
+    height: 37px;
+    width: 56px;
+    margin-top: -4px;
 
-    label {
-        display: inline-block;
-        margin-bottom: $grid-gutter-width;
-    }
-
-    input[type=email] {
-        width: 270px;
-        box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.05);
-        border: 1px solid #ccc;
-        border-radius: 2px;
-        padding: 4px;
-    }
+    theme({
+        stroke: $theme-secondary
+    })
 }
 
-.newsletter_radio label {
-    padding-left: $grid-gutter-width;
-}
-
-.invalid {
-    margin: auto ($grid-gutter-width * -1) $grid-gutter-width;
-    padding: $grid-gutter-width;
-    background-color: rgba(0, 0, 0, 0.1);
-
-    & > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-.thanks {
-    display: none;
-}
-
-.error {
+.newsletter_errors {
     display: none; /* hide by default */
     margin-bottom: $grid-gutter-width;
+    box-shadow: 0 0 0 1px #ffffff; // incase it's on a black background
     padding: $grid-gutter-width;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1); // incase it's on a white background
 
     > :last-child {
         margin-bottom: 0;
     }
 }
 
-@media $media-query-680-and-up {
-    .subscribe-form {
-        min-height: 50vh;
+.newsletter_promise {
+    display: block;
+    set-font-size(14px);
+}
+
+.newsletter_thanks {
+    display: none;
+}
+
+.newsletter-inline {
+    #newsletter_email label {
+        @extend .invisible;
     }
 
-    .form-fine-print em {
-        display: block;
+    input[type=email],
+    .button {
+        width: 100%;
+    }
+}
+
+/* hide the newsletter selection */
+#newsletter_options {
+    display: none;
+}
+
+.js-site .js-collapse {
+    #newsletter_privacy,
+    .newsletter_promise {
+        display: none;
+    }
+}
+
+@media $media-query-680-and-up {
+    .newsletter:not(.newsletter-inline) {
+        min-height: 50vh;
     }
 }
 
 @media $media-query-tall {
-    .subscribe-form {
+    .newsletter:not(.newsletter-inline) {
         min-height: 45vh;
     }
 }
