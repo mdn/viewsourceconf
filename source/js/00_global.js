@@ -5,4 +5,5 @@
     html.classList.remove('js-no');
     // signal site js loaded
     html.classList.add('js-site');
+
 })();
