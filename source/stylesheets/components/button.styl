@@ -7,11 +7,12 @@ button
 .button {
     display: inline-block;
     box-sizing: border-box;
-    min-width: 200px;
-    border: 3px solid transparent;
-    padding: 3px 15px;
+    min-width: $input-min-width;
+    border: $input-border-width solid transparent;
+    padding: $input-v-padding $input-h-padding;
     background: transparent;
     font-size: inherit;
+    line-height: 1; // to match elements/forms.styl
     text-align: center;
     text-decoration: none;
     text-shadow: none; /* over-ride text shadow in .hero */
