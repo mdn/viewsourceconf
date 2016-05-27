@@ -9,7 +9,7 @@ header
 
 .header_body {
     position: relative;
-    max-width: grid-max($grid-gutter-width);
+    max-width: $grid-max;
     margin: 0 auto;
     padding: $grid-gutter-width;
     font-family: $heading-font-family;
@@ -93,7 +93,6 @@ li.header_crumb {
 @media $media-query-960-and-up {
 
     .header_body {
-        max-width: grid-max($grid-gutter-width-wide);
         padding: $grid-gutter-width $grid-gutter-width-wide;
     }
 
@@ -114,11 +113,11 @@ li.header_crumb {
 
 @media $media-query-1200-and-up {
     .header_logo {
-        margin-left: $grid-gutter-width-wide * -1;
+        margin-left: $grid-gutter-width-wide * -1.5;
     }
 
     .header_links {
-        margin-right: $grid-gutter-width-wide * -1;
+        margin-right: $grid-gutter-width-wide * -1.5;
     }
 
     li.header_crumb {
