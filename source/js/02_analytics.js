@@ -188,9 +188,40 @@
             });
         },
 
+        trackLandingSplit: function() {
+            // get links to conference landing pages from .split
+            var splitLinks = document.querySelectorAll('.split a');
+            // add listeners
+            Array.prototype.forEach.call(splitLinks, function(element) {
+                var link = element.getAttribute('href');
+                element.addEventListener('click', function() {
+                    window.vs.analytics.trackEvent({
+                        category: 'nav',
+                        action: 'split',
+                        label: link
+                    });
+                });
+            });
+            // get links to conference landing pages from text
+            var introLinks = document.querySelectorAll('#intro a');
+            // add listeners
+            Array.prototype.forEach.call(introLinks, function(element) {
+                var link = element.getAttribute('href');
+                element.addEventListener('click', function() {
+                    window.vs.analytics.trackEvent({
+                        category: 'nav',
+                        action: 'intro',
+                        label: link
+                    });
+                });
+            });
+        },
+
     };
 
-    window.vs.analytics.trackClicks();
+    analytics.trackClicks();
+    analytics.trackClientErrors();
+    analytics.trackLandingSplit();
 })();
 
 
