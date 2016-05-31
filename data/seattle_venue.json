@@ -13,5 +13,26 @@
         }
     },
     "hotels": {
+        "Hotel Andra": {
+            "url": "https://gc.synxis.com/rez.aspx?Hotel=67216&Chain=18696&arrive=10/31/2016&depart=11/4/2016&adult=1&child=0&group=MVJ31Z",
+            "stars": [1,1,1,1],
+            "rate": "$210.00 plus tax and assessment fee",
+            "address": "2000 Fourth Avenue, Seattle, WA 98121",
+            "map_link": "https://goo.gl/maps/GL32C8qRoxj",
+            "how_to_book": "Online, email or phone",
+            "email": "reservations@hotelandra.com",
+            "phone": "(877) 448-8600",
+            "reference": "View Source 2016"
+        },
+        "The Maxwell Hotel": {
+            "url": "http://www.themaxwellhotel.com/",
+            "stars": [1,1,1],
+            "rate": "$146.00 plus tax and assessment fee",
+            "address": "300 Roy Street, Seattle, WA 98109",
+            "map_link": "https://goo.gl/maps/ic8nXL3MJtp",
+            "how_to_book": "Online or phone",
+            "phone": "(866) 866-7977",
+            "reference": "View Source 2016"
+        }
     }
 }
