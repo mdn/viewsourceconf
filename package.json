@@ -4,10 +4,9 @@
   "scripts": {
     "build": "node build",
     "build_dev": "node build dev",
-    "check_links": "./node_modules/.bin/blc http://localhost:8080 --filter-level 3 --exclude /2015 -ro",
-    "validate_json": "for FILE in data/*; do tput setaf 3; echo validating $FILE; tput setaf 1; ./node_modules/.bin/jsonlint -q $FILE; echo; tput sgr0; done",
-    "tests": "npm run check_links && npm run validate_json",
     "test": "node_modules/.bin/mocha test/",
+    "unit_test": "node_modules/.bin/mocha test/unit",
+    "integration_test": "node_modules/.bin/mocha test/integration",
     "check_prod_links": "./node_modules/.bin/blc http://viewsourceconf.org --filter-level 3 --exclude /2015 -ro"
   },
   "devDependencies": {
@@ -16,7 +15,6 @@
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.3.0",
-    "jsonlint": "^1.6.2",
     "metalsmith": "^2.1.0",
     "metalsmith-branch": "0.0.4",
     "metalsmith-collections": "^0.7.0",
