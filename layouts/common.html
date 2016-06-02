@@ -35,4 +35,16 @@
 
         <script src="/{{ fingerprint['js/main.js'] }}" async></script>
     <!-- <![endif]-->
+
+    <!--[if lte IE 10]>
+    <script>
+        (function() {
+            'use strict';
+            var html = document.documentElement;
+            html.className = 'js-siteno';
+        })()
+    </script>
+    <![endif]-->
+
+
 </html>
