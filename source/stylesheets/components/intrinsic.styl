@@ -1,4 +1,5 @@
-@require 'includes/variables'
+@require 'includes/variables';
+@require 'includes/extends';
 /*
 Creates container that preserves aspect ratio, and fills container with iframe
 http://alistapart.com/article/creating-intrinsic-ratios-for-video
@@ -20,5 +21,11 @@ https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
         left: 0;
         width: 100%;
         height: 100%;
+    }
+}
+
+@media print {
+    .intrinsic {
+        @extends $print-no;
     }
 }

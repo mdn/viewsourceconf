@@ -1,4 +1,5 @@
-@require 'includes/variables'
+@require 'includes/variables';
+@require 'includes/extends';
 
 /*
 split
@@ -12,7 +13,7 @@ split
         margin-bottom: ($grid-gutter-width * 2);
     }
 
-    clearfix()
+    @extends $clearfix
 
     &::before {
         content: '';
@@ -115,5 +116,27 @@ split
             width: calc(50vw + 77px);
             z-index: 1;
         }
+    }
+}
+
+@media $media-query-tall {
+    .split {
+        &,
+        &:last-child { // needs to counter last-child rules in .section
+            margin-bottom: ($grid-gutter-width-wide * 2);
+        }
+    }
+}
+
+@media print {
+    .split_conference {
+
+        &.seattle {
+            padding-left: $grid-gutter-width !important;
+        }
+        &.berlin {
+            padding-right: $grid-gutter-width !important;
+        }
+
     }
 }

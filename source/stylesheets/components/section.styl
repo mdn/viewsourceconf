@@ -1,4 +1,6 @@
-@require 'includes/variables'
+@require 'includes/variables';
+@require 'includes/extends';
+
 /*
 sections
 ====================================================================== */
@@ -11,7 +13,7 @@ sections
         color: $theme-text
     })
 
-    clearfix()
+    @extends $clearfix;
 
     > *:last-child,
     > *:last-child > *:last-child,
@@ -137,5 +139,16 @@ sections
 @media $media-query-tall {
     .section_body {
         padding: ($grid-gutter-width-wide * 2) $grid-gutter-width-wide;
+    }
+}
+
+@media print {
+    .section {
+        @extends $print-plain;
+    }
+
+    .section_body {
+        @extends $print-section;
+        @extends $print-wide;
     }
 }

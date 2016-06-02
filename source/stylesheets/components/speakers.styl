@@ -1,4 +1,5 @@
 @require '../includes/variables';
+@require '../includes/extends';
 
 /*
 speakers
@@ -7,7 +8,7 @@ speakers
 .speakers {
     position: relative;
 
-    clearfix()
+    @extends $clearfix
 
     theme({
         background: $theme-dark
@@ -20,7 +21,7 @@ speakers
     margin: 0 auto;
     background-color: #fff;
     list-style-type: none;
-    clearfix();
+    @extends $clearfix;
 
     &.js-active,
     &.js-focus,
@@ -162,5 +163,41 @@ speakers
         &::before {
             display: none;
         }
+    }
+}
+
+@media print {
+    .speaker {
+        width: 100% !important;
+        min-height: 0 !important;
+    }
+
+    .speaker img {
+        opacity: 1 !important;
+    }
+
+    .speaker_pic {
+        float: right !important;
+        width: 25% !important;
+        padding: $grid-gutter-width 0 $grid-gutter-width $grid-gutter-width !important;
+    }
+
+    .speaker_info {
+        position: static !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .speaker_name {
+        text-align: left;
+    }
+
+    .speaker_text {
+        width: 70% !important;
+    }
+
+    .speaker_close {
+        display: none !important;
     }
 }

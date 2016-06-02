@@ -1,3 +1,6 @@
+@require 'includes/variables';
+@require 'includes/extends';
+
 .hero {
     position: relative;
     display: table;
@@ -174,5 +177,18 @@
                 background-image: url('/assets/images/seattle_hero_2800x1200.jpg');
             }
         }
+    }
+}
+
+
+@media print {
+    .hero {
+        height: auto !important;
+        @extends $print-section;
+        @extends $print-plain;
+    }
+
+    .hero_body {
+        @extends $print-plain;
     }
 }
