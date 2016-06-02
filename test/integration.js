@@ -11,7 +11,7 @@ const browser = process.env.VS_TEST_BROWSER || 'firefox';
 console.log(`Running integration tests against ${baseURL} with ${browser}`);
 
 describe('The site...', function() {
-    this.timeout(35000);
+    this.timeout(45000);
     const url = baseURL;
 
     it('should not have any broken links', function(done) {
@@ -58,7 +58,9 @@ test.describe('The landing page...', function() {
             }).then(function(link) {
                 return link.isDisplayed();
             }).then(function(response) {
-                done(assert(response));
+                driver.close().then(function() {
+                    done(assert(response));
+                });
             });
         });
     });
@@ -78,7 +80,9 @@ test.describe('The conference pages...', function() {
             }).then(function(link) {
                 return link.isDisplayed();
             }).then(function(response) {
-                done(assert(response));
+                driver.close().then(function() {
+                    done(assert(response));
+                });
             });
         });
 
@@ -90,7 +94,9 @@ test.describe('The conference pages...', function() {
             }).then(function(link) {
                 return link.isDisplayed()
             }).then(function(response) {
-                done(assert(response));
+                driver.close().then(function() {
+                    done(assert(response));
+                });
             });
         });
 
@@ -102,7 +108,9 @@ test.describe('The conference pages...', function() {
             }).then(function(link) {
                 return link.isDisplayed()
             }).then(function(response) {
-                done(assert(response));
+                driver.close().then(function() {
+                    done(assert(response));
+                });
             });
         });
 
@@ -122,9 +130,13 @@ test.describe('The conference pages...', function() {
                 }).then(function() {
                     return driver.findElement(webdriver.By.css(`#${emailInputId}:invalid`));
                 }).then(function(invalid) {
-                    done();
+                    driver.close().then(function() {
+                        done();
+                    });
                 }, function(valid) {
-                    done(new Error('Form not marked as invalid with missing email'));
+                    driver.close().then(function() {
+                        done(new Error('Form not marked as invalid with missing email'));
+                    });
                 });
             });
 
@@ -137,9 +149,13 @@ test.describe('The conference pages...', function() {
                 }).then(function() {
                     driver.findElement(webdriver.By.css(`#${policyCheckboxId}:invalid`));
                 }).then(function(invalid) {
-                    done();
+                    driver.close().then(function() {
+                        done();
+                    });
                 }, function(valid) {
-                    done(new Error('Form not marked as invalid with missing policy checkbox'));
+                    driver.close().then(function() {
+                        done(new Error('Form not marked as invalid with missing policy checkbox'));
+                    });
                 });
             });
 
@@ -164,9 +180,13 @@ test.describe('The conference pages...', function() {
                     return driver.wait(
                         until.elementIsVisible(thanks), 5000
                     ).then(function(resolved) {
-                        done();
+                        driver.close().then(function() {
+                            done();
+                        });
                     }, function(rejected) {
-                        done(rejected);
+                        driver.close().then(function() {
+                            done(rejected);
+                        });
                     });
                 });
             });
