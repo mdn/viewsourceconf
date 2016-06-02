@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    if(!window.vs.js){ return; }
+
     // heavily inspired by https://css-tricks.com/the-blur-up-technique-for-loading-background-images/
     // hero image on page?
     var hero = document.getElementsByClassName('hero')[0];

@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    if(!window.vs.js){ return; }
+
     // Adding to globally available vs object
     var analytics = window.vs.analytics = {
         /*
