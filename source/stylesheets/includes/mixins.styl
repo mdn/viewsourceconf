@@ -44,6 +44,16 @@ a11y-hidden() {
 
 /*
 ====================================================================== */
+heading-major() {
+    margin: 0 0 $grid-gutter-width 0;
+    font-family: $heading-font-family;
+    font-weight: normal;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/*
+====================================================================== */
 cols-wide($cols) {
     $width = $cols / $grid-column-total * 100;
     if($width > 100) {
