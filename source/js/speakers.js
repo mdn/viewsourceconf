@@ -16,7 +16,10 @@
         button.setAttribute('aria-controls', speakerId + '_info');
         button.setAttribute('aria-expanded', 'false');
         button.classList.add('speaker_close');
-        button.appendChild(document.createTextNode('Return to speaker list.'));
+        var buttonText = document.createElement('span');
+        buttonText.classList.add('invisible');
+        buttonText.appendChild(document.createTextNode('Return to speaker list.'));
+        button.appendChild(buttonText);
         //add listenter
         button.addEventListener('click', function() {
             speakerClose(speakerId);
