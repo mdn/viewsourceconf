@@ -38,5 +38,15 @@
     "pic" : "jensimmons.jpg",
     "bio" : "<p>Dubbed “the Terry Gross of the tech industry,” Jen Simmons is the host and executive producer of <a href=\"http://thewebahead.net\">The Web Ahead</a>. Her in-depth interviews explain emerging technology and predict the future of the web — and won the 2015 Net Award for Podcast of the Year.</p><p>Jen is a Designer and Developer Advocate at Mozilla, where she advocates for web standards and researches the coming revolution in graphic design on the web. She’s spoken at events including SXSW, An Event Apart, Fluent, Generate, Future of Web Design, and Respond. Her talk, <em>Modern Layouts: Getting Out of Our Ruts</em>, was awarded Best Conference Presentation at CSS Dev Conf 2014.</p>",
     "sessions" : []
+  },
+  {
+    "slug" : "belen-albeza",
+    "first" : "Belen",
+    "last" : "Albeza",
+    "feature": false,
+    "twitter" : "",
+    "pic" : "belenalbeza.jpg",
+    "bio" : "Belén is an engineer and game developer working at Developer Relations in Mozilla. She cares about web standards, high-quality code, accessibility and game development. She has worked in both startup's and big companies, developing R&D prototypes, social games, apps and websites.   Belén now lives in Barcelona and likes heavy metal, joining game jams, rollerblading and 'Mass Effect'.",
+    "sessions" : []
   }
 ]

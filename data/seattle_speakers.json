@@ -37,6 +37,15 @@
         "pic" : "potch.jpg",
         "bio" : "Potch is a Web Developer Advocate at Mozilla. He's also the creator of <a href='http://unmaintained.tech/'>unmaintained.tech</a>, which encourages people to open source their software even when they don't have time to support it. When he's not building dashboards or making stickers, he's probably singing karaoke. Or singing in the car. Or shower.",
         "sessions" : []
+    },
+    {
+        "slug" : "mike-taylor",
+        "first" : "Mike",
+        "last" : "Taylor",
+        "feature": false,
+        "twitter" : "",
+        "pic" : "miketaylor.jpg",
+        "bio" : "Mike Taylor is a Web Compatibility Engineer at Mozilla, working from Austin, TX. Previously he worked as a Web Opener at Opera Software, which is a funny title for pretty much the same thing.",
+        "sessions" : []
     }
-
 ]
