@@ -14,7 +14,7 @@
         "last" : "Virdee",
         "feature": true,
         "twitter" : "",
-        "pic" : "kawandeepvirdee.png",
+        "pic" : "kawandeepvirdee.jpg",
         "bio" : "Kawandeep Virdee works on new ways to create, remix, and share media at Embedly, building partnerships with companies across tech and media. He co-founded New American Public Art to build interactive art that makes public spaces more communal and welcoming. He is a trustee of the Boston chapter of the Awesome Foundation, and helps organize Boston Tech Poetics, exploring new ways of expression through technology. Previously, he researched at the New England Complex Systems Institute, using data mining and sentiment extraction to explore media sharing in social networks.",
         "sessions" : []
     },
@@ -37,6 +37,15 @@
         "pic" : "potch.jpg",
         "bio" : "Potch is a Web Developer Advocate at Mozilla. He's also the creator of <a href='http://unmaintained.tech/'>unmaintained.tech</a>, which encourages people to open source their software even when they don't have time to support it. When he's not building dashboards or making stickers, he's probably singing karaoke. Or singing in the car. Or shower.",
         "sessions" : []
+    },
+    {
+        "slug" : "mike-taylor",
+        "first" : "Mike",
+        "last" : "Taylor",
+        "feature": false,
+        "twitter" : "",
+        "pic" : "miketaylor.jpg",
+        "bio" : "Mike Taylor is a Web Compatibility Engineer at Mozilla, working from Austin, TX. Previously he worked as a Web Opener at Opera Software, which is a funny title for pretty much the same thing.",
+        "sessions" : []
     }
-
 ]
