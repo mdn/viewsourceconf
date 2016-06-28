@@ -1,6 +1,6 @@
 {
     "header": {
-        "/cfp": {
+        "/cfp/": {
             "text": "Call for Proposals"
         },
         "/#speakers": {
@@ -17,7 +17,7 @@
         }
     },
     "footer": {
-        "/code-of-conduct": {
+        "/code-of-conduct/": {
             "text": "Code of Conduct"
         },
         "https://www.mozilla.org/en-US/privacy/": {

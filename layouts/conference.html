@@ -47,7 +47,7 @@
             <div class="solo">
                 <h2>Call for Proposals</h2>
                 <p>View Source {{ conference_data.location }} is currently accepting proposals for talks.</p>
-                <p><a href="cfp" class="button">Submit your proposal.</a></p>
+                <p><a href="cfp/" class="button">Submit your proposal.</a></p>
             </div>
         </div>
     </section>
@@ -70,7 +70,7 @@
                     <li class="speaker" id="{{ speaker.slug }}">
 
                         <div class="speaker_pic">
-                            <a href="speakers/{{ speaker.slug }}">
+                            <a href="speakers/{{ speaker.slug }}/">
                                 <img src="/assets/images/speakers/{{ speaker.pic }}" alt="{{ speaker.first }} {{ speaker.last }}">
                             </a>
                         </div>
@@ -96,7 +96,7 @@
                                                     {% endif %}
                                                 {% endfor %}
                                             {% endfor %}
-                                            <a href="speakers/{{ speaker.slug }}">Read more about {{ speaker.first }}</a>
+                                            <a href="speakers/{{ speaker.slug }}/">Read more about {{ speaker.first }}</a>
                                         {% else %}
                                             {% if speaker.bio.indexOf('<p>') === 0 %}
                                                 {{ speaker.bio }}
@@ -136,7 +136,7 @@
             {% endfor %}
             </div>
             {# TODO when there is more schedule
-                <p><a href="{{ conference_data.folder }}/schedule" class="button">See full schedule</a></p>
+                <p><a href="{{ conference_data.folder }}/schedule/" class="button">See full schedule</a></p>
             #}
         </div>
     </section>
