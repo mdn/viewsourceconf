@@ -5,7 +5,18 @@
     <section class="section">
         <div class="section_body">
             <div class="cols">
-                <div class="col col-2"><img src="/assets/images/speakers/{{ data.pic }}"></div>
+                <div class="col col-2">
+                        <img src="/assets/images/speakers-assets/{{ data.pic }}.jpg"
+                             height="400px"
+                             width="400px"
+                             {# 100% until 42.5em and then 33% or less #}
+                             sizes="100vw, (min-width:42.5em) 33vw"
+                             srcset="/assets/images/speakers-assets/{{ data.pic }}_200x200.jpg 200w,
+                                     /assets/images/speakers-assets/{{ data.pic }}_300x300.jpg 300w,
+                                     /assets/images/speakers-assets/{{ data.pic }}.jpg 400w"
+                             alt="{{ data.first }} {{ data.last }}"
+                        >
+                </div>
                 <div class="col col-4">
                     <h1>{{ data.first }} {{ data.last }}</h1>
                     {% if data.bio.indexOf('<p>') === 0 %}

@@ -41,7 +41,6 @@ cols($gutter) {
 @media $media-query-680-and-up {
     cols($grid-gutter-width);
 
-
     for $num in (1..$grid-column-total) {
         .col-{$num}{
             width: cols-wide($num)
@@ -53,7 +52,6 @@ cols($gutter) {
 
 @media $media-query-960-and-up {
     cols($grid-gutter-width-wide);
-
 
     for $num in (1..$grid-column-total) {
         .col-{$num}{

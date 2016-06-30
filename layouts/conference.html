@@ -71,7 +71,16 @@
 
                         <div class="speaker_pic">
                             <a href="speakers/{{ speaker.slug }}/">
-                                <img src="/assets/images/speakers/{{ speaker.pic }}" alt="{{ speaker.first }} {{ speaker.last }}">
+                                <img src="/assets/images/speakers-assets/{{ speaker.pic }}.jpg"
+                                     height="400px"
+                                     width="400px"
+                                     {# 50% until 42.5em and then 25% or less #}
+                                     sizes="50vw, (min-width:42.5em) 25vw"
+                                     srcset="/assets/images/speakers-assets/{{ speaker.pic }}_200x200.jpg 200w,
+                                             /assets/images/speakers-assets/{{ speaker.pic }}_300x300.jpg.jpg 300w,
+                                             /assets/images/speakers-assets/{{ speaker.pic }}.jpg 400w"
+                                     alt="{{ speaker.first }} {{ speaker.last }}"
+                                >
                             </a>
                         </div>
 
