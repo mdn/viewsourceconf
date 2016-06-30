@@ -17,7 +17,7 @@ speakers
 
 .speakers_list {
     position: relative;
-    max-width: grid-max($grid-gutter-width);
+    max-width: $object-max;
     margin: 0 auto;
     background-color: #fff;
     list-style-type: none;
@@ -127,10 +127,6 @@ speakers
 }
 
 @media $media-query-680-and-up {
-    .speakers_list {
-        max-width: 400px * 4;
-    }
-
     .speaker {
         width: 25%;
 

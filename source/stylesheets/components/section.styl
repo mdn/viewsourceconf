@@ -29,7 +29,7 @@ sections
 }
 
 .section_body {
-    max-width: grid-max($grid-gutter-width);
+    max-width: $grid-max;
     margin: 0 auto;
     padding: ($grid-gutter-width * 2) $grid-gutter-width;
 }
@@ -132,7 +132,6 @@ sections
 
 @media $media-query-960-and-up {
     .section_body {
-        max-width: 960px;
         padding: $grid-gutter-width-wide;
     }
 }
