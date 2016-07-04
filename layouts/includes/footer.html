@@ -18,8 +18,10 @@
         </ul>
         <ul class="footer_social">
             <li class="footer_social_twitter"><a href="http://twitter.com/viewsourceconf" target="_blank">@ViewSourceConf</a></li>
-            {% if conference_data %}
+            {% if conference_data.facebook %}
                 <li class="footer_social_facebook"><a href="{{conference_data.facebook}}" target="_blank">Facebook</a></li>
+            {% endif %}
+            {% if conference_data %}
                 <li class="footer_social_email"><a href="{{ conference_data.folder }}/newsletter/">Email newsletter</a></li>
             {% endif %}
         </ul>

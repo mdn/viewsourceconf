@@ -14,7 +14,7 @@
 
                 <p>Sessions will dive into the code, analyze the web experience across browsers and devices, and explore ready-to-use new technologies. Demos will focus on products that create powerful, convenient, and easy-to-use apps and websites. </p>
 
-                <p><a href="{{ conference_data.register_url }}" class="button button-bright">Register</a></p>
+                {% if conference_data.register_url %}<p><a href="{{ conference_data.register_url }}" class="button button-bright">Register</a></p>{% endif %}
             </div>
         </div>
     </section>
@@ -42,6 +42,7 @@
         </div>
     </section>
 
+{% if conference_data.cfp %}
     <section class="section section-grid">
         <div class="section_body">
             <div class="solo">
@@ -51,7 +52,9 @@
             </div>
         </div>
     </section>
+{% endif %}
 
+{% if conference_data.speakers %}
     <section id="speakers">
         <div class="section">
             <div class="section_body">
@@ -115,7 +118,9 @@
             </ul>
         </div>
     </section>
+{% endif %}
 
+{% if conference_data.sessions %}
     <section class="section section-grid" id="sessions">
         <div class="section_body">
             <div class="solo">
@@ -140,8 +145,10 @@
             #}
         </div>
     </section>
+{% endif %}
 
 
+{% if conference_data.venue %}
     <section class="section" id="venue">
         <div class="section_body">
             <h2 class="center">Venue</h2>
@@ -156,7 +163,9 @@
             <p>{{ model.venue.meta.blurb }}</p>
         </div>
     </section>
+{% endif %}
 
+{% if conference_data.venue && model.venue.travel.blurb %}
     <section class="section section-grid" id="travel">
         <div class="section_body">
             <h2 class="center">Travel and Accommodation</h2>
@@ -193,9 +202,10 @@
             {% endfor %}
         </div>
     </section>
+{% endif %}
+
 
     <section id="sponsors">
-
         {% if model.sponsors %}
             <div class="section">
                 <div class="section_body">
@@ -216,19 +226,21 @@
                 </div>
             </div>
         {% endif %}
-
-        <div class="section section-uncommon" id="sponsor">
-            <div class="section_body">
-                <div class="solo">
-                    <h2>Sponsor the Event</h2>
-                    <div class="sponsorship_logo">
-                        {% include "includes/svg/vs-logo-v.svg" %}
+        {% if conference_data.sponsor_prospectus %}
+            <div class="section section-uncommon" id="sponsor">
+                <div class="section_body">
+                    <div class="solo">
+                        <h2>Sponsor the Event</h2>
+                        <div class="sponsorship_logo">
+                            {% include "includes/svg/vs-logo-v.svg" %}
+                        </div>
+                        <p><strong>Want to sponsor View Source?</strong></p>
+                        <p>We're always open for sponsorship and partnerships, please email Sandra Persing at <a href="mailto:spersing@mozilla.com">spersing@mozilla.com</a> for details. You can also check out our <a href="{{ conference_data.sponsor_prospectus }}" target="_blank">Sponsorship Prospectus</a>. If you don’t see what you are looking for, please <a href="mailto:spersing@mozilla.com">email us</a>, we’re happy to discuss additional options.</p>
                     </div>
-                    <p><strong>Want to sponsor View Source?</strong></p>
-                    <p>We're always open for sponsorship and partnerships, please email Sandra Persing at <a href="mailto:spersing@mozilla.com">spersing@mozilla.com</a> for details. You can also check out our <a href="{{ conference_data.sponsor_prospectus }}" target="_blank">Sponsorship Prospectus</a>. If you don’t see what you are looking for, please <a href="mailto:spersing@mozilla.com">email us</a>, we’re happy to discuss additional options.</p>
                 </div>
             </div>
-        </div>
+        {% endif %}
     </section>
+
 
 {% endblock %}

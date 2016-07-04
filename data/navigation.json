@@ -1,21 +1,4 @@
 {
-    "header": {
-        "/cfp/": {
-            "text": "Call for Proposals"
-        },
-        "/#speakers": {
-            "text": "Speakers",
-            "anchor": true
-        },
-        "/#venue": {
-            "text": "Venue",
-            "anchor": true
-        },
-        "/#sponsor": {
-            "text": "Sponsor",
-            "anchor": true
-        }
-    },
     "footer": {
         "/code-of-conduct/": {
             "text": "Code of Conduct"
