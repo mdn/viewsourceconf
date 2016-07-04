@@ -9,6 +9,10 @@
         "2016-09-14"
     ],
     "folder": "/berlin-2016",
+    "speakers": true,
+    "schedule": false,
+    "venue": true,
+    "cfp": true,
     "sponsor_prospectus": "/assets/viewsource_berlin_sponsorship.pdf",
     "register_url": "https://ti.to/mdn/view-source-berlin-2016",
     "facebook": "https://www.facebook.com/events/1726468307566424/"
@@ -16,15 +20,15 @@
   "seattle": {
     "slug": "seattle",
     "location": "Seattle",
-    "date": "November 1-3, 2016",
-    "days" : [
-        "2016-11-01",
-        "2016-11-02",
-        "2016-11-03"
-    ],
+    "date": "",
+    "days" : [],
     "folder": "/seattle-2016",
-    "sponsor_prospectus": "/assets/viewsource_seattle_sponsorship.pdf",
-    "register_url": "https://ti.to/mdn/view-source-seattle-2016",
-    "facebook": "https://www.facebook.com/events/1586766601634364/"
+    "speakers": false,
+    "venue": false,
+    "schedule": false,
+    "cfp": false,
+    "sponsor_prospectus": "",
+    "register_url": "",
+    "facebook": ""
   }
 }

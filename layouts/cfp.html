@@ -8,7 +8,8 @@
             {% block top_blurb %}{% endblock %}
     </div>
 </section>
-{% if !thanks %}
+
+{% if !thanks && conference_data.cfp %}
 <section class="section section-grid">
     <div class="section_body">
         <h2>Submit your proposal that includes an abstract, details, and pitch</h2>
