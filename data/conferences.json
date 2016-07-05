@@ -12,7 +12,7 @@
     "speakers": true,
     "schedule": false,
     "venue": true,
-    "cfp": true,
+    "cfp": false,
     "sponsor_prospectus": "/assets/viewsource_berlin_sponsorship.pdf",
     "register_url": "https://ti.to/mdn/view-source-berlin-2016",
     "facebook": "https://www.facebook.com/events/1726468307566424/"
