@@ -123,26 +123,31 @@
 {% if conference_data.sessions %}
     <section class="section section-grid" id="sessions">
         <div class="section_body">
-            <div class="solo">
-                <h2>Sessions</h2>
-                <p>Our speakers are awesome, but there’s more to View Source—it’s equal parts sharing, learning, and meeting new people. Discuss and collaborate in an on-going hacking space, chill in comfy hangout spots, see some great demos, and participate in engaging discussions. Evening activities will provide a fun, friendly space to continue the conversation and start new ones.</p>
-            </div>
-            <div class="cols cols-third">
-            {% for date in model.sessions|groupBy('date') %}
-                <div class="col center">
-                    <p><strong>{{ loop.key|date(date_format) }}</strong><br>
-                    {% for session in date %}
-                        {% if session.feature %}
-                            {{ session.title }}<br>
+            <h2 class="center">Sessions</h2>
+
+            {% for day in conference_data.days %}
+                {% if ! loop.first %}
+                    <section id="{{day}}">
+                        <h3 class="section-invert session_day">
+                            <span class="session_day_date">{{ day|date(date_format) }}</span>
+                        </h3>
+
+                        {% if model.sessions.length > 0 %}
+                            {% for session in model.sessions %}
+                                {% if session.date == day && session.feature %}
+                                    {% include "includes/session.html" with session %}
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <div>
+                                <p> Sessions have not been scheduled yet.</p>
+                            </div>
                         {% endif %}
-                    {% endfor %}
-                    </p>
-                </div>
+                    </section>
+                    <p class="center"><a href="{{ conference_data.folder }}/schedule/" class="button">See full schedule</a></p>
+                {% endif %}
             {% endfor %}
-            </div>
-            {# TODO when there is more schedule
-                <p><a href="{{ conference_data.folder }}/schedule/" class="button">See full schedule</a></p>
-            #}
+
         </div>
     </section>
 {% endif %}

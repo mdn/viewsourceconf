@@ -1,6 +1,6 @@
 <div class="session" id="{{ session.slug }}">
     <div class="cols">
-        <div class="col col-1"><strong>{{ session.time }}</strong></div>
+        <div class="col col-1"><strong>{{ session.start }}</strong></div>
 
         <div class="col col-1">
             {% if session.speakers %}
@@ -9,7 +9,7 @@
                         {% for speaker in model.speakers %}
                             {% if session_speaker == speaker.slug %}
                                 {% if speaker.pic %}
-                                <a href="../speakers/{{speaker.slug}}"><img src="/assets/images/{{ speaker.pic }}" height="400" width="400"></a>
+                                <a href="../speakers/{{speaker.slug}}"><img src="/assets/images/speakers/{{ speaker.pic }}" height="400" width="400"></a>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
@@ -19,7 +19,7 @@
         </div>
 
         <div class="col col-4">
-            {% if session.summary == '' %}
+            {% if session.speakers.length == 0 %}
                 <h4 class="session_head">{{ session.title }}</h4>
             {% else %}
                 <div class="session_details">
@@ -29,13 +29,13 @@
                                     {% for session_speaker in session.speakers %}
                                         {% for speaker in model.speakers %}
                                             {% if session_speaker == speaker.slug %}
-                                                <a href="../speakers/{{ speaker.slug }}" class="session_speaker">{{ speaker.first }} {{ speaker.last }}</a>
+                                                <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}" class="session_speaker">{{ speaker.first }} {{ speaker.last }}</a>
                                             {% endif %}
                                         {% endfor %}
                                     {% endfor %}
                                 </span>
                             {% endif %}
-                            {{ session.title }} • <a href="#{{ session.slug }}">More&nbsp;&hellip;</a>
+                            {{ session.title }}{% if session.summary != "" %} • <a href="#{{ session.slug }}">More&nbsp;&hellip;</a>{% endif %}
                         </h4>
                     <div class="session_summary">
                         {% if session.summary.indexOf('<p>') === 0 %}

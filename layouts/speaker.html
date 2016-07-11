@@ -27,14 +27,16 @@
                             <h2>{{ session.title }}</h2>
                             <p><strong>
                                 {{ session.date|date(date_format) }}<br>
-                                {% if session.place || session.time %}
-                                    @ {{ session.place }}{% if session.place && session.time %},{% endif %} {{session.time}}
+                                {% if session.place || session.start %}
+                                    @ {{ session.place }}{% if session.place && session.start %},{% endif %} {{session.start}}
                                 {% endif %}
                                 </strong>
                             </p>
+                            {% if session.summary != "" %}
                             <p>
                                 {{ session.summary }}
                             </p>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
