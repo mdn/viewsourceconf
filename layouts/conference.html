@@ -120,31 +120,24 @@
     </section>
 {% endif %}
 
-{% if conference_data.sessions %}
+{% if conference_data.sessions && model.sessions.length > 0 %}
     <section class="section section-grid" id="sessions">
         <div class="section_body">
-            <h2 class="center">Sessions</h2>
+            <h2 class="center">Schedule</h2>
 
             {% for day in conference_data.days %}
                 {% if ! loop.first %}
-                    <section id="{{day}}">
-                        <h3 class="section-invert session_day">
-                            <span class="session_day_date">{{ day|date(date_format) }}</span>
+                    <section id="{{day}}" class="session_day">
+                        <h3 class="section-invert session_day_header">
+                            <span class="session_day_header_date">{{ day|date(date_format) }}</span>
                         </h3>
-
-                        {% if model.sessions.length > 0 %}
-                            {% for session in model.sessions %}
-                                {% if session.date == day && session.feature %}
-                                    {% include "includes/session.html" with session %}
-                                {% endif %}
-                            {% endfor %}
-                        {% else %}
-                            <div>
-                                <p> Sessions have not been scheduled yet.</p>
-                            </div>
-                        {% endif %}
-                    </section>
+                        {% for session in model.sessions %}
+                            {% if session.date == day && session.feature %}
+                                {% include "includes/session.html" with session %}
+                            {% endif %}
+                        {% endfor %}
                     <p class="center"><a href="{{ conference_data.folder }}/schedule/" class="button">See full schedule</a></p>
+                    </section>
                 {% endif %}
             {% endfor %}
 

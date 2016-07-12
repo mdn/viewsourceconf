@@ -8,10 +8,10 @@
 
             {% for day in conference_data.days %}
 
-                <section id="{{day}}">
-                    <h3 class="section-invert session_day">
-                        <span class="session_day_date">{{ day|date(date_format) }}</span>
-                        <span class="session_day_day">Day {{loop.index}}</span>
+                <section id="{{day}}" class="session_day">
+                    <h3 class="section-invert session_day_header">
+                        <span class="session_day_header_date">{{ day|date(date_format) }}</span>
+                        <span class="session_day_header_day">Day {{loop.index}}</span>
                     </h3>
 
                     {% if model.sessions.length > 0 %}
