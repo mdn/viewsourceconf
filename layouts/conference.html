@@ -99,7 +99,7 @@
                                                     {% endif %}
                                                 {% endfor %}
                                             {% endfor %}
-                                            <a href="speakers/{{ speaker.slug }}/">Read more about {{ speaker.first }}</a>
+                                            <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}/">Read more about {{ speaker.first }}</a>
                                         {% else %}
                                             {% if speaker.bio.indexOf('<p>') === 0 %}
                                                 {{ speaker.bio }}
