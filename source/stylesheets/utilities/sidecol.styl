@@ -24,27 +24,8 @@ sidecol
     }
 }
 
-
-@supports (display:flex) {
-    .sidecol {
-        display: flex;
-    }
-
-    .sidecol,
-    .sidecol_body {
-        overflow: visible;
-    }
-
-    .sidecol_side {
-        float: none;
-    }
-
-}
-
-
 @media $media-query-960-and-up {
     .sidecol_side {
         margin-right: $grid-gutter-width-wide;
     }
 }
-

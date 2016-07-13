@@ -10,7 +10,7 @@
     ],
     "folder": "/berlin-2016",
     "speakers": true,
-    "schedule": false,
+    "schedule": true,
     "venue": true,
     "cfp": false,
     "sessions": true,
