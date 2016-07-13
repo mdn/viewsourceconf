@@ -1,0 +1,43 @@
+<div class="sessionteaser" id="{{ session.slug }}-teaser">
+    <div class="sidecol">
+        <div class="sidecol_side">
+            {% if session.speakers %}
+                <div class="sessionteaser_pic">
+                    {% for session_speaker in session.speakers %}
+                        {% for speaker in model.speakers %}
+                            {% if session_speaker == speaker.slug %}
+                                {% if speaker.pic %}
+                                <a href="{{ conference_data.folder }}/speakers/{{speaker.slug}}"><img src="/assets/images/speakers/{{ speaker.pic }}" height="400" width="400"></a>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="sidecol_body">
+            {% if session.speakers.length == 0 %}
+                <h4 class="sessionteaser_head">{{ session.title }}</h4>
+            {% else %}
+                <h4 class="sessionteaser_head">
+                    {% if session.speakers %}
+                        <span class="sessionteaser_speakers">
+                            {% for session_speaker in session.speakers %}
+                                {% for speaker in model.speakers %}
+                                    {% if session_speaker == speaker.slug %}
+                                        <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}" class="sessionteaser_speaker">{{ speaker.first }} {{ speaker.last }}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </span>
+                    {% endif %}
+
+                </h4>
+                <p class="sessionteaser_title">
+                    {{ session.title }}{% if session.summary != "" %} • <a href="{{ conference_data.folder }}/schedule#{{ session.slug }}">More&nbsp;&hellip;</a>{% endif %}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>

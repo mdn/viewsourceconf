@@ -37,7 +37,7 @@
     "metalsmith-uglify": "^1.2.1",
     "metalsmith-watch": "^1.0.1",
     "mocha": "^2.4.5",
-    "selenium-webdriver": "^2.53.2",
+    "selenium-webdriver": "^2.53.3",
     "stylus": "^0.54.2",
     "swig": "^1.4.2"
   },

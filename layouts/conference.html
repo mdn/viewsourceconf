@@ -61,7 +61,12 @@
                 <div class="solo">
                     <h2>Speakers</h2>
 
-                    <p>View Source features 16 world-class speakers (plus discussions and Q&amp;A breakouts), exposing best practices and new technologies. Check out our confirmed speakers below, and <a href="#newsletter" title="Get email updates">stay tuned</a> for upcoming additions to our stellar lineup.</p>
+                    <p>View Source features 16 world-class speakers (plus
+                        discussions and Q&amp;A breakouts), exposing best
+                        practices and new technologies. Check out our keynote
+                        speakers below, <a href="schedule/">see the full
+                        schedule</a>, and <a href="#newsletter">sign up for speaker
+                        announcements</a>.</p>
                 </div>
             </div>
         </div>
@@ -86,28 +91,33 @@
                                     </div>
 
                                     <div class="col speaker_text">
+                                        {% set showbio = true %}
                                         {% if speaker.sessions.length > 0 %}
                                             {% for session in model.sessions %}
                                                 {% for session_speaker in session.speakers %}
                                                     {% if session_speaker == speaker.slug %}
                                                         <h4 class="speaker_title">{{ session.title }}</h4>
-                                                        {% if session.summary.indexOf('<p>') === 0 %}
-                                                            {{ session.summary }}
-                                                        {% else %}
-                                                            <p>{{ session.summary }}</p>
+                                                        {% if session.summary %}
+                                                            {% set showbio = false %}
+                                                            {% if session.summary.indexOf('<p>') === 0 %}
+                                                                {{ session.summary }}
+                                                            {% else %}
+                                                                <p>{{ session.summary }}</p>
+                                                            {% endif %}
                                                         {% endif %}
                                                     {% endif %}
                                                 {% endfor %}
                                             {% endfor %}
-                                            <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}/">Read more about {{ speaker.first }}</a>
-                                        {% else %}
+                                        {% endif %}
+                                        {% if showbio %}
                                             {% if speaker.bio.indexOf('<p>') === 0 %}
                                                 {{ speaker.bio }}
                                             {% else %}
                                                 <p>{{ speaker.bio }}</p>
                                             {% endif %}
+                                        {% else %}
+                                            <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}/">Read more about {{ speaker.first }}</a>
                                         {% endif %}
-
                                     </div>
                                 </div>
                             </div>
@@ -123,24 +133,29 @@
 {% if conference_data.sessions && model.sessions.length > 0 %}
     <section class="section section-grid" id="sessions">
         <div class="section_body">
-            <h2 class="center">Schedule</h2>
-
-            {% for day in conference_data.days %}
-                {% if ! loop.first %}
-                    <section id="{{day}}" class="session_day">
-                        <h3 class="section-invert session_day_header">
-                            <span class="session_day_header_date">{{ day|date(date_format) }}</span>
-                        </h3>
-                        {% for session in model.sessions %}
-                            {% if session.date == day && session.feature %}
-                                {% include "includes/session.html" with session %}
-                            {% endif %}
-                        {% endfor %}
-                    <p class="center"><a href="{{ conference_data.folder }}/schedule/" class="button">See full schedule</a></p>
-                    </section>
-                {% endif %}
-            {% endfor %}
-
+            <h2 class="center">Sessions</h2>
+            <div class="cols cols-half">
+                {% for day in conference_data.days %}
+                    {% if ! loop.first %}
+                        <div class="col">
+                            <section id="{{day}}" class="session_day">
+                                <h3 class="section-invert session_day_header">
+                                    <span class="session_day_header_date">{{ day|date(date_format) }}</span>
+                                </h3>
+                                {% for session in model.sessions %}
+                                    {% if session.date == day && session.feature %}
+                                        {% include "includes/sessionteaser.html" with session %}
+                                    {% endif %}
+                                {% endfor %}
+                            </section>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="solo">
+                <p>View Source is equal parts sharing, learning, and meeting new people. Discuss and collaborate in an on-going hacking space, chill in comfy hangout spots, see some great demos, and participate in engaging discussions. Evening activities will provide a fun, friendly space to continue the conversation and start new ones.</p>
+            </div>
+            <p class="center"><a href="{{ conference_data.folder }}/schedule/" class="button">See full schedule</a></p>
         </div>
     </section>
 {% endif %}

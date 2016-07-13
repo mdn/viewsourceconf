@@ -37,6 +37,7 @@
                             {% endif %}
                             {{ session.title }}{% if session.summary != "" %} • <a href="#{{ session.slug }}">More&nbsp;&hellip;</a>{% endif %}
                         </h4>
+                    {% if session.summary %}    
                     <div class="session_summary">
                         {% if session.summary.indexOf('<p>') === 0 %}
                             {% autoescape false %}{{ session.summary }}{% endautoescape %}
@@ -44,6 +45,7 @@
                             {% autoescape false %}<p>{{ session.summary }}</p>{% endautoescape %}
                         {% endif %}
                     </div>
+                    {% endif %}
                 </div>
             {% endif %}
         </div>
