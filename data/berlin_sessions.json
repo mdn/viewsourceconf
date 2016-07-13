@@ -185,15 +185,5 @@
         "place": "Main Stage",
         "summary": "",
         "feature": true
-    },
-    {
-        "slug": "future-of-the-web",
-        "speakers": ["katharina-borchert"],
-        "title": "Future of the Web",
-        "start": "16:30",
-        "date": "2016-09-14",
-        "place": "Main Stage",
-        "summary": "",
-        "feature": true
     }
 ]
