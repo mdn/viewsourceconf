@@ -1,52 +1,182 @@
 [
-  {
-    "slug" : "rachel-andrew",
-    "first" : "Rachel",
-    "last" : "Andrew",
-    "feature": true,
-    "twitter" : "rachelandrew",
-    "pic" : "rachelandrew.jpg",
-    "bio" : "<p>Rachel Andrew lives in Bristol, England. She is one half of web development company <a href=\"http://edgeofmyseat.com\">edgeofmyseat.com</a>, the company behind Perch CMS (<a href=\"https://grabaperch.com\">grabaperch.com</a>).</p><p>Rachel has been working on the web since 1996 and writing about the web for almost as long. Her books include the recent Get Ready for CSS Grid Layout and HTML5 for Web Designers second edition. She is a regular columnist for A List Apart as well as other publications online and print. You can find her on Twitter as <a href=\"https://twitter.com/rachelandrew\">@rachelandrew</a> and writing about technology and business on her blog at <a href=\"https://rachelandrew.co.uk\">rachelandrew.co.uk</a>.</p>",
-    "sessions" : []
-  },
-  {
-    "slug" : "ola-gasidlo",
-    "first" : "Ola",
-    "last" : "Gasidlo",
-    "feature": true,
-    "twitter" : "",
-    "pic" : "olagasidlo.jpg",
-    "bio" : "Ola is a senior engineer at Styla living in Berlin, who is very passionate about Open Source, the Offline First concept and Hoodie. She loves making the web accessible for everyone, riding the trails, and daughter-driven development.",
-    "sessions" : []
-  },
-  {
-    "slug" : "lena-reinhard",
-    "first" : "Lena",
-    "last" : "Reinhard",
-    "feature": true,
-    "twitter" : "",
-    "pic" : "lenareinhard.jpg",
-    "bio" : "Lena Reinhard is a consultant, team leader, and former CEO with an interdisciplinary background. She has co-founded a software company and contributed to the Open Source projects Hoodie and Apache CouchDB. Lena has also co-organised tech conferences and has been an editor for the feminist blog Kleinerdrei.org. Through her work, Lena aims to support change in the tech industry to make it more accessible, diverse and inclusive. She currently lives in Berlin and really loves Alpacas.",
-    "sessions" : []
-  },
-  {
-    "slug" : "jen-simmons",
-    "first" : "Jen",
-    "last" : "Simmons",
-    "feature": true,
-    "twitter" : "",
-    "pic" : "jensimmons.jpg",
-    "bio" : "<p>Dubbed “the Terry Gross of the tech industry,” Jen Simmons is the host and executive producer of <a href=\"http://thewebahead.net\">The Web Ahead</a>. Her in-depth interviews explain emerging technology and predict the future of the web — and won the 2015 Net Award for Podcast of the Year.</p><p>Jen is a Designer and Developer Advocate at Mozilla, where she advocates for web standards and researches the coming revolution in graphic design on the web. She’s spoken at events including SXSW, An Event Apart, Fluent, Generate, Future of Web Design, and Respond. Her talk, <em>Modern Layouts: Getting Out of Our Ruts</em>, was awarded Best Conference Presentation at CSS Dev Conf 2014.</p>",
-    "sessions" : []
-  },
-  {
-    "slug" : "belen-albeza",
-    "first" : "Belen",
-    "last" : "Albeza",
-    "feature": false,
-    "twitter" : "",
-    "pic" : "belenalbeza.jpg",
-    "bio" : "Belén is an engineer and game developer working at Developer Relations in Mozilla. She cares about web standards, high-quality code, accessibility and game development. She has worked in both startup's and big companies, developing R&D prototypes, social games, apps and websites.   Belén now lives in Barcelona and likes heavy metal, joining game jams, rollerblading and 'Mass Effect'.",
-    "sessions" : []
-  }
+    {
+        "slug" : "dominique-hazael-massieux",
+        "first" : "Dominique",
+        "last" : "Hazael-Massieux",
+        "feature": false,
+        "twitter" : "dontcallmeDOM",
+        "pic" : "dominiquehazael-massieux.jpg",
+        "bio" : "I have been working on Web standards in W3C for 16 years, with a particular focus on their applications to mobile devices. I have been more specifically involved in the development of JavaScript APIs to access new hardware features, and more recently, of the APIs needed for Real-Time Communications (WebRTC). One of my most recent work item is to start standardizing the missing bricks for bringing Virtual Reality to the Web.",
+        "sessions" : ["webvr"]
+    },
+    {
+        "slug" : "chris-wilson",
+        "first" : "Chris",
+        "last" : "Wilson",
+        "feature": false,
+        "twitter" : "@cwilso",
+        "pic" : "chriswilson.jpg",
+        "bio" : "Chris Wilson is an Open Web Platform Developer Advocate working on Chrome. He has also Co-chaired the W3C Working Group for HTML5 and been Platform Architect at Microsoft. He began working on web browsers in 1993 when he co-authored the original Windows version of NCSA Mosaic, went on to Microsoft to work on Internet Explorer for fifteen years, and joined Google in 2010. He has a particular interest in enabling awesome user experiences on the web platform, and is a long-time participant in various web standards working groups. In his free time, he enjoys photography, SCUBA diving, playing music and hiking with his wife and daughters. You can keep up with Chris at <a href='http://twitter.com/cwilso'>@cwilso</a> and <a href='http://cwilso.com'>cwilso.com</a>.",
+        "sessions" : ["pwa"]
+    },
+    {
+        "slug" : "myles-borins",
+        "first" : "Myles",
+        "last" : "Borins",
+        "feature": false,
+        "twitter" : "thealphanerd",
+        "pic" : "mylesborins.jpg",
+        "bio" : "Myles Borins is a developer, musician, artist, and inventor. He works for IBM spending most of his time contributing to the node.js ecosystem",
+        "sessions" : ["node-releases"]
+    },
+    {
+        "slug" : "tracy-osborn",
+        "first" : "Tracy",
+        "last" : "Osborn",
+        "feature": false,
+        "twitter" : "limedaring",
+        "pic" : "tracyday.jpg",
+        "bio" : "Tracy Osborn is a designer, developer, and entreprenerd living in the California Bay Area. She’s a part of the developer relations team at DreamFactory, the author of Hello Web App, and creator of WeddingLovely. She's also an avid outdoorswoman and would love to go on a hike with you.",
+        "sessions" : ["design-for-non-designers"]
+    },
+    {
+        "slug" : "tim-pietrusky",
+        "first" : "Tim",
+        "last" : "Pietrusky",
+        "feature": false,
+        "twitter" : "@timpietrusky",
+        "pic" : "timpietrusky.jpg",
+        "bio" : "By day <a href='https://twitter.com/TimPietrusky'>Tim Pietrusky</a> is the CTO of <a href='https://twitter.com/Synoa_GmbH'>Synoa</a> and lives near Frankfurt (Main). At night he and his cat <a href='https://twitter.com/KazzoTheCat'>Kazzo</a> work on <a href='https://twitter.com/NERDDISCO'>NERDDISCO</a> to create live music visualizations with JavaScript. He contributed <a href='http://codepen.io/TimPietrusky/pen/cdmtA'>Kittify</a> to the \"only FUN open-source projects\"-community <a href='https://twitter.com/bullgit'>bullgit</a>",
+        "sessions" : ["special-music-visuals-hardware"]
+    },
+    {
+        "slug" : "ruth-john",
+        "first" : "Ruth",
+        "last" : "John",
+        "feature": false,
+        "twitter" : "rumyra",
+        "pic" : "ruthjohn.jpg",
+        "bio" : "Ruth is a web technologist and Google Developer Expert. She likes to educate people about new web technologies and inspire them to try them, coming up with exciting and engaging ways to use them. Her favourite things include interactive audio/visual installations and 80s cartoons, usually at the same time!",
+        "sessions" : ["special-music-visuals-hardware"]
+    },
+    {
+        "slug" : "dan-shappir",
+        "first" : "Dan",
+        "last" : "Shappir",
+        "feature": false,
+        "twitter" : "@danshappir",
+        "pic" : "danshappir.jpg",
+        "bio" : "Dan Shappir is a Performance Specialist at <a href='http://wix.com'>Wix.com</a>, focusing on making +80 million sites hosted on the Wix platform load and execute faster. Dan is a twenty year software development veteran, having worked on systems ranging from missile trajectory simulations to networked multi-user games to designing and building Rich Web Apps, since even before AJAX. Dan holds an M.Sc. in Computer Science, and has spoken at various technical conferences.",
+        "sessions" : ["es6"]
+    },
+    {
+        "slug" : "estelle-weyl",
+        "first" : "Estelle",
+        "last" : "Weyl",
+        "feature": false,
+        "twitter" : "estellevw",
+        "pic" : "estelleweyl.jpg",
+        "bio" : "Estelle is an internationally published author, speaker, and trainer. She is an Open Web Evangelist for <a href='http://instartlogic.com'>InstartLogic.com</a>. She is the author of Mobile HTML5 and Transitions & Animations in CSS, and co-author of HTML5 and CSS3 for the Real World.",
+        "sessions" : ["inclusive-markup"]
+    },
+    {
+        "slug" : "helen-holmes",
+        "first" : "Helen",
+        "last" : "Holmes",
+        "feature": false,
+        "twitter" : "helenvholmes",
+        "pic" : "helenvholmes.jpg",
+        "bio" : "Helen is a designer trying to work in the little space where good story, art, and technology all meet. A big proponent of making tech a healthy community for all, she helped found Women Who Code DC’s chapter and has mentored at student hackathons all over the U.S. She’s currently at Mozilla helping make developer tools the best she can. If she's not on the web, she's probably baking up a storm while listening to a good podcast.",
+        "sessions" : ["typography"]
+    },
+    {
+        "slug" : "rey-bango",
+        "first" : "Rey",
+        "last" : "Bango",
+        "feature": true,
+        "twitter" : "reybango",
+        "pic" : "reybango.jpg",
+        "bio" : "Rey Bango works at Microsoft in developer relations, focusing primarily on Internet Explorer and web development with the primary goal of being an advocate for the web development community.",
+        "sessions" : ["state-of-the-web"]
+    },
+    {
+        "slug" : "rachel-andrew",
+        "first" : "Rachel",
+        "last" : "Andrew",
+        "feature": false,
+        "twitter" : "rachelandrew",
+        "pic" : "rachelandrew.jpg",
+        "bio" : "<p>Rachel Andrew lives in Bristol, England. She is one half of web development company <a href=\"http://edgeofmyseat.com\">edgeofmyseat.com</a>, the company behind Perch CMS (<a href=\"https://grabaperch.com\">grabaperch.com</a>).</p><p>Rachel has been working on the web since 1996 and writing about the web for almost as long. Her books include the recent Get Ready for CSS Grid Layout and HTML5 for Web Designers second edition. She is a regular columnist for A List Apart as well as other publications online and print. You can find her on Twitter as <a href=\"https://twitter.com/rachelandrew\">@rachelandrew</a> and writing about technology and business on her blog at <a href=\"https://rachelandrew.co.uk\">rachelandrew.co.uk</a>.</p>",
+        "sessions" : ["layout"]
+    },
+    {
+        "slug" : "ola-gasidlo",
+        "first" : "Ola",
+        "last" : "Gasidlo",
+        "feature": false,
+        "twitter" : "",
+        "pic" : "olagasidlo.jpg",
+        "bio" : "Ola is a senior engineer at Styla living in Berlin, who is very passionate about Open Source, the Offline First concept and Hoodie. She loves making the web accessible for everyone, riding the trails, and daughter-driven development.",
+        "sessions" : ["offline-first"]
+    },
+    {
+        "slug" : "lena-reinhard",
+        "first" : "Lena",
+        "last" : "Reinhard",
+        "feature": true,
+        "twitter" : "",
+        "pic" : "lenareinhard.jpg",
+        "bio" : "Lena Reinhard is a consultant, team leader, and former CEO with an interdisciplinary background. She has co-founded a software company and contributed to the Open Source projects Hoodie and Apache CouchDB. Lena has also co-organised tech conferences and has been an editor for the feminist blog Kleinerdrei.org. Through her work, Lena aims to support change in the tech industry to make it more accessible, diverse and inclusive. She currently lives in Berlin and really loves Alpacas.",
+        "sessions" : ["coping"]
+    },
+    {
+        "slug" : "jen-simmons",
+        "first" : "Jen",
+        "last" : "Simmons",
+        "feature": false,
+        "twitter" : "",
+        "pic" : "jensimmons.jpg",
+        "bio" : "<p>Dubbed “the Terry Gross of the tech industry,” Jen Simmons is the host and executive producer of <a href=\"http://thewebahead.net\">The Web Ahead</a>. Her in-depth interviews explain emerging technology and predict the future of the web — and won the 2015 Net Award for Podcast of the Year.</p><p>Jen is a Designer and Developer Advocate at Mozilla, where she advocates for web standards and researches the coming revolution in graphic design on the web. She’s spoken at events including SXSW, An Event Apart, Fluent, Generate, Future of Web Design, and Respond. Her talk, <em>Modern Layouts: Getting Out of Our Ruts</em>, was awarded Best Conference Presentation at CSS Dev Conf 2014.</p>",
+        "sessions" : ["design-css"]
+    },
+    {
+        "slug" : "mike-taylor",
+        "first" : "Mike",
+        "last" : "Taylor",
+        "feature": false,
+        "twitter" : "",
+        "pic" : "miketaylor.jpg",
+        "bio" : "Mike Taylor is a Web Compatibility Engineer at Mozilla, working from Austin, TX. Previously he worked as a Web Opener at Opera Software, which is a funny title for pretty much the same thing.",
+        "sessions" : ["compatibility"]
+    },
+    {
+        "slug" : "belen-albeza",
+        "first" : "Belen",
+        "last" : "Albeza",
+        "feature": false,
+        "twitter" : "",
+        "pic" : "belenalbeza.jpg",
+        "bio" : "Belén is an engineer and game developer working at Developer Relations in Mozilla. She cares about web standards, high-quality code, accessibility and game development. She has worked in both startup's and big companies, developing R&D prototypes, social games, apps and websites.   Belén now lives in Barcelona and likes heavy metal, joining game jams, rollerblading and 'Mass Effect'.",
+        "sessions" : ["css-framework"]
+    },
+    {
+        "slug" : "jeremy-keith",
+        "first" : "Jeremy",
+        "last" : "Keith",
+        "feature": true,
+        "twitter" : "adactio",
+        "pic" : "jeremykeith.jpg",
+        "bio" : "Jeremy Keith lives in Brighton, England where he makes websites with the splendid design agency Clearleft. You may know him from such books as DOM Scripting, Bulletproof Ajax, and HTML5 For Web Designers. Jeremy spends most of his time goofing off on the internet, documenting his time-wasting on <a href='http://adactio.com'>adactio.com</a>, where he has been writing for fifteen years.",
+        "sessions" : ["resilience"]
+    },
+    {
+        "slug" : "katharina-borchert",
+        "first" : "Katharina",
+        "last" : "Borchert",
+        "feature": true,
+        "twitter" : "",
+        "pic" : "katharinaborchert.jpg",
+        "bio" : "As Mozilla’s Chief Innovation Officer, Katharina serves as the senior executive broadly responsible for fostering and enriching our culture of open innovation, internally and externally.",
+        "sessions" : ["future-of-the-web"]
+    }
 ]

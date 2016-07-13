@@ -49,9 +49,9 @@ test.describe('The landing page...', function() {
     this.timeout(10000);
     const url = baseURL;
 
-    ['seattle-2016', 'berlin-2016'].forEach(function(conference) {
+    ['berlin-2016'].forEach(function(conference) {
         test.it(`should have a visible link to the ${conference} page`, function(done) {
-            const conferenceSelector = `a[href="/${conference}"]`;
+            const conferenceSelector = `a[href="/${conference}/"]`;
             const driver = new webdriver.Builder().forBrowser(browser).build();
             driver.get(url).then(function() {
                 return driver.findElement(webdriver.By.css(conferenceSelector));
@@ -69,7 +69,7 @@ test.describe('The landing page...', function() {
 test.describe('The conference pages...', function() {
     this.timeout(10000);
 
-    ['seattle-2016', 'berlin-2016'].forEach(function(conference) {
+    ['berlin-2016'].forEach(function(conference) {
         const url = `${baseURL}/${conference}`;
 
         test.it(`should have a visible ${conference} register link`, function(done) {
@@ -86,7 +86,7 @@ test.describe('The conference pages...', function() {
             });
         });
 
-        test.it(`should have a visible ${conference} cfp link`, function(done) {
+        test.it.skip(`should have a visible ${conference} cfp link`, function(done) {
             const registerSelector = 'a[href="cfp"].button';
             const driver = new webdriver.Builder().forBrowser(browser).build();
             driver.get(url).then(function() {
