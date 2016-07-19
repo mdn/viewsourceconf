@@ -50,7 +50,7 @@ test.describe('The landing page...', function() {
     const url = baseURL;
 
     ['berlin-2016'].forEach(function(conference) {
-        test.it(`should have a visible link to the ${conference} page`, function(done) {
+        test.it.skip(`should have a visible link to the ${conference} page`, function(done) {
             const conferenceSelector = `a[href="/${conference}/"]`;
             const driver = new webdriver.Builder().forBrowser(browser).build();
             driver.get(url).then(function() {
