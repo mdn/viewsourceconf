@@ -22,7 +22,8 @@ SERVE_ARGS ?= -v ${MOUNT_DIR}/build:/usr/share/nginx/html \
 HTTPS_SERVE_ARGS ?= -v ${MOUNT_DIR}/build:/usr/share/nginx/html \
                     -v ${MOUNT_DIR}/nginx-ssl.conf:/etc/nginx/nginx.conf \
                     -v ${MOUNT_DIR}/ssl:/etc/nginx/ssl \
-                    -p "${SERVE_PORT}:80" -p "${HTTPS_SERVE_PORT}:443"
+                    -p "${SERVE_PORT}:80" -p "${HTTPS_SERVE_PORT}:443" \
+                    -e FORCE_HTTPS=1
 HOST_IP ?= $(shell docker-machine ip || echo 127.0.0.1)
 DEIS_PROFILE ?= usw
 DEIS_APP ?= viewsourceconf-stage
