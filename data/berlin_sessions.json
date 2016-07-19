@@ -152,7 +152,7 @@
         "date": "2016-09-13",
         "place": "Social Space",
         "summary": "<p>Spinning for our Social Hour</p>",
-        "feature": false
+        "feature": true
     },
     {
         "slug": "coping",
