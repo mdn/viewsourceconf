@@ -43,7 +43,7 @@
         "start": "10:00",
         "date": "2016-09-13",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>Not everyone can hire a professional designer for their websites and web apps, but we all still want our interfaces to be easy to use and attractive. However, if you want to learn a bit of design, design books jump straight into concepts like \"the golden ratio\" and teach proper typographic terms which, to be frank, aren't needed if you're just looking to improve your website's look and feel.</p><p>This talk will cover the top quick ways to improve your website, covering both user experience as well as visual design. Quick hits, easy to understand and utilize principles that anyone can use to improve their design skills. Perhaps you too can become the next designer+developer unicorn!</p>",
         "feature": true
     },
     {
@@ -53,8 +53,15 @@
         "start": "10:30",
         "date": "2016-09-13",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>Accessibility is the law and a good idea. Let's make the Web accessible and fast for everyone. We'll skip \"why\" and focus on \"how.\" Accessibility can be as simple as using the right semantic elements in your HTML. Semantic HTML can prevent bugs, improve performance, reduce code bloat, and make your site accessible to screen readers and keyboard users. We'll explores accessibility features native to semantic elements, adding a sprinkling of ARIA roles and attributes. Form controls, input masking, styleable selects, and carousels with a few lines of CSS, fewer lines of JS and no frameworks.</p>",
         "feature": true
+    },
+    {
+        "slug": "break",
+        "title": "Break",
+        "start": "11:00",
+        "date": "2016-09-13",
+        "feature": false
     },
     {
         "slug": "css-framework",
@@ -63,7 +70,7 @@
         "start": "11:30",
         "date": "2016-09-13",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>Nowadays it is very common to find CSS frameworks like Bootstrap used everywhere. But they come at a cost, paid in big CSS files, styles that don't get used, and a hard to maintain code base.  </p><p>In this presentation we will talk about why using a third-party framework might not be the right choice for your project, be it a theme or a custom website. We will also see techniques to craft a blog theme without frameworks, from layout to individual UI components.</p>",
         "feature": true
     },
     {
@@ -73,18 +80,39 @@
         "start": "12:00",
         "date": "2016-09-13",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>Node.js is growing up, and with that comes the responsibility of proper legacy support. As of Node.js Argon (v4.2.0) there is an official Long Term Support release cycle that lasts for 30 months!</p><p>How does a project moving at the pace of node maintain multiple release lines? How does a commit get backported? How is a release actually made? You will learn all this and more on this weeks episode of \"Node.js Releases, how do they work?\"</p>",
         "feature": true
     },
     {
         "slug": "typography",
         "speakers": ["helen-holmes"],
-        "title": "Type is your right!",
+        "title": "Type is Your Right!: Performance and Web Typography",
         "start": "12:30",
         "date": "2016-09-13",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>As front end developers, we <em>own</em> performance. As designers, we own typography. So how do you handle the tricky intersection of beautiful web typography and performant web pages? I'll be showing the audience OpenType features, explaining why they're important to typefaces, and explaining the tradeoffs they have on performance. We'll go over how to enable OpenType features and how you can optimize your font files for the web whether you own them and serve them up through @font-face or through Typekit so you can feel confident serving up gorgeous typography on your sites.</p>",
         "feature": true
+    },
+    {
+        "slug": "lunch",
+        "title": "Lunch",
+        "start": "13:00",
+        "date": "2016-09-13",
+        "feature": false
+    },
+    {
+        "slug": "discussions-demos",
+        "title": "Discussions and Demos",
+        "start": "14:00",
+        "date": "2016-09-13",
+        "feature": false
+    },
+    {
+        "slug": "break",
+        "title": "Break",
+        "start": "15:30",
+        "date": "2016-09-13",
+        "feature": false
     },
     {
         "slug": "es6",
@@ -93,47 +121,57 @@
         "start": "16:00",
         "date": "2016-09-13",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>ES6 and ES7 introduce many new features and capabilities to the JavaScript language. And yet, the majority of these enhancements are essentially syntactic sugar over the previous version. This is why tools like Babel are able to convert ES6 code into ES5. But there are several new features that can't be implemented in ES5.</p><p>In this session I'll explain what these new features are, what they do, and why they were added to the language.</p>",
         "feature": true
     },
     {
         "slug": "resilience",
         "speakers": ["jeremy-keith"],
-        "title": "Resilience: using progressive enhancement as an approach",
+        "title": "Resilience",
         "start": "16:30",
         "date": "2016-09-13",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>Web browsers have become so powerful that developers are now treating them as if they were a runtime environment as predictable as any other. But the truth is that we still need to deal with many unknown factors that torpedo our assumptions. The web is where Postel’s Law meets Murphy’s Law, so we can’t treat web development as if it were just another flavour of software. Instead we must work with the grain of the web.</p>",
         "feature": true
     },
     {
         "slug": "special-music-visuals-hardware",
         "speakers": ["tim-pietrusky", "ruth-john"],
-        "title": "music+visuals+hardware",
+        "title": "music + visuals + hardware",
         "start": "17:00",
         "date": "2016-09-13",
-        "place": "Main Stage",
+        "place": "Social Space",
         "summary": "",
         "feature": true
     },
     {
+        "slug": "dj-social",
+        "speakers": ["patrick-tartaglini"],
+        "title": "DJ",
+        "start": "17:30",
+        "date": "2016-09-13",
+        "place": "Social Space",
+        "summary": "<p>Spinning for our Social Hour</p>",
+        "feature": false
+    },
+    {
         "slug": "coping",
         "speakers": ["lena-reinhard"],
-        "title": "Coping with pressure and stress in tech",
+        "title": "Existing in Tech",
         "start": "09:30",
         "date": "2016-09-14",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>Over the past few years, several CSS methodologies and JavaScript frameworks have been released. In one year, we receive 32,120 business emails. Every weekday, we're active on Slack for 2 hours 15 minutes. Technology is moving fast, and constantly, there's so much going on. We constantly have to adapt in an ever-changing environment, while somehow still doing our job of building proper, functioning software to the latest tight-super-unrealistic deadline.</p><p>This talk will look at the human side of our daily work in technology. Together, we will examine which factors affect us physically and emotionally in our work. We'll learn how they lead to pressure, stress, self-consciousness and ultimately burnout, and we'll find out how to identify early warning signs of being affected. You'll leave with a realistic look at your own, human capabilities, and the knowledge of what you can do to take care of yourself while working on software.</p>",
         "feature": true
     },
     {
         "slug": "design-css",
         "speakers": ["jen-simmons"],
-        "title": "Design and CSS",
+        "title": "Revolutionize Your Page: Real Art Direction on the Web",
         "start": "10:00",
         "date": "2016-09-14",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>We finally have the tools necessary to create amazing page designs on the web. Now we can art direct our layouts, leveraging the power and tradition of graphic design.</p><p>In this eye-opening talk, Jen will explore concrete examples of an incredible range of new possibilities. She’ll walk through a step-by-step design process for figuring out how to create a layout as unique as your content. You’ll learn how Flexbox, Grid, Shapes, Multicolumn, Viewport Units, and more can be combined together to revolutionize how you approach the page &mdash; any page.</p>",
         "feature": true
     },
     {
@@ -147,34 +185,62 @@
         "feature": true
     },
     {
+        "slug": "break",
+        "title": "Break",
+        "start": "11:00",
+        "date": "2016-09-14",
+        "feature": false
+    },
+    {
         "slug": "layout",
         "speakers": ["rachel-andrew"],
-        "title": "CSS Layout, Flexbox and more",
+        "title": "Laying out the future with Grid and Flexbox",
         "start": "11:30",
         "date": "2016-09-14",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>It is 2016. CSS is now 20 years old, and it has taken this long for us to get a true layout system designed for web pages and applications. A layout system, not based on hacking properties designed for something else entirely, but one that considers the reality of design for the web today.</p><p>In this talk I’ll introduce this new layout system, a system encompassing Flexbox, CSS Grid Layout and the Box Alignment Module. We’ll take a look at the mindset shift needed to really take advantage of these modules, and also consider what they mean in terms of accessibility and performance.</p>",
         "feature": true
     },
     {
         "slug": "compatibility",
         "speakers": ["mike-taylor"],
-        "title": "Web Compatibility",
+        "title": "Doing the Unstuck: How to make browsers compatible with the web",
         "start": "12:00",
+        "date": "2016-09-14",
+        "place": "Main Stage",
+        "summary": "<p>What does it mean for JavaScript and CSS to be — or not to be — compatible with the web?</p><p>Is it possible for a site written today to continue to work in 10 years? Likewise, could existing code complicate adding language features or fixing mistakes in web APIs?</p><p>In this talk I'll discuss the issues that arise when browsers attempt to clean up the web platform, either by adding new language features and DOM APIs or removing old ones — while attempting to remain backwards compatible. I'll even talk about some controversial moves made by browsers to support non-standard (cough webkit prefixes) CSS and JS.</p>",
+        "feature": true
+    },
+    {
+        "slug": "offline-first",
+        "speakers": ["ola-gasidlo"],
+        "title": "Offline First + 3 Years of Learning",
+        "start": "12:30",
         "date": "2016-09-14",
         "place": "Main Stage",
         "summary": "",
         "feature": true
     },
     {
-        "slug": "offline-first",
-        "speakers": ["ola-gasidlo"],
-        "title": "Offline First",
-        "start": "12:30",
+        "slug": "lunch",
+        "title": "Lunch",
+        "start": "13:00",
         "date": "2016-09-14",
-        "place": "Main Stage",
-        "summary": "",
-        "feature": true
+        "feature": false
+    },
+    {
+        "slug": "discussions-demos",
+        "title": "Discussions and Demos",
+        "start": "14:00",
+        "date": "2016-09-14",
+        "feature": false
+    },
+    {
+        "slug": "break",
+        "title": "Break",
+        "start": "15:30",
+        "date": "2016-09-14",
+        "feature": false
     },
     {
         "slug": "webvr",
@@ -185,5 +251,14 @@
         "place": "Main Stage",
         "summary": "",
         "feature": true
+    },
+    {
+        "slug": "closing-keynote",
+        "title": "Closing Keynote",
+        "start": "15:30",
+        "date": "2016-09-14",
+        "place": "Main Stage",
+        "summary": "Coming Soon",
+        "feature": false
     }
 ]
