@@ -48,7 +48,7 @@ metalsmith(__dirname)
     .source('source')
     // Define some global values that will be accessible in metadata anywhere.
     .use(define({
-        date_format: 'F j, Y',
+        date_format: 'j F, Y',
     }))
     // Add debug messages to terminal. Dev-only.
     .use(devonly(debug, {}))
