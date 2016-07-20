@@ -66,12 +66,27 @@
         trackClicks: function() {
             // capture all click events
             document.addEventListener('click', function (event) {
+
+                // utility functions
+                function controlClasses(controls){
+                    var controlClasses = controls.className;
+                    // remove common utility class
+                    controlClasses = controlClasses.replace('section','');
+                    // make double spaces single
+                    controlClasses = controlClasses.replace(/\s{2,}/,'');
+                    // remove spaces at start and finish
+                    controlClasses = controlClasses.trim();
+                    return controlClasses;
+                }
+
+
                 // was it a link?
                 event = event || window.event;
                 var local = window.location.protocol + '//' + window.location.host;
                 var trigger = event.target.tagName;
                 var parent = event.target.parentNode.tagName;
-                if(trigger == 'A' || parent == 'A') {
+                var category, action, label, data;
+                if(trigger === 'A' || parent === 'A') {
                     var link = (trigger == 'A') ? event.target : event.target.parentNode;
                     var href;
                     // no really, was it a link?
@@ -83,7 +98,7 @@
                     }
 
                     // what's our label?
-                    var label = link.href.replace(local, '');
+                    label = link.href.replace(local, '');
 
                     // track header/footer click
                     var headerNode = document.getElementById('header');
@@ -103,8 +118,8 @@
                     }
 
                     // variables to populate as we check tracking posabilities
-                    var category = 'link';
-                    var action = '';
+                    category = 'link';
+                    action = '';
                     var needsCallback = false;
 
                     // link away from site
@@ -121,16 +136,18 @@
                     }
 
                     // aria-expanded on link - over rides anchor tracking
-                    if(link.getAttribute('aria-expanded') && link.getAttribute('aria-controls')) {
+                    if(link.hasAttribute('aria-expanded') && link.hasAttribute('aria-controls')) {
+                        // we only track openings, not closings
+                        var linkExpanded = link.getAttribute('aria-expanded');
+                        if(linkExpanded === 'false') {
+                            return;
+                        }
                         category = 'expand';
-                        // get the class off the object it controls
-                        var controlFor = link.getAttribute('aria-controls');
-                        var controls = document.getElementById(controlFor);
-                        var controlClasses = controls.className;
-                        // remove common utility class
-                        controlClasses = controlClasses.replace('section ','');
-                        action = controlClasses;
-
+                        // get the classes off the object it controls
+                        var linkControlFor = link.getAttribute('aria-controls');
+                        var linkControls = document.getElementById(linkControlFor);
+                        // set action
+                        action = controlClasses(linkControls);
                     }
 
                     // file link
@@ -160,7 +177,7 @@
                         window.location = href;
                     };
 
-                    var data = {
+                    data = {
                         'category': category,
                         'action': action,
                         'label': label,
@@ -173,6 +190,34 @@
                     } else {
                         analytics.trackEvent(data);
                     }
+                } else if(trigger === 'BUTTON' || parent === 'BUTTON') {
+                    var button = (trigger == 'BUTTON') ? event.target : event.target.parentNode;
+                    if(button.hasAttribute('aria-expanded') && button.hasAttribute('aria-controls')) {
+                        // we only track openings, not closings
+                        var buttonExpanded = button.getAttribute('aria-expanded');
+                        if(buttonExpanded === 'false') {
+                            return;
+                        }
+
+                        category = 'expand';
+                        // get the classes off the object it controls
+                        var buttonControlFor = button.getAttribute('aria-controls');
+                        var buttonControls = document.getElementById(buttonControlFor);
+                        // set action
+                        action = controlClasses(buttonControls);
+                        // set label
+                        label = buttonControlFor;
+                    } else {
+                        // we don't track other buttons yet
+                        return;
+                    }
+
+                    data = {
+                        'category': category,
+                        'action': action,
+                        'label': label,
+                    };
+                    analytics.trackEvent(data);
                 }
             }, false);
         },
@@ -184,7 +229,11 @@
         trackClientErrors: function() {
             window.addEventListener('error', function (err) {
                 var lineAndColumnInfo = err.colno ? ' line:' + err.lineno +', column:'+ err.colno : ' line:' + err.lineno;
-                analytics.trackEvent('Error', err.message , err.filename + ':' + lineAndColumnInfo);
+                window.vs.analytics.trackEvent({
+                    category: 'error',
+                    action:  err.message,
+                    label: lineAndColumnInfo
+                });
             });
         },
 
@@ -223,5 +272,3 @@
     analytics.trackClientErrors();
     analytics.trackLandingSplit();
 })();
-
-
