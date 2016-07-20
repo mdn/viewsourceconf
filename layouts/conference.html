@@ -191,7 +191,10 @@
             {% endfor %}
 
             {% for hotel in model.venue.hotels %}
-                {% if loop.first %}<h3 id="hotels">Suggested Hotels</h3>{% endif %}
+                {% if loop.first %}
+                    <h3>Suggested Hotels</h3>
+                    <div id="hotels_suggestions" class="hotels_suggestions js-hidden">
+                {% endif %}
                 <div class="cols cols-half">
                     <h4><a href="{{ hotel.url }}" target="_blank">{{ loop.key }}</a></h4>
                     <div class="col">
@@ -212,6 +215,9 @@
                         </p>
                     </div>
                 </div>
+                {% if loop.last %}
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </section>

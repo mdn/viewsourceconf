@@ -69,3 +69,20 @@ button
         })
     }
 }
+
+.button-expand {
+    position: relative;
+    padding-right: 3rem;
+
+    &::after {
+        content: '\A+';
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        margin-top: -1rem;
+        set-font-size(28px);
+    }
+    &[aria-expanded=true]::after {
+        content: '\A-';
+    }
+}

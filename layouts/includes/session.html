@@ -35,10 +35,10 @@
                                     {% endfor %}
                                 </span>
                             {% endif %}
-                            {{ session.title }}{% if session.summary != "" %} • <a href="#{{ session.slug }}">More&nbsp;&hellip;</a>{% endif %}
+                            <span class="session_title">{{ session.title }}</span>
                         </h4>
-                    {% if session.summary %}    
-                    <div class="session_summary">
+                    {% if session.summary %}
+                    <div id="{{ session.slug }}_summary" class="session_summary js-hidden">
                         {% if session.summary.indexOf('<p>') === 0 %}
                             {% autoescape false %}{{ session.summary }}{% endautoescape %}
                         {% else %}

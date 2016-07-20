@@ -27,19 +27,7 @@ session
     })
 }
 
-.session_summary {
-    display: none;
-}
-
-.session:target .session_summary {
-    display: block;
-}
-
 .session_speakers {
-    display: block;
-}
-
-.session_speaker {
     display: block;
 }
 
@@ -51,22 +39,88 @@ session
     > a {
         min-width: 0; /* http://stackoverflow.com/questions/31967019/max-width-doesnt-work-in-flexbox  */
         overflow: hidden;
+
+        > img {
+            display: block;
+        }
     }
 }
 
+.session_speaker {
+    display: block;
+}
+
+button.session_title {
+    // this becomes a button with some js help so need to over ride defulat button styles
+    // also needs the speificity bump
+    display: inline-block;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    min-width: 0;
+    border: 0;
+    padding: 0;
+    background: #fff;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: $heading-line-height;
+    text-align: left;
+}
+
+.session_cta {
+    theme({
+        color: $theme-links
+    })
+}
+
+.session_title {
+
+        &:hover,
+        &:focus,
+        &:active {
+
+            .session_cta {
+                text-decoration: underline;
+            }
+        }
+}
+
 @media $media-query-320-and-up {
+    $session-pic-320 = 60px;
+    $session-pic-space-320 = $session-pic-320 + $grid-gutter-width + 5px; // plus a little extra because buttons have weird widths
+
     .session_pic {
         float: right;
-        width: 60px;
+        width: $session-pic-320;
         flex-direction: column;
         margin-top: -2.1em;
         margin-left: $grid-gutter-width;
     }
+
+    button.session_title {
+        max-width: "calc(100% - %s)" % $session-pic-space-320;
+    }
+
+    .session_summary::before {
+        content: '';
+        display: block;
+        height: 8.5em;
+        margin: -8.5em 0 0;
+    }
 }
 
 @media $media-query-480-and-up {
+    $session-pic-480 = 100px;
+    $session-pic-space-480 = $session-pic-480 + $grid-gutter-width + 5px; // plus a little extra because buttons have weird widths
+
     .session_pic {
-        width: 100px;
+        width: $session-pic-480;
+    }
+
+    button.session_title {
+        max-width: "calc(100% - %s)" % $session-pic-space-480;
     }
 }
 
@@ -78,6 +132,13 @@ session
         &::before {
             content: "• ";
         }
+    }
+
+    .session_pic {
+        float: none;
+        width: auto;
+        flex-direction: row;
+        margin: 0;
     }
 
     .session_speaker {
@@ -95,11 +156,13 @@ session
         }
     }
 
-    .session_pic {
-        float: none;
-        width: auto;
-        flex-direction: row;
-        margin: 0;
+    button.session_title {
+        max-width: 100%;
+    }
+
+    .session_summary::before {
+        height: 5.5em;
+        margin: -5.5em 0 0;
     }
 }
 

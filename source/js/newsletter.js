@@ -10,7 +10,7 @@
     var newsletterForm = document.getElementById('newsletter_form');
     // only do this if there's a form on the page
     if(!newsletterForm) { return; }
-    var newsletterWrapper = window.vs.utils.closestByClass(newsletterForm, 'newsletter');
+    var newsletterWrapper = window.vs.utils.parentByClass(newsletterForm, 'newsletter');
 
     // add listener if form is collapsed
     if(newsletterWrapper.classList.contains('js-collapse')) {
@@ -55,12 +55,11 @@
 
         // if this is an inline form
         if(newsletterWrapper.classList.contains('newsletter-inline')) {
-            var sectionBody = window.vs.utils.closestByClass(newsletterForm, 'section_body');
+            var sectionBody = window.vs.utils.parentByClass(newsletterForm, 'section_body');
             // move the thanks up to the section level
             sectionBody.insertBefore(thanks, sectionBody.firstChild);
             // hide the other stuff in the section
             var sectionChildren = sectionBody.children;
-            console.log(sectionChildren);
             for (var i = 0; i < sectionChildren.length; i++) {
                 sectionChildren[i].style.display = 'none';
             }

@@ -80,14 +80,6 @@
         Array.prototype.forEach.call(controls, function(element, i) {
             element.setAttribute('aria-expanded', 'true');
         });
-
-        if(window.vs.analytics) {
-            window.vs.analytics.trackEvent({
-                category: 'expand',
-                action: 'speaker',
-                label: speakerId
-            });
-        }
     }
 
     function speakerClose(speakerId) {
