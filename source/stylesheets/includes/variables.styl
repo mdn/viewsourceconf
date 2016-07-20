@@ -4,7 +4,7 @@
 colors
 ====================================================================== */
 
-/* seattle needs to be before default because default relies on it */
+// seattle variables need to stay because other stuff uses it
 $seattle-text = #4D4E54;
 $seattle-background = #FFFFFF;
 $seattle-light = #72C0B0;
@@ -49,7 +49,6 @@ $dark-fade = linear-gradient(#201e1f $grid-gutter-width, #2e2c2d $grid-gutter-wi
 // list of theme prefixes
 $themes = {
     'default': '',
-    'seattle': '.seattle',
     'berlin': '.berlin'
 };
 
@@ -57,73 +56,61 @@ $themes = {
 ---------------------------------------------------------------------- */
 $theme-text = {
     'default': $default-text,
-    'seattle': $seattle-text,
     'berlin': $berlin-text
 };
 
 $theme-links = {
     'default': $seattle-secondary,
-    'seattle': $seattle-secondary,
     'berlin': $berlin-secondary
 };
 
 $theme-buttons = {
     'default': $seattle-secondary,
-    'seattle': $seattle-secondary,
     'berlin': $berlin-secondary
 };
 
 $theme-background = {
     'default': $default-background,
-    'seattle': $seattle-background,
     'berlin': $berlin-background
 };
 
 $theme-light = {
     'default': $default-light,
-    'seattle': $seattle-light,
     'berlin': $berlin-light
 };
 
 $theme-dark = {
     'default': $default-dark,
-    'seattle': $seattle-dark,
     'berlin': $berlin-dark
 };
 
 $theme-secondary = {
     'default': $default-secondary,
-    'seattle': $seattle-secondary,
     'berlin': $berlin-secondary
 };
 
 $theme-headings = {
     'default': $default-headings,
-    'seattle': $seattle-headings,
     'berlin': $berlin-headings
 };
 
 $theme-gradient = {
     'default': $default-gradient,
-    'seattle': $seattle-gradient,
     'berlin': $berlin-gradient
 };
 
 $theme-grid = {
     'default': $dark-grid,
-    'seattle': $light-grid,
     'berlin': $light-grid
 };
 
 $theme-grid-background = {
     'default': $dark-grid-background,
-    'seattle': $light-grid-background,
     'berlin': $light-grid-background
 };
 
 $theme-fade = {
     'default': $dark-fade,
-    'seattle': $light-fade,
     'berlin': $light-fade
 };
 
