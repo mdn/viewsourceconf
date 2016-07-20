@@ -103,6 +103,9 @@
     var summaryDivs = document.querySelectorAll('.session_summary');
 
     if(summaryDivs) {
+        var sessionTitleCTATextCollapsed = 'More…';
+        var sessionTitleCTATextExpanded = 'Less';
+
         Array.prototype.forEach.call(summaryDivs, function(element, i) {
             var summary = element;
             // get parent div
@@ -112,8 +115,7 @@
             var sessionTitleText = sessionTitle.innerHTML + ' • ';
             var sessionTitleCTA = document.createElement('span');
             sessionTitleCTA.classList.add('session_cta');
-            var sessionTitleCTATextCollapsed = 'More…';
-            var sessionTitleCTATextExpanded = 'Less';
+
 
             // create button to replace session_title
             var sessionButton = document.createElement('button');
@@ -142,18 +144,19 @@
                     sessionTitleCTA.textContent = sessionTitleCTATextCollapsed;
                 }
             }, false);
-
-            if(isHash) {
-                var matchesSummary = document.querySelector('.session button[aria-controls="' + targetId + '"]');
-                var matchesParent = document.querySelector('.session button[aria-controls="' + targetId + '_summary"]');
-                if(matchesParent || matchesSummary) {
-                    var controller = matchesSummary ? matchesSummary : matchesParent;
-                    var controlled = matchesSummary ? document.getElementById(targetId) : document.getElementById(targetId + '_summary');
-                    expandOpen(controller);
-                    controlled.classList.remove('js-hidden');
-                    sessionTitleCTA.textContent = sessionTitleCTATextExpanded;
-                }
-            }
         });
+
+        if(isHash) {
+            var matchesSummary = document.querySelector('.session button[aria-controls="' + targetId + '"]');
+            var matchesParent = document.querySelector('.session button[aria-controls="' + targetId + '_summary"]');
+            if(matchesParent || matchesSummary) {
+                var matchedController = matchesSummary ? matchesSummary : matchesParent;
+                var matchedControlled = matchesSummary ? document.getElementById(targetId) : document.getElementById(targetId + '_summary');
+                var cta = matchedController.querySelector('.session_cta');
+                expandOpen(matchedController);
+                matchedControlled.classList.remove('js-hidden');
+                cta.textContent = sessionTitleCTATextExpanded;
+            }
+        }
     }
 })();
