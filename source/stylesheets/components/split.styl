@@ -8,11 +8,6 @@ split
 .split {
     position: relative;
 
-    &,
-    &:last-child { // needs to counter last-child rules in .section
-        margin-bottom: ($grid-gutter-width * 2);
-    }
-
     @extends $clearfix
 
     &::before {
@@ -48,16 +43,6 @@ split
     a:focus,
     a:active {
         color: #fff;
-    }
-
-    &.seattle {
-        background-color: $seattle-dark;
-        background: $seattle-gradient;
-
-        &::before {
-            right: 0;
-            background-image: linear-gradient(125deg, transparent 115px, #106671 115px, #72C0B0);
-        }
     }
 
     &.berlin {
@@ -96,37 +81,8 @@ split
         align-items: stretch;
     }
 
-    .split_conference {
-
-        &.seattle {
-            padding-left: 150px;
-            text-align: left;
-        }
-
-        &.berlin {
-            padding-right: 150px;
-            text-align: right;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: calc(50vw + 77px);
-            z-index: 1;
-        }
-    }
 }
 
-@media $media-query-tall {
-    .split {
-        &,
-        &:last-child { // needs to counter last-child rules in .section
-            margin-bottom: ($grid-gutter-width-wide * 2);
-        }
-    }
-}
 
 @media print {
     .split_conference {
