@@ -32,11 +32,8 @@
                             {% endfor %}
                         </span>
                     {% endif %}
-
                 </h4>
-                <p class="sessionteaser_title">
-                    {{ session.title }}{% if session.summary != "" %} • <a href="{{ conference_data.folder }}/schedule#{{ session.slug }}">More&nbsp;&hellip;</a>{% endif %}
-                </p>
+                <a class="sessionteaser_title" href="{{ conference_data.folder }}/schedule/#{{ session.slug }}">{{ session.title }}{% if session.summary != "" %} <span class="sessionteaser_title_spacer">•</span> <span class="sessionteaser_cta">More&hellip;</span>{% endif %}</a>
             {% endif %}
         </div>
     </div>

@@ -47,8 +47,34 @@ $sessionteaser_image = 100px;
 }
 
 .sessionteaser_title {
-    margin-bottom: 0;
+    display: block;
     line-height: 1.24;
+
+    theme({
+            color: $theme-text
+    })
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+
+        .sessionteaser_cta {
+             text-decoration: underline;
+        }
+    }
+}
+
+.sessionteaser_title_spacer {
+    display: none;
+}
+
+.sessionteaser_cta {
+    display: block;
+
+    theme({
+        color: $theme-links
+    })
 }
 
 @media $media-query-320-and-up {
@@ -80,6 +106,11 @@ $sessionteaser_image = 100px;
         width: auto;
         flex-direction: row;
         margin: 0;
+    }
+
+    .sessionteaser_title_spacer,
+    .sessionteaser_cta {
+        display: inline;
     }
 }
 
