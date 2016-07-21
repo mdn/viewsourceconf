@@ -125,8 +125,7 @@ metalsmith(__dirname)
             tidyOptions: {
                 'indent-spaces': 4,
                 'quote-ampersand': false,
-                'new-blocklevel-tags': ['svg', 'defs'],
-                'new-inline-tags': ['path', 'polyline', 'line', 'polygon'],
+                'new-inline-tags': ['svg', 'defs', 'path', 'polyline', 'line', 'polygon'],
             },
         }))
         // Log global metadata, etc., to terminal.
