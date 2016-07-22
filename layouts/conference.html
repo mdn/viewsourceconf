@@ -19,28 +19,9 @@
         </div>
     </section>
 
-    <section id="newsletter" class="section section-dark">
-        <div class="section_body">
-            <div class="cols cols-half">
-                <div class="col">
-                    <div class="sidecol sidecol-line">
-                        <div class="sidecol_side">
-                            {% set class_names = 'newsletter_icon' %}
-                            {% include "includes/svg/email.svg" %}
-                        </div>
-                        <div class="sidecol_body">
-                            <h2>Get updates by email</h2>
-                            <p>Join our mailing list to get updates and more information about View Source.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    {% set collapse = true %}
-                    {% include "includes/newsletter.html" with collapse %}
-                </div>
-            </div>
-        </div>
-    </section>
+{% if conference_data.announcements %}
+    {% include "includes/announcements.html" with conference_data.slug %}
+{% endif %}
 
 {% if conference_data.cfp %}
     <section class="section section-grid">
@@ -160,6 +141,28 @@
     </section>
 {% endif %}
 
+    <section id="newsletter" class="section section-dark">
+        <div class="section_body">
+            <div class="cols cols-half">
+                <div class="col">
+                    <div class="sidecol sidecol-line">
+                        <div class="sidecol_side">
+                            {% set class_names = 'newsletter_icon' %}
+                            {% include "includes/svg/email.svg" %}
+                        </div>
+                        <div class="sidecol_body">
+                            <h2>Get updates by email</h2>
+                            <p>Join our mailing list to get updates and more information about View Source.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    {% set collapse = true %}
+                    {% include "includes/newsletter.html" with collapse %}
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% if conference_data.venue %}
     <section class="section" id="venue">
