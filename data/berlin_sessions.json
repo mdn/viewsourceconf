@@ -27,14 +27,13 @@
         "feature": false
     },
     {
-        "slug": "state-of-the-web",
-        "speakers": ["rey-bango"],
-        "title": "State of the Web",
+        "slug": "opening-keynote",
+        "title": "Opening Keynote",
         "start": "09:30",
         "date": "2016-09-13",
         "place": "Main Stage",
         "summary": "",
-        "feature": true
+        "feature": false
     },
     {
         "slug": "design-for-non-designers",

@@ -90,16 +90,6 @@
         "sessions" : ["typography"]
     },
     {
-        "slug" : "rey-bango",
-        "first" : "Rey",
-        "last" : "Bango",
-        "feature": false,
-        "twitter" : "reybango",
-        "pic" : "reybango.jpg",
-        "bio" : "Rey Bango works at Microsoft in developer relations, focusing primarily on Internet Explorer and web development with the primary goal of being an advocate for the web development community.",
-        "sessions" : ["state-of-the-web"]
-    },
-    {
         "slug" : "rachel-andrew",
         "first" : "Rachel",
         "last" : "Andrew",
