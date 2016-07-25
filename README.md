@@ -10,13 +10,13 @@ In 2016 we're using a static site generator, [metalsmith](http://metalsmith.io),
 
 `/source`: Most source code for the site lives here: HTML, Stylus, JavaScript. Subdirectories:
   * `/2015`: The prior year's website (which is mostly ignored by metalsmith using [metalsmith-branch](https://github.com/ericgj/metalsmith-branch)).
-  * `/berlin-2016` or `/seattle-2016`: Any source code specific to these events.
+  * `/berlin-2016`: Any source code specific to the event.
   * `/js` and `/stylesheets` (which are processed by [metalsmith-uglify](https://github.com/ksmithut/metalsmith-uglify) and [metalsmith-stylus](https://github.com/esundahl/metalsmith-stylus), respectively)
   * `/index.html`: the main landing page that'll live at http://viewsourceconf.org
 
-`/layouts`: One or more layouts that page content can live in. For example we might have a berlin layout or a seattle layout, or a front and interior layout. These files are processed by [metalsmith-layouts](https://github.com/superwolff/metalsmith-layouts).
+`/layouts`: One or more layouts that page content can live in. For example we might have a berlin layout, a front layout, an interior layout. These files are processed by [metalsmith-layouts](https://github.com/superwolff/metalsmith-layouts).
 
-`/data`: json files containing structured data. For example, `berlin_speakers.json` or `seattle_sessions.json`. Data files are an appropriate place to put content that we want to handle in a structured, templated way. Data files are processed by [metalsmith-models](https://github.com/jaichandra/metalsmith-models).
+`/data`: json files containing structured data. For example, `berlin_speakers.json`. Data files are an appropriate place to put content that we want to handle in a structured, templated way. Data files are processed by [metalsmith-models](https://github.com/jaichandra/metalsmith-models).
 
 `/build`: The built site goes here. It looks a lot like the source directory, but files have been processed and composed. JS will be uglified; stylus files will be CSS-ified. This directory may or may not be checked into the repo.
 
