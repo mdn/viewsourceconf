@@ -10,9 +10,13 @@
 
                 <p class="hero_sub">{{ conference_data.date }}</p>
 
-                <p>View Source is an event by developers, for developers, exploring best practices and exciting new techniques.</p>
+                <p>In this three-day, intimate (limited to 500 participants), single-track conference,
+                    Mozilla brings together the most visionary speakers and companies to explore new frontiers
+                    in the open web, from both technical and design perspectives, across platforms and devices.
+                    And when the day’s done, we’ll relax with fun (optional) group activities.</p>
 
-                <p>Sessions will dive into the code, analyze the web experience across browsers and devices, and explore ready-to-use new technologies. Demos will focus on products that create powerful, convenient, and easy-to-use apps and websites. </p>
+                <p>It’s a great opportunity to network with likeminded people in a collaborative, inclusive
+                    environment.</p>
 
                 {% if conference_data.register_url %}<p><a href="{{ conference_data.register_url }}" class="button button-bright">Register</a></p>{% endif %}
             </div>
@@ -264,5 +268,35 @@
         {% endif %}
     </section>
 
+    <section class="section section-grid">
+        <div class="section_body">
+            <div class="cols cols-third">
+                <div class="col">
+                    <p><img alt="A speaker on stage at View Source 2015." src="/assets/images/speaker.jpg"></p>
+                </div>
+                <div class="col col-x2">
+                    <h2>Previous Events</h2>
+                    <p>Our first View Source Conference was held in Portland, Oregon, November 1-3, 2015. More than 400 front-end developers, designers, and industry leaders came together to discuss the web of today and explore the possibilities of the web of tomorrow.</p>
+                    <p><a href="/2015/" class="button">See View Source 2015</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="strip"></div>
+
+    <section class="section section-night">
+        <div class="section_body">
+            <div class="solo">
+                <h2>About Mozilla</h2>
+
+                <p>Founded in 1998, Mozilla is best known for the Firefox browser, used by hundreds of millions of Internet citizens globally, across various devices and platforms.</p>
+
+                <p>As a non-profit, Mozilla works to empower all Internet consumers to also be producers, equipping them with tools, platforms, documentation, community and other resources. We also care deeply about open standards and platforms that are accessible to everyone, no matter where they are or what browser they choose.</p>
+
+                <p>Read our <a href="https://www.mozilla.org/en-US/about/manifesto/">Manifesto</a> to learn more about the principles that guide our mission.</p>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
