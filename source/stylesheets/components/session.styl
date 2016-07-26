@@ -20,11 +20,8 @@ session
 .session {
     padding: $grid-gutter-width;
     margin-bottom: ($grid-gutter-width / 2);
+    background-color: $berlin-background;
     @extends $clearfix
-
-    theme({
-        background-color: $theme-background
-    })
 }
 
 .session_speakers {
@@ -70,9 +67,7 @@ button.session_title {
 }
 
 .session_cta {
-    theme({
-        color: $theme-links
-    })
+    color: $berlin-links;
 }
 
 .session_title {
@@ -146,9 +141,7 @@ button.session_title {
 
         &::before {
             content: "• ";
-            theme({
-                color: $theme-text
-            })
+            color: $berlin-text;
         }
 
         &:first-child::before {

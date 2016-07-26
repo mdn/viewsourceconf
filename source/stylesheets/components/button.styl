@@ -10,7 +10,9 @@ button
     min-width: $input-min-width;
     border: $input-border-width solid transparent;
     padding: $input-v-padding $input-h-padding;
+    border-color: $berlin-secondary;
     background: transparent;
+    color: $berlin-secondary;
     font-size: inherit;
     line-height: 1; // to match elements/forms.styl
     text-align: center;
@@ -18,19 +20,11 @@ button
     text-shadow: none; /* over-ride text shadow in .hero */
     transition: all $transition-duration $transition-timing;
 
-    theme({
-        border-color: $theme-buttons
-        color: $theme-buttons
-        text-decoration: none
-    })
-
     &:hover,
     &:focus,
     &:active {
+        background-color: $berlin-background;
         transform: scale(1.05);
-        theme({
-            background-color: $theme-background
-        })
     }
 
     &::after{
@@ -48,11 +42,9 @@ button
     &:hover,
     &:focus,
     &:active {
-        theme({
-            border-color: transparent
-            background-color: $theme-buttons
-            color: #fff
-        })
+        border-color: transparent;
+        background-color: $berlin-secondary;
+        color: $berlin-background;
     }
 }
 
@@ -62,11 +54,9 @@ button
     &:hover,
     &:focus,
     &:active {
-        theme({
-            border-color: transparent
-            background-color: #fff
-            color: $theme-dark
-        })
+        border-color: transparent
+        background-color: $berlin-background
+        color: $berlin-dark;
     }
 }
 

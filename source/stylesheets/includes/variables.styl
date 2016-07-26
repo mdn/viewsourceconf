@@ -15,9 +15,9 @@ $seattle-headings = $seattle-dark;
 $default-border = #d2d3d5;
 $default-text = #FFFFFF;
 $default-background = #313131;
-$default-light = saturation($seattle-light, 0%);
+$default-light = saturation(#72C0B0, 0%);
 $default-dark = #272526;
-$default-secondary = saturation($seattle-secondary, 0%);
+$default-secondary = saturation(#63C8CF, 0%);
 $default-headings = $default-text;
 
 $berlin-text = #4D4E54;
@@ -28,7 +28,6 @@ $berlin-secondary = #F79B72;
 $berlin-headings = $berlin-dark;
 
 $default-gradient = linear-gradient(26deg, $default-light, $default-dark 50%);
-$seattle-gradient = linear-gradient(26deg, $seattle-light, $seattle-dark 50%);
 $berlin-gradient = linear-gradient(26deg, $berlin-light, $berlin-dark 50%);
 
 $grid-size = 30px; // can't combine grid and grid background because stylus treats the background shorthand declaration as math
@@ -45,74 +44,6 @@ $dark-grid = linear-gradient($dark-grid-thick, $dark-grid-thick 1px, transparent
 
 $light-fade = linear-gradient(rgba(255, 255, 255, 0.2) $grid-gutter-width, rgba(255, 255, 255, 0.5) $grid-gutter-width )
 $dark-fade = linear-gradient(#201e1f $grid-gutter-width, #2e2c2d $grid-gutter-width )
-
-// list of theme prefixes
-$themes = {
-    'default': '',
-    'berlin': '.berlin'
-};
-
-/* colour lists
----------------------------------------------------------------------- */
-$theme-text = {
-    'default': $default-text,
-    'berlin': $berlin-text
-};
-
-$theme-links = {
-    'default': $seattle-secondary,
-    'berlin': $berlin-secondary
-};
-
-$theme-buttons = {
-    'default': $seattle-secondary,
-    'berlin': $berlin-secondary
-};
-
-$theme-background = {
-    'default': $default-background,
-    'berlin': $berlin-background
-};
-
-$theme-light = {
-    'default': $default-light,
-    'berlin': $berlin-light
-};
-
-$theme-dark = {
-    'default': $default-dark,
-    'berlin': $berlin-dark
-};
-
-$theme-secondary = {
-    'default': $default-secondary,
-    'berlin': $berlin-secondary
-};
-
-$theme-headings = {
-    'default': $default-headings,
-    'berlin': $berlin-headings
-};
-
-$theme-gradient = {
-    'default': $default-gradient,
-    'berlin': $berlin-gradient
-};
-
-$theme-grid = {
-    'default': $dark-grid,
-    'berlin': $light-grid
-};
-
-$theme-grid-background = {
-    'default': $dark-grid-background,
-    'berlin': $light-grid-background
-};
-
-$theme-fade = {
-    'default': $dark-fade,
-    'berlin': $light-fade
-};
 
 /*
 typography

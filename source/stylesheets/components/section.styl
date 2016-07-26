@@ -7,11 +7,8 @@ sections
 
 .section {
     position: relative;
-
-    theme({
-        background: $theme-background
-        color: $theme-text
-    })
+    background: $berlin-background;
+    color: $berlin-text;
 
     @extends $clearfix;
 
@@ -47,10 +44,7 @@ sections
         height: $grid-gutter-width * 2;
         width: 100%;
         background: rgba(255,255,255,0.2); // fallback for non-linear gradient browsers
-
-        theme({
-            background: $theme-fade
-        })
+        background: $light-fade;
     }
 }
 
@@ -70,10 +64,8 @@ sections
 /*
 ---------------------------------------------------------------------- */
 .section-gradient {
-    theme({
-        background-color: $theme-dark // fallback for older browsers
-        background-image: $theme-gradient
-    })
+    background-color: $berlin-dark; // fallback for older browsers
+    background-image: $berlin-gradient;
 
     white-text()
 }
@@ -81,9 +73,7 @@ sections
 /*
 ---------------------------------------------------------------------- */
 .section-invert {
-    theme({
-        background: $theme-dark
-    })
+    background: $berlin-dark;
 
     white-text()
 }
@@ -91,9 +81,7 @@ sections
 /*
 ---------------------------------------------------------------------- */
 .section-dark {
-    theme({
-        background: $default-background
-    })
+    background: $default-background;
 
     white-text()
 }
@@ -103,11 +91,8 @@ sections
 .section.section-grid { // needs increased specificity, because reasons
     background-position: 50% 0, 50% 0;
     background-size: $grid-size $grid-size, $grid-size $grid-size;
-
-    theme({
-        background-color: $theme-grid-background
-        background-image: $theme-grid
-    })
+    background-color: $light-grid-background;
+    background-image: $light-grid;
 }
 
 
