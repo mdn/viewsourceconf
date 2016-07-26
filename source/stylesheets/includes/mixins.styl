@@ -54,97 +54,22 @@ cols-wide($cols) {
 /*
 ====================================================================== */
 white-text() {
-    theme({
-        color: #fff
-    })
+    color: #fff;
 
     h1, h2, h3, h4 {
-        theme({
-            color: #fff
-        })
+        color: #fff;
+
     }
 
     a:not(.button) {
+        color: #fff;
         text-decoration: underline;
-
-        theme({
-            color: #fff
-        })
     }
 
     a:not(.button):hover,
     a:not(.button):focus,
     a:not(.button):active {
+        color: #fff;
         text-decoration: none;
-
-        theme({
-            color: #fff
-        })
-    }
-}
-
-/*
-- takes a "hash" ie {property: var}
-- if the var is the name of a list on the variables page (ie $theme-light)
-  it will resolve the list item and output a colour
-- if the var is a stylus variable that is not a list it will resolve it
-- if the var is a colour it will output it unaltered
-- iterates over themes and makes the var into a theme colour
-Example usage:
-    .section {
-        theme({
-            background-color: $theme-light
-            border-color: $theme-secondary
-            color: #fff
-        })
-    }
-Example output:
-    .section {
-        background-color: #72C0B0;
-        border-color: #cfcfcf;
-        color: #fff
-    }
-    .seattle .section {
-        background-color: #72C0B0;
-        border-color: #63C8CF;
-        color: #fff
-    }
-    .berlin .section {
-        background-color: #F05556;
-        border-color: #F79B72;
-        color: #fff
-    }
-====================================================================== */
-theme(hash) {
-    // loop through all themes
-    for $theme_name, $theme_class in $themes {
-        // if this is the default theme we don't need a new selector
-        if($theme_class == '') {
-            for $property, $value in hash {
-                {$property}: theme-color($theme_name, $value);
-            }
-        } else {
-            // not default, nest our work under the theme's selector
-            {$theme_class} & {
-                for $property, $value in hash {
-                    {$property}: theme-color($theme_name, $value);
-                }
-            }
-        }
-    }
-}
-
-// theme names are listed in $themes.
-// value may be the name of a theme color list
-theme-color($theme_name, $value){
-    // see if $value is a theme colour list
-    if($value[$theme_name]) {
-        // if there is a corresponding value, use it
-        return $value[$theme_name];
-    } else {
-        // if it's not in the list, return the value for use
-        // could be annother styuls variable
-        // could be a straight up property value
-        return $value
     }
 }

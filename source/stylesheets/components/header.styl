@@ -38,20 +38,17 @@ header
     > li {
         display: inline-block;
         padding-left: $grid-gutter-width;
-    }
 
-    a:not(.button) {
-        theme({
-            text-decoration: none
-        })
-    }
+        // needs increased specificity
+        a:not(.button) {
+            text-decoration: none;
+        }
 
-    a:not(.button):hover,
-    a:not(.button):focus,
-    a:not(.button):active {
-        theme({
-            text-decoration: underline
-        })
+        a:not(.button):hover,
+        a:not(.button):focus,
+        a:not(.button):active {
+            text-decoration: underline;
+        }
     }
 }
 

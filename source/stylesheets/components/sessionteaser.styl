@@ -10,11 +10,8 @@ $sessionteaser_image = 100px;
     min-height: $sessionteaser_image;
     padding: $grid-gutter-width;
     margin-bottom: ($grid-gutter-width / 2);
+    background-color: $berlin-background;
     @extends $clearfix
-
-    theme({
-        background-color: $theme-background
-    })
 }
 
 .sessionteaser .sidecol_side {
@@ -48,11 +45,8 @@ $sessionteaser_image = 100px;
 
 .sessionteaser_title {
     display: block;
+    color: $berlin-text;
     line-height: 1.24;
-
-    theme({
-            color: $theme-text
-    })
 
     &:hover,
     &:focus,
@@ -71,10 +65,7 @@ $sessionteaser_image = 100px;
 
 .sessionteaser_cta {
     display: block;
-
-    theme({
-        color: $theme-links
-    })
+    color: $berlin-links;
 }
 
 @media $media-query-320-and-up {
@@ -91,9 +82,7 @@ $sessionteaser_image = 100px;
 
         &::before {
             content: "• ";
-            theme({
-                color: $theme-text
-            })
+            color: $berlin-text;
         }
 
         &:first-child::before {
