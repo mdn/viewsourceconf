@@ -100,10 +100,84 @@
         "feature": false
     },
     {
-        "slug": "discussions-demos",
-        "title": "Discussions and Demos",
+        "slug": "pwa-hack-corner-1",
+        "title": "Progressive Web App Hack Corner: Part 1",
         "start": "14:00",
         "date": "2016-09-13",
+        "place": "Ground Floor: Discussion corner D - Saal (Social room)",
+        "summary": "<p>Bring your laptop on Tuesday to learn about core PWA technologies such as Service Workers, the Web Manifest and Push notifications and join us on Wednesday in an open discussion session about the future of the Web.</p>",
+        "feature": false
+    },
+    {
+        "slug": "diversity-in-tech-1",
+        "title": "Diversity in Tech",
+        "start": "14:00",
+        "date": "2016-09-13",
+        "place": "1st Floor: Discussion corner A - (Atelier A)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "sustainable-oss-1",
+        "title": "Sustainable Open-Source Projects",
+        "start": "14:00",
+        "date": "2016-09-13",
+        "place": "2nd Floor: Discussion corner B - (Kubus)",
+        "summary": "<p>A lot of people enjoy contributing to Open Source projects. And Open Source projects love contributions. And yet we keep seeing newcomers struggling to contribute and project maintainers struggling to find contributors. What’s the catch? Let’s talk!</p>",
+        "feature": false
+    },
+    {
+        "slug": "aframe-workshop-1",
+        "title": "How to build in webVR - AFrame Workshop",
+        "start": "14:00",
+        "date": "2016-09-13",
+        "place": "4th Floor Discussion corner C (Studio C)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "rust-discussion-1",
+        "title": "Rust",
+        "start": "14:00",
+        "date": "2016-09-13",
+        "place": "4th Floor Discussion corner E - (Studio B)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "diversity-in-tech-2",
+        "title": "Diversity in Tech",
+        "start": "14:45",
+        "date": "2016-09-13",
+        "place": "1st Floor: Discussion corner A - (Atelier A)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "sustainable-oss-2",
+        "title": "Sustainable Open-Source Projects",
+        "start": "14:45",
+        "date": "2016-09-13",
+        "place": "2nd Floor: Discussion corner B - (Kubus)",
+        "summary": "<p>A lot of people enjoy contributing to Open Source projects. And Open Source projects love contributions. And yet we keep seeing newcomers struggling to contribute and project maintainers struggling to find contributors. What’s the catch? Let’s talk!</p>",
+        "feature": false
+    },
+    {
+        "slug": "aframe-workshop-2",
+        "title": "How to build in webVR - AFrame Workshop",
+        "start": "14:45",
+        "date": "2016-09-13",
+        "place": "4th Floor Discussion corner C (Studio C)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "rust-discussion-2",
+        "title": "Rust",
+        "start": "14:45",
+        "date": "2016-09-13",
+        "place": "4th Floor Discussion corner E - (Studio B)",
+        "summary": "",
         "feature": false
     },
     {
@@ -136,11 +210,11 @@
     {
         "slug": "special-music-visuals-hardware",
         "speakers": ["tim-pietrusky", "ruth-john"],
-        "title": "music + visuals + hardware",
+        "title": "{ LiveJS : Berlin }",
         "start": "17:00",
         "date": "2016-09-13",
         "place": "Social Space",
-        "summary": "",
+        "summary": "<p>Welcome to { LiveJS : Berlin } where Ruth and Tim take you on a journey through audio apis, midi controllers, drum machines and neopixels. All with a visual show and live music from DJ Patrick, to help you relax after a day of amazing talks.</p>",
         "feature": true
     },
     {
@@ -213,11 +287,11 @@
     {
         "slug": "offline-first",
         "speakers": ["ola-gasidlo"],
-        "title": "Offline First + 3 Years of Learning",
+        "title": "I'm offline, cool! What now?",
         "start": "12:30",
         "date": "2016-09-14",
         "place": "Main Stage",
-        "summary": "",
+        "summary": "<p>We learned a lot about the offline first concept in the past two years including Service Worker, CouchDB etc.</p><p>Did we do everything already to make our applications offline first? Is caching the resources enough? Did we answer all the questions already and if not… What are the new questions we need to answer?</p><p>In this talk, I’ll show you what has changed in the last few years, how people did adapt the concept and what are the best practices.</p><p>And most importantly, can offline first help to save lives?</p>",
         "feature": true
     },
     {
@@ -228,10 +302,84 @@
         "feature": false
     },
     {
-        "slug": "discussions-demos",
-        "title": "Discussions and Demos",
+        "slug": "pwa-hack-corner-2",
+        "title": "Progressive Web App Hack Corner: Part 2",
         "start": "14:00",
         "date": "2016-09-14",
+        "place": "Ground Floor: Discussion corner D - Saal (Social room)",
+        "summary": "<p>Join us with Mozilla and Google in an open discussion session about progressive web apps and the future of the Web.</p>",
+        "feature": false
+    },
+    {
+        "slug": "diversity-in-tech-3",
+        "title": "Diversity in Tech",
+        "start": "14:00",
+        "date": "2016-09-14",
+        "place": "1st Floor: Discussion corner A - (Atelier A)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "story-webvr-1",
+        "title": "Creating a story for webVR",
+        "start": "14:00",
+        "date": "2016-09-14",
+        "place": "2nd Floor: Discussion corner B - (Kubus)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "building-webvr-1",
+        "title": "Building in webVR - API workshops",
+        "start": "14:00",
+        "date": "2016-09-14",
+        "place": "4th Floor Discussion corner C (Studio C)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "2fa-wtf",
+        "title": "2FA, WTF?",
+        "start": "14:00",
+        "date": "2016-09-14",
+        "place": "4th Floor Discussion corner E - (Studio B)",
+        "summary": "Everyone is hacking everything. Everything is vulnerable. Your site, your users, even you. Are you worried about this? You should be! Don't worry, I'm not trying to scare you (that much). We have plenty of safeguards against attempts on our applications' user data. We all (hopefully) recognise Two Factor Auth (2FA) as one of those safeguards, but what actually goes on under the hood of 2FA? We'll take a look into generating one time passwords, implementing 2FA in web applications and the only real life compelling use case for QR codes. Together, we'll make the web a more secure place.",
+        "feature": false
+    },
+    {
+        "slug": "diversity-in-tech-4",
+        "title": "Diversity in Tech",
+        "start": "14:45",
+        "date": "2016-09-14",
+        "place": "1st Floor: Discussion corner A - (Atelier A)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "story-webvr-2",
+        "title": "Creating a story for webVR",
+        "start": "14:45",
+        "date": "2016-09-14",
+        "place": "2nd Floor: Discussion corner B - (Kubus)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "building-webvr-2",
+        "title": "Building in webVR - API workshops",
+        "start": "14:45",
+        "date": "2016-09-14",
+        "place": "4th Floor Discussion corner C (Studio C)",
+        "summary": "",
+        "feature": false
+    },
+    {
+        "slug": "developers-learn-design",
+        "title": "Why developers need to learn Design",
+        "start": "14:45",
+        "date": "2016-09-14",
+        "place": "4th Floor Discussion corner E - (Studio B)",
+        "summary": "<p>There has been a huge buzz in the last 1-2 years around the topic that \"Everyone should learn how to code\" and more specifically that \"Designers should learn how to code\". Why is this not happening the other way around? Can brainstorming, user research, personas and design thinking change the way we write software? Can we adopt the same army-knives used by design agencies and freelancers to speed up the development of Software or to better prioritise some features over others?</p>",
         "feature": false
     },
     {
