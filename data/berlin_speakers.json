@@ -104,7 +104,7 @@
         "first" : "Ola",
         "last" : "Gasidlo",
         "feature": false,
-        "twitter" : "",
+        "twitter" : "misprintedtype",
         "pic" : "olagasidlo.jpg",
         "bio" : "Ola is a senior engineer at Styla living in Berlin, who is very passionate about Open Source, the Offline First concept and Hoodie. She loves making the web accessible for everyone, riding the trails, and daughter-driven development.",
         "sessions" : ["offline-first"]
