@@ -1,4 +1,4 @@
-<div class="session" id="{{ session.slug }}">
+
     <div class="cols">
         <div class="col col-1"><strong>{{ session.start }}</strong></div>
 
@@ -19,7 +19,7 @@
         </div>
 
         <div class="col col-4">
-            <div class="session_details">
+            <div class="session_details {% if !session.speakers %}session_details-nopic{% endif %}">
                 <h4 class="session_head">
                     {% if session.speakers %}
                         <span class="session_speakers">
@@ -43,7 +43,10 @@
                         {% endif %}
                     </div>
                 {% endif %}
+                {% if session.place %}
+                    <div class="session_place">@ {{ session.place }}</div>
+                {% endif %}
             </div>
         </div>
     </div>
-</div>
+

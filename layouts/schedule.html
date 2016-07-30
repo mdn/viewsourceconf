@@ -17,9 +17,15 @@
                     </h3>
 
                     {% if model.sessions.length > 0 %}
+                        {% set last_time = 0 %}
                         {% for session in model.sessions %}
                             {% if session.date == day %}
-                                {% include "includes/session.html" with session %}
+
+                                <div class="session {% if last_time == session.start %}session-sametime{% endif %} {% if session.keynote == true %}session-keynote{% endif %}"" id="{{ session.slug }}">
+                                    {% include "includes/session.html" with session %}
+                                </div>
+                                {% set last_time = session.start %}
+
                             {% endif %}
                         {% endfor %}
                     {% else %}
