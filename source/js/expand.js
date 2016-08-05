@@ -112,7 +112,7 @@
             var sessionParent = window.vs.utils.parentByClass(summary, 'session_details');
             // get what we need to figure out session_title
             var sessionTitle = sessionParent.querySelector('.session_title');
-            var sessionTitleText = sessionTitle.innerHTML + ' • ';
+            var sessionTitleText = sessionTitle.textContent + ' • ';
             var sessionTitleCTA = document.createElement('span');
             sessionTitleCTA.classList.add('session_cta');
 
