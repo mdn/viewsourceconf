@@ -121,7 +121,7 @@
         "keynote": false
     },
     {
-        "slug": "diversity-in-tech-1",
+        "slug": "women-in-tech",
         "title": "Women In Tech",
         "start": "14:00",
         "date": "2016-09-13",
@@ -131,7 +131,7 @@
         "keynote": false
     },
     {
-        "slug": "sustainable-oss-1",
+        "slug": "sustainable-oss",
         "title": "Sustainable Open-Source Projects",
         "start": "14:00",
         "date": "2016-09-13",
@@ -141,17 +141,18 @@
         "keynote": false
     },
     {
-        "slug": "aframe-workshop-1",
+        "slug": "aframe-workshop",
         "title": "WORKSHOP: Bringing VR to the world via the web",
         "start": "14:00",
         "date": "2016-09-13",
         "place": "4th Floor Discussion corner C (Studio C)",
         "summary": "Join us at this webVR workshop aimed at traditional web developers. This is an introduction to building Virtual Reality experiences for the Web, touching on the tools for creating assets for 3D VR scenes. The session will focus on A-Frame for composing 3D scenes in a fashion familiar to those used to building for the web.",
         "feature": false,
-        "keynote": false
+        "keynote": false,
+        "speakers": ["ada-rose-edwards"]
     },
     {
-        "slug": "rust-workshop-1",
+        "slug": "rust-workshop",
         "title": "WORKSHOP: A Web of Rust",
         "start": "14:00",
         "date": "2016-09-13",
@@ -161,7 +162,7 @@
         "keynote": false
     },
     {
-        "slug": "diversity-in-tech-2",
+        "slug": "regional-challenges",
         "title": "Regional Challenges Talk",
         "start": "14:45",
         "date": "2016-09-13",
@@ -181,18 +182,19 @@
         "keynote": false
     },
     {
-        "slug": "aframe-workshop-2",
+        "slug": "aframe-workshop-repeat",
         "title": "WORKSHOP: Bringing VR to the world via the web",
         "start": "14:45",
         "date": "2016-09-13",
         "place": "4th Floor Discussion corner C (Studio C)",
         "summary": "Join us at this webVR workshop aimed at traditional web developers. This is an introduction to building Virtual Reality experiences for the Web, touching on the tools for creating assets for 3D VR scenes. The session will focus on A-Frame for composing 3D scenes in a fashion familiar to those used to building for the web.",
         "feature": false,
-        "keynote": false
+        "keynote": false,
+        "speakers": ["ada-rose-edwards"]
     },
     {
-        "slug": "rust-workshop-2",
-        "title": "WORKSHOP: A Web of Rust ",
+        "slug": "rust-workshop-repeat",
+        "title": "WORKSHOP: A Web of Rust",
         "start": "14:45",
         "date": "2016-09-13",
         "place": "4th Floor Discussion corner E - (Studio B)",
@@ -365,14 +367,15 @@
         "keynote": false
     },
     {
-        "slug": "building-webvr-1",
+        "slug": "building-webvr",
         "title": "WORKSHOP: Making WebVR work for you",
         "start": "14:00",
         "date": "2016-09-14",
         "place": "4th Floor Discussion corner C (Studio C)",
         "summary": "On day 2 of this continuing webVR workshop session, let's look at a more in depth view on the new WebVR api. This session is for those who are looking to use WebVR directly to implement virtual reality themselves in their WebGL or THREE.js experiences.",
         "feature": false,
-        "keynote": false
+        "keynote": false,
+        "speakers": ["ada-rose-edwards"]
     },
     {
         "slug": "docker-for-devs",
@@ -382,7 +385,8 @@
         "place": "4th Floor Discussion corner E - (Studio B)",
         "summary": "You might have heard that Docker is a great deployment tool, but it's also a power tool for development. Docker makes it easy to create consistent development environments, which means it's easier for you to manage application dependencies, share code with your team, and get up and running with new applications quickly. We'll look at tools in the Docker ecosystem designed specifically with developers in mind, like Docker Compose and Docker for Mac and Windows. You'll learn how to get a Docker development environment set up on your own machine, and get to know the tools and processes needed to create your own containerized web applications with Docker, regardless of the language or framework you prefer.",
         "feature": false,
-        "keynote": false
+        "keynote": false,
+        "speakers": ["laura-frank"]
     },
     {
         "slug": "ux-design-qa",
@@ -407,14 +411,15 @@
         "speakers": ["mike-taylor"]
     },
     {
-        "slug": "building-webvr-2",
+        "slug": "building-webvr-repeat",
         "title": "WORKSHOP: Making WebVR work for you",
         "start": "14:45",
         "date": "2016-09-14",
         "place": "4th Floor Discussion corner C (Studio C)",
         "summary": "On day 2 of this continuing webVR workshop session, let's look at a more in depth view on the new WebVR api. This session is for those who are looking to use WebVR directly to implement virtual reality themselves in their WebGL or THREE.js experiences.",
         "feature": false,
-        "keynote": false
+        "keynote": false,
+        "speakers": ["ada-rose-edwards"]
     },
     {
         "slug": "developers-learn-design",

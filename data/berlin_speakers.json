@@ -10,6 +10,34 @@
         "sessions" : ["webvr"]
     },
     {
+        "slug" : "ada-rose-edwards",
+        "first" : "Ada-Rose",
+        "last" : "Edwards",
+        "feature": false,
+        "pic" : "adaroseedwards.jpg",
+        "bio" : "Ada Rose Edwards is a Web Developer Advocate for Samsung. She writes and talks about graphics on the web, offline first web apps and front end animation performance.",
+        "sessions": ["aframe-workshop", "building-webvr"]
+    },
+    {
+        "slug" : "rachel-uwa",
+        "first" : "Rachel",
+        "last" : "Uwa",
+        "feature": false,
+        "twitter" : "schoolofmaaa",
+        "pic" : "racheluwa.jpg",
+        "bio" : "Rachel is an artist and organiser whose background is in audio engineering and vfx compositing. She is the founder of School of Machines, Making & Make Believe, a uniquely curated School born in Berlin, Germany in 2014, keen on inventing one-of-a-kind hands-on learning experiences in the field of Art, Technology, Design, and human connection."
+    },
+    {
+        "slug" : "laura-frank",
+        "first" : "Laura",
+        "last" : "Frank",
+        "feature": false,
+        "twitter" : "rhein_wein",
+        "pic" : "laurafrank.jpg",
+        "bio" : "Laura Frank is senior software engineer at Codeship and a Docker Captain. She focuses mainly on the Docker build platform at Codeship, and has been a co-maintainer for many Docker development tools like Panamax and ImageLayers. Above all, she enjoys creating development tools that help take the friction out of development and deployment. She started coding after receiving a hand-me-down DOS system and has been lost in the code mines ever since. Laura lives in Berlin.",
+        "sessions" : ["docker-for-devs"]
+    },
+    {
         "slug" : "chris-wilson",
         "first" : "Chris",
         "last" : "Wilson",
