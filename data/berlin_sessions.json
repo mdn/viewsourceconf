@@ -440,10 +440,19 @@
         "keynote": false
     },
     {
+        "slug": "tbc",
+        "title": "Session to Be Announced",
+        "start": "16:00",
+        "date": "2016-09-14",
+        "summary": "Coming Soon",
+        "feature": false,
+        "keynote": false
+    },
+    {
         "slug": "webvr",
         "speakers": ["dominique-hazael-massieux"],
         "title": "Web, meet Virtual Reality",
-        "start": "16:00",
+        "start": "16:30",
         "date": "2016-09-14",
         "place": "Main Stage",
         "summary": "<p>A combination of improvements in hardware and software capabilities has resulted in a lot of excitement around virtual reality experiences. In this session, we will explore how many of these improved capabilities are supported in modern browsers, and why the Web provides a promising pre-existing ecosystem for creating, distributing and experiencing virtual reality content, applications, and services.</p>",
@@ -453,7 +462,7 @@
     {
         "slug": "closing-keynote",
         "title": "Closing Keynote",
-        "start": "15:30",
+        "start": "17:00",
         "date": "2016-09-14",
         "place": "Main Stage",
         "summary": "Coming Soon",
