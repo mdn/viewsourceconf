@@ -2,7 +2,6 @@
 {% block title %}{% parent %}{{ conference_data.date }}{% endblock %}
 {% block body %}
 
-
     <section class="section section-invert">
         <div class="hero">
             <div class="hero_body">
@@ -58,7 +57,7 @@
 
         <div class="speakers">
             <ul id="speakers_list" class="speakers_list">
-            {% for speaker in model.speakers %}
+            {% for speaker in conference_speakers %}
                 {% if speaker.pic && speaker.feature %}
                     <li class="speaker" id="{{ speaker.slug }}">
 
@@ -78,7 +77,7 @@
                                     <div class="col speaker_text">
                                         {% set showbio = true %}
                                         {% if speaker.sessions.length > 0 %}
-                                            {% for session in model.sessions %}
+                                            {% for session in conference_sessions %}
                                                 {% for session_speaker in session.speakers %}
                                                     {% if session_speaker == speaker.slug %}
                                                         <h4 class="speaker_title">{{ session.title }}</h4>
@@ -115,21 +114,26 @@
     </section>
 {% endif %}
 
-{% if conference_data.sessions && model.sessions.length > 0 %}
+{% if conference_data.sessions && conference_sessions.length > 0 %}
     <section class="section section-grid" id="sessions">
         <div class="section_body">
             <h2 class="center">Sessions</h2>
             <div class="cols cols-half">
-                {% for day in conference_data.days %}
+                {% for day, times in conference_schedule %}
                     {% if ! loop.first %}
                         <div class="col">
                             <section id="{{day}}" class="session_day">
                                 <h3 class="section-invert session_day_header">
                                     <span class="session_day_header_date">{{ day|date(date_format) }}</span>
                                 </h3>
-                                {% for session in model.sessions %}
-                                    {% if session.date == day && session.feature %}
-                                        {% include "includes/sessionteaser.html" with session %}
+                                {% for time, time_slot in times %}
+                                    {% if !time_slot.sessions %}
+                                        {% set session_coords = time_slot %}
+                                        {% for session in conference_sessions %}
+                                            {% if session.slug == session_coords.slug && session.feature %}
+                                                {% include "includes/sessionteaser.html" %}
+                                            {% endif %}
+                                        {% endfor %}
                                     {% endif %}
                                 {% endfor %}
                             </section>
@@ -172,32 +176,32 @@
     <section class="section" id="venue">
         <div class="section_body">
             <h2 class="center">Venue</h2>
-            <p><strong>{{ model.venue.meta.name }}<br>
-            {{ model.venue.meta.address }}</strong>
+            <p><strong>{{ conference_venue.meta.name }}<br>
+            {{ conference_venue.meta.address }}</strong>
             </p>
 
             <div class="intrinsic">
-                <iframe src="{{ model.venue.meta.map_url }}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe src="{{ conference_venue.meta.map_url }}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
 
-            <p>{{ model.venue.meta.blurb }}</p>
+            <p>{{ conference_venue.meta.blurb }}</p>
         </div>
     </section>
 {% endif %}
 
-{% if conference_data.venue && model.venue.travel.blurb %}
+{% if conference_data.venue && conference_venue.travel.blurb %}
     <section class="section section-grid" id="travel">
         <div class="section_body">
             <h2 class="center">Travel and Accommodation</h2>
 
-            {% if model.venue.travel.blurb %}<p>{{ model.venue.travel.blurb }}</p>{% endif %}
+            {% if conference_venue.travel.blurb %}<p>{{ conference_venue.travel.blurb }}</p>{% endif %}
 
-            {% for mode in model.venue.travel.modes %}
+            {% for mode in conference_venue.travel.modes %}
                 <h3>{{ loop.key }}</h3>
                 <p>{{ mode }}</h3>
             {% endfor %}
 
-            {% for hotel in model.venue.hotels %}
+            {% for hotel in conference_venue.hotels %}
                 {% if loop.first %}
                     <h3>Suggested Hotels</h3>
                     <div id="hotels_suggestions" class="hotels_suggestions js-hidden">
@@ -232,7 +236,7 @@
 
 
     <section id="sponsors">
-        {% if model.sponsors %}
+        {% if conference_sponsors %}
             <div class="section">
                 <div class="section_body">
                     {% macro sponsor_block(title, sponsors) %}
@@ -245,10 +249,10 @@
                         </div>
 
                     {% endmacro %}
-                    {{ sponsor_block("Premier Sponsors", model.sponsors.premier) }}
-                    {{ sponsor_block("Gold Sponsors", model.sponsors.gold) }}
-                    {{ sponsor_block("Silver Sponsors", model.sponsors.silver) }}
-                    {{ sponsor_block("Other Sponsors and Partners", model.sponsors.other) }}
+                    {{ sponsor_block("Premier Sponsors", conference_sponsors.premier) }}
+                    {{ sponsor_block("Gold Sponsors", conference_sponsors.gold) }}
+                    {{ sponsor_block("Silver Sponsors", conference_sponsors.silver) }}
+                    {{ sponsor_block("Other Sponsors and Partners", conference_sponsors.other) }}
                 </div>
             </div>
         {% endif %}

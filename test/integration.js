@@ -5,6 +5,8 @@ const blc = require('broken-link-checker');
 const test = require('selenium-webdriver/testing');
 const until = require('selenium-webdriver/lib/until');
 const webdriver = require('selenium-webdriver');
+const jsyaml = require('js-yaml');
+const fs = require('fs');
 
 const baseURL = process.env.VS_TEST_URL || 'https://viewsourceconf-stage.us-west.moz.works';
 const browser = process.env.VS_TEST_BROWSER || 'firefox';
@@ -188,6 +190,57 @@ test.describe('The conference pages...', function() {
                             done(rejected);
                         });
                     });
+                });
+            });
+        });
+    });
+
+
+    test.describe('The schedule page...', function() {
+        this.timeout(10000);
+
+        ['berlin-2016'].forEach(function(conference) {
+            const url = `${baseURL}/${conference}/schedule`;
+
+            test.it(`should have all the sessions on it`, function(done) {
+                const filename = 'source/data/berlin_schedule.yaml';
+                const sessionSelector = '.session_details';
+
+                let doc;
+                let count = 0;
+
+                // Get the schedule yaml
+                try {
+                    doc = jsyaml.safeLoad(fs.readFileSync(filename, 'utf8'));
+                } catch (e) {
+                    return done(e.message);
+                }
+
+                // find all the slugs in the yaml
+                for (let day in doc) {
+                    let times = doc[day];
+                    for (let time in times) {
+                        let event = times[time];
+                        if (event.slug) {
+                            count += 1;
+                        } else if (event.sessions) {
+                            for (let s in event.sessions) {
+                                let session = event.sessions[s];
+                                if (session.slug) {
+                                    count += 1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                const driver = new webdriver.Builder().forBrowser(browser).build();
+                driver.get(url).then(function(){
+                    // find all the sessions on the page
+                    return driver.findElements(webdriver.By.css(sessionSelector));
+                }).then((items) => {
+                    // same number of slugs & sessions?
+                    done(assert(items.length === count));
                 });
             });
         });

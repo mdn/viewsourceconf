@@ -1,9 +1,3 @@
----
-model:
-  sessions: berlin_sessions
-  speakers: berlin_speakers
----
-
 {% extends "layouts/common.html" %}
 
 {% block title %}Style Guide{% endblock %}
@@ -107,7 +101,7 @@ model:
 
         <h3>Schedual</h3>
 
-        {% for session in model.sessions %}
+        {% for session in conference_sessions %}
 
             {% include "layouts/includes/session.html" with session %}
 

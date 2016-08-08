@@ -2,6 +2,17 @@
 {% block title %}{% parent %}{{ data.first }} {{ data.last }}{% endblock %}
 {% block body %}
 
+{# we use this below in 2 locations #}
+{% macro session_time(day, time, place) %}
+    <p><strong>
+        {{ day|date(date_format) }}<br>
+        {% if place || time %}
+            @ {{ place }}{% if place && time %},{% endif %} {{ time }}
+        {% endif %}
+        </strong>
+    </p>
+{% endmacro %}
+
     <section class="section">
         <div class="section_body">
             <div class="cols">
@@ -21,17 +32,22 @@
     <section class="section section-grid">
         <div class="section_body">
             {% if data.sessions.length > 0 %}
-                {% for session in model.sessions %}
+                {% for session in conference_sessions %}
                     {% for session_speaker in session.speakers %}
                         {% if session_speaker == data.slug %}
-                            <h2>{{ session.title }}</h2>
-                            <p><strong>
-                                {{ session.date|date(date_format) }}<br>
-                                {% if session.place || session.start %}
-                                    @ {{ session.place }}{% if session.place && session.start %},{% endif %} {{session.start}}
-                                {% endif %}
-                                </strong>
-                            </p>
+                            <h2><a href="{{ conference_data.folder }}/schedule/#{{ session.slug }}">{{ session.title }}</a></h2>
+                            {% for day, times in conference_schedule %}
+                                {% for time, timeslot in times %}
+                                    {% if timeslot.slug == session.slug %}
+                                        {{ session_time(day, time, timeslot.place) }}
+                                    {% endif %}
+                                    {% for s in timeslot.sessions %}
+                                        {% if s.slug == session.slug %}
+                                            {{ session_time(day, time, s.place) }}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endfor %}
                             {% if session.summary != "" %}
                             <p>
                                 {{ session.summary }}

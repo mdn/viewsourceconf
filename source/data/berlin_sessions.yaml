@@ -1,0 +1,271 @@
+-
+    slug: break
+    title: Break
+-
+    slug: lunch
+    title: Lunch
+-
+    slug: "early-registration"
+    title: "Early Registration Pick Up"
+-
+    slug: "ignite-talks"
+    title: "Ignite Talks"
+-
+    slug: "welcome-reception"
+    title: "Welcome Reception"
+-
+    slug: "opening-keynote"
+    title: "Opening Keynote"
+    keynote: true
+-
+    slug: "design-for-non-designers"
+    speakers:
+        - "tracy-osborn"
+    title: "Design for Non-Designers"
+    summary: "<p>Not everyone can hire a professional designer for their websites and web apps, but we all still want our interfaces to be easy to use and attractive. However, if you want to learn a bit of design, design books jump straight into concepts like \"the golden ratio\" and teach proper typographic terms which, to be frank, aren't needed if you're just looking to improve your website's look and feel.</p><p>This talk will cover the top quick ways to improve your website, covering both user experience as well as visual design. Quick hits, easy to understand and utilize principles that anyone can use to improve their design skills. Perhaps you too can become the next designer+developer unicorn!</p>"
+    feature: true
+-
+    slug: "inclusive-markup"
+    speakers:
+        - "estelle-weyl"
+    title: "Inclusive Markup"
+    summary: "<p>Accessibility is the law and a good idea. Let's make the Web accessible and fast for everyone. We'll skip \"why\" and focus on \"how.\" Accessibility can be as simple as using the right semantic elements in your HTML. Semantic HTML can prevent bugs, improve performance, reduce code bloat, and make your site accessible to screen readers and keyboard users. We'll explores accessibility features native to semantic elements, adding a sprinkling of ARIA roles and attributes. Form controls, input masking, styleable selects, and carousels with a few lines of CSS, fewer lines of JS and no frameworks.</p>"
+    feature: true
+-
+    slug: "css-framework"
+    speakers:
+        - "belen-albeza"
+    title: "You might not need a CSS framework"
+    summary: "<p>Nowadays it is very common to find CSS frameworks like Bootstrap used everywhere. But they come at a cost, paid in big CSS files, styles that don't get used, and a hard to maintain code base.  </p><p>In this presentation we will talk about why using a third-party framework might not be the right choice for your project, be it a theme or a custom website. We will also see techniques to craft a blog theme without frameworks, from layout to individual UI components.</p>"
+    feature: true
+-
+    slug: "node-releases"
+    speakers:
+        - "myles-borins"
+    title: "Node.js Releases"
+    summary: "<p>Node.js is growing up, and with that comes the responsibility of proper legacy support. As of Node.js Argon (v4.2.0) there is an official Long Term Support release cycle that lasts for 30 months!</p><p>How does a project moving at the pace of node maintain multiple release lines? How does a commit get backported? How is a release actually made? You will learn all this and more on this weeks episode of \"Node.js Releases, how do they work?\"</p>"
+    feature: true
+-
+    slug: typography
+    speakers:
+        - "helen-holmes"
+    title: "Type is Your Right!: Performance and Web Typography"
+    summary: "<p>As front end developers, we <em>own</em> performance. As designers, we own typography. So how do you handle the tricky intersection of beautiful web typography and performant web pages? I'll be showing the audience OpenType features, explaining why they're important to typefaces, and explaining the tradeoffs they have on performance. We'll go over how to enable OpenType features and how you can optimize your font files for the web whether you own them and serve them up through @font-face or through Typekit so you can feel confident serving up gorgeous typography on your sites.</p>"
+    feature: true
+-
+    slug: "pwa-hack-corner-1"
+    title: "Demystifying Progressive Webapps"
+    summary: "<p>You might have already caught the bug—or may have never heard the whizz around these \"Progressive Webapps\" that's swirling around? What are they? Come to learn about and try building supercharged Web Applications with engaging, fast user experiences and offline support. Lear about the components underpinning these new tools and APIs, bring your computer get to know service workers, webapp manifests, web push and the principles driving the web platform, like \"offline-first\" and \"progressive enhancement\".</p><p>Basic web development knowledge is required to participate in the hands-on examples, but not for the talks and introductions into the driving principles/philosophy behind these upcoming Web Platform technologies.</p>"
+    speakers:
+      - chris-wilson
+    moderators:
+      - Salvador DelaPuenta
+      - Alex Googler
+      - Jake Googler
+-
+    slug: "women-in-tech"
+    title: "Women In Tech"
+    summary: "Coming Soon"
+-
+    slug: "sustainable-oss"
+    title: "Sustainable Open-Source Projects"
+    summary: "<p>A lot of people enjoy contributing to Open Source projects. And Open Source projects love contributions. And yet we keep seeing newcomers struggling to contribute and project maintainers struggling to find contributors. What’s the catch? Let’s talk!</p>"
+    speakers:
+        - jan-lenhardt
+-
+    slug: "aframe-workshop"
+    title: "Bringing VR to the world via the web"
+    speakers:
+        - "ada-rose-edwards"
+    summary: "Join us at this webVR workshop aimed at traditional web developers. This is an introduction to building Virtual Reality experiences for the Web, touching on the tools for creating assets for 3D VR scenes. The session will focus on A-Frame for composing 3D scenes in a fashion familiar to those used to building for the web."
+-
+    slug: "aframe-workshop-repeat"
+    title: "Bringing VR to the world via the web (repeat)"
+    speakers:
+        - "ada-rose-edwards"
+    summary: "Join us at this webVR workshop aimed at traditional web developers. This is an introduction to building Virtual Reality experiences for the Web, touching on the tools for creating assets for 3D VR scenes. The session will focus on A-Frame for composing 3D scenes in a fashion familiar to those used to building for the web."
+-
+    slug: "rust-workshop"
+    title: "A Web of Rust"
+    summary: "<p>Rust promises to be a safe & fast  systems programming language. It prevents segfaults and guarantees thread safety. This makes it a useful language for a wide variety of applications, ranging from microcontrollers over browsers all up to full web frameworks. In this workshop you will get a chance to learn the basics of Rust, have a basic idea and general overview of the ecosystem and maybe even touch on Rust's web capabilities. All workshop materials and coaches will be provided — just bring a laptop to learn some Rust!</p>"
+-
+    slug: "rust-workshop-repeat"
+    title: "A Web of Rust (repeat)"
+    summary: "<p>Rust promises to be a safe & fast  systems programming language. It prevents segfaults and guarantees thread safety. This makes it a useful language for a wide variety of applications, ranging from microcontrollers over browsers all up to full web frameworks. In this workshop you will get a chance to learn the basics of Rust, have a basic idea and general overview of the ecosystem and maybe even touch on Rust's web capabilities. All workshop materials and coaches will be provided — just bring a laptop to learn some Rust!</p>"
+-
+    slug: "regional-challenges"
+    title: "Regional Challenges Talk"
+-
+    slug: hiring
+    title: "What Companies Are Looking For When Hiring Devs"
+-
+    slug: es6
+    speakers:
+        - "dan-shappir"
+    title: "Things You Can Do In ES6 That Can't Be Done In ES5"
+    summary: "<p>ES6 and ES7 introduce many new features and capabilities to the JavaScript language. And yet, the majority of these enhancements are essentially syntactic sugar over the previous version. This is why tools like Babel are able to convert ES6 code into ES5. But there are several new features that can't be implemented in ES5.</p><p>In this session I'll explain what these new features are, what they do, and why they were added to the language.</p>"
+    feature: true
+-
+    slug: resilience
+    speakers:
+        - "jeremy-keith"
+    title: Resilience
+    summary: "<p>Web browsers have become so powerful that developers are now treating them as if they were a runtime environment as predictable as any other. But the truth is that we still need to deal with many unknown factors that torpedo our assumptions. The web is where Postel’s Law meets Murphy’s Law, so we can’t treat web development as if it were just another flavour of software. Instead we must work with the grain of the web.</p>"
+    feature: true
+    keynote: true
+-
+    slug: livejs
+    speakers:
+        - "tim-pietrusky"
+        - "ruth-john"
+    title: "{ LiveJS : Berlin }"
+    summary: "<p>Welcome to { LiveJS : Berlin } where Ruth and Tim take you on a journey through audio apis, midi controllers, drum machines and neopixels. All with a visual show and live music from DJ Patrick, to help you relax after a day of amazing talks.</p>"
+    feature: true
+-
+    slug: "dj-social"
+    speakers:
+        - "patrick-tartaglini"
+    title: DJ
+    summary: "<p>Spinning for our Social Hour</p>"
+    feature: true
+-
+    slug: coping
+    speakers:
+        - "lena-reinhard"
+    title: "Existing in Tech"
+    summary: "<p>Over the past few years, several CSS methodologies and JavaScript frameworks have been released. In one year, we receive 32,120 business emails. Every weekday, we're active on Slack for 2 hours 15 minutes. Technology is moving fast, and constantly, there's so much going on. We constantly have to adapt in an ever-changing environment, while somehow still doing our job of building proper, functioning software to the latest tight-super-unrealistic deadline.</p><p>This talk will look at the human side of our daily work in technology. Together, we will examine which factors affect us physically and emotionally in our work. We'll learn how they lead to pressure, stress, self-consciousness and ultimately burnout, and we'll find out how to identify early warning signs of being affected. You'll leave with a realistic look at your own, human capabilities, and the knowledge of what you can do to take care of yourself while working on software.</p>"
+    feature: true
+    keynote: true
+-
+    slug: "design-css"
+    speakers:
+        - "jen-simmons"
+    title: "Revolutionize Your Page: Real Art Direction on the Web"
+    summary: "<p>We finally have the tools necessary to create amazing page designs on the web. Now we can art direct our layouts, leveraging the power and tradition of graphic design.</p><p>In this eye-opening talk, Jen will explore concrete examples of an incredible range of new possibilities. She’ll walk through a step-by-step design process for figuring out how to create a layout as unique as your content. You’ll learn how Flexbox, Grid, Shapes, Multicolumn, Viewport Units, and more can be combined together to revolutionize how you approach the page &mdash; any page.</p>"
+    feature: true
+-
+    slug: pwa
+    speakers:
+        - "chris-wilson"
+    title: "Progressive Web Apps"
+    feature: true
+-
+    slug: layout
+    speakers:
+        - "rachel-andrew"
+    title: "Laying out the future with Grid and Flexbox"
+    summary: "<p>It is 2016. CSS is now 20 years old, and it has taken this long for us to get a true layout system designed for web pages and applications. A layout system, not based on hacking properties designed for something else entirely, but one that considers the reality of design for the web today.</p><p>In this talk I’ll introduce this new layout system, a system encompassing Flexbox, CSS Grid Layout and the Box Alignment Module. We’ll take a look at the mindset shift needed to really take advantage of these modules, and also consider what they mean in terms of accessibility and performance.</p>"
+    feature: true
+-
+    slug: compatibility
+    speakers:
+        - "mike-taylor"
+    title: "Doing the Unstuck: How to make browsers compatible with the web"
+    summary: "<p>What does it mean for JavaScript and CSS to be — or not to be — compatible with the web?</p><p>Is it possible for a site written today to continue to work in 10 years? Likewise, could existing code complicate adding language features or fixing mistakes in web APIs?</p><p>In this talk I'll discuss the issues that arise when browsers attempt to clean up the web platform, either by adding new language features and DOM APIs or removing old ones — while attempting to remain backwards compatible. I'll even talk about some controversial moves made by browsers to support non-standard (cough webkit prefixes) CSS and JS.</p>"
+    feature: true
+-
+    slug: "offline-first"
+    speakers:
+        - "ola-gasidlo"
+    title: "I'm offline, cool! What now?"
+    summary: "<p>We learned a lot about the offline first concept in the past two years including Service Worker, CouchDB etc.</p><p>Did we do everything already to make our applications offline first? Is caching the resources enough? Did we answer all the questions already and if not… What are the new questions we need to answer?</p><p>In this talk, I’ll show you what has changed in the last few years, how people did adapt the concept and what are the best practices.</p><p>And most importantly, can offline first help to save lives?</p>"
+    feature: true
+-
+    slug: "pwa-hack-corner-2"
+    title: "DISCUSSION: The future of the Web Platform — Progressive Webapps and beyond"
+    summary: "Everything you wanted to know about progressive webapps and upcoming modern web platform features, bringing native-parity to browsers  — this is your chance for an answer! Chat with experts from Mozilla, Google and renowned web developers about the peaks and perils of the web platform and progressive webapps. Have you ever run into problems? Noticed a bug in a browser implementation? Building or planning a product and interested in first-hand information from people at the helm of Web Platform development, bring your concerns to the table at View Source."
+    speakers:
+      - chris-wilson
+    moderators:
+      - Salvador DelaPuenta
+      - Alex Googler
+      - Jake Googler
+-
+    slug: "2fa-wtf"
+    title: "2FA, WTF?"
+    summary: "Everyone is hacking everything. Everything is vulnerable. Your site, your users, even you. Are you worried about this? You should be! Don't worry, I'm not trying to scare you (that much). We have plenty of safeguards against attempts on our applications' user data. We all (hopefully) recognise Two Factor Auth as one of those safeguards, but what actually goes on under the hood of 2FA? We'll take a look into generating one time passwords, implementing 2FA in web applications and the only real life compelling use case for QR codes. Together, we'll make the web a more secure place."
+-
+    slug: "hot-web-apis"
+    title: "Hot Web APIs"
+-
+    slug: "building-webvr"
+    title: "Making WebVR work for you"
+    speakers:
+        - "ada-rose-edwards"
+    summary: "On day 2 of this continuing webVR workshop session, let's look at a more in depth view on the new WebVR api. This session is for those who are looking to use WebVR directly to implement virtual reality themselves in their WebGL or THREE.js experiences."
+-
+    slug: "building-webvr-repeat"
+    title: "Making WebVR work for you (repeat)"
+    speakers:
+        - "ada-rose-edwards"
+    summary: "On day 2 of this continuing webVR workshop session, let's look at a more in depth view on the new WebVR api. This session is for those who are looking to use WebVR directly to implement virtual reality themselves in their WebGL or THREE.js experiences."
+-
+    slug: "docker-for-devs"
+    title: "INTERACTIVE DISCUSSION: Docker for Developers"
+    speakers:
+        - "laura-frank"
+    summary: "You might have heard that Docker is a great deployment tool, but it's also a power tool for development. Docker makes it easy to create consistent development environments, which means it's easier for you to manage application dependencies, share code with your team, and get up and running with new applications quickly. We'll look at tools in the Docker ecosystem designed specifically with developers in mind, like Docker Compose and Docker for Mac and Windows. You'll learn how to get a Docker development environment set up on your own machine, and get to know the tools and processes needed to create your own containerized web applications with Docker, regardless of the language or framework you prefer."
+-
+    slug: "ux-design-qa"
+    title: "Q&A Session on UX and Design"
+    speakers:
+        - "tracy-osborn"
+    summary: "Let's talk more about all things design and layout during this time to ask questions and get answers."
+-
+    slug: "web-compat-qa"
+    title: "Q&A Session on Web Compat Issues"
+    speakers:
+        - "mike-taylor"
+    summary: "Let's talk more about web compat during this afternoon Q&A session"
+-
+    slug: "developers-learn-design"
+    title: "Why developers need to learn Design"
+    summary: "<p>There has been a huge buzz in the last 1-2 years around the topic that \"Everyone should learn how to code\" and more specifically that \"Designers should learn how to code\". Why is this not happening the other way around? Can brainstorming, user research, personas and design thinking change the way we write software? Can we adopt the same army-knives used by design agencies and freelancers to speed up the development of Software or to better prioritise some features over others?</p>"
+-
+    slug: tbc
+    title: "Session to Be Announced"
+    summary: "Coming Soon"
+-
+    slug: webvr
+    speakers:
+        - "dominique-hazael-massieux"
+    title: "Web, meet Virtual Reality"
+    summary: "<p>A combination of improvements in hardware and software capabilities has resulted in a lot of excitement around virtual reality experiences. In this session, we will explore how many of these improved capabilities are supported in modern browsers, and why the Web provides a promising pre-existing ecosystem for creating, distributing and experiencing virtual reality content, applications, and services.</p>"
+    feature: true
+-
+    slug: "closing-keynote"
+    title: "Closing Keynote"
+    summary: "Coming Soon"
+    keynote: true
+-
+    slug: "project-magnet"
+    title: "Connected Devices: Project Magnet"
+    summary: "In the coming years we are going to be surrounded by more and more things that your device can interact with. Many of these things are going to be identified by a URL, and because of that, the name \"Physical Web\" has been coined to refer to that environment. Project Magnet has developed a Standalone application together with a Metadata server to discover physical web content with the best User Experience. Come visit us to find out more on how this experience works."
+    moderators:
+        - "Francisco Jordano"
+        - "Wilson Page"
+        - "Isabel Rios"
+        - "Sam Giles"
+        - "Maria Oteo"
+-
+    slug: "realm-of-vr"
+    title: "Experiences and New Storytelling Ideas in the Realm of VR"
+    summary: "VR is not just about the technology and definitely not just about the code. Come see what we do to create the content and stories to make the VR world a truly rich environment!"
+    speakers:
+        - rachel-uwa
+-
+    slug: html5-games
+    title: HTML5 Games
+    summary: "In the Games Demo Corner you will be able to see some examples of games you can quickly create with HTML5 and JavaScript. Come and play, try to beat our high-score, and ask us lots of questions about HTML5 game development!"
+    speakers:
+      - belen-albeza
+    moderators:
+      - Andrezej Mazur
+-
+    slug: dev-tools
+    summary: "Come learn about our latest debugger.html and how you can contribute!"
+    title: Developer Tools
+    speakers:
+      - helen-holmes
+    moderators:
+      - Bryan Clark
