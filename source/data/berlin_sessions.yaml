@@ -15,8 +15,12 @@
     title: "Welcome Reception"
 -
     slug: "opening-keynote"
-    title: "Opening Keynote"
+    title: "State of the Web"
+    speakers:
+        - "hadley-beeman"
+    summary: "Coming Soon"
     keynote: true
+    feature: true
 -
     slug: "design-for-non-designers"
     speakers:
@@ -172,7 +176,7 @@
     feature: true
 -
     slug: "pwa-hack-corner-2"
-    title: "DISCUSSION: The future of the Web Platform — Progressive Webapps and beyond"
+    title: "The future of the Web Platform — Progressive Webapps and beyond"
     summary: "Everything you wanted to know about progressive webapps and upcoming modern web platform features, bringing native-parity to browsers  — this is your chance for an answer! Chat with experts from Mozilla, Google and renowned web developers about the peaks and perils of the web platform and progressive webapps. Have you ever run into problems? Noticed a bug in a browser implementation? Building or planning a product and interested in first-hand information from people at the helm of Web Platform development, bring your concerns to the table at View Source."
     speakers:
       - chris-wilson
@@ -201,7 +205,7 @@
     summary: "On day 2 of this continuing webVR workshop session, let's look at a more in depth view on the new WebVR api. This session is for those who are looking to use WebVR directly to implement virtual reality themselves in their WebGL or THREE.js experiences."
 -
     slug: "docker-for-devs"
-    title: "INTERACTIVE DISCUSSION: Docker for Developers"
+    title: "Docker for Developers"
     speakers:
         - "laura-frank"
     summary: "You might have heard that Docker is a great deployment tool, but it's also a power tool for development. Docker makes it easy to create consistent development environments, which means it's easier for you to manage application dependencies, share code with your team, and get up and running with new applications quickly. We'll look at tools in the Docker ecosystem designed specifically with developers in mind, like Docker Compose and Docker for Mac and Windows. You'll learn how to get a Docker development environment set up on your own machine, and get to know the tools and processes needed to create your own containerized web applications with Docker, regardless of the language or framework you prefer."
@@ -234,9 +238,12 @@
     feature: true
 -
     slug: "closing-keynote"
-    title: "Closing Keynote"
-    summary: "Coming Soon"
+    title: "The Future of the Web: Progressive Web Apps and Beyond"
+    summary: "<p>Progressive Web Apps is more or less almost the entire web story that we're working on. It includes Service Workers, Push and more, but also for future APIs and possibilities like Payments, Credential Management, Web Bluetooth and such. Let's take a bird's-eye view on the web platform with new features, how it fits in and relates to native mobile platforms, and where it's going and how to make sure it stays relevant.</p>"
+    speakers:
+        - "robert-nyman"
     keynote: true
+    feature: true
 -
     slug: "project-magnet"
     title: "Connected Devices: Project Magnet"

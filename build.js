@@ -80,6 +80,7 @@ metalsmith(__dirname)
             berlin_schedule: 'data/berlin_schedule.yaml',
             berlin_sessions: 'data/berlin_sessions.yaml',
             berlin_speakers: 'data/berlin_speakers.yaml',
+            berlin_sponsors: 'data/berlin_sponsors.yaml',
             berlin_venue: 'data/berlin_venue.yaml',
         }))
         // Make pretty urls by moving foo.html to /foo/index.html.
