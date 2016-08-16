@@ -234,7 +234,7 @@
     </section>
 {% endif %}
 
-
+{% if conference_data.sponsors %}
     <section id="sponsors">
         {% if conference_sponsors %}
             <div class="section">
@@ -244,15 +244,14 @@
                         <div class="sponsors">
                             <h2 class="sponsors_title">{{ title }}</h2>
                             {% for sponsor in sponsors %}
-                                <a class="sponsor" href="{{ sponsor.url }}"><img alt="{{ loop.key }}" src="/assets/images/sponsors/{{ sponsor.image }}"></a>
+                                <a class="sponsor" href="{{ sponsor.url }}"><img alt="{{ loop.key }}" src="/assets/images/sponsors/{{ sponsor.logo }}"></a>
                             {% endfor %}
                         </div>
 
                     {% endmacro %}
-                    {{ sponsor_block("Premier Sponsors", conference_sponsors.premier) }}
-                    {{ sponsor_block("Gold Sponsors", conference_sponsors.gold) }}
-                    {{ sponsor_block("Silver Sponsors", conference_sponsors.silver) }}
-                    {{ sponsor_block("Other Sponsors and Partners", conference_sponsors.other) }}
+                    {{ sponsor_block("Main Sponsor", conference_sponsors.main) }}
+                    {{ sponsor_block("Art Walk Sponsor", conference_sponsors.art_walk) }}
+                    {{ sponsor_block("Community Sponsor", conference_sponsors.community) }}
                 </div>
             </div>
         {% endif %}
@@ -271,6 +270,7 @@
             </div>
         {% endif %}
     </section>
+{% endif %}
 
     <section class="section section-grid">
         <div class="section_body">

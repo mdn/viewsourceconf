@@ -15,8 +15,12 @@
     title: "Welcome Reception"
 -
     slug: "opening-keynote"
-    title: "Opening Keynote"
+    title: "State of the Web"
+    speakers:
+        - "hadley-beeman"
+    summary: "Coming Soon"
     keynote: true
+    feature: true
 -
     slug: "design-for-non-designers"
     speakers:
@@ -234,9 +238,12 @@
     feature: true
 -
     slug: "closing-keynote"
-    title: "Closing Keynote"
-    summary: "Coming Soon"
+    title: "The Future of the Web: Progressive Web Apps and Beyond"
+    summary: "<p>Progressive Web Apps is more or less almost the entire web story that we're working on. It includes Service Workers, Push and more, but also for future APIs and possibilities like Payments, Credential Management, Web Bluetooth and such. Let's take a bird's-eye view on the web platform with new features, how it fits in and relates to native mobile platforms, and where it's going and how to make sure it stays relevant.</p>"
+    speakers:
+        - "robert-nyman"
     keynote: true
+    feature: true
 -
     slug: "project-magnet"
     title: "Connected Devices: Project Magnet"

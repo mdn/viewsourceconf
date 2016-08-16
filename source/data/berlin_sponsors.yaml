@@ -1,0 +1,12 @@
+main:
+    -
+        url: "http://google.com"
+        logo: google_logo.png
+art_walk:
+    -
+        url: "http://github.com"
+        logo: github_logo.png
+community:
+    -
+        url: "https://www.w3.org"
+        logo: w3c_logo.png
