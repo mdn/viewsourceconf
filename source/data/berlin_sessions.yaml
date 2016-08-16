@@ -18,7 +18,7 @@
     title: "State of the Web"
     speakers:
         - "hadley-beeman"
-    summary: "Coming Soon"
+    #summary: "Coming Soon"
     keynote: true
     feature: true
 -
@@ -69,7 +69,7 @@
 -
     slug: "women-in-tech"
     title: "Women In Tech"
-    summary: "Coming Soon"
+    #summary: "Coming Soon"
 -
     slug: "sustainable-oss"
     title: "Sustainable Open-Source Projects"
@@ -92,10 +92,24 @@
     slug: "rust-workshop"
     title: "A Web of Rust"
     summary: "<p>Rust promises to be a safe & fast  systems programming language. It prevents segfaults and guarantees thread safety. This makes it a useful language for a wide variety of applications, ranging from microcontrollers over browsers all up to full web frameworks. In this workshop you will get a chance to learn the basics of Rust, have a basic idea and general overview of the ecosystem and maybe even touch on Rust's web capabilities. All workshop materials and coaches will be provided — just bring a laptop to learn some Rust!</p>"
+    moderators:
+        - "Jan-Erik Rediger"
+        - Florian Gilcher
+        - Andrew Hobden
+        - Jan Schulte
+        - Sebastian Ziebell
+        - Johann Hoffmann
 -
     slug: "rust-workshop-repeat"
     title: "A Web of Rust (repeat)"
     summary: "<p>Rust promises to be a safe & fast  systems programming language. It prevents segfaults and guarantees thread safety. This makes it a useful language for a wide variety of applications, ranging from microcontrollers over browsers all up to full web frameworks. In this workshop you will get a chance to learn the basics of Rust, have a basic idea and general overview of the ecosystem and maybe even touch on Rust's web capabilities. All workshop materials and coaches will be provided — just bring a laptop to learn some Rust!</p>"
+    moderators:
+        - "Jan-Erik Rediger"
+        - Florian Gilcher
+        - Andrew Hobden
+        - Jan Schulte
+        - Sebastian Ziebell
+        - Johann Hoffmann
 -
     slug: "regional-challenges"
     title: "Regional Challenges Talk"
@@ -176,7 +190,7 @@
     feature: true
 -
     slug: "pwa-hack-corner-2"
-    title: "The future of the Web Platform — Progressive Webapps and beyond"
+    title: "The future of the Web Platform: Progressive Webapps and beyond"
     summary: "Everything you wanted to know about progressive webapps and upcoming modern web platform features, bringing native-parity to browsers  — this is your chance for an answer! Chat with experts from Mozilla, Google and renowned web developers about the peaks and perils of the web platform and progressive webapps. Have you ever run into problems? Noticed a bug in a browser implementation? Building or planning a product and interested in first-hand information from people at the helm of Web Platform development, bring your concerns to the table at View Source."
     speakers:
       - chris-wilson
@@ -225,10 +239,12 @@
     slug: "developers-learn-design"
     title: "Why developers need to learn Design"
     summary: "<p>There has been a huge buzz in the last 1-2 years around the topic that \"Everyone should learn how to code\" and more specifically that \"Designers should learn how to code\". Why is this not happening the other way around? Can brainstorming, user research, personas and design thinking change the way we write software? Can we adopt the same army-knives used by design agencies and freelancers to speed up the development of Software or to better prioritise some features over others?</p>"
+    moderators:
+        - Emanuele Libralato
 -
     slug: tbc
     title: "Session to Be Announced"
-    summary: "Coming Soon"
+    #summary: "Coming Soon"
 -
     slug: webvr
     speakers:
