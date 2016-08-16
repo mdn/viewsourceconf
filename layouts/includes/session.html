@@ -29,7 +29,7 @@
         <div class="col col-{{ details_width }}">
             <div class="session_details {% if !session.speakers %}session_details-nopic{% endif %}">
                 <h4 class="session_head">
-                    {% if session.speakers %}
+                    {% if session.speakers or session.moderators %}
                         <span class="session_speakers">
                             {% for session_speaker in session.speakers %}
                                 {% for speaker in conference_speakers %}
