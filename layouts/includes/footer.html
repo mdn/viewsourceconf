@@ -10,7 +10,7 @@
                 {% endif %}
             {% endmacro %}
 
-            {% for item in model.nav.footer %}
+            {% for item in navigation.footer %}
                 {% set item.url = loop.key %}
                 <li>{{ link(item) }}</li>
             {% endfor %}

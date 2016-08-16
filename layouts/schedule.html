@@ -8,34 +8,48 @@
 
             <p>We’re still adding speakers, demos, breakout sessions, social events and more to the schedule. Check back soon.</p>
 
-            {% for day in conference_data.days %}
+            {% for day, times in conference_schedule %}
 
-                <section id="{{day}}" class="session_day">
+                <section id="{{ loop.index }}" class="session_day">
                     <h3 class="section-invert session_day_header">
                         <span class="session_day_header_date">{{ day|date(date_format) }}</span>
                         <span class="session_day_header_day">Day {{loop.index}}</span>
                     </h3>
 
-                    {% if model.sessions.length > 0 %}
-                        {% set last_time = 0 %}
-                        {% for session in model.sessions %}
-                            {% if session.date == day %}
-
-                                <div class="session {% if last_time == session.start %}session-sametime{% endif %} {% if session.keynote == true %}session-keynote{% endif %}"" id="{{ session.slug }}">
-                                    {% include "includes/session.html" with session %}
-                                </div>
-                                {% set last_time = session.start %}
-
+                    {% for time, time_slot in times %}
+                        {% if time_slot.sessions %}
+                            {# build a multi-session block #}
+                            {% if time == "All Day" %}
+                                <div class="session-allday">
                             {% endif %}
-                        {% endfor %}
-                    {% else %}
-                        <div>
-                            <p> Sessions have not been scheduled yet.</p>
-                        </div>
-                    {% endif %}
+                            <div class="session session-multi">
+                                <div class="cols">
+                                    <div class="col col-1"><strong>{{ time }}</strong></div>
+                                    <div class="col col-5">{{ time_slot.title }}</div>
+                                </div>
+                            </div>
+                            {% for session_coords in time_slot.sessions %}
+                                {% set show_time = false %}
+                                {% set show_pic = false %}
+                                {% set additional_classes = "session-sametime" %}
+                                {% set details_width = 5 %}
+                                {% include "includes/session.html" %}
+                            {% endfor %}
+                            {% if time == "All Day" %}
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            {# build a single-session block #}
+                            {% set show_pic = true %}
+                            {% set show_time = true %}
+                            {% set additional_classes = "" %}
+                            {% set details_width = 4 %}
+                            {% set session_coords = time_slot %}
+                            {% include "includes/session.html" %}
+                        {% endif %}
+                    {% endfor %}
                 </section>
             {% endfor %}
-
         </div>
     </div>
 {% endblock %}

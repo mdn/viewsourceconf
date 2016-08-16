@@ -1,34 +1,46 @@
+{% set session = false %}
+{% for s in conference_sessions %}
+    {% if s.slug == session_coords.slug %}
+        {% set session = s %}
+    {% endif %}
+{% endfor %}
 
+{% if session %}
+<div class="session {% if session.keynote == true %}session-keynote{% endif %} {{ additional_classes }}" id="{{ session.slug }}">
     <div class="cols">
-        <div class="col col-1"><strong>{{ session.start }}</strong></div>
+        <div class="col col-1">{% if show_time %}<strong>{{ time }}</strong>{% endif %}</div>
 
+        {% if show_pic and session.speakers %}
         <div class="col col-1">
-            {% if session.speakers %}
                 <div class="session_pic">
                     {% for session_speaker in session.speakers %}
-                        {% for speaker in model.speakers %}
+                        {% for speaker in conference_speakers %}
                             {% if session_speaker == speaker.slug %}
                                 {% if speaker.pic %}
-                                <a href="{{ conference_data.folder }}/speakers/{{speaker.slug}}"><img src="/assets/images/speakers/{{ speaker.pic }}" height="400" width="400"></a>
+                                <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}"><img src="/assets/images/speakers/{{ speaker.pic }}" height="400" width="400"></a>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
                     {% endfor %}
                 </div>
-            {% endif %}
         </div>
+        {% endif %}
 
-        <div class="col col-4">
+        <div class="col col-{{ details_width }}">
             <div class="session_details {% if !session.speakers %}session_details-nopic{% endif %}">
                 <h4 class="session_head">
                     {% if session.speakers %}
                         <span class="session_speakers">
                             {% for session_speaker in session.speakers %}
-                                {% for speaker in model.speakers %}
+                                {% for speaker in conference_speakers %}
                                     {% if session_speaker == speaker.slug %}
                                         <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}" class="session_speaker">{{ speaker.first }} {{ speaker.last }}</a>
                                     {% endif %}
                                 {% endfor %}
+                            {% endfor %}
+                            {# moderators don't get linked to a speaker page #}
+                            {% for moderator in session.moderators %}
+                                <span class="session_speaker">{{ moderator }}</span>
                             {% endfor %}
                         </span>
                     {% endif %}
@@ -43,10 +55,11 @@
                         {% endif %}
                     </div>
                 {% endif %}
-                {% if session.place %}
-                    <div class="session_place">@ {{ session.place }}</div>
+                {% if session_coords.place %}
+                    <div class="session_place">@ {{ session_coords.place }}</div>
                 {% endif %}
             </div>
         </div>
     </div>
-
+</div>
+{% endif %}

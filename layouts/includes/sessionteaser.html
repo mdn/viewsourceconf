@@ -4,7 +4,7 @@
             {% if session.speakers %}
                 <div class="sessionteaser_pic">
                     {% for session_speaker in session.speakers %}
-                        {% for speaker in model.speakers %}
+                        {% for speaker in conference_speakers %}
                             {% if session_speaker == speaker.slug %}
                                 {% if speaker.pic %}
                                 <a href="{{ conference_data.folder }}/speakers/{{speaker.slug}}"><img src="/assets/images/speakers/{{ speaker.pic }}" height="400" width="400"></a>
@@ -24,7 +24,7 @@
                     {% if session.speakers %}
                         <span class="sessionteaser_speakers">
                             {% for session_speaker in session.speakers %}
-                                {% for speaker in model.speakers %}
+                                {% for speaker in conference_speakers %}
                                     {% if session_speaker == speaker.slug %}
                                         <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}" class="sessionteaser_speaker">{{ speaker.first }} {{ speaker.last }}</a>
                                     {% endif %}

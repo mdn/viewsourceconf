@@ -11,6 +11,7 @@ const ignore = require('metalsmith-ignore');
 const inplace = require('metalsmith-in-place');
 const json_to_files = require('metalsmith-json-to-files');
 const layouts = require('metalsmith-layouts');
+const metadata = require('metalsmith-metadata');
 const models = require('metalsmith-models');
 const permalinks = require('metalsmith-permalinks');
 const serve = require('metalsmith-serve');
@@ -43,6 +44,7 @@ const dump = function(options) {
     };
 };
 
+
 metalsmith(__dirname)
     // Input files from source directory.
     .source('source')
@@ -59,9 +61,9 @@ metalsmith(__dirname)
     // Restrict the files we transform to a pattern; don't transform 2015.
     .use(branch('!2015/**/*')
     .use(branch('!assets/**/*')
-        // Also put json from /data into collections.
+        // Also put stuff from source/data into collections.
         .use(json_to_files({
-            source_path: 'data/',
+            source_path: 'source/data/',
         }))
         // Ignore files that we don't want to copy to build dir.
         // Must follow json_to_files
@@ -71,9 +73,14 @@ metalsmith(__dirname)
             // At launch we may not have a seattle event. This prevents building its pages.
             // '**/seattle-2016/*',
         ]))
-        // Put json from /data into global metadata. Must be above inplace.
-        .use(models({
-            directory: 'data',
+        // Put yaml from source/data into global metadata. Must be above inplace.
+        .use(metadata({
+            conferences: 'data/conferences.yaml',
+            navigation: 'data/navigation.yaml',
+            berlin_schedule: 'data/berlin_schedule.yaml',
+            berlin_sessions: 'data/berlin_sessions.yaml',
+            berlin_speakers: 'data/berlin_speakers.yaml',
+            berlin_venue: 'data/berlin_venue.yaml',
         }))
         // Make pretty urls by moving foo.html to /foo/index.html.
         // Also, add a 'path' to global metadata for each file.
@@ -142,7 +149,7 @@ metalsmith(__dirname)
             'source/js/**/*': true,
             'source/stylesheets/**/*': true,
             'source/*': true,
-            'data/**/*': '**/*',
+            'source/data/**/*': '**/*',
             'layouts/**/*': '**/*',
         },
         livereload: true,

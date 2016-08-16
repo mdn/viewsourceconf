@@ -1,0 +1,14 @@
+"berlin":
+    "slug": "berlin"
+    "location": "Berlin"
+    "date": "12-14 September, 2016"
+    "folder": "/berlin-2016"
+    "speakers": true
+    "schedule": true
+    "venue": true
+    "cfp": false
+    "sessions": true
+    "announcements": true
+    "sponsor_prospectus": "/assets/viewsource_berlin_sponsorship.pdf"
+    "register_url": "https://ti.to/mdn/view-source-berlin-2016"
+    "facebook": "https://www.facebook.com/events/1726468307566424/"
