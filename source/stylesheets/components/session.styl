@@ -5,7 +5,7 @@ session
 ====================================================================== */
 
 .session_day {
-    margin-bottom: 40px;
+    margin-bottom: $grid-gutter-width * 2;
 }
 
 .session_day_header {
@@ -15,10 +15,7 @@ session
 
 .session_day_header_day {
     display: block;
-}
-
-.session-allday {
-    border: 2px solid $berlin-dark;
+    margin-bottom: ($grid-gutter-width / 2);
 }
 
 .session {
@@ -29,24 +26,9 @@ session
     @extends $clearfix
 }
 
-.session-sametime {
-    margin-top: ($grid-gutter-width / 2) * -1;
-}
-
-.session-keynote:before {
-  content: '★';
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: $grid-gutter-width;
-  width: $grid-gutter-width;
-  background-color: $berlin-dark;
-  color: #fff;
-  set-font-size(8px);
-  line-height: 1;
+.session-allday {
+    border: 2px solid $berlin-dark;
+    padding: $grid-gutter-width - 2px;
 }
 
 .session_head {
@@ -59,6 +41,12 @@ session
 
 .session_summary {
     margin-top: $grid-gutter-width;
+}
+
+.session_moderators {
+    display: block;
+    margin-top: -0.3em;
+    line-height: $heading-line-height;
 }
 
 .session_speakers {
@@ -82,8 +70,10 @@ session
 
 .session_speaker {
     display: block;
+    white-space: nowrap;
 }
 
+.session_title,
 button.session_title {
     // this becomes a button with some js help so need to over ride defulat button styles
     // also needs the speificity bump
@@ -92,15 +82,20 @@ button.session_title {
     -webkit-appearance: none;
     appearance: none;
     min-width: 0;
+    margin: 0;
     border: 0;
     padding: 0;
     background: #fff;
     color: inherit;
-    font-size: inherit;
+    set-font-size(18px);
     font-family: inherit;
-    font-weight: inherit;
+    font-weight: bold;
     line-height: $heading-line-height;
     text-align: left;
+}
+
+.session_title-group {
+    margin-bottom: $grid-gutter-width * 2;
 }
 
 .session_cta {
@@ -119,13 +114,33 @@ button.session_title {
     }
 }
 
+.session_details + .session_details {
+    margin-top: $grid-gutter-width;
+}
+
 .session_details-nopic button.session_title {
     max-width: 100%;
 }
 
+.session_details-keynote:before {
+  content: '★';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $grid-gutter-width;
+  width: $grid-gutter-width;
+  background-color: $berlin-dark;
+  color: #fff;
+  set-font-size(8px);
+  line-height: 1;
+}
+
+
 @media $media-query-320-and-up {
     $session-pic-320 = 60px;
-    $session-pic-space-320 = $session-pic-320 + $grid-gutter-width + 5px; // plus a little extra because buttons have weird widths
 
     .session_pic {
         float: right;
@@ -133,10 +148,6 @@ button.session_title {
         flex-direction: column;
         margin-top: -2.1em;
         margin-left: $grid-gutter-width;
-    }
-
-    button.session_title {
-        max-width: "calc(100% - %s)" % $session-pic-space-320;
     }
 
     .session_summary::before {
@@ -203,5 +214,12 @@ button.session_title {
 @media $media-query-960-and-up {
     .session {
         padding: $grid-gutter-width;
+    }
+}
+
+
+@media $media-query-tall {
+    .session_day {
+        margin-bottom: $grid-gutter-width-wide;
     }
 }
