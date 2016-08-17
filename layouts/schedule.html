@@ -17,36 +17,30 @@
                     </h3>
 
                     {% for time, time_slot in times %}
-                        {% if time_slot.sessions %}
-                            {# build a multi-session block #}
-                            {% if time == "All Day" %}
-                                <div class="session-allday">
-                            {% endif %}
-                            <div class="session session-multi">
+                        <div class="session {% if time == 'All Day' %}session-allday{% endif %}">
+                            {% if time_slot.sessions %}
                                 <div class="cols">
                                     <div class="col col-1"><strong>{{ time }}</strong></div>
-                                    <div class="col col-5">{{ time_slot.title }}</div>
+                                    <div class="col col-5">
+                                        <h4 class="session_title session_title-group">{{ time_slot.title }}</h4>
+                                        {% for session_coords in time_slot.sessions %}
+                                            {% set session = false %}
+                                            {% for s in conference_sessions %}
+                                                {% if s.slug == session_coords.slug %}
+                                                    {% set session = s %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% include "includes/groupdetails.html" %}
+                                        {% endfor %}
+                                    </div>
                                 </div>
-                            </div>
-                            {% for session_coords in time_slot.sessions %}
-                                {% set show_time = false %}
-                                {% set show_pic = false %}
-                                {% set additional_classes = "session-sametime" %}
-                                {% set details_width = 5 %}
+
+                            {% else %}
+                                {# build a single-session block #}
+                                {% set session_coords = time_slot %}
                                 {% include "includes/session.html" %}
-                            {% endfor %}
-                            {% if time == "All Day" %}
-                                </div>
                             {% endif %}
-                        {% else %}
-                            {# build a single-session block #}
-                            {% set show_pic = true %}
-                            {% set show_time = true %}
-                            {% set additional_classes = "" %}
-                            {% set details_width = 4 %}
-                            {% set session_coords = time_slot %}
-                            {% include "includes/session.html" %}
-                        {% endif %}
+                        </div>
                     {% endfor %}
                 </section>
             {% endfor %}
