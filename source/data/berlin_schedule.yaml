@@ -32,7 +32,7 @@
     "13:00":
         slug: lunch
     "All Day":
-        title: Demos
+        title: "Demos: Drop by during breaks!"
         sessions:
             -
                 slug: project-magnet
@@ -116,6 +116,21 @@
         place: Main Stage
     "13:00":
         slug: lunch
+    "All Day":
+        title: "Demos: Drop by during breaks!"
+        sessions:
+            -
+                slug: project-magnet-repeat
+                place: Social Hall
+            -
+                slug: realm-of-vr-repeat
+                place: Social Hall
+            -
+                slug: html5-games-repeat
+                place: Social Hall
+            -
+                slug: dev-tools-repeat
+                place: Foyer Hall
     "14:00":
         title: "Worskhops & Discussion Corners"
         sessions:
