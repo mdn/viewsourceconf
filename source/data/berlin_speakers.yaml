@@ -65,7 +65,7 @@
     slug: "chris-wilson"
     first: Chris
     last: Wilson
-    twitter: "@cwilso"
+    twitter: "cwilso"
     pic: "chriswilson.jpg"
     bio: "Chris Wilson is an Open Web Platform Developer Advocate working on Chrome. He has also Co-chaired the W3C Working Group for HTML5 and been Platform Architect at Microsoft. He began working on web browsers in 1993 when he co-authored the original Windows version of NCSA Mosaic, went on to Microsoft to work on Internet Explorer for fifteen years, and joined Google in 2010. He has a particular interest in enabling awesome user experiences on the web platform, and is a long-time participant in various web standards working groups. In his free time, he enjoys photography, SCUBA diving, playing music and hiking with his wife and daughters. You can keep up with Chris at <a href='http://twitter.com/cwilso'>@cwilso</a> and <a href='http://cwilso.com'>cwilso.com</a>."
     sessions:
@@ -92,7 +92,7 @@
     slug: "tim-pietrusky"
     first: Tim
     last: Pietrusky
-    twitter: "@timpietrusky"
+    twitter: "timpietrusky"
     pic: "timpietrusky.jpg"
     bio: "By day <a href='https://twitter.com/TimPietrusky'>Tim Pietrusky</a> is the CTO of <a href='https://twitter.com/Synoa_GmbH'>Synoa</a> and lives near Frankfurt (Main). At night he and his cat <a href='https://twitter.com/KazzoTheCat'>Kazzo</a> work on <a href='https://twitter.com/NERDDISCO'>NERDDISCO</a> to create live music visualizations with JavaScript. He contributed <a href='http://codepen.io/TimPietrusky/pen/cdmtA'>Kittify</a> to the \"only FUN open-source projects\"-community <a href='https://twitter.com/bullgit'>bullgit</a>"
     sessions:
@@ -110,7 +110,7 @@
     slug: "dan-shappir"
     first: Dan
     last: Shappir
-    twitter: "@danshappir"
+    twitter: "danshappir"
     pic: "danshappir.jpg"
     bio: "Dan Shappir is a Performance Specialist at <a href='http://wix.com'>Wix.com</a>, focusing on making +80 million sites hosted on the Wix platform load and execute faster. Dan is a twenty year software development veteran, having worked on systems ranging from missile trajectory simulations to networked multi-user games to designing and building Rich Web Apps, since even before AJAX. Dan holds an M.Sc. in Computer Science, and has spoken at various technical conferences."
     sessions:

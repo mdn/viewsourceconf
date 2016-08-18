@@ -10,3 +10,7 @@ community:
     -
         url: "https://www.w3.org"
         logo: w3c_logo.png
+media:
+    -
+        url: "http://www.digitalmediawomen.de/"
+        logo: dmw_logo.png

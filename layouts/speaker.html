@@ -24,6 +24,9 @@
                     {% else %}
                         <p>{{ data.bio }}</p>
                     {% endif %}
+                    {% if data.twitter %}
+                        <div class="speaker_social">Follow {{ data.first }} at <a href="http://twitter.com/@{{ data.twitter }}">@{{ data.twitter }}</a>.</div>
+                    {% endif %}
                 </div>
             </div>
         </div>

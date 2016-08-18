@@ -15,7 +15,7 @@
     title: "Welcome Reception"
 -
     slug: "opening-keynote"
-    title: "State of the Web"
+    title: "Opening Keynote: State of the Web"
     speakers:
         - "hadley-beeman"
     #summary: "Coming Soon"
@@ -127,7 +127,7 @@
     slug: resilience
     speakers:
         - "jeremy-keith"
-    title: Resilience
+    title: "Closing Keynote: Resilience"
     summary: "<p>Web browsers have become so powerful that developers are now treating them as if they were a runtime environment as predictable as any other. But the truth is that we still need to deal with many unknown factors that torpedo our assumptions. The web is where Postel’s Law meets Murphy’s Law, so we can’t treat web development as if it were just another flavour of software. Instead we must work with the grain of the web.</p>"
     feature: true
     keynote: true
@@ -150,7 +150,7 @@
     slug: coping
     speakers:
         - "lena-reinhard"
-    title: "Existing in Tech"
+    title: "Opening Keynote: Existing in Tech"
     summary: "<p>Over the past few years, several CSS methodologies and JavaScript frameworks have been released. In one year, we receive 32,120 business emails. Every weekday, we're active on Slack for 2 hours 15 minutes. Technology is moving fast, and constantly, there's so much going on. We constantly have to adapt in an ever-changing environment, while somehow still doing our job of building proper, functioning software to the latest tight-super-unrealistic deadline.</p><p>This talk will look at the human side of our daily work in technology. Together, we will examine which factors affect us physically and emotionally in our work. We'll learn how they lead to pressure, stress, self-consciousness and ultimately burnout, and we'll find out how to identify early warning signs of being affected. You'll leave with a realistic look at your own, human capabilities, and the knowledge of what you can do to take care of yourself while working on software.</p>"
     feature: true
     keynote: true
@@ -190,7 +190,7 @@
     feature: true
 -
     slug: "pwa-hack-corner-2"
-    title: "The future of the Web Platform: Progressive Webapps and beyond"
+    title: "Progressive Webapps Q&A"
     summary: "Everything you wanted to know about progressive webapps and upcoming modern web platform features, bringing native-parity to browsers  — this is your chance for an answer! Chat with experts from Mozilla, Google and renowned web developers about the peaks and perils of the web platform and progressive webapps. Have you ever run into problems? Noticed a bug in a browser implementation? Building or planning a product and interested in first-hand information from people at the helm of Web Platform development, bring your concerns to the table at View Source."
     speakers:
       - chris-wilson
@@ -204,7 +204,11 @@
     summary: "Everyone is hacking everything. Everything is vulnerable. Your site, your users, even you. Are you worried about this? You should be! Don't worry, I'm not trying to scare you (that much). We have plenty of safeguards against attempts on our applications' user data. We all (hopefully) recognise Two Factor Auth as one of those safeguards, but what actually goes on under the hood of 2FA? We'll take a look into generating one time passwords, implementing 2FA in web applications and the only real life compelling use case for QR codes. Together, we'll make the web a more secure place."
 -
     slug: "hot-web-apis"
-    title: "Hot Web APIs"
+    title: "New and upcoming Web APIs"
+    moderators:
+      - Florian Scholz
+      - Jean-Yves Perrier
+    summary: "In this session, MDN documentation herders will bring up new Web APIs and technologies for discussion. How is the Web platform evolving? Which technologies are we looking forward to or are desperately needed?"
 -
     slug: "building-webvr"
     title: "Making WebVR work for you"
@@ -254,7 +258,7 @@
     feature: true
 -
     slug: "closing-keynote"
-    title: "The Future of the Web: Progressive Web Apps and Beyond"
+    title: "Closing Keynote: The Future of the Web – Progressive Web Apps and Beyond"
     summary: "<p>Progressive Web Apps is more or less almost the entire web story that we're working on. It includes Service Workers, Push and more, but also for future APIs and possibilities like Payments, Credential Management, Web Bluetooth and such. Let's take a bird's-eye view on the web platform with new features, how it fits in and relates to native mobile platforms, and where it's going and how to make sure it stays relevant.</p>"
     speakers:
         - "robert-nyman"
@@ -271,7 +275,23 @@
         - "Sam Giles"
         - "Maria Oteo"
 -
+    slug: "project-magnet-repeat"
+    title: "Connected Devices: Project Magnet"
+    summary: "In the coming years we are going to be surrounded by more and more things that your device can interact with. Many of these things are going to be identified by a URL, and because of that, the name \"Physical Web\" has been coined to refer to that environment. Project Magnet has developed a Standalone application together with a Metadata server to discover physical web content with the best User Experience. Come visit us to find out more on how this experience works."
+    moderators:
+        - "Francisco Jordano"
+        - "Wilson Page"
+        - "Isabel Rios"
+        - "Sam Giles"
+        - "Maria Oteo"
+-
     slug: "realm-of-vr"
+    title: "Experiences and New Storytelling Ideas in the Realm of VR"
+    summary: "VR is not just about the technology and definitely not just about the code. Come see what we do to create the content and stories to make the VR world a truly rich environment!"
+    speakers:
+        - rachel-uwa
+-
+    slug: "realm-of-vr-repeat"
     title: "Experiences and New Storytelling Ideas in the Realm of VR"
     summary: "VR is not just about the technology and definitely not just about the code. Come see what we do to create the content and stories to make the VR world a truly rich environment!"
     speakers:
@@ -285,7 +305,23 @@
     moderators:
       - Andrezej Mazur
 -
+    slug: html5-games-repeat
+    title: HTML5 Games
+    summary: "In the Games Demo Corner you will be able to see some examples of games you can quickly create with HTML5 and JavaScript. Come and play, try to beat our high-score, and ask us lots of questions about HTML5 game development!"
+    speakers:
+      - belen-albeza
+    moderators:
+      - Andrezej Mazur
+-
     slug: dev-tools
+    summary: "Come learn about our latest debugger.html and how you can contribute!"
+    title: Developer Tools
+    speakers:
+      - helen-holmes
+    moderators:
+      - Bryan Clark
+-
+    slug: dev-tools-repeat
     summary: "Come learn about our latest debugger.html and how you can contribute!"
     title: Developer Tools
     speakers:
