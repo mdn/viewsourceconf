@@ -13,7 +13,7 @@ const browser = process.env.VS_TEST_BROWSER || 'firefox';
 console.log(`Running integration tests against ${baseURL} with ${browser}`);
 
 describe('The site...', function() {
-    this.timeout(45000);
+    this.timeout(65000);
     const url = baseURL;
 
     it('should not have any broken links', function(done) {
@@ -21,6 +21,7 @@ describe('The site...', function() {
             // https://github.com/stevenvachon/broken-link-checker
             excludedKeywords: ['/2015', 'livereload'],
             filterLevel: '3',
+            maxSocketsPerHost: '3',
         };
 
         const errors = {};
