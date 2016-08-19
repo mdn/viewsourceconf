@@ -205,5 +205,6 @@
     twitter: robertnyman
     feature: true
     pic: "robertnyman.jpg"
+    bio: "Robert is a strong believer in the Open Web, and has been working since 1999 with Front End development for the web, in Sweden and in New York City. He is currently the Global Lead for Developer Feedback & Communities, Web Platform, at Google, and loves to travel and meet people and helps developers in creating great things! Robert has presented in 37 countries, and holds claim to the title of most well-travelled speaker on Lanyrd. He is listed by Twitter as one of 23 Swedes to follow and 5th best developer in Sweden."
     sessions:
         - "closing-keynote"
