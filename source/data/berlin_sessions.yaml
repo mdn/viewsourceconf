@@ -61,11 +61,11 @@
     title: "Demystifying Progressive Webapps"
     summary: "<p>You might have already caught the bug—or may have never heard the whizz around these \"Progressive Webapps\" that's swirling around? What are they? Come to learn about and try building supercharged Web Applications with engaging, fast user experiences and offline support. Lear about the components underpinning these new tools and APIs, bring your computer get to know service workers, webapp manifests, web push and the principles driving the web platform, like \"offline-first\" and \"progressive enhancement\".</p><p>Basic web development knowledge is required to participate in the hands-on examples, but not for the talks and introductions into the driving principles/philosophy behind these upcoming Web Platform technologies.</p>"
     speakers:
-      - chris-wilson
+        - chris-wilson
     moderators:
-      - Salvador DelaPuenta
-      - Alex Googler
-      - Jake Googler
+        - Salvador de la Puenta
+        - Alex Googler
+        - Jake Googler
 -
     slug: "women-in-tech"
     title: "Women In Tech"
@@ -193,21 +193,23 @@
     title: "Progressive Webapps Q&A"
     summary: "Everything you wanted to know about progressive webapps and upcoming modern web platform features, bringing native-parity to browsers  — this is your chance for an answer! Chat with experts from Mozilla, Google and renowned web developers about the peaks and perils of the web platform and progressive webapps. Have you ever run into problems? Noticed a bug in a browser implementation? Building or planning a product and interested in first-hand information from people at the helm of Web Platform development, bring your concerns to the table at View Source."
     speakers:
-      - chris-wilson
+        - chris-wilson
     moderators:
-      - Salvador DelaPuenta
-      - Alex Googler
-      - Jake Googler
+        - Salvador de la Puenta
+        - Alex Googler
+        - Jake Googler
 -
     slug: "2fa-wtf"
     title: "2FA, WTF?"
     summary: "Everyone is hacking everything. Everything is vulnerable. Your site, your users, even you. Are you worried about this? You should be! Don't worry, I'm not trying to scare you (that much). We have plenty of safeguards against attempts on our applications' user data. We all (hopefully) recognise Two Factor Auth as one of those safeguards, but what actually goes on under the hood of 2FA? We'll take a look into generating one time passwords, implementing 2FA in web applications and the only real life compelling use case for QR codes. Together, we'll make the web a more secure place."
+    moderators:
+        - Dominik Kundl
 -
     slug: "hot-web-apis"
     title: "New and upcoming Web APIs"
     moderators:
-      - Florian Scholz
-      - Jean-Yves Perrier
+        - Florian Scholz
+        - Jean-Yves Perrier
     summary: "In this session, MDN documentation herders will bring up new Web APIs and technologies for discussion. How is the Web platform evolving? Which technologies are we looking forward to or are desperately needed?"
 -
     slug: "building-webvr"
@@ -301,30 +303,30 @@
     title: HTML5 Games
     summary: "In the Games Demo Corner you will be able to see some examples of games you can quickly create with HTML5 and JavaScript. Come and play, try to beat our high-score, and ask us lots of questions about HTML5 game development!"
     speakers:
-      - belen-albeza
+        - belen-albeza
     moderators:
-      - Andrezej Mazur
+        - Andrezej Mazur
 -
     slug: html5-games-repeat
     title: HTML5 Games
     summary: "In the Games Demo Corner you will be able to see some examples of games you can quickly create with HTML5 and JavaScript. Come and play, try to beat our high-score, and ask us lots of questions about HTML5 game development!"
     speakers:
-      - belen-albeza
+        - belen-albeza
     moderators:
-      - Andrezej Mazur
+        - Andrezej Mazur
 -
     slug: dev-tools
     summary: "Come learn about our latest debugger.html and how you can contribute!"
     title: Developer Tools
     speakers:
-      - helen-holmes
+        - helen-holmes
     moderators:
-      - Bryan Clark
+        - Bryan Clark
 -
     slug: dev-tools-repeat
     summary: "Come learn about our latest debugger.html and how you can contribute!"
     title: Developer Tools
     speakers:
-      - helen-holmes
+        - helen-holmes
     moderators:
-      - Bryan Clark
+        - Bryan Clark
