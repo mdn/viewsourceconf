@@ -51,6 +51,7 @@ metalsmith(__dirname)
     // Define some global values that will be accessible in metadata anywhere.
     .use(define({
         date_format: 'j F, Y',
+        version_date: new Date().toISOString(),
     }))
     // Add debug messages to terminal. Dev-only.
     .use(devonly(debug, {}))
@@ -90,7 +91,7 @@ metalsmith(__dirname)
         }))
         // Minimize and concatenate js files. Must be above fingerprint.
         .use(uglify({
-            pattern: 'js/*.js',
+            filter: 'js/*.js',
             sourceMap: true,
             concat: 'js/main.js',
         }))
@@ -106,7 +107,7 @@ metalsmith(__dirname)
         // Process template files in the source dir using specified engine.
         .use(inplace({
             engine: 'swig',
-            pattern: '**/*.html',
+            pattern: ['**/*.html', 'worker.js'],
             autoescape: false,
         }))
         // Apply layouts to (certain) source files using specified engine.
@@ -134,6 +135,7 @@ metalsmith(__dirname)
                 'indent-spaces': 4,
                 'quote-ampersand': false,
                 'coerce-endtags': false,
+                'drop-empty-elements': false,
                 'new-blocklevel-tags': ['svg', 'defs', 'path', 'polyline', 'line', 'polygon',],
             },
         }))

@@ -74,6 +74,10 @@ The site is deployed to staging and production using Docker and Deis, and you ca
   * useful for testing nginx.conf changes
 * `make serve`: run the nginx deployment image
   * listens on port 8000 by doefault, override with the SERVE_PORT environment variable
+* `make generate-cert`: create a self signed cert for localhost
+* `make serve-https`: run the nginx deployment image but force https
+  * does not use port number
+  * generate a cert first
 * `make curl`: run curl with the "X-Forwarded-Proto: https" header to bypass the http>https redirect
 * `make sh`: run an interactive shell in a "build" container
   * useful for debugging new build dependencies

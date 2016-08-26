@@ -1,0 +1,87 @@
+.tic {
+    text-align: center;
+}
+
+.tic_board {
+    margin: 0 auto;
+}
+
+.tic button {
+    position: relative;
+    height: 20vh;
+    width: 20vh;
+    min-width: 0;
+    margin: 1vh;
+    padding: 0;
+    border: 2px solid #B93C5A;
+    background-color: #F79B72;
+    color: #B93C5A;
+    font-size: 10vh;
+    font-weight: bold;
+    line-height: calc(20vh - 4px);
+    transition: opacity 0.3s;
+}
+
+.tic button[disabled] {
+    opacity: 0.2;
+}
+
+.tic_X,
+.tic_O {
+    border-color: #F79B72;
+}
+
+.tic_winner {
+    animation-duration: 0.3s;
+    animation-name: happy;
+
+    button[disabled]& {
+        opacity: 1;
+    }
+}
+
+@keyframes happy {
+    from {
+        top: 0;
+    }
+
+    10% {
+        top: -2vh;
+    }
+
+    60% {
+        transform: rotate(2deg);
+    }
+
+    80% {
+        transform: rotate(-2deg);
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+#tic_restart {
+    margin: 1vh;
+    border: 2px solid #B93C5A;
+    padding: 10px 20px;
+    background-color: #F79B72;
+    color: #B93C5A;
+    font-size: 10vh;
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    .tic button {
+        height: 20vw;
+        width: 20vw;
+        margin: 1vw;
+        font-size: 10vw;
+        line-height: calc(20vw - 4px);
+    }
+
+    #tic_restart {
+        margin: 1vw;
+        font-size: 10vw;
+    }
+}
