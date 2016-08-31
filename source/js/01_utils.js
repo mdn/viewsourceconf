@@ -13,4 +13,7 @@
             return parent;
         }
     };
+
+    window.vs.size = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
+
 })();

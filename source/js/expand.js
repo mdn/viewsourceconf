@@ -34,7 +34,9 @@
         return controller;
     }
 
-    function expandSimple(event, controller, controlled) {
+    function expandSimple(controller) {
+        var controls = controller.getAttribute('aria-controls');
+        var controlled = document.getElementById(controls);
         if (controller.getAttribute('aria-expanded') === 'true') {
             // toggle aria
             expandClose(controller);
@@ -61,6 +63,7 @@
     /*
         hotels expand/collapse
     */
+
     var hotelDivId = 'hotels_suggestions';
     var hotelsDiv = document.getElementById(hotelDivId);
 
@@ -80,7 +83,7 @@
         // add listener for button
         hotelsButton.addEventListener('click', function(event) {
             // toggle aria and visibililty
-            expandSimple(event, hotelsButton, hotelsDiv);
+            expandSimple(hotelsButton);
             // toggle button text
             if (hotelsButton.getAttribute('aria-expanded') === 'true') {
                 hotelsButton.textContent = hotelsButtonTextExpanded;
@@ -137,7 +140,7 @@
             expandInitController(sessionButton, summaryId);
             // add listener
             sessionButton.addEventListener('click', function(event) {
-                expandSimple(event, sessionButton, summary);
+                expandSimple(sessionButton);
                 if (sessionButton.getAttribute('aria-expanded') === 'true') {
                     sessionTitleCTA.textContent = sessionTitleCTATextExpanded;
                 } else {
@@ -159,4 +162,72 @@
             }
         }
     }
+
+    /*
+        schedule days expand/collapse
+    */
+
+    var dayDivs = document.querySelectorAll('.sesson_day_sessions');
+
+    if(dayDivs) {
+
+        // check screen is small enough to warrent this
+        if(parseInt(window.vs.size) > 2) {
+            Array.prototype.forEach.call(dayDivs, function(element, i) {
+                // remove the .js-hidden class so content stays visible if
+                // they resize their screens later
+                element.classList.remove('js-hidden');
+            });
+            return;
+        }
+
+        var dayToday = new Date().toISOString().slice(0, 10);
+
+        // add the buttons and events
+        Array.prototype.forEach.call(dayDivs, function(element, i) {
+            var daySessions = element;
+            var daySessionsId = element.id;
+
+            // get heading
+            var dayHeading = daySessions.previousElementSibling;
+            var dayHeadingId = dayHeading.id;
+            var dayHeadingDay = dayHeading.querySelector('.session_day_header_day');
+            var dayHeadingDayText = dayHeadingDay.textContent;
+
+            // create button
+            var dayButton = document.createElement('button');
+            dayButton.setAttribute('type', 'button');
+            dayButton.appendChild(document.createTextNode(dayHeadingDayText));
+
+            // replace heading text with button
+            while (dayHeading.firstChild) {
+                dayHeading.removeChild(dayHeading.firstChild);
+            }
+            dayHeading.appendChild(dayButton);
+
+            // wire button as controller
+            expandInitController(dayButton, daySessionsId);
+
+            // add listener for button
+            dayButton.addEventListener('click', function(event) {
+                // toggle aria and visibililty
+                expandSimple(dayButton);
+            }, false);
+
+
+            if(isHash) {
+                // open and scroll to if this day has been linked to
+                if(targetId === dayHeadingId){
+                    dayButton.click();
+                }
+            } else {
+                // explicitly open if today is day of this day of conference
+                var dayDate = daySessions.dataset.date;
+                if(dayToday === dayDate) {
+                    expandSimple(dayButton);
+                }
+            }
+        });
+    }
+
 })();

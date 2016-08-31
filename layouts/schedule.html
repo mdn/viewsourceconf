@@ -11,11 +11,12 @@
             {% for day, times in conference_schedule %}
 
                 <section id="{{ loop.index }}" class="session_day">
-                    <h3 class="section-invert session_day_header">
+                    <h3 id="day_{{loop.index}}" class="session_day_header">
                         <span class="session_day_header_date">{{ day|date(date_format) }}</span>
                         <span class="session_day_header_day">Day {{loop.index}}</span>
                     </h3>
 
+                    <div id="day_{{ loop.index }}_sessions" class="sesson_day_sessions js-hidden" data-date="{{ day }}">
                     {% for time, time_slot in times %}
                         <div class="session {% if time == 'All Day' %}session-allday{% endif %}">
                             {% if time_slot.sessions %}
@@ -42,6 +43,7 @@
                             {% endif %}
                         </div>
                     {% endfor %}
+                    </div>
                 </section>
             {% endfor %}
         </div>
