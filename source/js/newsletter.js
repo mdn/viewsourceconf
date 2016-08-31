@@ -96,6 +96,11 @@
 
         xhr.onload = function(r) {
             if (r.target.status >= 200 && r.target.status < 300) {
+                // response is null if handled by service worker
+                if(response === null ) {
+                    newsletterError(new Error());
+                    return;
+                }
                 var response = r.target.response;
                 if (response.success === true) {
                     newsletterForm.style.display = 'none';

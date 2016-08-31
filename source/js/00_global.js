@@ -6,4 +6,10 @@
     // signal site js loaded
     html.classList.add('js-site');
 
+    if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('/worker.js', {
+            scope: '/'
+        });
+    }
+
 })();

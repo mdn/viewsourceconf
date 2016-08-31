@@ -1,5 +1,10 @@
 {
 	"name": "View Source 2016",
+    "short_name": "View Source",
+    "start_url": "/berlin-2016/schedule/",
+    "display": "browser",
+    "background_color": "#fff",
+    "theme_color": "#b93c5a",
 	"icons": [
 		{
 			"src": "\/android-chrome-36x36.png?v=2016",
