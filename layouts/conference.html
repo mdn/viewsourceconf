@@ -244,7 +244,7 @@
                         <div class="sponsors">
                             <h2 class="sponsors_title">{{ title }}</h2>
                             {% for sponsor in sponsors %}
-                                <a class="sponsor" href="{{ sponsor.url }}"><img alt="{{ loop.key }}" src="/assets/images/sponsors/{{ sponsor.logo }}"></a>
+                                <a class="sponsor" href="{{ sponsor.url }}"><img alt="{{ sponsor.name }}" src="/assets/images/sponsors/{{ sponsor.logo }}"></a>
                             {% endfor %}
                         </div>
 
