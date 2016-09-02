@@ -271,7 +271,7 @@
 -
     slug: "project-magnet"
     title: "Connected Devices: Project Magnet"
-    summary: "In the coming years we are going to be surrounded by more and more things that your device can interact with. Many of these things are going to be identified by a URL, and because of that, the name \"Physical Web\" has been coined to refer to that environment. Project Magnet has developed a Standalone application together with a Metadata server to discover physical web content with the best User Experience. Come visit us to find out more on how this experience works."
+    summary: "In the coming years we are going to be surrounded by more and more things that your device can interact with. Many of these things are going to be identified by a URL, and because of that, the name \"Physical Web\" has been coined to refer to that environment. Project Magnet has developed a Standalone application together with a Metadata server to discover physical web content with the best User Experience. Come visit us to find out more on how this experience works. <a href="https://mzl.la/trymagnet">Download the application for your Android or iOS device!</a>"
     moderators:
         - "Francisco Jordano"
         - "Wilson Page"
@@ -281,7 +281,7 @@
 -
     slug: "project-magnet-repeat"
     title: "Connected Devices: Project Magnet"
-    summary: "In the coming years we are going to be surrounded by more and more things that your device can interact with. Many of these things are going to be identified by a URL, and because of that, the name \"Physical Web\" has been coined to refer to that environment. Project Magnet has developed a Standalone application together with a Metadata server to discover physical web content with the best User Experience. Come visit us to find out more on how this experience works."
+    summary: "In the coming years we are going to be surrounded by more and more things that your device can interact with. Many of these things are going to be identified by a URL, and because of that, the name \"Physical Web\" has been coined to refer to that environment. Project Magnet has developed a Standalone application together with a Metadata server to discover physical web content with the best User Experience. Come visit us to find out more on how this experience works. <a href="https://mzl.la/trymagnet">Download the application for your Android or iOS device!</a>"
     moderators:
         - "Francisco Jordano"
         - "Wilson Page"
