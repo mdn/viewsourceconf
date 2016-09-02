@@ -68,9 +68,14 @@
     moderators:
         - Salvador de la Puente
 -
-    slug: "women-in-tech"
-    title: "Women In Tech"
-    #summary: "Coming Soon"
+    slug: "diversity-in-tech"
+    title: "How to Increase Diversity in Tech"
+    summary: "In this one-hour long ideation workshop, our goal is to come up with new ideas and practical conclusions to increase diversity in tech. We would like to gain participants' input while we are exploring this topic together."
+    moderators:
+       - "Ioana Chiorean"
+       - "Julia Schütze"
+       - "Lucie Kaffee"
+       - "Charlie Kritschmar"
 -
     slug: "sustainable-oss"
     title: "Sustainable Open-Source Projects"
@@ -152,7 +157,7 @@
     speakers:
         - "chris-wilson"
     title: "Progressive Web Apps is the new Ajax"
-    summary: "This is a transformative moment for the web. The revolution that is happening now is no less revolutionary than what happened a decade ago with Ajax - we can finally build reliable, fast and engaging apps on web technologies. In this talk, I'll dive into the what, why and how of Progressive Web Apps - describe what a \"Progressive Web App\" really is, show the opportunities in building them, and point you on your way to becoming a Progressive Web App developer." 
+    summary: "This is a transformative moment for the web. The revolution that is happening now is no less revolutionary than what happened a decade ago with Ajax - we can finally build reliable, fast and engaging apps on web technologies. In this talk, I'll dive into the what, why and how of Progressive Web Apps - describe what a \"Progressive Web App\" really is, show the opportunities in building them, and point you on your way to becoming a Progressive Web App developer."
     feature: true
 -
     slug: layout
