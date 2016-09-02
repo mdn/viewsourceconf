@@ -162,7 +162,7 @@
                 slug: ux-design-qa
                 place: "1st Floor: Discussion corner A - (Atelier A)"
             -
-                slug: web-compat-qa
+                slug: compat-qa
                 place: "2nd Floor: Discussion corner B (Kubus)"
             -
                 slug: building-webvr-repeat

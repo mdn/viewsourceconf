@@ -241,11 +241,11 @@
         - "tracy-osborn"
     summary: "Let's talk more about all things design and layout during this time to ask questions and get answers."
 -
-    slug: "web-compat-qa"
-    title: "Q&A Session on Web Compat Issues"
+    slug: "compat-qa"
+    title: "Q&A Session on Cross-Browser Compatibility Issues"
     speakers:
         - "mike-taylor"
-    summary: "Let's talk more about web compat during this afternoon Q&A session"
+    summary: "Let's talk more about cross-browser compatibility during this afternoon Q&A session"
 -
     slug: "developers-learn-design"
     title: "Why developers need to learn Design"
