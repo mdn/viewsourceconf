@@ -76,12 +76,6 @@
             -
                 slug: hiring
                 place: "2nd Floor: Discussion corner B (Kubus)"
-            -
-                slug: aframe-workshop-repeat
-                place: "4th Floor Discussion corner C (Studio C)"
-            -
-                slug: rust-workshop-repeat
-                place: "4th Floor Discussion corner E - (Studio B)"
     "15:30":
         slug: break
     "16:00":
@@ -164,9 +158,6 @@
             -
                 slug: compat-qa
                 place: "2nd Floor: Discussion corner B (Kubus)"
-            -
-                slug: building-webvr-repeat
-                place: "4th Floor Discussion corner C (Studio C)"
             -
                 slug: developers-learn-design
                 place: "4th Floor Discussion corner E - (Studio B)"

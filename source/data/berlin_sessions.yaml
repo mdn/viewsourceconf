@@ -84,25 +84,8 @@
         - "ada-rose-edwards"
     summary: "Join us at this webVR workshop aimed at traditional web developers. This is an introduction to building Virtual Reality experiences for the Web, touching on the tools for creating assets for 3D VR scenes. The session will focus on A-Frame for composing 3D scenes in a fashion familiar to those used to building for the web."
 -
-    slug: "aframe-workshop-repeat"
-    title: "Bringing VR to the world via the web (repeat)"
-    speakers:
-        - "ada-rose-edwards"
-    summary: "Join us at this webVR workshop aimed at traditional web developers. This is an introduction to building Virtual Reality experiences for the Web, touching on the tools for creating assets for 3D VR scenes. The session will focus on A-Frame for composing 3D scenes in a fashion familiar to those used to building for the web."
--
     slug: "rust-workshop"
     title: "A Web of Rust"
-    summary: "<p>Rust promises to be a safe & fast  systems programming language. It prevents segfaults and guarantees thread safety. This makes it a useful language for a wide variety of applications, ranging from microcontrollers over browsers all up to full web frameworks. In this workshop you will get a chance to learn the basics of Rust, have a basic idea and general overview of the ecosystem and maybe even touch on Rust's web capabilities. All workshop materials and coaches will be provided — just bring a laptop to learn some Rust!</p>"
-    moderators:
-        - "Jan-Erik Rediger"
-        - Florian Gilcher
-        - Andrew Hobden
-        - Jan Schulte
-        - Sebastian Ziebell
-        - Johann Hoffmann
--
-    slug: "rust-workshop-repeat"
-    title: "A Web of Rust (repeat)"
     summary: "<p>Rust promises to be a safe & fast  systems programming language. It prevents segfaults and guarantees thread safety. This makes it a useful language for a wide variety of applications, ranging from microcontrollers over browsers all up to full web frameworks. In this workshop you will get a chance to learn the basics of Rust, have a basic idea and general overview of the ecosystem and maybe even touch on Rust's web capabilities. All workshop materials and coaches will be provided — just bring a laptop to learn some Rust!</p>"
     moderators:
         - "Jan-Erik Rediger"
@@ -215,12 +198,6 @@
 -
     slug: "building-webvr"
     title: "Making WebVR work for you"
-    speakers:
-        - "ada-rose-edwards"
-    summary: "On day 2 of this continuing webVR workshop session, let's look at a more in depth view on the new WebVR api. This session is for those who are looking to use WebVR directly to implement virtual reality themselves in their WebGL or THREE.js experiences."
--
-    slug: "building-webvr-repeat"
-    title: "Making WebVR work for you (repeat)"
     speakers:
         - "ada-rose-edwards"
     summary: "On day 2 of this continuing webVR workshop session, let's look at a more in depth view on the new WebVR api. This session is for those who are looking to use WebVR directly to implement virtual reality themselves in their WebGL or THREE.js experiences."
