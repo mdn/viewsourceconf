@@ -63,7 +63,7 @@
     speakers:
         - chris-wilson
     moderators:
-        - Salvador de la Puenta
+        - Salvador de la Puente
         - Alex Googler
         - Jake Googler
 -
@@ -116,6 +116,8 @@
 -
     slug: hiring
     title: "What Companies Are Looking For When Hiring Devs"
+    moderators:
+        - "Steward Ulm"
 -
     slug: es6
     speakers:
@@ -151,7 +153,7 @@
     speakers:
         - "lena-reinhard"
     title: "Opening Keynote: Existing in Tech"
-    summary: "<p>Over the past few years, several CSS methodologies and JavaScript frameworks have been released. In one year, we receive 32,120 business emails. Every weekday, we're active on Slack for 2 hours 15 minutes. Technology is moving fast, and constantly, there's so much going on. We constantly have to adapt in an ever-changing environment, while somehow still doing our job of building proper, functioning software to the latest tight-super-unrealistic deadline.</p><p>This talk will look at the human side of our daily work in technology. Together, we will examine which factors affect us physically and emotionally in our work. We'll learn how they lead to pressure, stress, self-consciousness and ultimately burnout, and we'll find out how to identify early warning signs of being affected. You'll leave with a realistic look at your own, human capabilities, and the knowledge of what you can do to take care of yourself while working on software.</p>"
+    summary: "<p>Over the past few years, several CSS methodologies and JavaScript frameworks have been released. In one year, we receive 32,120 business emails. Every weekday, we're active on Slack for 2 hours 15 minutes. Technology is moving fast, and constantly, there's so much going on. We constantly have to adapt in an ever-changing environment, while somehow still doing our job of building proper, functioning software to the latest tight-super-unrealistic deadline.</p><p>This talk will look at the human side of our daily work in technology. Together, we will examine which factors affect us physically and emotionally in our work. We'll learn how they lead to pressure, stress, self-consciousness and ultimately burnout, and we'll find out how to identify early warning signs of being affected. You'll leave with a realistic look at your own, human capabilities, and the knowledge of what you can do to take care of yourself while working on software.</p><p><strong>Trigger Warning:</strong> This talk will cover burnout, depression, harassment, and will include mention of abuse.</p>"
     feature: true
     keynote: true
 -
@@ -195,7 +197,7 @@
     speakers:
         - chris-wilson
     moderators:
-        - Salvador de la Puenta
+        - Salvador de la Puente
         - Alex Googler
         - Jake Googler
 -
@@ -203,7 +205,7 @@
     title: "2FA, WTF?"
     summary: "Everyone is hacking everything. Everything is vulnerable. Your site, your users, even you. Are you worried about this? You should be! Don't worry, I'm not trying to scare you (that much). We have plenty of safeguards against attempts on our applications' user data. We all (hopefully) recognise Two Factor Auth as one of those safeguards, but what actually goes on under the hood of 2FA? We'll take a look into generating one time passwords, implementing 2FA in web applications and the only real life compelling use case for QR codes. Together, we'll make the web a more secure place."
     moderators:
-        - Dominik Kundl
+        - Dominik Kundel
 -
     slug: "hot-web-apis"
     title: "New and upcoming Web APIs"
@@ -316,17 +318,15 @@
         - Andrezej Mazur
 -
     slug: dev-tools
-    summary: "Come learn about our latest debugger.html and how you can contribute!"
-    title: Developer Tools
-    speakers:
-        - helen-holmes
+    summary: "Get a sneak peak at the future of the debugger in Firefox which has been written from scratch in React and Redux and hosted on Github. Easy to use and easy to develop."
+    title: Firefox debugger that works everywhere
     moderators:
         - Bryan Clark
+        - Patrick Brosset
 -
     slug: dev-tools-repeat
-    summary: "Come learn about our latest debugger.html and how you can contribute!"
-    title: Developer Tools
-    speakers:
-        - helen-holmes
+    summary: "Get a sneak peak at the future of the debugger in Firefox which has been written from scratch in React and Redux and hosted on Github. Easy to use and easy to develop."
+    title: Firefox debugger that works everywhere
     moderators:
         - Bryan Clark
+        - Patrick Brosset
