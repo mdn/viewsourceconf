@@ -151,7 +151,8 @@
     slug: pwa
     speakers:
         - "chris-wilson"
-    title: "Progressive Web Apps"
+    title: "Progressive Web Apps is the new Ajax"
+    summary: "This is a transformative moment for the web. The revolution that is happening now is no less revolutionary than what happened a decade ago with Ajax - we can finally build reliable, fast and engaging apps on web technologies. In this talk, I'll dive into the what, why and how of Progressive Web Apps - describe what a \"Progressive Web App\" really is, show the opportunities in building them, and point you on your way to becoming a Progressive Web App developer." 
     feature: true
 -
     slug: layout

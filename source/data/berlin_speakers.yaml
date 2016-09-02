@@ -67,7 +67,7 @@
     last: Wilson
     twitter: "cwilso"
     pic: "chriswilson.jpg"
-    bio: "Chris Wilson is an Open Web Platform Developer Advocate working on Chrome. He has also Co-chaired the W3C Working Group for HTML5 and been Platform Architect at Microsoft. He began working on web browsers in 1993 when he co-authored the original Windows version of NCSA Mosaic, went on to Microsoft to work on Internet Explorer for fifteen years, and joined Google in 2010. He has a particular interest in enabling awesome user experiences on the web platform, and is a long-time participant in various web standards working groups. In his free time, he enjoys photography, SCUBA diving, playing music and hiking with his wife and daughters. You can keep up with Chris at <a href='http://twitter.com/cwilso'>@cwilso</a> and <a href='http://cwilso.com'>cwilso.com</a>."
+    bio: "Chris Wilson is Developer Advocate on the Web team at Google. He started helping build the web in 1993 when he co-authored the original Windows version of the NCSA Mosaic browser. He then spent fifteen years at Microsoft working on Internet Explorer, and then joined Google in 2010. He has a particular interest in enabling awesome user experiences and hacking on audio and MIDI in the web platform, and is a long-time participant in various web standards working groups. He chairs the Web Platform Incubation Group at the W3C, and also sits on the W3C Advisory Board."
     sessions:
         - pwa
 -
