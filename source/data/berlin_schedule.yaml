@@ -98,7 +98,7 @@
         slug: coping
         place: Main Stage
     "10:00":
-        slug: design-css
+        slug: layout
         place: Main Stage
     "10:30":
         slug: pwa
@@ -106,7 +106,7 @@
     "11:00":
         slug: break
     "11:30":
-        slug: layout
+        slug: design-css
         place: Main Stage
     "12:00":
         slug: compatibility
