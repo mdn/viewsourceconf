@@ -18,3 +18,7 @@ media:
         url: "http://www.digitalmediawomen.de/"
         logo: dmw_logo.png
         name: Digital Media Women
+    -
+        url: "http://berlinvalley.com/"
+        logo: berlinvalley_logo.png
+        name: Berlin Valley
