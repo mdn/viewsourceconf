@@ -1,13 +1,19 @@
 "2016-09-12":
     "17:00":
-        slug: early-registration
-        place: Registration / Cloakroom Tent
+        title: "Welcome to View Source 2016!"
+        sessions:
+            -
+                slug: early-registration
+                place: Registration / Cloakroom Tent
+            -
+                slug: happy-hour
+                place: Social Hall
     "18:00":
         slug: ignite-talks
         place: Main Stage
     "19:00":
         slug: welcome-reception
-        place: Social Room
+        place: Social Hall
 "2016-09-13":
     "08:30":
         slug: breakfast
@@ -86,10 +92,10 @@
         place: Main Stage
     "17:00":
         slug: livejs
-        place: Social Space
+        place: Social Hall
     "17:30":
         slug: dj-social
-        place: Social Space
+        place: Social Hall
 "2016-09-14":
     "08:30":
         slug: breakfast
@@ -164,11 +170,8 @@
     "15:30":
         slug: break
     "16:00":
-        slug: tbc
-        place: Main Stage
-    "16:30":
         slug: webvr
         place: Main Stage
-    "17:00":
+    "16:30":
         slug: closing-keynote
         place: Main Stage

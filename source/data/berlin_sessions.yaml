@@ -17,6 +17,9 @@
     slug: "welcome-reception"
     title: "Welcome Reception"
 -
+    slug: "happy-hour"
+    title: "Happy Hour"
+-
     slug: "opening-keynote"
     title: "Opening Keynote: State of the Web"
     speakers:
@@ -62,7 +65,7 @@
 -
     slug: "pwa-hack-corner-1"
     title: "Demystifying Progressive Webapps"
-    summary: "<p>You might have already caught the bug—or may have never heard the whizz around these \"Progressive Webapps\" that's swirling around? What are they? Come to learn about and try building supercharged Web Applications with engaging, fast user experiences and offline support. Lear about the components underpinning these new tools and APIs, bring your computer get to know service workers, webapp manifests, web push and the principles driving the web platform, like \"offline-first\" and \"progressive enhancement\".</p><p>Basic web development knowledge is required to participate in the hands-on examples, but not for the talks and introductions into the driving principles/philosophy behind these upcoming Web Platform technologies.</p>"
+    summary: "<p>You might have already caught the bug—or may have never heard the whizz around these \"Progressive Webapps\" that's swirling around? What are they? Come to learn about and try building supercharged Web Applications with engaging, fast user experiences and offline support. Learn about the components underpinning these new tools and APIs, bring your computer get to know service workers, webapp manifests, web push and the principles driving the web platform, like \"offline-first\" and \"progressive enhancement\".</p><p>Basic web development knowledge is required to participate in the hands-on examples, but not for the talks and introductions into the driving principles/philosophy behind these upcoming Web Platform technologies.</p>"
     speakers:
         - chris-wilson
     moderators:
@@ -133,7 +136,7 @@
 -
     slug: "dj-social"
     speakers:
-        - "patrick-tartaglini"
+        - "dj-patrick"
     title: DJ
     summary: "<p>Spinning for our Social Hour</p>"
     feature: true
