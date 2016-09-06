@@ -17,6 +17,9 @@
     slug: "welcome-reception"
     title: "Welcome Reception"
 -
+    slug: "happy-hour"
+    title: "Happy Hour"
+-
     slug: "opening-keynote"
     title: "Opening Keynote: State of the Web"
     speakers:
