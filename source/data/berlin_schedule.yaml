@@ -170,11 +170,8 @@
     "15:30":
         slug: break
     "16:00":
-        slug: tbc
-        place: Main Stage
-    "16:30":
         slug: webvr
         place: Main Stage
-    "17:00":
+    "16:30":
         slug: closing-keynote
         place: Main Stage
