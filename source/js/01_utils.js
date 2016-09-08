@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    if(!window.vs.js){ return; }
+
     window.vs.utils = {
         parentByClass: function(parent, matchClass) {
             while (!parent.classList.contains(matchClass)) {

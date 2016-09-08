@@ -5,6 +5,8 @@
 ;(function() {
     'use strict';
 
+    if(!window.vs.js){ return; }
+
     // !! this file assumes only one signup form per page !!
 
     var newsletterForm = document.getElementById('newsletter_form');
@@ -140,8 +142,5 @@
         return false;
     }
 
-    var newsletterForm = document.getElementById('newsletter_form');
-    if(newsletterForm){
-        newsletterForm.addEventListener('submit', newsletterSubscribe, false);
-    }
+    newsletterForm.addEventListener('submit', newsletterSubscribe, false);
 })();

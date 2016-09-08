@@ -1,5 +1,8 @@
 (function() {
     'use strict';
+
+    if(!window.vs.js){ return; }
+
     var speakersList = document.getElementById('speakers_list');
     var speakers;
     if(speakersList !== null) {

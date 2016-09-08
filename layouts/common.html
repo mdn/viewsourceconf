@@ -23,28 +23,34 @@
 
     {% include "includes/footer.html" %}
 
-    </body>
-
-    <!--[if gt IE 10]> <!-- -->
-        <script>
-            (function() {
-                'use strict';
-                window.vs = {};
-            })();
-        </script>
-
-        <script src="/{{ fingerprint['js/main.js'] }}" async></script>
-    <!-- <![endif]-->
-
-    <!--[if lte IE 10]>
     <script>
-        (function() {
+        (function(v,i,e,w) {
             'use strict';
-            var html = document.documentElement;
-            html.className = 'js-siteno';
-        })()
+
+            // let's see if this browser can handle our scripts
+            // https://sixtwothree.org/posts/cutting-the-mustard-revisited
+            // IE 11 and up
+            if ('devicePixelRatio' in v) {
+                // load site script
+                v.vs = {};
+
+                (function(){
+                    var s = i.createElement(e);
+                    s.async = true;
+                    s.src = w;
+                    var r = i.getElementsByTagName(e)[0];
+                    r.parentNode.insertBefore(s, r);
+                })();
+
+            } else {
+                // or not
+                var c = i.documentElement;
+                c.className = 'js-yes js-siteno';
+            }
+
+        })(window, document, 'script', '/{{ fingerprint['js/main.js'] }}');
+
     </script>
-    <![endif]-->
 
-
+    </body>
 </html>
