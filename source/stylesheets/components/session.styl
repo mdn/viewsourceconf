@@ -44,9 +44,15 @@ session
 }
 
 .session_moderators {
-    display: block;
+    display: none;
     margin-top: -0.3em;
     line-height: $heading-line-height;
+}
+
+.session_moderators-inside {
+    display: block;
+    margin: -0.5em 0 0.5em 0;
+    font-weight: bold;
 }
 
 .session_speakers {
@@ -208,6 +214,14 @@ button.session_title {
     .session_summary::before {
         height: 5.5em;
         margin: -5.5em 0 0;
+    }
+
+    .session_moderators {
+        display: block;
+    }
+
+    .session_moderators-inside {
+        display: none;
     }
 }
 

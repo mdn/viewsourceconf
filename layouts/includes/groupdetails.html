@@ -4,6 +4,8 @@
     </h4>
     {% if session.summary %}
         <div id="{{ session.slug }}_summary" class="session_summary js-hidden">
+            {% set inside = true %}
+            {% include "groupmoderators.html" with inside %}
             {% if session.summary.indexOf('<p>') === 0 %}
                 {% autoescape false %}{{ session.summary }}{% endautoescape %}
             {% else %}
@@ -11,21 +13,8 @@
             {% endif %}
         </div>
     {% endif %}
-    {% if session.speakers or session.moderators %}
-        <span class="session_moderators">
-            {% for session_speaker in session.speakers %}
-                {% for speaker in conference_speakers %}
-                    {% if session_speaker == speaker.slug %}
-                        <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}" class="session_speaker">{{ speaker.first }} {{ speaker.last }}</a>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-            {# moderators don't get linked to a speaker page #}
-            {% for moderator in session.moderators %}
-                <span class="session_speaker">{{ moderator }}</span>
-            {% endfor %}
-        </span>
-    {% endif %}
+    {% set inside = false %}
+    {% include "groupmoderators.html" with inside %}
     {% if session_coords.place %}
         <div class="session_place">@ {{ session_coords.place }}</div>
     {% endif %}
