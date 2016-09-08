@@ -41,7 +41,11 @@
                 {% for session in conference_sessions %}
                     {% for session_speaker in session.speakers %}
                         {% if session_speaker == speaker.slug %}
-                            <h2><a href="{{ conference_data.folder }}/schedule/#{{ session.slug }}">{{ session.title }}</a></h2>
+                            <h2>
+                            {% if session.summary != "" %}<a href="{{ conference_data.folder }}/schedule/#{{ session.slug }}_summary">{% endif %}
+                            {{ session.title }}
+                            {% if session.summary != "" %}</a>{% endif %}
+                            </h2>
                             {% for day, times in conference_schedule %}
                                 {% for time, timeslot in times %}
                                     {% if timeslot.slug == session.slug %}
