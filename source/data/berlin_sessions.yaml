@@ -84,7 +84,7 @@
     title: "Sustainable Open-Source Projects"
     summary: "<p>A lot of people enjoy contributing to Open Source projects. And Open Source projects love contributions. And yet we keep seeing newcomers struggling to contribute and project maintainers struggling to find contributors. What’s the catch? Let’s talk!</p>"
     speakers:
-        - jan-lenhardt
+        - jan-lehnardt
 -
     slug: "aframe-workshop"
     title: "Bringing VR to the world via the web"
@@ -131,13 +131,13 @@
         - "tim-pietrusky"
         - "ruth-john"
     title: "{ LiveJS : Berlin }"
-    summary: "<p>Welcome to { LiveJS : Berlin } where Ruth and Tim take you on a journey through audio apis, midi controllers, drum machines and neopixels. All with a visual show and live music from DJ Patrick, to help you relax after a day of amazing talks.</p>"
+    summary: "<p>Welcome to { LiveJS : Berlin } where Ruth and Tim take you on a journey through audio apis, midi controllers, drum machines and neopixels. All with a visual show and live music from Patrick Tartaglini, to help you relax after a day of amazing talks.</p>"
     feature: true
 -
     slug: "dj-social"
     speakers:
-        - "dj-patrick"
-    title: DJ
+        - "patrick-tartaglini"
+    title: Social Hour with DJ
     summary: "<p>Spinning for our Social Hour</p>"
     feature: true
 -
