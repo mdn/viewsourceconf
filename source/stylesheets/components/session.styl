@@ -42,9 +42,8 @@ session
     }
 }
 
-.session_day_header_day {
-    display: block;
-    margin-bottom: ($grid-gutter-width / 2);
+.session_day_header_date {
+    display: none;
 }
 
 .session_day_sessions:before {
@@ -215,8 +214,11 @@ button.session_title {
 
 @media $media-query-680-and-up {
 
-    .session_day_header_day {
+    .session_day_header_date {
         display: inline;
+    }
+
+    .session_day_header_day {
 
         &::before {
             content: "• ";
