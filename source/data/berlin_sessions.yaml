@@ -184,12 +184,13 @@
     summary: "<p>We learned a lot about the offline first concept in the past two years including Service Worker, CouchDB etc.</p><p>Did we do everything already to make our applications offline first? Is caching the resources enough? Did we answer all the questions already and if not… What are the new questions we need to answer?</p><p>In this talk, I’ll show you what has changed in the last few years, how people did adapt the concept and what are the best practices.</p><p>And most importantly, can offline first help to save lives?</p>"
     feature: true
 -
-    slug: "pwa-hack-corner-2"
+    slug: "pwa-qa"
     title: "Progressive Webapps Q&A"
     summary: "Everything you wanted to know about progressive webapps and upcoming modern web platform features, bringing native-parity to browsers  — this is your chance for an answer! Chat with experts from Mozilla, Google and renowned web developers about the peaks and perils of the web platform and progressive webapps. Have you ever run into problems? Noticed a bug in a browser implementation? Building or planning a product and interested in first-hand information from people at the helm of Web Platform development, bring your concerns to the table at View Source."
     speakers:
         - "chris-wilson"
         - "ada-rose-edwards"
+        - "jeremy-keith"
     moderators:
         - Salvador de la Puente
 -
