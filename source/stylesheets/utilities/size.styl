@@ -1,0 +1,39 @@
+@require 'variables';
+/*
+size
+====================================================================== */
+
+body:before {
+    content: "0";
+    display: none;
+}
+
+@media $media-query-320-and-up {
+    body:before {
+        content: "1";
+    }
+}
+
+@media $media-query-480-and-up {
+    body:before {
+        content: "2";
+    }
+}
+
+@media $media-query-680-and-up {
+    body:before {
+        content: "3";
+    }
+}
+
+@media $media-query-960-and-up {
+    body:before {
+        content: "4";
+    }
+}
+
+@media $media-query-1200-and-up {
+    body:before {
+        content: "5";
+    }
+}
