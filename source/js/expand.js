@@ -230,6 +230,8 @@
                 expandOpen(matchedController);
                 matchedControlled.classList.remove('js-hidden');
                 cta.textContent = sessionTitleCTATextExpanded;
+                // scroll to it now that it is in view
+                location.href = '#' + targetId;
             }
         }
     }
