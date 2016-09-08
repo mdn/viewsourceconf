@@ -22,8 +22,8 @@ session
         margin: 0;
         border: 0;
         padding: 0;
-        background: inherit;
-        color: inherit;
+        background: $berlin-dark;
+        color: #fff;
         font-size: inherit;
         font-family: inherit;
         font-weight: bold;
@@ -42,12 +42,11 @@ session
     }
 }
 
-.session_day_header_day {
-    display: block;
-    margin-bottom: ($grid-gutter-width / 2);
+.session_day_header_date {
+    display: none;
 }
 
-.sesson_day_sessions:before {
+.session_day_sessions:before {
     content: '';
     display: block;
     height: 4em;
@@ -209,8 +208,11 @@ button.session_title {
 
 @media $media-query-680-and-up {
 
-    .session_day_header_day {
+    .session_day_header_date {
         display: inline;
+    }
+
+    .session_day_header_day {
 
         &::before {
             content: "• ";
@@ -231,7 +233,7 @@ button.session_title {
     }
 
     /* show days by default at this size */
-    .sesson_day_sessions.js-hidden {
+    .session_day_sessions.js-hidden {
         display: block;
     }
 
