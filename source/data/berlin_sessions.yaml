@@ -188,7 +188,8 @@
     title: "Progressive Webapps Q&A"
     summary: "Everything you wanted to know about progressive webapps and upcoming modern web platform features, bringing native-parity to browsers  — this is your chance for an answer! Chat with experts from Mozilla, Google and renowned web developers about the peaks and perils of the web platform and progressive webapps. Have you ever run into problems? Noticed a bug in a browser implementation? Building or planning a product and interested in first-hand information from people at the helm of Web Platform development, bring your concerns to the table at View Source."
     speakers:
-        - chris-wilson
+        - "chris-wilson"
+        - "ada-rose-edwards"
     moderators:
         - Salvador de la Puente
 -

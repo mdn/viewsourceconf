@@ -59,29 +59,36 @@
         title: "Worskhops & Discussion Corners"
         sessions:
             -
-                slug: diversity-in-tech
-                place: "1st Floor: Discussion corner A - (Atelier A)"
-            -
-                slug: sustainable-oss
-                place: "2nd Floor: Discussion corner B (Kubus)"
-            -
                 slug: aframe-workshop
                 place: "4th Floor Discussion corner C (Studio C)"
+                duration: 90
             -
                 slug: pwa-hack-corner-1
                 place: "Ground Floor: Discussion corner D - Saal (Social room)"
+                duration: 90
             -
                 slug: rust-workshop
                 place: "4th Floor Discussion corner E - (Studio B)"
+                duration: 90
+            -
+                slug: diversity-in-tech
+                place: "1st Floor: Discussion corner A - (Atelier A)"
+                duration: 40
+            -
+                slug: sustainable-oss
+                place: "2nd Floor: Discussion corner B (Kubus)"
+                duration: 40
     "14:45":
         title: "Worskhops & Discussion Corners"
         sessions:
             -
                 slug: regional-challenges
                 place: "1st Floor: Discussion corner A - (Atelier A)"
+                duration: 40
             -
                 slug: hiring
                 place: "2nd Floor: Discussion corner B (Kubus)"
+                duration: 40
     "15:30":
         slug: break
     "16:00":
@@ -143,30 +150,38 @@
             -
                 slug: 2fa-wtf
                 place: "1st Floor: Discussion corner A - (Atelier A)"
+                duration: 40
             -
                 slug: hot-web-apis
                 place: "2nd Floor: Discussion corner B (Kubus)"
-            -
-                slug: building-webvr
-                place: "4th Floor Discussion corner C (Studio C)"
+                duration: 40
             -
                 slug: pwa-hack-corner-2
                 place: "Ground Floor: Discussion corner D - Saal (Social room)"
+                duration: 40
             -
                 slug: docker-for-devs
                 place: "4th Floor Discussion corner E - (Studio B)"
+                duration: 40
     "14:45":
         title: "Worskhops & Discussion Corners"
         sessions:
             -
+                slug: building-webvr
+                place: "4th Floor Discussion corner C (Studio C)"
+                duration: 40
+            -
                 slug: ux-design-qa
                 place: "1st Floor: Discussion corner A - (Atelier A)"
+                duration: 40
             -
                 slug: compat-qa
                 place: "2nd Floor: Discussion corner B (Kubus)"
+                duration: 40
             -
                 slug: developers-learn-design
                 place: "4th Floor Discussion corner E - (Studio B)"
+                duration: 40
     "15:30":
         slug: break
     "16:00":
