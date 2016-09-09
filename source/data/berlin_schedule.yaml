@@ -1,17 +1,14 @@
 "2016-09-12":
-    "17:00":
-        title: "Welcome to View Source 2016!"
-        sessions:
-            -
-                slug: early-registration
-                place: Registration / Cloakroom Tent
-            -
-                slug: happy-hour
-                place: Social Hall
+    "17:30":
+        slug: early-registration
+        place: Registration / Cloakroom Tent
     "18:00":
+        slug: happy-hour
+        place: Social Hall
+    "19:00":
         slug: ignite-talks
         place: Main Stage
-    "19:00":
+    "20:00":
         slug: welcome-reception
         place: Social Hall
 "2016-09-13":
