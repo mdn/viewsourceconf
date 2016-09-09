@@ -5,7 +5,9 @@ session
 ====================================================================== */
 
 .session_day {
+    margin-right: ($grid-gutter-width * -1) + 2px;
     margin-bottom: $grid-gutter-width * 2;
+    margin-left: ($grid-gutter-width * -1) + 2px;
 }
 
 .session_day_header {
@@ -61,9 +63,15 @@ session
     @extends $clearfix
 }
 
-.session-allday {
-    border: 2px solid $berlin-dark;
-    padding: $grid-gutter-width - 2px;
+.session_time-allday {
+    padding: 0 4px;
+    background-color: $berlin-dark;
+    color: #fff;
+}
+
+.session_group {
+    border-left: 2px solid $berlin-dark;
+    padding-left: $grid-gutter-width;
 }
 
 .session_head {
@@ -136,7 +144,7 @@ button.session_title {
 }
 
 .session_title-group {
-    margin-bottom: $grid-gutter-width * 2;
+    margin-bottom: $grid-gutter-width;
 }
 
 .session_cta {
@@ -202,6 +210,11 @@ button.session_title {
 @media $media-query-480-and-up {
     $session-pic-480 = 100px;
     $session-pic-space-480 = $session-pic-480 + $grid-gutter-width + 5px; // plus a little extra because buttons have weird widths
+
+    .session_day {
+        margin-left: 0;
+        margin-right: 0;
+    }
 
     .session_pic {
         width: $session-pic-480;

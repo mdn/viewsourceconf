@@ -23,18 +23,20 @@
                         <div class="session {% if time == 'All Day' %}session-allday{% endif %}">
                             {% if time_slot.sessions %}
                                 <div class="cols">
-                                    <div class="col col-1"><strong>{{ time }}</strong></div>
+                                    <div class="col col-1"><strong {% if time == 'All Day' %}class="session_time-allday"{% endif %}>{{ time }}</strong></div>
                                     <div class="col col-5">
                                         <h4 class="session_title session_title-group">{{ time_slot.title }}</h4>
-                                        {% for session_coords in time_slot.sessions %}
-                                            {% set session = false %}
-                                            {% for s in conference_sessions %}
-                                                {% if s.slug == session_coords.slug %}
-                                                    {% set session = s %}
-                                                {% endif %}
+                                        <div class="session_group">
+                                            {% for session_coords in time_slot.sessions %}
+                                                {% set session = false %}
+                                                {% for s in conference_sessions %}
+                                                    {% if s.slug == session_coords.slug %}
+                                                        {% set session = s %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                                {% include "includes/groupdetails.html" %}
                                             {% endfor %}
-                                            {% include "includes/groupdetails.html" %}
-                                        {% endfor %}
+                                        </div>
                                     </div>
                                 </div>
 
