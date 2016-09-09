@@ -84,7 +84,7 @@
     title: "Sustainable Open-Source Projects"
     summary: "<p>A lot of people enjoy contributing to Open Source projects. And Open Source projects love contributions. And yet we keep seeing newcomers struggling to contribute and project maintainers struggling to find contributors. What’s the catch? Let’s talk!</p>"
     speakers:
-        - jan-lenhardt
+        - jan-lehnardt
 -
     slug: "aframe-workshop"
     title: "Bringing VR to the world via the web"
@@ -131,13 +131,13 @@
         - "tim-pietrusky"
         - "ruth-john"
     title: "{ LiveJS : Berlin }"
-    summary: "<p>Welcome to { LiveJS : Berlin } where Ruth and Tim take you on a journey through audio apis, midi controllers, drum machines and neopixels. All with a visual show and live music from DJ Patrick, to help you relax after a day of amazing talks.</p>"
+    summary: "<p>Welcome to { LiveJS : Berlin } where Ruth and Tim take you on a journey through audio apis, midi controllers, drum machines and neopixels. All with a visual show and live music from Patrick Tartaglini, to help you relax after a day of amazing talks.</p>"
     feature: true
 -
     slug: "dj-social"
     speakers:
-        - "dj-patrick"
-    title: DJ
+        - "patrick-tartaglini"
+    title: Social Hour with DJ
     summary: "<p>Spinning for our Social Hour</p>"
     feature: true
 -
@@ -145,7 +145,7 @@
     speakers:
         - "lena-reinhard"
     title: "Opening Keynote: Existing in Tech"
-    summary: "<p>Over the past few years, several CSS methodologies and JavaScript frameworks have been released. In one year, we receive 32,120 business emails. Every weekday, we're active on Slack for 2 hours 15 minutes. Technology is moving fast, and constantly, there's so much going on. We constantly have to adapt in an ever-changing environment, while somehow still doing our job of building proper, functioning software to the latest tight-super-unrealistic deadline.</p><p>This talk will look at the human side of our daily work in technology. Together, we will examine which factors affect us physically and emotionally in our work. We'll learn how they lead to pressure, stress, self-consciousness and ultimately burnout, and we'll find out how to identify early warning signs of being affected. You'll leave with a realistic look at your own, human capabilities, and the knowledge of what you can do to take care of yourself while working on software.</p><p><strong>Trigger Warning:</strong> This talk will cover burnout, depression, harassment, and will include mention of abuse.</p>"
+    summary: "<p>Over the past few years, several CSS methodologies and JavaScript frameworks have been released. In one year, we receive 32,120 business emails. Every weekday, we're active on Slack for 2 hours 15 minutes. Technology is moving fast, and constantly, there's so much going on. We constantly have to adapt in an ever-changing environment, while somehow still doing our job of building proper, functioning software to the latest tight-super-unrealistic deadline.</p><p>This talk will look at the human side of our daily work in technology. Together, we will examine which factors affect us physically and emotionally in our work. We'll learn how they lead to pressure, stress, self-consciousness and ultimately burnout, and we'll find out how to identify early warning signs of being affected. You'll leave with a realistic look at your own, human capabilities, and the knowledge of what you can do to take care of yourself while working on software.</p>"
     feature: true
     keynote: true
 -
@@ -184,11 +184,13 @@
     summary: "<p>We learned a lot about the offline first concept in the past two years including Service Worker, CouchDB etc.</p><p>Did we do everything already to make our applications offline first? Is caching the resources enough? Did we answer all the questions already and if not… What are the new questions we need to answer?</p><p>In this talk, I’ll show you what has changed in the last few years, how people did adapt the concept and what are the best practices.</p><p>And most importantly, can offline first help to save lives?</p>"
     feature: true
 -
-    slug: "pwa-hack-corner-2"
+    slug: "pwa-qa"
     title: "Progressive Webapps Q&A"
     summary: "Everything you wanted to know about progressive webapps and upcoming modern web platform features, bringing native-parity to browsers  — this is your chance for an answer! Chat with experts from Mozilla, Google and renowned web developers about the peaks and perils of the web platform and progressive webapps. Have you ever run into problems? Noticed a bug in a browser implementation? Building or planning a product and interested in first-hand information from people at the helm of Web Platform development, bring your concerns to the table at View Source."
     speakers:
-        - chris-wilson
+        - "chris-wilson"
+        - "ada-rose-edwards"
+        - "jeremy-keith"
     moderators:
         - Salvador de la Puente
 -
