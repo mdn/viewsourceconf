@@ -297,7 +297,7 @@
     speakers:
         - belen-albeza
     moderators:
-        - Andrezej Mazur
+        - Andrzej Mazur
 -
     slug: html5-games-repeat
     title: HTML5 Games
@@ -305,7 +305,7 @@
     speakers:
         - belen-albeza
     moderators:
-        - Andrezej Mazur
+        - Andrzej Mazur
 -
     slug: dev-tools
     summary: "Get a sneak peak at the future of the debugger in Firefox which has been written from scratch in React and Redux and hosted on Github. Easy to use and easy to develop."
