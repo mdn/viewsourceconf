@@ -1,0 +1,19 @@
+@require 'includes/variables'
+@require 'includes/extends'
+
+/*
+line
+====================================================================== */
+
+@media $media-query-480-and-up {
+    .line {
+        margin-left: 0;
+        @extends $clearfix;
+
+        li {
+            float: left;
+            padding-right: 10px;
+            list-style-position: inside;
+        }
+    }
+}

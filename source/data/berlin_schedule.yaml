@@ -57,7 +57,7 @@
         sessions:
             -
                 slug: aframe-workshop
-                place: "4th Floor Discussion corner C (Studio C)"
+                place: "4th Floor: Discussion corner C (Studio C)"
                 duration: 90
             -
                 slug: pwa-hack-corner-1
@@ -65,7 +65,7 @@
                 duration: 90
             -
                 slug: rust-workshop
-                place: "4th Floor Discussion corner E - (Studio B)"
+                place: "4th Floor: Discussion corner E - (Studio B)"
                 duration: 90
             -
                 slug: diversity-in-tech
@@ -158,14 +158,14 @@
                 duration: 40
             -
                 slug: docker-for-devs
-                place: "4th Floor Discussion corner E - (Studio B)"
+                place: "4th Floor: Discussion corner E - (Studio B)"
                 duration: 40
     "14:45":
         title: "Worskhops & Discussion Corners"
         sessions:
             -
                 slug: building-webvr
-                place: "4th Floor Discussion corner C (Studio C)"
+                place: "4th Floor: Discussion corner C (Studio C)"
                 duration: 40
             -
                 slug: ux-design-qa
@@ -177,7 +177,7 @@
                 duration: 40
             -
                 slug: developers-learn-design
-                place: "4th Floor Discussion corner E - (Studio B)"
+                place: "4th Floor: Discussion corner E - (Studio B)"
                 duration: 40
     "15:30":
         slug: break
