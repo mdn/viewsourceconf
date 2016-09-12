@@ -185,6 +185,8 @@
             </div>
 
             <p>{{ conference_venue.meta.blurb }}</p>
+
+            {% if conference_data.local_guide %}<p>Check out the <a href="{{ conference_data.local_guide }}" title"Local Guide">View Source {{ conference_data.location }} local guide</a> for emergency contacts, wifi information, key conference locations, local attractions and dining suggestions nearby.</p>{% endif %}
         </div>
     </section>
 {% endif %}

@@ -105,6 +105,10 @@
 -
     slug: "regional-challenges"
     title: "Regional Challenges Talk"
+    summary: "Why do most software and tech products seem to originate from North America and Europe? In this discussion corner session, we will explore some of the challenges that affect regional diversity in the tech world. Let’s talk about how we can improve diversity for all regions!"
+    moderators:
+        - "Manel Rhaiem"
+        - "Andre Garzia"
 -
     slug: hiring
     title: "What Companies Are Looking For When Hiring Devs"
@@ -190,7 +194,6 @@
     speakers:
         - "chris-wilson"
         - "ada-rose-edwards"
-        - "jeremy-keith"
     moderators:
         - Salvador de la Puente
 -
@@ -294,7 +297,7 @@
     speakers:
         - belen-albeza
     moderators:
-        - Andrezej Mazur
+        - Andrzej Mazur
 -
     slug: html5-games-repeat
     title: HTML5 Games
@@ -302,7 +305,7 @@
     speakers:
         - belen-albeza
     moderators:
-        - Andrezej Mazur
+        - Andrzej Mazur
 -
     slug: dev-tools
     summary: "Get a sneak peak at the future of the debugger in Firefox which has been written from scratch in React and Redux and hosted on Github. Easy to use and easy to develop."
