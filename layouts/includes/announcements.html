@@ -1,8 +1,11 @@
 {% if conference_data.slug == 'berlin' %}
     <section id="announcements" class="section section-night">
         <div class="section_body">
-            <h2>Announcing Ignite Berlin!</h2>
-            <p>View Source is excited to host <a href="http://igniteberlin.com/ignite-at-viewsource/">a special Ignite Berlin</a> on 12 September! Your View Source ticket includes admission to Ignite; non-View Source tickets to Ignite are €10. This is sure to be the largest Ignite Berlin ever!</p>
+            <h2>View Source is underway!</h2>
+            <p>Check out <a href="/berlin-2016/schedule/">the schedule</a> or the <a href="/berlin-2016/local_guide/">local guide</a>!</p>
+            {% if conference_data.register_url %}
+                <p>It's not too late to join us for visionary speakers, technical and design discussions, and fun group activities! <a href="{{ conference_data.register_url }}">Register now</a>.</p>
+            {% endif %}
         </div>
     </section>
 {% endif %}
