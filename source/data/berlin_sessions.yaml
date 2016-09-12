@@ -105,6 +105,10 @@
 -
     slug: "regional-challenges"
     title: "Regional Challenges Talk"
+    summary: "Why do most software and tech products seem to originate from North America and Europe? In this discussion corner session, we will explore some of the challenges that affect regional diversity in the tech world. Let’s talk about how we can improve diversity for all regions!"
+    moderators:
+        - "Manel Rhaiem"
+        - "Andre Garzia"
 -
     slug: hiring
     title: "What Companies Are Looking For When Hiring Devs"
