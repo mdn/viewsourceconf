@@ -9,8 +9,7 @@
     "venue": true
     "cfp": false
     "sessions": true
-    "announcements": true
-    "sponsor_prospectus": "/assets/viewsource_berlin_sponsorship.pdf"
+    "announcements": false
     "floorplan": "/assets/berlin_floorplan.pdf"
     "local_guide": "/berlin-2016/local-guide/"
     "print_schedule": "/assets/berlin_schedule.pdf"
