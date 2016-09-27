@@ -42,7 +42,7 @@
                     {% for session_speaker in session.speakers %}
                         {% if session_speaker == speaker.slug %}
                             <h2>
-                            {% if session.summary != "" %}<a href="{{ conference_data.folder }}/schedule/#{{ session.slug }}_summary">{% endif %}
+                            {% if session.summary != "" %}<a href="{{ conference_data.folder }}/#{{ session.slug }}_summary">{% endif %}
                             {{ session.title }}
                             {% if session.summary != "" %}</a>{% endif %}
                             </h2>
