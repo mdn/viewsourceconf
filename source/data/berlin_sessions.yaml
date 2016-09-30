@@ -24,9 +24,9 @@
     title: "Opening Keynote: State of the Web"
     speakers:
         - "hadley-beeman"
-    #summary: "Coming Soon"
     keynote: true
     feature: true
+    video: https://air.mozilla.org/hadley-beeman/video/
 -
     slug: "design-for-non-designers"
     speakers:
@@ -34,6 +34,8 @@
     title: "Design for Non-Designers"
     summary: "<p>Not everyone can hire a professional designer for their websites and web apps, but we all still want our interfaces to be easy to use and attractive. However, if you want to learn a bit of design, design books jump straight into concepts like \"the golden ratio\" and teach proper typographic terms which, to be frank, aren't needed if you're just looking to improve your website's look and feel.</p><p>This talk will cover the top quick ways to improve your website, covering both user experience as well as visual design. Quick hits, easy to understand and utilize principles that anyone can use to improve their design skills. Perhaps you too can become the next designer+developer unicorn!</p>"
     feature: true
+    video: https://air.mozilla.org/tracy-osborn/video/
+
 -
     slug: "inclusive-markup"
     speakers:
@@ -41,6 +43,7 @@
     title: "Inclusive Markup"
     summary: "<p>Accessibility is the law and a good idea. Let's make the Web accessible and fast for everyone. We'll skip \"why\" and focus on \"how.\" Accessibility can be as simple as using the right semantic elements in your HTML. Semantic HTML can prevent bugs, improve performance, reduce code bloat, and make your site accessible to screen readers and keyboard users. We'll explores accessibility features native to semantic elements, adding a sprinkling of ARIA roles and attributes. Form controls, input masking, styleable selects, and carousels with a few lines of CSS, fewer lines of JS and no frameworks.</p>"
     feature: true
+    video: https://air.mozilla.org/estelle-weyl/video/
 -
     slug: "css-framework"
     speakers:
@@ -48,6 +51,7 @@
     title: "You might not need a CSS framework"
     summary: "<p>Nowadays it is very common to find CSS frameworks like Bootstrap used everywhere. But they come at a cost, paid in big CSS files, styles that don't get used, and a hard to maintain code base.  </p><p>In this presentation we will talk about why using a third-party framework might not be the right choice for your project, be it a theme or a custom website. We will also see techniques to craft a blog theme without frameworks, from layout to individual UI components.</p>"
     feature: true
+    video: https://air.mozilla.org/belen-albeza/video/
 -
     slug: "node-releases"
     speakers:
@@ -55,6 +59,7 @@
     title: "Node.js Releases"
     summary: "<p>Node.js is growing up, and with that comes the responsibility of proper legacy support. As of Node.js Argon (v4.2.0) there is an official Long Term Support release cycle that lasts for 30 months!</p><p>How does a project moving at the pace of node maintain multiple release lines? How does a commit get backported? How is a release actually made? You will learn all this and more on this weeks episode of \"Node.js Releases, how do they work?\"</p>"
     feature: true
+    video: https://air.mozilla.org/myles-borins/video/
 -
     slug: typography
     speakers:
@@ -62,6 +67,7 @@
     title: "Type is Your Right!: Performance and Web Typography"
     summary: "<p>As front end developers, we <em>own</em> performance. As designers, we own typography. So how do you handle the tricky intersection of beautiful web typography and performant web pages? I'll be showing the audience OpenType features, explaining why they're important to typefaces, and explaining the tradeoffs they have on performance. We'll go over how to enable OpenType features and how you can optimize your font files for the web whether you own them and serve them up through @font-face or through Typekit so you can feel confident serving up gorgeous typography on your sites.</p>"
     feature: true
+    video: https://air.mozilla.org/helen-holmes/video/
 -
     slug: "pwa-hack-corner-1"
     title: "Demystifying Progressive Webapps"
@@ -121,6 +127,7 @@
     title: "Things You Can Do In ES6 That Can't Be Done In ES5"
     summary: "<p>ES6 and ES7 introduce many new features and capabilities to the JavaScript language. And yet, the majority of these enhancements are essentially syntactic sugar over the previous version. This is why tools like Babel are able to convert ES6 code into ES5. But there are several new features that can't be implemented in ES5.</p><p>In this session I'll explain what these new features are, what they do, and why they were added to the language.</p>"
     feature: true
+    video: https://air.mozilla.org/dan-shappir/video/
 -
     slug: resilience
     speakers:
@@ -129,6 +136,7 @@
     summary: "<p>Web browsers have become so powerful that developers are now treating them as if they were a runtime environment as predictable as any other. But the truth is that we still need to deal with many unknown factors that torpedo our assumptions. The web is where Postel’s Law meets Murphy’s Law, so we can’t treat web development as if it were just another flavour of software. Instead we must work with the grain of the web.</p>"
     feature: true
     keynote: true
+    video: https://air.mozilla.org/jeremy-keith/video/
 -
     slug: livejs
     speakers:
@@ -152,6 +160,7 @@
     summary: "<p>Over the past few years, several CSS methodologies and JavaScript frameworks have been released. In one year, we receive 32,120 business emails. Every weekday, we're active on Slack for 2 hours 15 minutes. Technology is moving fast, and constantly, there's so much going on. We constantly have to adapt in an ever-changing environment, while somehow still doing our job of building proper, functioning software to the latest tight-super-unrealistic deadline.</p><p>This talk will look at the human side of our daily work in technology. Together, we will examine which factors affect us physically and emotionally in our work. We'll learn how they lead to pressure, stress, self-consciousness and ultimately burnout, and we'll find out how to identify early warning signs of being affected. You'll leave with a realistic look at your own, human capabilities, and the knowledge of what you can do to take care of yourself while working on software.</p>"
     feature: true
     keynote: true
+    video: https://air.mozilla.org/lena-reinhard/video/
 -
     slug: "design-css"
     speakers:
@@ -159,6 +168,7 @@
     title: "Revolutionize Your Page: Real Art Direction on the Web"
     summary: "<p>We finally have the tools necessary to create amazing page designs on the web. Now we can art direct our layouts, leveraging the power and tradition of graphic design.</p><p>In this eye-opening talk, Jen will explore concrete examples of an incredible range of new possibilities. She’ll walk through a step-by-step design process for figuring out how to create a layout as unique as your content. You’ll learn how Flexbox, Grid, Shapes, Multicolumn, Viewport Units, and more can be combined together to revolutionize how you approach the page &mdash; any page.</p>"
     feature: true
+    video: https://air.mozilla.org/jen-simmons/video/
 -
     slug: pwa
     speakers:
@@ -166,6 +176,7 @@
     title: "Progressive Web Apps is the new Ajax"
     summary: "This is a transformative moment for the web. The revolution that is happening now is no less revolutionary than what happened a decade ago with Ajax - we can finally build reliable, fast and engaging apps on web technologies. In this talk, I'll dive into the what, why and how of Progressive Web Apps - describe what a \"Progressive Web App\" really is, show the opportunities in building them, and point you on your way to becoming a Progressive Web App developer."
     feature: true
+    video: https://air.mozilla.org/chris-wilson/video/
 -
     slug: layout
     speakers:
@@ -173,6 +184,7 @@
     title: "Laying out the future with Grid and Flexbox"
     summary: "<p>It is 2016. CSS is now 20 years old, and it has taken this long for us to get a true layout system designed for web pages and applications. A layout system, not based on hacking properties designed for something else entirely, but one that considers the reality of design for the web today.</p><p>In this talk I’ll introduce this new layout system, a system encompassing Flexbox, CSS Grid Layout and the Box Alignment Module. We’ll take a look at the mindset shift needed to really take advantage of these modules, and also consider what they mean in terms of accessibility and performance.</p>"
     feature: true
+    video: https://air.mozilla.org/rachel-andrew/video/
 -
     slug: compatibility
     speakers:
@@ -180,6 +192,7 @@
     title: "Doing the Unstuck: How to make browsers compatible with the web"
     summary: "<p>What does it mean for JavaScript and CSS to be — or not to be — compatible with the web?</p><p>Is it possible for a site written today to continue to work in 10 years? Likewise, could existing code complicate adding language features or fixing mistakes in web APIs?</p><p>In this talk I'll discuss the issues that arise when browsers attempt to clean up the web platform, either by adding new language features and DOM APIs or removing old ones — while attempting to remain backwards compatible. I'll even talk about some controversial moves made by browsers to support non-standard (cough webkit prefixes) CSS and JS.</p>"
     feature: true
+    video: https://air.mozilla.org/mike-taylor/video/
 -
     slug: "offline-first"
     speakers:
@@ -187,6 +200,7 @@
     title: "I'm offline, cool! What now?"
     summary: "<p>We learned a lot about the offline first concept in the past two years including Service Worker, CouchDB etc.</p><p>Did we do everything already to make our applications offline first? Is caching the resources enough? Did we answer all the questions already and if not… What are the new questions we need to answer?</p><p>In this talk, I’ll show you what has changed in the last few years, how people did adapt the concept and what are the best practices.</p><p>And most importantly, can offline first help to save lives?</p>"
     feature: true
+    video: https://air.mozilla.org/ola-gasidlo/video/
 -
     slug: "pwa-qa"
     title: "Progressive Webapps Q&A"
@@ -250,6 +264,7 @@
     title: "Web, meet Virtual Reality"
     summary: "<p>A combination of improvements in hardware and software capabilities has resulted in a lot of excitement around virtual reality experiences. In this session, we will explore how many of these improved capabilities are supported in modern browsers, and why the Web provides a promising pre-existing ecosystem for creating, distributing and experiencing virtual reality content, applications, and services.</p>"
     feature: true
+    video: https://air.mozilla.org/dominique-hazael-massieux/video/
 -
     slug: "closing-keynote"
     title: "Closing Keynote: The Future of the Web – Progressive Web Apps and Beyond"
@@ -258,6 +273,7 @@
         - "robert-nyman"
     keynote: true
     feature: true
+    video: https://air.mozilla.org/robert-nyman/video/
 -
     slug: "project-magnet"
     title: "Connected Devices: Project Magnet"

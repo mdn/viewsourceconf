@@ -51,7 +51,6 @@ describe('The site...', function() {
 test.describe('The landing page...', function() {
     this.timeout(10000);
     const url = baseURL;
-
     ['berlin-2016'].forEach(function(conference) {
         test.it.skip(`should have a visible link to the ${conference} page`, function(done) {
             const conferenceSelector = `a[href="/${conference}/"]`;
@@ -75,7 +74,38 @@ test.describe('The conference pages...', function() {
     ['berlin-2016'].forEach(function(conference) {
         const url = `${baseURL}/${conference}`;
 
-        test.it(`should have a visible ${conference} register link`, function(done) {
+        test.it(`should have all the session videos on it`, function(done) {
+            const filename = 'source/data/berlin_sessions.yaml';
+            const videoSelector = '.session_summary iframe';
+
+            let doc;
+            let count = 0;
+
+            // Get the sessions yaml
+            try {
+                doc = jsyaml.safeLoad(fs.readFileSync(filename, 'utf8'));
+            } catch (e) {
+                return done(e.message);
+            }
+
+            doc.forEach((session) => {
+                if (session.video) {
+                    count += 1;
+                }
+            });
+
+            const driver = new webdriver.Builder().forBrowser(browser).build();
+            driver.get(url).then(function(){
+                // find all the sessions on the page
+                return driver.findElements(webdriver.By.css(videoSelector));
+            }).then((items) => {
+                // same number on page as in yaml?
+                console.log(items.length + ' videos on page; ' + count + ' videos in yaml.');
+                done(assert(items.length === count));
+            });
+        });
+
+        test.it.skip(`should have a visible ${conference} register link`, function(done) {
             const registerSelector = '.hero a[href*="ti.to"]';
             const driver = new webdriver.Builder().forBrowser(browser).build();
             driver.get(url).then(function() {
@@ -103,7 +133,7 @@ test.describe('The conference pages...', function() {
             });
         });
 
-        test.it(`should have a visible ${conference} sponsor prospectus link`, function(done) {
+        test.it.skip(`should have a visible ${conference} sponsor prospectus link`, function(done) {
             const prospectusSelector = 'a[href$="sponsorship.pdf"]';
             const driver = new webdriver.Builder().forBrowser(browser).build();
             driver.get(url).then(function() {
@@ -203,7 +233,7 @@ test.describe('The conference pages...', function() {
         ['berlin-2016'].forEach(function(conference) {
             const url = `${baseURL}/${conference}/schedule`;
 
-            test.it(`should have all the sessions on it`, function(done) {
+            test.it.skip(`should have all the sessions on it`, function(done) {
                 const filename = 'source/data/berlin_schedule.yaml';
                 const sessionSelector = '.session_details';
 
@@ -244,6 +274,7 @@ test.describe('The conference pages...', function() {
                     done(assert(items.length === count));
                 });
             });
+
         });
     });
 });

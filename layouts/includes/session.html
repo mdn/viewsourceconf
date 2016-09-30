@@ -1,13 +1,6 @@
-{% set session = false %}
-{% for s in conference_sessions %}
-    {% if s.slug == session_coords.slug %}
-        {% set session = s %}
-    {% endif %}
-{% endfor %}
 
-{% if session %}
+
     <div id="{{ session.slug }}" class="cols">
-        <div class="col col-1"><strong>{{ time }}</strong></div>
 
         {% if session.speakers %}
         <div class="col col-1">
@@ -29,4 +22,3 @@
             {% include "sessiondetails.html" %}
         </div>
     </div>
-{% endif %}

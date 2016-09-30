@@ -5,27 +5,8 @@
             {% include "svg/vs-logo-h.svg" %}
         </a>
 
-        {# only show nav if we're on a subpage #}
-        {% if conference_subpage %}
-            <ul class="header_links">
-                {% if conference_data.register_url %}
-                <li><a href="{{ conference_data.register_url }}">Register</a></li>
-                {% endif %}
-                {% if conference_data.cfp %}
-                    <li><a href="{{ conference_data.folder }}/cfp/">Call for Proposals</a></li>
-                {% endif %}
-
-                {% if conference_data.speakers %}
-                    <li><a href="{{ conference_data.folder }}/#speakers">Speakers</a></li>
-                {% endif %}
-                {% if conference_data.schedule %}
-                    <li><a href="{{ conference_data.folder }}/schedule/">Schedule</a></li>
-                {% endif %}
-                {% if conference_data.venue %}
-                    <li><a href="{{ conference_data.folder }}/#venue">Venue</a></li>
-                {% endif %}
-                <li><a href="{{ conference_data.folder }}/#sponsors">Sponsors</a></li>
-            </ul>
-        {% endif %}
+        <ul class="header_links">
+            <li><a href="http://twitter.com/viewsourceconf">@viewsourceconf</a></li>
+        </ul>
     </div>
 </header>

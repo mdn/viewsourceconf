@@ -5,27 +5,11 @@
     <section class="section section-invert">
         <div class="hero">
             <div class="hero_body">
-                <h1>View Source {{ conference_data.location }}</h1>
-
-                <p class="hero_sub">{{ conference_data.date }}</p>
-
-                <p>In this three-day, intimate (limited to 500 participants), single-track conference,
-                    Mozilla brings together the most visionary speakers and companies to explore new frontiers
-                    in the open web, from both technical and design perspectives, across platforms and devices.
-                    And when the day’s done, we’ll relax with fun (optional) group activities.</p>
-
-                <p>It’s a great opportunity to network with likeminded people in a collaborative, inclusive
-                    environment.</p>
-
-                {% if conference_data.register_url %}<p><a href="{{ conference_data.register_url }}" class="button button-bright">Register</a></p>{% endif %}
+                <h1>Mozilla's View Source</h1>
+                <p>Through View Source events, Mozilla brings together visionary speakers and companies to explore new frontiers in the open web. Let’s explore the possibilities from both technical and design perspectives, across all platforms and devices. Learn how you can be part of this collaborative network of likeminded people.</p>
             </div>
         </div>
     </section>
-
-{% if conference_data.announcements %}
-    {% include "includes/announcements.html" with conference_data.slug %}
-{% endif %}
-
     <section id="newsletter" class="section section-dark">
         <div class="section_body">
             <div class="cols cols-half">
@@ -37,7 +21,7 @@
                         </div>
                         <div class="sidecol_body">
                             <h2>Get updates by email</h2>
-                            <p>Be the first to know about our future plans, join our mailing list.</p>
+                            <p>Find out about future View Source events by signing up for email updates.</p>
                         </div>
                     </div>
                 </div>
@@ -49,191 +33,11 @@
         </div>
     </section>
 
-{% if conference_data.cfp %}
-    <section class="section section-grid">
-        <div class="section_body">
-            <div class="solo">
-                <h2>Call for Proposals</h2>
-                <p>View Source {{ conference_data.location }} is currently accepting proposals for talks.</p>
-                <p><a href="cfp/" class="button">Submit your proposal.</a></p>
-            </div>
-        </div>
-    </section>
-{% endif %}
-
-{% if conference_data.speakers %}
-    <section id="speakers">
+    <section id="session_videos">
         <div class="section">
-            <div class="section_body">
-                <div class="solo">
-                    <h2>Speakers</h2>
-
-                    <p>View Source features 16 world-class speakers (plus
-                        discussions and Q&amp;A breakouts), exposing best
-                        practices and new technologies. Check out our keynote
-                        speakers below, <a href="schedule/">see the full
-                        schedule</a>.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="speakers">
-            <ul id="speakers_list" class="speakers_list">
-            {% for speaker in conference_speakers %}
-                {% if speaker.pic && speaker.feature %}
-                    <li class="speaker" id="{{ speaker.slug }}">
-
-                        <div class="speaker_pic">
-                            <a href="speakers/{{ speaker.slug }}/">
-                                <img src="/assets/images/speakers/{{ speaker.pic }}" alt="{{ speaker.first }} {{ speaker.last }}">
-                            </a>
-                        </div>
-
-                        <div class="section speaker_info" id="{{ speaker.slug }}_info">
-                            <div class="section_body">
-                                <div class="cols cols-half">
-                                    <div class="col">
-                                        <h3 class="speaker_name">{{ speaker.first }} {{ speaker.last }}</h3>
-                                    </div>
-
-                                    <div class="col speaker_text">
-                                        {% set showbio = true %}
-                                        {% if speaker.sessions.length > 0 %}
-                                            {% for session in conference_sessions %}
-                                                {% for session_speaker in session.speakers %}
-                                                    {% if session_speaker == speaker.slug %}
-                                                        <h4 class="speaker_title">{{ session.title }}</h4>
-                                                        {% if session.summary %}
-                                                            {% set showbio = false %}
-                                                            {% if session.summary.indexOf('<p>') === 0 %}
-                                                                {{ session.summary }}
-                                                            {% else %}
-                                                                <p>{{ session.summary }}</p>
-                                                            {% endif %}
-                                                        {% endif %}
-                                                    {% endif %}
-                                                {% endfor %}
-                                            {% endfor %}
-                                        {% endif %}
-                                        {% if showbio %}
-                                            {% if speaker.bio.indexOf('<p>') === 0 %}
-                                                {{ speaker.bio }}
-                                            {% else %}
-                                                <p>{{ speaker.bio }}</p>
-                                            {% endif %}
-                                        {% else %}
-                                            <a href="{{ conference_data.folder }}/speakers/{{ speaker.slug }}/">Read more about {{ speaker.first }}</a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                {% endif %}
-            {% endfor %}
-            </ul>
+            {% include "includes/video_archive.html" %}
         </div>
     </section>
-{% endif %}
-
-{% if conference_data.sessions && conference_sessions.length > 0 %}
-    <section class="section section-grid" id="sessions">
-        <div class="section_body">
-            <h2 class="center">Sessions</h2>
-            <div class="cols cols-half">
-                {% for day, times in conference_schedule %}
-                    {% if ! loop.first %}
-                        <div class="col">
-                            <section id="{{day}}" class="session_day">
-                                <h3 class="section-invert session_day_header">
-                                    <span class="session_day_header_date">{{ day|date(date_format) }}</span>
-                                </h3>
-                                {% for time, time_slot in times %}
-                                    {% if !time_slot.sessions %}
-                                        {% set session_coords = time_slot %}
-                                        {% for session in conference_sessions %}
-                                            {% if session.slug == session_coords.slug && session.feature %}
-                                                {% include "includes/sessionteaser.html" %}
-                                            {% endif %}
-                                        {% endfor %}
-                                    {% endif %}
-                                {% endfor %}
-                            </section>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="solo">
-                <p>View Source is equal parts sharing, learning, and meeting new people. Discuss and collaborate in an on-going hacking space, chill in comfy hangout spots, see some great demos, and participate in engaging discussions. Evening activities will provide a fun, friendly space to continue the conversation and start new ones.</p>
-            </div>
-            <p class="center"><a href="{{ conference_data.folder }}/schedule/" class="button">See full schedule</a></p>
-        </div>
-    </section>
-{% endif %}
-
-{% if conference_data.venue %}
-    <section class="section" id="venue">
-        <div class="section_body">
-            <h2 class="center">Venue</h2>
-            <p><strong>{{ conference_venue.meta.name }}<br>
-            {{ conference_venue.meta.address }}</strong>
-            </p>
-
-            <div class="intrinsic">
-                <iframe src="{{ conference_venue.meta.map_url }}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-
-            <p>{{ conference_venue.meta.blurb }}</p>
-
-            {% if conference_data.local_guide %}<p>Check out the <a href="{{ conference_data.local_guide }}" title"Local Guide">View Source {{ conference_data.location }} local guide</a> for emergency contacts, wifi information, key conference locations, local attractions and dining suggestions nearby.</p>{% endif %}
-        </div>
-    </section>
-{% endif %}
-
-{% if conference_data.venue && conference_venue.travel.blurb %}
-    <section class="section section-grid" id="travel">
-        <div class="section_body">
-            <h2 class="center">Travel and Accommodation</h2>
-
-            {% if conference_venue.travel.blurb %}<p>{{ conference_venue.travel.blurb }}</p>{% endif %}
-
-            {% for mode in conference_venue.travel.modes %}
-                <h3>{{ loop.key }}</h3>
-                <p>{{ mode }}</h3>
-            {% endfor %}
-
-            {% for hotel in conference_venue.hotels %}
-                {% if loop.first %}
-                    <h3>Suggested Hotels</h3>
-                    <div id="hotels_suggestions" class="hotels_suggestions js-hidden">
-                {% endif %}
-                <div class="cols cols-half">
-                    <h4><a href="{{ hotel.url }}" target="_blank">{{ loop.key }}</a></h4>
-                    <div class="col">
-                        <p>
-                            <strong>Hotel rating: </strong><span title="{{hotel.stars.length}}-star rating">{% for star in hotel.stars %}&star;{% endfor %}</span><br>
-                            <strong>Preferential rate:</strong> {{ hotel.rate }}<br>
-                            <strong>Address:</strong> <a href="{{ hotel.map_link }}" target="_blank">{{ hotel.address }}</a><br>
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            <strong>How to book</strong><br>
-                            {{ hotel.how_to_book }}<br>
-                            {% if hotel.email %}<strong>Email address: </strong><a href="mailto:{{ hotel.email }}">{{ hotel.email }}</a><br>{% endif %}
-                            {% if hotel.phone %}<strong>Telephone number: </strong>{{ hotel.phone }}<br>{% endif %}
-                            {% if hotel.reference %}<strong>Booking reference: </strong>{{ hotel.reference }}<br>{% endif %}
-                            <em>A credit card will be necessary to secure a booking.</em>
-                        </p>
-                    </div>
-                </div>
-                {% if loop.last %}
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </section>
-{% endif %}
 
 {% if conference_data.sponsors %}
     <section id="sponsors">
@@ -250,24 +54,7 @@
                         </div>
 
                     {% endmacro %}
-                    {{ sponsor_block("Main Sponsor", conference_sponsors.main) }}
-                    {{ sponsor_block("Art Walk Sponsor", conference_sponsors.art_walk) }}
-                    {{ sponsor_block("Community Sponsor", conference_sponsors.community) }}
-                    {{ sponsor_block("Media Sponsor", conference_sponsors.media) }}
-                </div>
-            </div>
-        {% endif %}
-        {% if conference_data.sponsor_prospectus %}
-            <div class="section section-uncommon" id="sponsor">
-                <div class="section_body">
-                    <div class="solo">
-                        <h2>Sponsor the Event</h2>
-                        <div class="sponsorship_logo">
-                            {% include "includes/svg/vs-logo-v.svg" %}
-                        </div>
-                        <p><strong>Want to sponsor View Source?</strong></p>
-                        <p>We're always open for sponsorship and partnerships, please email Sandra Persing at <a href="mailto:spersing@mozilla.com">spersing@mozilla.com</a> for details. You can also check out our <a href="{{ conference_data.sponsor_prospectus }}" target="_blank">Sponsorship Prospectus</a>. If you don’t see what you are looking for, please <a href="mailto:spersing@mozilla.com">email us</a>, we’re happy to discuss additional options.</p>
-                    </div>
+                    {{ sponsor_block("Sponsors", conference_sponsors.consolidated) }}
                 </div>
             </div>
         {% endif %}
