@@ -9,7 +9,7 @@
                             <span class="session_day_header_date">{{ day|date(date_format) }}</span>
                         </h3>
 
-                        <div id="day_{{ loop.index }}_sessions" class="session_day_sessions js-hidden" data-date="{{ day }}">
+                        <div id="day_{{ loop.index }}_sessions" class="session_day_sessions" data-date="{{ day }}">
                         {% for time, time_slot in times %}
 
                             {% set session = false %}
