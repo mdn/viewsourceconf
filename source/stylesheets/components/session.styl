@@ -44,10 +44,6 @@ session
     }
 }
 
-.session_day_header_date {
-    display: none;
-}
-
 .session_day_sessions:before {
     content: '';
     display: block;
@@ -69,11 +65,6 @@ session
     color: #fff;
 }
 
-.session_group {
-    border-left: 2px solid $berlin-dark;
-    padding-left: $grid-gutter-width;
-}
-
 .session_head {
     margin-bottom: 0;
 }
@@ -88,18 +79,6 @@ session
     iframe {
         max-width: 100%;
     }
-}
-
-.session_moderators {
-    display: none;
-    margin-top: -0.3em;
-    line-height: $heading-line-height;
-}
-
-.session_moderators-inside {
-    display: block;
-    margin: -0.5em 0 0.5em 0;
-    font-weight: bold;
 }
 
 .session_speakers {
@@ -145,10 +124,6 @@ button.session_title {
     font-weight: bold;
     line-height: $heading-line-height;
     text-align: left;
-}
-
-.session_title-group {
-    margin-bottom: $grid-gutter-width;
 }
 
 .session_cta {
@@ -199,7 +174,6 @@ button.session_title {
         float: right;
         width: $session-pic-320;
         flex-direction: column;
-        margin-top: -2.1em;
         margin-left: $grid-gutter-width;
     }
 
@@ -255,11 +229,6 @@ button.session_title {
         }
     }
 
-    /* show days by default at this size */
-    .js-yes .session_day_sessions.js-hidden { // needs extra specificity
-        display: block;
-    }
-
     .session_pic {
         float: none;
         width: auto;
@@ -287,14 +256,6 @@ button.session_title {
     .session_summary::before {
         height: 5.5em;
         margin: -5.5em 0 0;
-    }
-
-    .session_moderators {
-        display: block;
-    }
-
-    .session_moderators-inside {
-        display: none;
     }
 }
 

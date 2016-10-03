@@ -13,8 +13,6 @@
                     '/{{ fingerprint['js/main.js'] }}',
                     '/{{ fingerprint['stylesheets/style.css'] }}',
                     '/offline/',
-                    '/berlin-2016/schedule/',
-                    '/berlin-2016/code-of-conduct/',
                     '/berlin-2016/'
                 ]);
             }).catch(function() {

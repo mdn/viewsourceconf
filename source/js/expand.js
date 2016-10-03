@@ -62,115 +62,6 @@
     }
 
     /*
-        hotels expand/collapse
-    */
-
-    var hotelDivId = 'hotels_suggestions';
-    var hotelsDiv = document.getElementById(hotelDivId);
-
-    if(hotelsDiv) {
-        // add button
-        var hotelsButton = document.createElement('button');
-        hotelsButton.setAttribute('type', 'button');
-        var hotelsButtonTextExpanded = 'Hide suggested hotels';
-        var hotelsButtonTextCollapsed = 'Show suggested hotels';
-        hotelsButton.appendChild(document.createTextNode(hotelsButtonTextCollapsed));
-        hotelsButton.classList.add('hotels_button');
-        hotelsButton.classList.add('button');
-        hotelsButton.classList.add('button-expand');
-        hotelsDiv.parentNode.insertBefore(hotelsButton, hotelsDiv);
-        // wire button as controller
-        expandInitController(hotelsButton, hotelDivId);
-        // add listener for button
-        hotelsButton.addEventListener('click', function(event) {
-            // toggle aria and visibililty
-            expandSimple(hotelsButton);
-            // toggle button text
-            if (hotelsButton.getAttribute('aria-expanded') === 'true') {
-                hotelsButton.textContent = hotelsButtonTextExpanded;
-            } else {
-                hotelsButton.textContent = hotelsButtonTextCollapsed;
-            }
-        }, false);
-
-        if(isHash) {
-            if(targetId === hotelDivId){
-                hotelsButton.click();
-            }
-        }
-    }
-
-    /*
-        schedule days expand/collapse
-    */
-
-    var dayDivs = document.querySelectorAll('.session_day_sessions');
-
-    if(dayDivs) {
-
-        // check screen is small enough to warrent this
-        if(parseInt(window.vs.size) > 2) {
-            Array.prototype.forEach.call(dayDivs, function(element, i) {
-                // remove the .js-hidden class so content stays visible if
-                // they resize their screens later
-                element.classList.remove('js-hidden');
-            });
-        } else {
-            var dayToday = new Date().toISOString().slice(0, 10);
-
-            // add the buttons and events
-            Array.prototype.forEach.call(dayDivs, function(element, i) {
-                var dayDiv = element;
-                var dayDivId = element.id;
-
-                // get heading
-                var dayHeading = dayDiv.previousElementSibling;
-                var dayHeadingId = dayHeading.id;
-                var dayHeadingDay = dayHeading.querySelector('.session_day_header_day');
-                var dayHeadingDayText = dayHeadingDay.textContent;
-
-                // create button
-                var dayButton = document.createElement('button');
-                dayButton.setAttribute('type', 'button');
-                dayButton.appendChild(document.createTextNode(dayHeadingDayText));
-
-                // replace heading text with button
-                while (dayHeading.firstChild) {
-                    dayHeading.removeChild(dayHeading.firstChild);
-                }
-                dayHeading.appendChild(dayButton);
-
-                // wire button as controller
-                expandInitController(dayButton, dayDivId);
-
-                // add listener for button
-                dayButton.addEventListener('click', function(event) {
-                    // toggle aria and visibililty
-                    expandSimple(dayButton);
-                }, false);
-
-
-                if(isHash) {
-                    if(targetId === dayHeadingId) {
-                        // open and scroll to if this day has been linked to
-                        dayButton.click();
-                    } else if (dayDiv.contains(targetElement)) {
-                        // open without interfearing with has scroll if child linked to
-                        expandOpen(dayButton);
-                        dayDiv.classList.remove('js-hidden');
-                    }
-                } else {
-                    // explicitly open if today is day of this day of conference
-                    var dayDate = dayDiv.dataset.date;
-                    if(dayToday === dayDate) {
-                        expandSimple(dayButton);
-                    }
-                }
-            });
-        }
-    }
-
-    /*
         session expand/collapse
     */
 
@@ -218,6 +109,12 @@
                     sessionTitleCTA.textContent = sessionTitleCTATextCollapsed;
                 }
             }, false);
+
+            if(sessionParent.classList.contains('session_details-keynote')) {
+                expandOpen(sessionButton);
+                summary.classList.remove('js-hidden');
+                sessionTitleCTA.textContent = sessionTitleCTATextExpanded;
+            }
         });
 
         if(isHash) {
