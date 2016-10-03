@@ -56,11 +56,11 @@ push-deploy-image:
 	docker push ${IMAGE}
 
 push-latest-build-image: push-build-image
-	docker tag -f ${BUILD_IMAGE} ${LATEST_BUILD_IMAGE}
+	docker tag ${BUILD_IMAGE} ${LATEST_BUILD_IMAGE}
 	docker push ${LATEST_BUILD_IMAGE}
 
 push-latest-deploy-image: push-deploy-image
-	docker tag -f ${IMAGE} ${LATEST_DEPLOY_IMAGE}
+	docker tag ${IMAGE} ${LATEST_DEPLOY_IMAGE}
 	docker push ${LATEST_DEPLOY_IMAGE}
 
 push-latest: push-latest-build-image push-latest-deploy-image
@@ -84,7 +84,7 @@ deis-pull:
 	deis pull ${IMAGE} -a ${DEIS_APP}
 
 push-private-registry:
-	docker tag -f ${IMAGE} ${PRIVATE_IMAGE}
+	docker tag ${IMAGE} ${PRIVATE_IMAGE}
 	docker push ${PRIVATE_IMAGE}
 
 deis-pull-private: push-private-registry
