@@ -1,10 +1,9 @@
-@Library('github.com/mozmar/jenkins-pipeline@master')
-
+//@Library('github.com/mozmar/jenkins-pipeline@master')
 
 node {
   stage("Prepare") {
     checkout scm
-    setGitEnvironmentVariables()
+    //setGitEnvironmentVariables()
 
     // When checking in a file exists in another directory start with './' or
     // prepare to fail.
