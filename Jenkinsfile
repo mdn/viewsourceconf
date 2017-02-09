@@ -1,6 +1,6 @@
-@Library('github.com/mozmar/jenkins-pipeline@master')
-
 node {
+  @Library('github.com/mozmar/jenkins-pipeline@master')
+
   stage("Prepare") {
     checkout scm
     setGitEnvironmentVariables()
