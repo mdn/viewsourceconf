@@ -1,3 +1,5 @@
+@Library('github.com/mozmar/jenkins-pipeline@master')
+
 node {
   stage("Prepare") {
     checkout scm
