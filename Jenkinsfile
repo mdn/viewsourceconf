@@ -7,12 +7,12 @@ node {
 
     // When checking in a file exists in another directory start with './' or
     // prepare to fail.
-    if (fileExists("./Jenkinsfiles/${env.BRANCH_NAME}.groovy") || fileExists("./Jenkinsfiles/${env.BRANCH_NAME}.yml")) {
-      loadBranch(env.BRANCH_NAME)
-    }
-    else {
-      loadBranch("default")
-    }
+    // if (fileExists("./Jenkinsfiles/${env.BRANCH_NAME}.groovy") || fileExists("./Jenkinsfiles/${env.BRANCH_NAME}.yml")) {
+    //   loadBranch(env.BRANCH_NAME)
+    // }
+    // else {
+    //   loadBranch("default")
+    // }
   }
 
   stage('Build & push images') {
