@@ -97,7 +97,7 @@ build-deploy: build-build-image build build-deploy-image deis-pull-private
 
 push-registry:
 	docker tag ${IMAGE} ${IMAGE}
-	docker push ${PRIVATE_IMAGE}
+	docker push ${IMAGE}
 
 workflow-pull:
 	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} pull ${IMAGE} -a ${DEIS_APP}

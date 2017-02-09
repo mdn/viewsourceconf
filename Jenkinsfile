@@ -19,7 +19,7 @@ node {
     sh 'make build-build-image'
     sh 'make build'
     sh 'make build-deploy-image'
-    //sh 'make push-registry'
+    sh 'make push-registry'
   }
 
   stage('Deploy') {
