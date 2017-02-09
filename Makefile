@@ -28,6 +28,7 @@ HOST_IP ?= $(shell docker-machine ip || echo 127.0.0.1)
 DEIS_PROFILE ?= usw
 DEIS_APP ?= viewsourceconf-stage
 PRIVATE_IMAGE ?= ${PRIVATE_REGISTRY}/${DEIS_APP}\:${VERSION}
+WORKERS ?= 1
 
 .PHONY: build
 
@@ -91,3 +92,24 @@ deis-pull-private: push-private-registry
 	deis pull ${DEIS_APP}:${VERSION} -a ${DEIS_APP}
 
 build-deploy: build-build-image build build-deploy-image deis-pull-private
+
+# METADAVE 02/09/2017
+
+
+workflow-pull:
+	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} pull ${IMAGE} -a ${DEIS_APP}
+
+workflow-create:
+	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} create ${DEIS_APP} --no-remote || \
+	${DEIS_BIN} apps | grep -q ${DEIS_APP}
+
+workflow-config:
+	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} config:set -a ${DEIS_APP} $(shell cat .env-dist) || true
+
+workflow-create-and-or-config:
+	make deis-create || echo already created
+	sleep 5
+	make deis-config
+
+workflow-scale-worker:
+	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} ps:scale worker=${WORKERS} -a ${DEIS_APP}
