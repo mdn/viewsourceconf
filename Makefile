@@ -95,6 +95,9 @@ build-deploy: build-build-image build build-deploy-image deis-pull-private
 
 # METADAVE 02/09/2017
 
+push-registry:
+	docker tag ${IMAGE} ${IMAGE}
+	docker push ${PRIVATE_IMAGE}
 
 workflow-pull:
 	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} pull ${IMAGE} -a ${DEIS_APP}
