@@ -30,6 +30,6 @@ node {
 
     sh 'make workflow-create'
     sh 'make workflow-pull'
-    sh 'make workflow-scale-worker'
+    //sh 'make workflow-scale-worker'
   }
 }
