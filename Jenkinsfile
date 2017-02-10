@@ -1,4 +1,4 @@
-//@Library('github.com/mozmar/jenkins-pipeline@master')
+@Library('github.com/mozmar/jenkins-pipeline@master')
 
 node {
   stage("Prepare") {
