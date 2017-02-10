@@ -1,4 +1,8 @@
+#!groovy
 @Library('github.com/mozmar/jenkins-pipeline@master')
+
+def config
+def utils
 
 node {
   stage("Prepare") {
