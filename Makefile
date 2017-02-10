@@ -91,3 +91,25 @@ deis-pull-private: push-private-registry
 	deis pull ${DEIS_APP}:${VERSION} -a ${DEIS_APP}
 
 build-deploy: build-build-image build build-deploy-image deis-pull-private
+
+######################################################
+# Deis Workflow + Kubernetes
+######################################################
+
+push-registry:
+	docker tag ${IMAGE} ${IMAGE}
+	docker push ${IMAGE}
+
+workflow-build-and-push: build-build-image build build-deploy-image push-registry
+	echo "workflow-build-and-push complete"
+
+workflow-pull:
+	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} pull ${IMAGE} -a ${DEIS_APP}
+
+workflow-create:
+	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} create ${DEIS_APP} --no-remote || \
+   ${DEIS_BIN} apps | grep -q ${DEIS_APP}
+
+workflow-create-and-pull: workflow-create workflow-pull
+	echo "workflow-create-and-pull complete"
+
