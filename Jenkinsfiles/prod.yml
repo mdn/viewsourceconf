@@ -1,0 +1,9 @@
+pipeline:
+  enabled: true
+deis:
+  app: viewsourceconf-prod
+  profile: virginia
+  bin: deis2
+  domain: virginia.moz.works
+kubernetes:
+  kubeconfig: "/var/lib/jenkins/.kube/virginia.kubeconfig"

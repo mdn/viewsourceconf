@@ -53,14 +53,10 @@ We welcome your help making this code better! Here's how to hack on it:
 ### How to deploy the site
 
 * [Build status is in Jenkins](https://ci.us-west.moz.works/view/viewsourceconf/)
-* Code merged to [https://github.com/mdn/viewsourceconf/tree/master](https://github.com/mdn/viewsourceconf/tree/master) will land on [staging](viewsourceconf-stage.us-west.moz.works) automatically, unless it breaks the build.
+* Code merged to [https://github.com/mdn/viewsourceconf/tree/master](https://github.com/mdn/viewsourceconf/tree/master) will land on [staging](https://viewsourceconf-stage.virginia.moz.works) automatically, unless it breaks the build.
 * Don't do anything else until your code is merged to master and you have tested it in staging. Srsly.
-* Tags pushed to Mozilla's remote master will trigger a production build. To tag...
-  * (Have permissions to push code to the Mozilla remote master)
-  * Check out the [Mozilla remote master](https://github.com/mdn/viewsourceconf/tree/master)
-  * Set an environment variable containing the name of the remote master: `export MOZ_GIT_REMOTE=upstream` (where 'upstream' is the name of the remote master).
-  * Run the tagging script conveniently located at the root of the repo. It is probably not set to be executable, so `. tag-release.sh --push`
-  * Watch your build in Jenkins. Verify it in production.
+* Pushing a commit to the `prod` branch will trigger a deploy to [https://viewsourceconf-prod.virginia.moz.works](https://viewsourceconf-prod.virginia.moz.works)
+* Watch your build in Jenkins. Verify it in production.
 
 ### Docker
 
