@@ -26,9 +26,8 @@ if [ $TAG_CHECK -ne 0 ]; then
     exit 1
 fi
 
-git tag ${VSC_TAG} -m "Prod release ${TODAY}"
-git checkout prod
-git merge ${VSC_TAG} -m "Merge ${VSC_TAG} into prod branch for release"
-git push origin prod
+git tag "${VSC_TAG}"
+git push origin master:prod
+
 echo "Check your prod deploy status here:"
 echo "https://ci.us-west.moz.works/blue/organizations/jenkins/viewsourceconf_deploy_k8s/activity"
