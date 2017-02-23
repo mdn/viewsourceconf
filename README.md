@@ -56,6 +56,7 @@ We welcome your help making this code better! Here's how to hack on it:
 * Code merged to [https://github.com/mdn/viewsourceconf/tree/master](https://github.com/mdn/viewsourceconf/tree/master) will land on [staging](https://viewsourceconf-stage.virginia.moz.works) automatically, unless it breaks the build.
 * Don't do anything else until your code is merged to master and you have tested it in staging. Srsly.
 * Pushing a commit to the `prod` branch will trigger a deploy to [https://viewsourceconf-prod.virginia.moz.works](https://viewsourceconf-prod.virginia.moz.works)
+	* the `deploy_to_prod.sh` script automates this for you by generating a tag name, committing an annotated tag, merging it to prod, and pushing the prod branch to origin.
 * Watch your build in Jenkins. Verify it in production.
 
 ### Docker
