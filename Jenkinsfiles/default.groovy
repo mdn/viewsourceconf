@@ -1,17 +1,23 @@
 stage('Build and push') {
-    env.KUBECONFIG = config.kubernetes.kubeconfig
-    env.DEIS_PROFILE = config.deis.profile
-    env.DEIS_BIN = config.deis.bin
     env.DEIS_APP = config.deis.app
-
-    println "Deis profile = ${config.deis.profile}"
-    println "Deis Workflow app = ${config.deis.app}"
+    env.DEIS_BIN = config.deis.bin
+    println "Deis app = ${config.deis.app}"
     println "Deis bin = ${config.deis.bin}"
-    println "kubeconfig = ${config.kubernetes.kubeconfig}"
     sh 'make workflow-build-and-push'
 }
 
-stage('Deploy to Workflow') {
-    // env is already set from "Build and push" stage above
+stage('Deploy to Virginia Workflow') {
+    env.KUBECONFIG = config.deis.virginia.kubeconfig
+    env.DEIS_PROFILE = config.deis.virginia.profile
+    println "Deis profile = ${env.KUBECONFIG}"
+    println "kubeconfig = ${env.DEIS_PROFILE}"
+    sh 'make workflow-create-and-pull'
+}
+
+stage('Deploy to Tokyo Workflow') {
+    env.KUBECONFIG = config.deis.tokyo.kubeconfig
+    env.DEIS_PROFILE = config.deis.tokyo.profile
+    println "Deis profile = ${env.KUBECONFIG}"
+    println "kubeconfig = ${env.DEIS_PROFILE}"
     sh 'make workflow-create-and-pull'
 }
