@@ -2,8 +2,12 @@ pipeline:
   enabled: true
 deis:
   app: viewsourceconf-prod
-  profile: virginia
   bin: deis2
-  domain: virginia.moz.works
-kubernetes:
-  kubeconfig: "/var/lib/jenkins/.kube/virginia.kubeconfig"
+  virginia:
+    profile: virginia
+    domain: virginia.moz.works
+    kubeconfig: "/var/lib/jenkins/.kube/virginia.kubeconfig"
+  tokyo:
+    profile: tokyo
+    domain: tokyo.moz.works
+    kubeconfig: "/var/lib/jenkins/.kube/tokyo.kubeconfig"
