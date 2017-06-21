@@ -9,19 +9,6 @@
             <input type="email" id="email" name="email" class="form_input" required placeholder="you@example.com" size="30">
         </div>
 
-        <fieldset id="newsletter_options" class="form_group">
-            <legend><span class="form_label">I want to hear about...</span></legend>
-            <input type="radio" name="newsletters" value="view-source-conference-global" id="view-source-conference-global" required {% if conference_data.slug == 'berlin' %}checked{% endif %} />
-            <label for="view-source-conference-global" class="form_label form_label-inline">
-                Berlin
-            </label>
-
-            <input type="radio" name="newsletters" value="view-source-conference-north-america" id="view-source-conference-north-america" required {% if conference_data.slug == 'seattle' %}checked{% endif %} />
-            <label for="view-source-conference-north-america" class="form_label form_label-inline">
-                Seattle
-            </label>
-        </fieldset>
-
         <div id="newsletter_privacy" class="form_group form_group-agree">
             <input type="checkbox" id="privacy" name="privacy" required>
             <label for="privacy">
