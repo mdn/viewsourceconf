@@ -37,10 +37,12 @@ header
 
     > li {
         display: inline-block;
-        padding-left: $grid-gutter-width;
+        padding-left: ($grid-gutter-width / 2);
 
         // needs increased specificity
         a:not(.button) {
+            display: inline-block;
+            padding-left: ($grid-gutter-width / 2);
             text-decoration: none;
         }
 
@@ -48,6 +50,10 @@ header
         a:not(.button):focus,
         a:not(.button):active {
             text-decoration: underline;
+        }
+
+        &::before {
+            content: '•';
         }
     }
 }

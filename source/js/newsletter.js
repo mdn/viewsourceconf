@@ -88,7 +88,7 @@
 
         var fmt = document.getElementById('fmt').value;
         var email = document.getElementById('email').value;
-        var newsletter = document.querySelector('input[name="newsletters"]:checked') ? document.querySelector('input[name="newsletters"]:checked').value : '';
+        var newsletter = 'view-source-conference-global';
         var privacy = document.querySelector('input[name="privacy"]:checked') ? '&privacy=true' : '';
         var params = 'email=' + encodeURIComponent(email) +
                      '&newsletters=' + newsletter +
