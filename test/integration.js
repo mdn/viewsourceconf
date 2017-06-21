@@ -9,7 +9,7 @@ const jsyaml = require('js-yaml');
 const fs = require('fs');
 
 const baseURL = process.env.VS_TEST_URL || 'https://viewsourceconf-stage.us-west.moz.works';
-const browser = process.env.VS_TEST_BROWSER || 'firefox';
+const browser = process.env.VS_TEST_BROWSER || 'safari';
 console.log(`Running integration tests against ${baseURL} with ${browser}`);
 
 describe('The site...', function() {
@@ -51,7 +51,7 @@ describe('The site...', function() {
 test.describe('The landing page...', function() {
     this.timeout(10000);
     const url = baseURL;
-    ['berlin-2016'].forEach(function(conference) {
+    ['london-2017'].forEach(function(conference) {
         test.it.skip(`should have a visible link to the ${conference} page`, function(done) {
             const conferenceSelector = `a[href="/${conference}/"]`;
             const driver = new webdriver.Builder().forBrowser(browser).build();
@@ -71,11 +71,11 @@ test.describe('The landing page...', function() {
 test.describe('The conference pages...', function() {
     this.timeout(10000);
 
-    ['berlin-2016'].forEach(function(conference) {
+    ['london-2017'].forEach(function(conference) {
         const url = `${baseURL}/${conference}`;
 
-        test.it(`should have all the session videos on it`, function(done) {
-            const filename = 'source/data/berlin_sessions.yaml';
+        test.it.skip(`should have all the session videos on it`, function(done) {
+            const filename = 'source/data/london_sessions.yaml';
             const videoSelector = '.session_summary iframe';
 
             let doc;
@@ -105,7 +105,7 @@ test.describe('The conference pages...', function() {
             });
         });
 
-        test.it.skip(`should have a visible ${conference} register link`, function(done) {
+        test.it(`should have a visible ${conference} register link`, function(done) {
             const registerSelector = '.hero a[href*="ti.to"]';
             const driver = new webdriver.Builder().forBrowser(browser).build();
             driver.get(url).then(function() {
@@ -230,11 +230,11 @@ test.describe('The conference pages...', function() {
     test.describe('The schedule page...', function() {
         this.timeout(10000);
 
-        ['berlin-2016'].forEach(function(conference) {
+        ['london-2017'].forEach(function(conference) {
             const url = `${baseURL}/${conference}/schedule`;
 
             test.it.skip(`should have all the sessions on it`, function(done) {
-                const filename = 'source/data/berlin_schedule.yaml';
+                const filename = 'source/data/london_schedule.yaml';
                 const sessionSelector = '.session_details';
 
                 let doc;

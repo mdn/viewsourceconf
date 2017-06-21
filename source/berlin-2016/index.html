@@ -1,1 +1,781 @@
-{% extends "../layouts/conference.html" %}
+<!DOCTYPE html>
+<html lang="en-US" class="js-no">
+    <head>
+        <meta name="generator" content="HTML Tidy for HTML5 (experimental) https://github.com/w3c/tidy-html5/tree/c63cc39">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            View Source Berlin • 12-14 September, 2016
+        </title><!--
+................................................................................
+..........................7.........................7...........................
+.........................7...........................7..........................
+........................7.............................7.........................
+.......................7............._===_.............7........................
+......................7............7.......7............7.......................
+.....................7...........7...........7...........7......................
+....................7...........7.............7...........7.....................
+...................7............I.............I............7....................
+..................7.............I.............I.............7...................
+...................7............I.............I............7....................
+....................7...........7.............7...........7.....................
+.....................7...........7...........7...........7......................
+......................7............7=-___-=7............7.......................
+.......................7...............................7........................
+........................7.............................7.........................
+.........................7...........................7..........................
+..........................I.........................I...........................
+................................................................................
+..................."View-source provides a powerful catalyst....................
+....................to creating a culture of shared learning....................
+.............................and learning-by-doing..."..........................
+................................................................................
+..............-Alex Russel, "View-Source is Good? Discuss.", 2010...............
+.........https://infrequently.org/2010/01/view-source-is-good-discuss/..........
+................................................................................
+-->
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <meta name="description" content="View Source is a conference for front-end web developers. Our goal is to provide an in-depth, practical look at current and on-the-horizon technologies, with plenty of opportunities for conversation.">
+        <script>
+(function() {
+        'use strict';
+        var html = document.documentElement;
+        html.className = 'js-yes';
+        })()
+        </script>
+        <script>
+
+            function _dntEnabled(dnt, ua) {
+
+                'use strict';
+
+                var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+                var userAgent = ua || navigator.userAgent;
+
+                var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+                var fxMatch = userAgent.match(/Firefox\/(\d+)/);
+                var ieRegEx = /MSIE|Trident/i;
+                var isIE = ieRegEx.test(userAgent);
+
+                var platform = userAgent.match(/Windows.+?(?=;)/g);
+
+                if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                    return false;
+                } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+
+                    dntStatus = 'Unspecified';
+                } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+
+                    dntStatus = 'Unspecified';
+                } else {
+
+                    dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+                }
+
+                return dntStatus === 'Enabled' ? true : false;
+            }
+
+            if (!window._dntEnabled()) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-35433268-65', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        <title id="vs_logo_h">
+            View Source Conference
+        </title>
+    </head>
+    <body class="berlin">
+        <div class="old">
+            <h1>
+                You are reading about View Source 2016
+            </h1>
+
+            <p>
+                <a href="/">Check out this year's conference</a>
+            </p>
+        </div>
+
+        <header id="header" class="header section section-gradient section-fadeend">
+            <div class="header_body">
+                <a href="" class="header_logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 544 92" width="544" height="92" role="image" aria-labelledby="vs_logo_h">
+                    <path role="presentation" d="M67.9 71c-13.8 0-25-11.2-25-25s11.2-25 25-25 25 11.2 25 25-11.2 25-25 25zm0-47.5c-12.4 0-22.5 10.1-22.5 22.5s10.1 22.5 22.5 22.5S90.4 58.4 90.4 46 80.3 23.5 67.9 23.5zm39.4 66.6l28.5-43.4c.3-.4.3-1 0-1.4L107.3 1.9c-.4-.6-1.2-.7-1.7-.4-.6.4-.7 1.2-.4 1.7l28 42.8-28 42.8c-.4.6-.2 1.4.4 1.7.2.1.4.2.7.2.3 0 .7-.2 1-.6zm-77.1.4c.6-.4.7-1.2.4-1.7L2.5 46l28-42.8c.4-.6.2-1.4-.4-1.7-.6-.4-1.4-.2-1.7.4L0 45.3c-.3.4-.3 1 0 1.4l28.5 43.4c.2.4.6.6 1 .6.3 0 .5-.1.7-.2zM186.3 9.5c.4.1.7.4.9.8.2.4.2.8.1 1.2l-12 34.1-.1.1v.1c0 .1-.1.1-.1.2v.1l-.2.2-.1.1c-.1 0-.1.1-.2.1 0 0-.1 0-.1.1-.1 0-.1.1-.2.1 0 0-.1 0-.2.1H173.5h-.1c-.1 0-.1 0-.2-.1-.1 0-.1-.1-.2-.1 0 0-.1 0-.1-.1-.1 0-.1-.1-.2-.1l-.1-.1-.2-.2c-.1-.1-.1-.1-.1-.2v-.1c0-.1-.1-.1-.1-.1l-12-34.1c-.2-.4-.1-.8.1-1.2.2-.4.5-.7.9-.8.4-.1.8-.1 1.2.1.4.2.6.5.8.9l10.5 30 10.5-30c.1-.4.4-.7.8-.9l.6-.3s.3 0 .7.1zm14 35.6c0 .4-.2.8-.5 1.1-.3.3-.7.5-1.1.5-.4 0-.8-.2-1.1-.5-.3-.3-.5-.7-.5-1.1v-34c0-.4.2-.8.5-1.1.3-.3.7-.5 1.1-.5.4 0 .8.2 1.1.5.3.3.5.7.5 1.1v34zm15.2 1.6c-.4 0-.8-.2-1.1-.5-.3-.3-.5-.7-.5-1.1V10.9c0-.4.2-.8.5-1.1.3-.3.7-.5 1.1-.5l20.6.1c.4 0 .8.2 1.1.5.3.3.5.7.5 1.1 0 .4-.2.8-.5 1.1-.3.3-.7.4-1.1.4H217v14h14.3c.4 0 .8.2 1.1.5.3.3.5.7.5 1.1 0 .4-.2.8-.5 1.1-.3.3-.7.5-1.1.5H217v14h19.1c.4 0 .8.2 1.1.5.3.3.5.7.5 1.1 0 .4-.2.8-.5 1.1-.3.3-.7.5-1.1.5h-20.6zm81.1-37.3c.4.1.7.4.9.8.2.4.2.8.1 1.2l-12 34.2-.1.1v.1c0 .1-.1.1-.1.2l-.2.2-.1.1c-.1 0-.1.1-.2.1l-.1.1c-.1 0-.1.1-.2.1 0 0-.1 0-.2.1H283.8h-.1c-.1 0-.1 0-.2-.1-.1 0-.2-.1-.2-.1s-.1 0-.1-.1c-.1 0-.1-.1-.2-.1l-.1-.1-.2-.2c0-.1-.1-.1-.1-.2l-.1-.1v-.1l-10.5-30-10.5 30-.1.1v.1c0 .1-.1.1-.1.2l-.2.2-.1.1c-.1 0-.1.1-.2.1 0 0-.1 0-.1.1-.1 0-.1.1-.2.1 0 0-.1 0-.2.1H259.7h-.1c-.1 0-.1 0-.2-.1-.1 0-.1-.1-.2-.1 0 0-.1 0-.1-.1-.1 0-.1-.1-.2-.1l-.1-.1-.2-.2c0-.1-.1-.1-.1-.2v-.1c0-.1-.1-.1-.1-.1l-12-34.2c-.2-.4-.1-.8.1-1.2.2-.4.5-.7.9-.8.4-.1.8-.1 1.2.1.4.2.6.5.8.9l10.5 30 10.5-30c0 .1 0 0 .1-.1 0-.1 0-.1.1-.2l.1-.1c0-.1.1-.1.1-.1 0-.1.1-.1.1-.1l.1-.1.1-.1c.1 0 .1-.1.2-.1 0 0 .1 0 .1-.1l.1-.1h.1c.1 0 .1 0 .2-.1H272.5c.1 0 .1 0 .2.1h.2c.1 0 .1 0 .1.1.1 0 .1.1.1.1l.1.1.1.1.1.1.1.1.1.1c0 .1.1.1.1.2.1.1.1.1 0 .1l10.5 30 10.5-30c.1-.4.4-.7.8-.9l.6-.3s.1.2.5.3zM337 29.6c-4.2-.1-7.3-1.2-9.4-3.5-1.7-1.8-2.5-3.9-2.4-6.3.1-2.9 1.3-5.4 3.6-7.4 2.2-2 4.9-3 8-3 2.7 0 5.2.6 7.3 1.7 2.6 1.4 4.2 3.3 4.9 5.9.1.4.1.8-.2 1.2-.2.4-.5.6-1 .7-.4.1-.8.1-1.2-.2-.4-.2-.6-.5-.7-.9-.5-1.8-1.7-3.2-3.6-4.1-1.6-.8-3.5-1.2-5.6-1.2-2.3 0-4.2.7-5.8 2.2s-2.5 3.2-2.6 5.3c-.1 1.5.4 2.8 1.6 4 1.5 1.6 3.9 2.4 7.2 2.5.4 0 .8.2 1.1.5.3.3.4.7.4 1.1 0 .4-.2.8-.5 1.1-.3.2-.7.4-1.1.4zM330.1 45c-2.6-1.4-4.2-3.3-4.9-5.9-.1-.4-.1-.8.2-1.2.2-.4.5-.6 1-.7.4-.1.8-.1 1.2.2.4.2.6.5.7.9.5 1.8 1.7 3.2 3.6 4.1 1.6.8 3.5 1.2 5.6 1.2 2.3 0 4.2-.7 5.8-2.2s2.5-3.2 2.6-5.3c.1-1.5-.4-2.8-1.6-4-1.5-1.6-3.9-2.4-7.2-2.5-.4 0-.8-.2-1.1-.5-.3-.3-.4-.7-.4-1.1 0-.4.2-.8.5-1.1.3-.3.7-.4 1.1-.4 4.2.1 7.3 1.2 9.4 3.5 1.7 1.8 2.5 3.9 2.4 6.2-.1 2.9-1.3 5.4-3.5 7.4s-4.9 3-8 3c-2.8.1-5.2-.5-7.4-1.6zm46.5 1.7c-5.1 0-9.5-1.8-13.2-5.5s-5.5-8-5.5-13.2 1.8-9.5 5.5-13.2 8-5.5 13.2-5.5c5.1 0 9.5 1.8 13.2 5.5s5.5 8 5.5 13.2-1.8 9.5-5.5 13.2-8.1 5.5-13.2 5.5zm0-34.2c-4.3 0-7.9 1.5-11 4.6-3 3-4.5 6.7-4.5 11s1.5 7.9 4.5 11c3 3 6.7 4.5 11 4.5s7.9-1.5 11-4.5c3-3 4.6-6.7 4.6-11s-1.5-7.9-4.6-11c-3.1-3-6.8-4.6-11-4.6zm54-3c.4 0 .8.1 1.1.4.3.3.4.7.4 1.1v22.9c0 3.5-1.2 6.5-3.7 9s-5.5 3.7-9 3.7-6.5-1.2-9-3.7-3.7-5.5-3.7-9V11c0-.4.1-.8.4-1.1.3-.3.7-.4 1.1-.4.4 0 .8.1 1.1.4.3.3.4.7.4 1.1v22.9c0 2.7 1 5 2.9 6.9 1.9 1.9 4.2 2.9 6.9 2.9s5-1 6.9-2.9c1.9-1.9 2.9-4.2 2.9-6.9V11c0-.4.1-.8.4-1.1.2-.2.5-.4.9-.4zm28.2 0c3 0 5.6 1 7.7 2.9 2.1 2 3.2 4.3 3.2 7.1 0 2.5-.9 4.6-2.6 6.5-1.7 1.9-3.8 3-6.4 3.4l7.4 15.1c.2.4.2.8.1 1.2-.1.4-.4.7-.8.9-.2.1-.4.2-.7.2-.6 0-1.1-.3-1.4-.9l-8-16.3h-8.7v15.3c0 .4-.2.8-.5 1.1-.3.3-.7.4-1.1.4-.4 0-.8-.1-1.1-.4-.3-.3-.4-.7-.4-1.1V11c0-.4.1-.8.4-1.1.3-.3.7-.4 1.1-.4h11.8zm7.7 10c0-1.9-.8-3.6-2.3-4.9-1.5-1.4-3.4-2.1-5.5-2.1h-10.2v13.9h10.4c2.1 0 3.9-.7 5.4-2.1 1.5-1.3 2.2-2.9 2.2-4.8zm30.1 27.2c-5.1 0-9.5-1.8-13.2-5.5-3.7-3.6-5.5-8-5.5-13.2 0-5.2 1.8-9.6 5.5-13.2 3.6-3.7 8-5.5 13.2-5.5 4.2 0 8 1.3 11.4 3.9.3.3.5.6.6 1 .1.4-.1.8-.3 1.1-.3.3-.6.5-1 .6-.4.1-.8 0-1.1-.3-2.8-2.1-5.9-3.2-9.5-3.2-4.3 0-7.9 1.5-11 4.5-3 3-4.5 6.7-4.5 11s1.5 7.9 4.5 11c3 3 6.7 4.5 11 4.5 4 0 7.5-1.3 10.5-4 .3-.3.7-.4 1.1-.4.4 0 .8.2 1.1.5.3.3.4.7.4 1.1 0 .4-.2.8-.5 1.1-3.6 3.4-7.8 5-12.7 5zm25 0c-.4 0-.8-.2-1.1-.5-.3-.3-.5-.7-.5-1.1V10.9c0-.4.2-.8.5-1.1.3-.3.7-.5 1.1-.5l20.6.1c.4 0 .8.2 1.1.5.3.3.5.7.5 1.1 0 .4-.2.8-.5 1.1-.3.3-.7.4-1.1.4l-19.1-.1v14h14.3c.4 0 .8.2 1.1.5.3.3.5.7.5 1.1 0 .4-.2.8-.5 1.1-.3.3-.7.5-1.1.5h-14.3v14h19.1c.4 0 .8.2 1.1.5.3.3.5.7.5 1.1 0 .4-.2.8-.5 1.1-.3.3-.7.5-1.1.5h-20.6zM165.7 67.6c1.3 0 2.3.4 3.2 1.3.9.8 1.3 1.8 1.3 3s-.4 2.2-1.3 3c-.9.8-1.9 1.3-3.1 1.3h-3.2v4.9c0 .3-.1.6-.3.8-.2.2-.5.4-.9.4-.3 0-.6-.1-.8-.4-.2-.2-.4-.5-.4-.8V68.8c0-.3.1-.6.4-.8.2-.2.5-.4.8-.4h4.3zm.1 6.2c.6 0 1.1-.2 1.5-.6.4-.4.6-.8.6-1.3s-.2-1-.6-1.3c-.4-.4-.9-.6-1.5-.6h-3.1v3.7h3.1zm19.7-1.9c0 .9-.3 1.7-.8 2.4s-1.2 1.2-2.1 1.5l2.3 4.7c.1.3.2.6.1.9-.1.3-.3.5-.6.7-.2.1-.3.1-.5.1-.5 0-.9-.2-1.1-.7l-2.7-5.5H178v5c0 .3-.1.6-.4.8-.2.2-.5.3-.8.3-.3 0-.6-.1-.8-.3-.2-.2-.3-.5-.3-.8V68.9c0-.3.1-.6.3-.8.2-.2.5-.4.8-.4h4.2c1.3 0 2.3.4 3.2 1.2.9.8 1.3 1.8 1.3 3zm-4.4 1.9c.6 0 1.1-.2 1.5-.6.4-.4.6-.8.6-1.3s-.2-1-.6-1.3c-.4-.4-.9-.5-1.5-.5h-3v3.7h3zm18.6 6.1c.3 0 .6.1.8.4.2.2.4.5.4.9s-.1.6-.4.8c-.2.2-.5.4-.8.4h-7.4c-.3 0-.6-.1-.8-.4-.2-.2-.4-.5-.4-.8V68.9c0-.3.1-.6.4-.9.2-.2.5-.4.8-.4h7.4c.3 0 .6.1.9.4.2.2.3.5.3.9s-.1.6-.4.8c-.2.2-.5.4-.8.4h-6.2v3.7h4.5c.3 0 .6.1.9.3.2.2.4.5.4.9s-.1.6-.4.9c-.2.2-.5.3-.9.3h-4.5v3.7h6.2zm15.7-1.9c-.1 1.2-.5 2.3-1.5 3.1-.9.8-2 1.3-3.3 1.3-1.1 0-2.1-.2-3-.7-1.1-.6-1.7-1.4-2-2.5-.1-.3 0-.6.1-.9.2-.3.4-.5.7-.6.3-.1.6 0 .9.1.3.2.5.4.6.7.1.5.5.8 1 1.1.5.2 1 .3 1.7.3.6 0 1.2-.2 1.6-.6.5-.4.7-.9.7-1.5 0-.4-.1-.7-.4-1-.4-.4-1.1-.7-2.1-.7-1.7 0-2.9-.5-3.8-1.4-.7-.8-1.1-1.7-1-2.7.1-1.2.5-2.3 1.5-3.1.9-.8 2-1.3 3.3-1.3 1.1 0 2.1.2 3 .7 1.1.6 1.7 1.4 2 2.5.1.3 0 .6-.1.9-.2.3-.4.5-.7.6-.3.1-.6 0-.9-.1-.3-.2-.5-.4-.6-.7-.1-.5-.5-.8-1-1.1-.5-.2-1-.3-1.7-.3-.6 0-1.2.2-1.7.6-.5.4-.7.9-.7 1.5 0 .4.1.7.4 1 .4.4 1.1.7 2.1.7h.1c1.7 0 2.9.5 3.8 1.5.7.6 1 1.5 1 2.6zm14.5 1.9c.3 0 .6.1.8.4.2.2.4.5.4.9s-.1.6-.4.8c-.2.2-.5.4-.8.4h-7.4c-.3 0-.6-.1-.8-.4-.2-.2-.4-.5-.4-.8V68.9c0-.3.1-.6.4-.9.2-.2.5-.4.8-.4h7.4c.3 0 .6.1.9.4.2.2.3.5.3.9s-.1.6-.4.8c-.2.2-.5.4-.8.4h-6.2v3.7h4.5c.3 0 .6.1.9.3.2.2.4.5.4.9s-.1.6-.4.9c-.2.2-.5.3-.9.3h-4.5v3.7h6.2zm16.3 2l-7.4-9.5v8.7c0 .3-.1.6-.4.8-.2.2-.5.4-.8.4-.3 0-.6-.1-.8-.4-.2-.2-.4-.5-.4-.8V68.9c0-.3.1-.5.2-.7.1-.2.3-.4.6-.4.2-.1.5-.1.7 0 .2.1.4.2.6.4l7.4 9.5V69c0-.3.1-.6.3-.8.2-.2.5-.4.9-.4.3 0 .6.1.8.4.2.2.4.5.4.8V82.5h-.1c-.1 0-.1.1-.2.1s-.1.1-.2.1h-.4-.1-.1-.1-.1-.1l-.1-.1-.1-.1-.5-.6zm11.5-11.8h-3c-.3 0-.6-.1-.9-.4-.2-.2-.3-.5-.3-.8s.1-.6.3-.8c.2-.2.5-.4.9-.4h8.5c.3 0 .6.1.8.4.2.2.3.5.3.8s-.1.6-.3.8c-.2.2-.5.4-.8.4h-3v11.1c0 .3-.1.6-.4.9-.2.2-.5.3-.8.3-.3 0-.6-.1-.8-.3-.2-.2-.4-.5-.4-.9V70.1zm20 9.8c.3 0 .6.1.8.4.2.2.4.5.4.9s-.1.6-.4.8c-.2.2-.5.4-.8.4h-7.4c-.3 0-.6-.1-.8-.4-.2-.2-.4-.5-.4-.8V68.9c0-.3.1-.6.4-.9.2-.2.5-.4.8-.4h7.4c.3 0 .6.1.9.4.2.2.3.5.3.9s-.1.6-.4.8c-.2.2-.5.4-.8.4h-6.2v3.7h4.5c.3 0 .6.1.9.3.2.2.4.5.4.9s-.1.6-.4.9c-.2.2-.5.3-.9.3h-4.5v3.7h6.2zm7.7 2.4c-.3 0-.6-.1-.8-.3-.2-.2-.4-.5-.4-.9V68.9c0-.3.1-.6.4-.9.2-.2.5-.3.8-.3h3.1c2 0 3.7.7 5.2 2.1 1.4 1.4 2.1 3.2 2.1 5.2s-.7 3.7-2.1 5.2c-1.4 1.4-3.2 2.1-5.2 2.1h-3.1zm1.2-2.4h1.9c1.4 0 2.5-.5 3.5-1.4 1-1 1.4-2.1 1.4-3.5 0-1.3-.5-2.5-1.4-3.4-1-1-2.1-1.4-3.5-1.4h-1.9v9.7zm23.4 2.4c-.3 0-.6-.1-.8-.4-.2-.2-.4-.5-.4-.8V68.9c0-.3.1-.6.3-.8.2-.2.5-.4.8-.4h4.3c1.3 0 2.4.4 3.3 1.2.9.8 1.3 1.8 1.3 3 0 1.1-.4 2.1-1.3 3 1 .8 1.5 1.9 1.5 3.2 0 1.2-.4 2.2-1.3 3-.9.8-2 1.3-3.2 1.3H310zm1.2-8.5h3.1c.6 0 1.1-.2 1.5-.6.4-.4.6-.8.6-1.3s-.2-.9-.6-1.3c-.4-.4-.9-.5-1.5-.5h-3.1v3.7zm0 6.1h3.3c.6 0 1.1-.2 1.5-.6.4-.4.6-.8.6-1.3s-.2-.9-.6-1.3c-.4-.4-.9-.5-1.5-.5H311.1v3.7zm24-11.9c.3.2.4.5.4.8 0 .3-.1.6-.3.9l-4.4 5.5v5.9c0 .3-.1.6-.4.9-.2.2-.5.3-.8.3-.3 0-.6-.1-.8-.3-.2-.2-.4-.5-.4-.9v-5.9l-4.4-5.5c-.2-.3-.3-.6-.3-.9 0-.3.2-.6.4-.8.3-.2.6-.3.9-.3.3 0 .6.2.8.4l3.8 4.7 3.8-4.7c.2-.3.5-.4.8-.4.3 0 .6.1.9.3zM350 67.4c.3.4.4.7.5 1.5 1-1 2.2-1.5 3.6-1.5 1.2 0 2.2.4 3 1.2.2.2.4.5.6.7 1.3-1.4 2.5-1.9 4.2-1.9 1.1 0 2.2.3 2.9.9.8.7 1.1 1.6 1.1 3.6v10.4h-3.7v-9.7c0-1.8-.2-2.1-1.2-2.1-.7 0-1.7.5-2.6 1.2v10.6h-3.6v-9.6c0-1.8-.3-2.3-1.3-2.3-.7 0-1.7.4-2.5 1.1v10.7h-3.8V72.1c0-2.1-.1-3-.5-3.8l3.3-.9zm29.6 2.2c1.2 1.4 1.7 3 1.7 5.4 0 2.5-.6 4.2-1.8 5.7-1.1 1.3-2.6 2-4.8 2-4 0-6.6-3-6.6-7.6s2.6-7.7 6.6-7.7c2 0 3.6.7 4.9 2.2zm-7 2.1c-.3.8-.4 1.8-.4 3.3 0 1.7.2 3 .5 3.7.3.8 1.2 1.2 1.9 1.2 1.7 0 2.4-1.5 2.4-5 0-2-.3-3.3-.8-3.9-.4-.5-1-.8-1.7-.8-.8 0-1.5.6-1.9 1.5zm21-4v2.6l-6.5 9.4h6.7l-.9 2.7h-10.8V80l6.9-9.6h-6.3v-2.7h10.9zm6.5-4.1c0 1.3-1.1 2.4-2.4 2.4-1.3 0-2.3-1.1-2.3-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.3 1.1 2.3 2.4zm-.4 3.7v15h-3.8V67.9l3.8-.6zm7-2.4v11.4c0 2.5 0 2.9.3 3.3.1.3.5.4.8.4.1 0 .2 0 .4-.1l.7 2.3c-.7.3-1.5.4-2.3.4-1.6 0-3-.8-3.4-2-.3-.7-.4-1.2-.4-3.3v-11c0-1.9 0-3.1-.2-4.4l3.9-.9c.1.9.2 1.9.2 3.9zm7.9 0v11.4c0 2.5 0 2.9.3 3.3.1.3.4.4.8.4.1 0 .2 0 .4-.1l.7 2.3c-.7.3-1.5.4-2.3.4-1.6 0-3-.8-3.4-2-.3-.7-.3-1.2-.3-3.3v-11c0-1.9-.1-3.1-.2-4.4l3.9-.9c.1.9.1 1.9.1 3.9zm6.1 3.3c1.4-.6 2.7-.9 4-.9 2.5 0 4.2.9 4.7 2.6.2.6.3 1.1.3 2.6l-.1 4.9v.3c0 1.6.3 2.2 1.4 3l-2 2.4c-.9-.4-1.7-1-2.1-1.8-.3.3-.6.6-.9.8-.7.5-1.8.8-3 .8-3.3 0-5-1.7-5-4.6 0-3.4 2.4-5.1 7.1-5.1h.9v-.6c0-1.6-.3-2.2-1.7-2.2-1.2 0-2.7.6-4.2 1.7l-1.6-2.8c.6-.4 1.1-.7 2.2-1.1zm4.9 7.7c-2.7 0-3.6.5-3.6 2.2 0 1.1.7 1.9 1.7 1.9.7 0 1.4-.4 2-1l.1-3.2h-.2z">
+                    </path>
+                </svg></a>
+                <ul class="header_links">
+                    <li>
+                        <a href="http://twitter.com/viewsourceconf" target="_blank">@viewsourceconf</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="section section-invert">
+            <div class="hero">
+                <div class="hero_body">
+                    <h1>
+                        Mozilla's View Source
+                    </h1>
+
+                    <p>
+                        Through View Source events, Mozilla brings together visionary speakers and companies to explore new frontiers in the open web. Let’s explore the possibilities from both technical and design perspectives, across all platforms and devices. Learn how you can be part of this collaborative network of likeminded people.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="session_videos">
+            <div class="section">
+                <div class="section section-grid">
+                    <div class="section_body">
+                        <h1>
+                            Berlin 2016 Sessions
+                        </h1>
+
+                        <section id="2" class="session_day">
+                            <h3 id="day_2" class="session_day_header">
+                                <span class="session_day_header_date">13 September, 2016</span>
+                            </h3>
+
+                            <div id="day_2_sessions" class="session_day_sessions" data-date="2016-09-13">
+                                <div class="session">
+                                    <div id="opening-keynote" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/hadley-beeman"><img src="assets/images/speakers/hadleybeeman.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details session_details-keynote">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/hadley-beeman" class="session_speaker">Hadley Beeman</a></span> <span class="session_title">Opening Keynote: State of the Web</span>
+                                                </h4>
+
+                                                <div id="opening-keynote_summary" class="session_summary js-hidden">
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/hadley-beeman/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="design-for-non-designers" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/tracy-osborn"><img src="assets/images/speakers/tracyday.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/tracy-osborn" class="session_speaker">Tracy Osborn</a></span> <span class="session_title">Design for Non-Designers</span>
+                                                </h4>
+
+                                                <div id="design-for-non-designers_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        Not everyone can hire a professional designer for their websites and web apps, but we all still want our interfaces to be easy to use and attractive. However, if you want to learn a bit of design, design books jump straight into concepts like "the golden ratio" and teach proper typographic terms which, to be frank, aren't needed if you're just looking to improve your website's look and feel.
+                                                    </p>
+
+                                                    <p>
+                                                        This talk will cover the top quick ways to improve your website, covering both user experience as well as visual design. Quick hits, easy to understand and utilize principles that anyone can use to improve their design skills. Perhaps you too can become the next designer+developer unicorn!
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/tracy-osborn/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="inclusive-markup" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/estelle-weyl"><img src="assets/images/speakers/estelleweyl.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/estelle-weyl" class="session_speaker">Estelle Weyl</a></span> <span class="session_title">Inclusive Markup</span>
+                                                </h4>
+
+                                                <div id="inclusive-markup_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        Accessibility is the law and a good idea. Let's make the Web accessible and fast for everyone. We'll skip "why" and focus on "how." Accessibility can be as simple as using the right semantic elements in your HTML. Semantic HTML can prevent bugs, improve performance, reduce code bloat, and make your site accessible to screen readers and keyboard users. We'll explores accessibility features native to semantic elements, adding a sprinkling of ARIA roles and attributes. Form controls, input masking, styleable selects, and carousels with a few lines of CSS, fewer lines of JS and no frameworks.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/estelle-weyl/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="css-framework" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/belen-albeza"><img src="assets/images/speakers/belenalbeza.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/belen-albeza" class="session_speaker">Belen Albeza</a></span> <span class="session_title">You might not need a CSS framework</span>
+                                                </h4>
+
+                                                <div id="css-framework_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        Nowadays it is very common to find CSS frameworks like Bootstrap used everywhere. But they come at a cost, paid in big CSS files, styles that don't get used, and a hard to maintain code base.  
+                                                    </p>
+
+                                                    <p>
+                                                        In this presentation we will talk about why using a third-party framework might not be the right choice for your project, be it a theme or a custom website. We will also see techniques to craft a blog theme without frameworks, from layout to individual UI components.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/belen-albeza/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="node-releases" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/myles-borins"><img src="assets/images/speakers/mylesborins.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/myles-borins" class="session_speaker">Myles Borins</a></span> <span class="session_title">Node.js Releases</span>
+                                                </h4>
+
+                                                <div id="node-releases_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        Node.js is growing up, and with that comes the responsibility of proper legacy support. As of Node.js Argon (v4.2.0) there is an official Long Term Support release cycle that lasts for 30 months!
+                                                    </p>
+
+                                                    <p>
+                                                        How does a project moving at the pace of node maintain multiple release lines? How does a commit get backported? How is a release actually made? You will learn all this and more on this weeks episode of "Node.js Releases, how do they work?"
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/myles-borins/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="typography" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/helen-holmes"><img src="assets/images/speakers/helenvholmes.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/helen-holmes" class="session_speaker">Helen Holmes</a></span> <span class="session_title">Type is Your Right!: Performance and Web Typography</span>
+                                                </h4>
+
+                                                <div id="typography_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        As front end developers, we <em>own</em> performance. As designers, we own typography. So how do you handle the tricky intersection of beautiful web typography and performant web pages? I'll be showing the audience OpenType features, explaining why they're important to typefaces, and explaining the tradeoffs they have on performance. We'll go over how to enable OpenType features and how you can optimize your font files for the web whether you own them and serve them up through @font-face or through Typekit so you can feel confident serving up gorgeous typography on your sites.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/helen-holmes/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="es6" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/dan-shappir"><img src="assets/images/speakers/danshappir.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/dan-shappir" class="session_speaker">Dan Shappir</a></span> <span class="session_title">Things You Can Do In ES6 That Can't Be Done In ES5</span>
+                                                </h4>
+
+                                                <div id="es6_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        ES6 and ES7 introduce many new features and capabilities to the JavaScript language. And yet, the majority of these enhancements are essentially syntactic sugar over the previous version. This is why tools like Babel are able to convert ES6 code into ES5. But there are several new features that can't be implemented in ES5.
+                                                    </p>
+
+                                                    <p>
+                                                        In this session I'll explain what these new features are, what they do, and why they were added to the language.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/dan-shappir/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="resilience" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/jeremy-keith"><img src="assets/images/speakers/jeremykeith.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details session_details-keynote">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/jeremy-keith" class="session_speaker">Jeremy Keith</a></span> <span class="session_title">Closing Keynote: Resilience</span>
+                                                </h4>
+
+                                                <div id="resilience_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        Web browsers have become so powerful that developers are now treating them as if they were a runtime environment as predictable as any other. But the truth is that we still need to deal with many unknown factors that torpedo our assumptions. The web is where Postel’s Law meets Murphy’s Law, so we can’t treat web development as if it were just another flavour of software. Instead we must work with the grain of the web.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/jeremy-keith/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="3" class="session_day">
+                            <h3 id="day_3" class="session_day_header">
+                                <span class="session_day_header_date">14 September, 2016</span>
+                            </h3>
+
+                            <div id="day_3_sessions" class="session_day_sessions" data-date="2016-09-14">
+                                <div class="session">
+                                    <div id="coping" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/lena-reinhard"><img src="assets/images/speakers/lenareinhard.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details session_details-keynote">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/lena-reinhard" class="session_speaker">Lena Reinhard</a></span> <span class="session_title">Opening Keynote: Existing in Tech</span>
+                                                </h4>
+
+                                                <div id="coping_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        Over the past few years, several CSS methodologies and JavaScript frameworks have been released. In one year, we receive 32,120 business emails. Every weekday, we're active on Slack for 2 hours 15 minutes. Technology is moving fast, and constantly, there's so much going on. We constantly have to adapt in an ever-changing environment, while somehow still doing our job of building proper, functioning software to the latest tight-super-unrealistic deadline.
+                                                    </p>
+
+                                                    <p>
+                                                        This talk will look at the human side of our daily work in technology. Together, we will examine which factors affect us physically and emotionally in our work. We'll learn how they lead to pressure, stress, self-consciousness and ultimately burnout, and we'll find out how to identify early warning signs of being affected. You'll leave with a realistic look at your own, human capabilities, and the knowledge of what you can do to take care of yourself while working on software.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/lena-reinhard/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="layout" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/rachel-andrew"><img src="assets/images/speakers/rachelandrew.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/rachel-andrew" class="session_speaker">Rachel Andrew</a></span> <span class="session_title">Laying out the future with Grid and Flexbox</span>
+                                                </h4>
+
+                                                <div id="layout_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        It is 2016. CSS is now 20 years old, and it has taken this long for us to get a true layout system designed for web pages and applications. A layout system, not based on hacking properties designed for something else entirely, but one that considers the reality of design for the web today.
+                                                    </p>
+
+                                                    <p>
+                                                        In this talk I’ll introduce this new layout system, a system encompassing Flexbox, CSS Grid Layout and the Box Alignment Module. We’ll take a look at the mindset shift needed to really take advantage of these modules, and also consider what they mean in terms of accessibility and performance.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/rachel-andrew/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="pwa" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/chris-wilson"><img src="assets/images/speakers/chriswilson.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/chris-wilson" class="session_speaker">Chris Wilson</a></span> <span class="session_title">Progressive Web Apps is the new Ajax</span>
+                                                </h4>
+
+                                                <div id="pwa_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        This is a transformative moment for the web. The revolution that is happening now is no less revolutionary than what happened a decade ago with Ajax - we can finally build reliable, fast and engaging apps on web technologies. In this talk, I'll dive into the what, why and how of Progressive Web Apps - describe what a "Progressive Web App" really is, show the opportunities in building them, and point you on your way to becoming a Progressive Web App developer.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/chris-wilson/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="design-css" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/jen-simmons"><img src="assets/images/speakers/jensimmons.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/jen-simmons" class="session_speaker">Jen Simmons</a></span> <span class="session_title">Revolutionize Your Page: Real Art Direction on the Web</span>
+                                                </h4>
+
+                                                <div id="design-css_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        We finally have the tools necessary to create amazing page designs on the web. Now we can art direct our layouts, leveraging the power and tradition of graphic design.
+                                                    </p>
+
+                                                    <p>
+                                                        In this eye-opening talk, Jen will explore concrete examples of an incredible range of new possibilities. She’ll walk through a step-by-step design process for figuring out how to create a layout as unique as your content. You’ll learn how Flexbox, Grid, Shapes, Multicolumn, Viewport Units, and more can be combined together to revolutionize how you approach the page — any page.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/jen-simmons/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="compatibility" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/mike-taylor"><img src="assets/images/speakers/miketaylor.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/mike-taylor" class="session_speaker">Mike Taylor</a></span> <span class="session_title">Doing the Unstuck: How to make browsers compatible with the web</span>
+                                                </h4>
+
+                                                <div id="compatibility_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        What does it mean for JavaScript and CSS to be — or not to be — compatible with the web?
+                                                    </p>
+
+                                                    <p>
+                                                        Is it possible for a site written today to continue to work in 10 years? Likewise, could existing code complicate adding language features or fixing mistakes in web APIs?
+                                                    </p>
+
+                                                    <p>
+                                                        In this talk I'll discuss the issues that arise when browsers attempt to clean up the web platform, either by adding new language features and DOM APIs or removing old ones — while attempting to remain backwards compatible. I'll even talk about some controversial moves made by browsers to support non-standard (cough webkit prefixes) CSS and JS.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/mike-taylor/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="offline-first" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/ola-gasidlo"><img src="assets/images/speakers/olagasidlo.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/ola-gasidlo" class="session_speaker">Ola Gasidlo</a></span> <span class="session_title">I'm offline, cool! What now?</span>
+                                                </h4>
+
+                                                <div id="offline-first_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        We learned a lot about the offline first concept in the past two years including Service Worker, CouchDB etc.
+                                                    </p>
+
+                                                    <p>
+                                                        Did we do everything already to make our applications offline first? Is caching the resources enough? Did we answer all the questions already and if not… What are the new questions we need to answer?
+                                                    </p>
+
+                                                    <p>
+                                                        In this talk, I’ll show you what has changed in the last few years, how people did adapt the concept and what are the best practices.
+                                                    </p>
+
+                                                    <p>
+                                                        And most importantly, can offline first help to save lives?
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/ola-gasidlo/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="webvr" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/dominique-hazael-massieux"><img src="assets/images/speakers/dominiquehazael-massieux.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/dominique-hazael-massieux" class="session_speaker">Dominique Hazael-Massieux</a></span> <span class="session_title">Web, meet Virtual Reality</span>
+                                                </h4>
+
+                                                <div id="webvr_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        A combination of improvements in hardware and software capabilities has resulted in a lot of excitement around virtual reality experiences. In this session, we will explore how many of these improved capabilities are supported in modern browsers, and why the Web provides a promising pre-existing ecosystem for creating, distributing and experiencing virtual reality content, applications, and services.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/dominique-hazael-massieux/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="session">
+                                    <div id="closing-keynote" class="cols">
+                                        <div class="col col-1">
+                                            <div class="session_pic">
+                                                <a href="speakers/robert-nyman"><img src="assets/images/speakers/robertnyman.jpg" height="400" width="400"></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col col-5">
+                                            <div class="session_details session_details-keynote">
+                                                <h4 class="session_head">
+                                                    <span class="session_speakers"><a href="speakers/robert-nyman" class="session_speaker">Robert Nyman</a></span> <span class="session_title">Closing Keynote: The Future of the Web – Progressive Web Apps and Beyond</span>
+                                                </h4>
+
+                                                <div id="closing-keynote_summary" class="session_summary js-hidden">
+                                                    <p>
+                                                        Progressive Web Apps is more or less almost the entire web story that we're working on. It includes Service Workers, Push and more, but also for future APIs and possibilities like Payments, Credential Management, Web Bluetooth and such. Let's take a bird's-eye view on the web platform with new features, how it fits in and relates to native mobile platforms, and where it's going and how to make sure it stays relevant.
+                                                    </p>
+
+                                                    <div class="intrinsic">
+                                                        <iframe src="https://air.mozilla.org/robert-nyman/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sponsors">
+            <div class="section">
+                <div class="section_body">
+                    <div class="sponsors">
+                        <h2 class="sponsors_title">
+                            Sponsors
+                        </h2>
+                        <a class="sponsor" href="http://google.com"><img alt="Google" src="assets/images/sponsors/google_logo.png"></a> <a class="sponsor" href="http://github.com"><img alt="GitHub" src="assets/images/sponsors/github_logo.png"></a> <a class="sponsor" href="https://www.w3.org"><img alt="W3C" src="assets/images/sponsors/w3c_logo.png"></a> <a class="sponsor" href="http://www.digitalmediawomen.de/"><img alt="Digital Media Women" src="assets/images/sponsors/dmw_logo.png"></a> <a class="sponsor" href="http://berlinvalley.com/"><img alt="Berlin Valley" src="assets/images/sponsors/berlinvalley_logo.png"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-grid">
+            <div class="section_body">
+                <div class="cols cols-third">
+                    <div class="col">
+                        <p>
+                            <img alt="An audience watching the stage at View Source 2015." src="assets/images/vs_2015_crowd.jpg">
+                        </p>
+                    </div>
+
+                    <div class="col col-x2">
+                        <h2>
+                            Previous Events
+                        </h2>
+
+                        <p>
+                            Our first View Source Conference was held in Portland, Oregon, November 1-3, 2015. More than 400 front-end developers, designers, and industry leaders came together to discuss the web of today and explore the possibilities of the web of tomorrow.
+                        </p>
+
+                        <p>
+                            <a href="/2015/" class="button">See View Source 2015</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="strip">
+        </div>
+
+        <section class="section section-night">
+            <div class="section_body">
+                <div class="solo">
+                    <h2>
+                        About Mozilla
+                    </h2>
+
+                    <p>
+                        Founded in 1998, Mozilla is best known for the Firefox browser, used by hundreds of millions of Internet citizens globally, across various devices and platforms.
+                    </p>
+
+                    <p>
+                        As a non-profit, Mozilla works to empower all Internet consumers to also be producers, equipping them with tools, platforms, documentation, community and other resources. We also care deeply about open standards and platforms that are accessible to everyone, no matter where they are or what browser they choose.
+                    </p>
+
+                    <p>
+                        Read our <a href="https://www.mozilla.org/en-US/about/manifesto/">Manifesto</a> to learn more about the principles that guide our mission.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer" class="section section-invert">
+            <div class="footer_body">
+                <ul class="footer_links">
+                    <li>
+                        <a href="code-of-conduct/">Code of Conduct</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/privacy/" target="_blank">Privacy</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/about/legal/terms/mozilla/" target="_blank">Legal</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/privacy/websites/#cookies/" target="_blank">Cookies</a>
+                    </li>
+
+                    <li>
+                        <a href="mailto:viewsource-info@mozilla.com" target="_blank">Contact Us</a>
+                    </li>
+                </ul>
+
+                <ul class="footer_social">
+                    <li class="footer_social_twitter">
+                        <a href="http://twitter.com/viewsourceconf" target="_blank">@ViewSourceConf</a>
+                    </li>
+
+                    <li class="footer_social_facebook">
+                        <a href="https://www.facebook.com/events/1726468307566424/" target="_blank">Facebook</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <script>
+(function(v,i,e,w) {
+            'use strict';
+
+            // let's see if this browser can handle our scripts
+            // https://sixtwothree.org/posts/cutting-the-mustard-revisited
+            // IE 11 and up
+            if ('devicePixelRatio' in v) {
+                // load site script
+                v.vs = {};
+
+                (function(){
+                    var s = i.createElement(e);
+                    s.async = true;
+                    s.src = w;
+                    var r = i.getElementsByTagName(e)[0];
+                    r.parentNode.insertBefore(s, r);
+                })();
+
+            } else {
+                // or not
+                var c = i.documentElement;
+                c.className = 'js-yes js-siteno';
+            }
+
+        })(window, document, 'script', 'js/main.js');
+
+        </script>
+    </body>
+</html>

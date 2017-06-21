@@ -13,7 +13,7 @@
                     '/{{ fingerprint['js/main.js'] }}',
                     '/{{ fingerprint['stylesheets/style.css'] }}',
                     '/offline/',
-                    '/berlin-2016/'
+                    '/london-2017/'
                 ]);
             }).catch(function() {
                 // problem with loading something, now what?
@@ -66,9 +66,9 @@
                     redirect: request.redirect
                 });
             }
-            // redirect requests for homepage to /berlin-2016/
+            // redirect requests for homepage to /london-2017/
             if(request.url == '/') {
-                return Response.redirect('/berlin-2016/', '307');
+                return Response.redirect('/london-2017/', '307');
             }
             event.respondWith(
                 fetch(request)

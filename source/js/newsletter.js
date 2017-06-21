@@ -5,7 +5,7 @@
 ;(function() {
     'use strict';
 
-    if(!window.vs.js){ return; }
+    if(!window.vs.js) { return; }
 
     // !! this file assumes only one signup form per page !!
 
@@ -73,6 +73,7 @@
 
     // XHR subscribe; handle errors; display thanks message on success.
     function newsletterSubscribe(evt) {
+        console.log('submitted');
         var skipXHR = newsletterForm.getAttribute('data-skip-xhr');
         if (skipXHR) {
             return true;

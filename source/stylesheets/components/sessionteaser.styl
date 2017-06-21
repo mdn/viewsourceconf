@@ -1,0 +1,118 @@
+@require 'includes/variables'
+@require 'includes/extends'
+/*
+sessionteaser
+====================================================================== */
+
+$sessionteaser_image = 100px;
+
+.sessionteaser {
+    min-height: $sessionteaser_image;
+    padding: $grid-gutter-width;
+    margin-bottom: ($grid-gutter-width / 2);
+    background-color: $berlin-background;
+    @extends $clearfix
+}
+
+.sessionteaser .sidecol_side {
+    width: $sessionteaser_image;
+}
+
+.sessionteaser_pic {
+    display: flex;
+    width: $sessionteaser_image;
+    margin-bottom: 10px;
+
+    > a {
+        min-width: 0; /* http://stackoverflow.com/questions/31967019/max-width-doesnt-work-in-flexbox  */
+        overflow: hidden;
+    }
+}
+
+.sessionteaser_head {
+    margin-top: -0.3em; /* makes it even with top of image */
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.sessionteaser_speakers {
+    display: block;
+}
+
+.sessionteaser_speaker {
+    display: block;
+}
+
+.sessionteaser_title {
+    display: block;
+    color: $berlin-text;
+    line-height: 1.24;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+
+        .sessionteaser_cta {
+             text-decoration: underline;
+        }
+    }
+}
+
+.sessionteaser_title_spacer {
+    display: none;
+}
+
+.sessionteaser_cta {
+    display: block;
+    color: $berlin-secondary;
+}
+
+@media $media-query-320-and-up {
+    .sessionteaser_pic {
+        float: right;
+        flex-direction: column;
+        margin-left: $grid-gutter-width;
+    }
+}
+
+@media $media-query-680-and-up {
+    .sessionteaser_speaker {
+        display: inline;
+
+        &::before {
+            content: "• ";
+            color: $berlin-text;
+        }
+
+        &:first-child::before {
+            content: "";
+        }
+    }
+
+    .sessionteaser_pic {
+        float: none;
+        width: auto;
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .sessionteaser_title_spacer,
+    .sessionteaser_cta {
+        display: inline;
+    }
+}
+
+@media $media-query-960-and-up {
+    .sessionteaser {
+        padding: $grid-gutter-width;
+    }
+
+    .sessionteaser .sidecol_side {
+        margin-right: $grid-gutter-width;
+    }
+
+    .sessionteaser_title {
+        line-height: $heading-line-height;
+    }
+}

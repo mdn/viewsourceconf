@@ -61,6 +61,7 @@ metalsmith(__dirname)
     .use(filenames())
     // Restrict the files we transform to a pattern; don't transform 2015.
     .use(branch('!2015/**/*')
+    .use(branch('!berlin-2016/**/*')
     .use(branch('!assets/**/*')
         // Also put stuff from source/data into collections.
         .use(json_to_files({
@@ -78,11 +79,7 @@ metalsmith(__dirname)
         .use(metadata({
             conferences: 'data/conferences.yaml',
             navigation: 'data/navigation.yaml',
-            berlin_schedule: 'data/berlin_schedule.yaml',
-            berlin_sessions: 'data/berlin_sessions.yaml',
-            berlin_speakers: 'data/berlin_speakers.yaml',
-            berlin_sponsors: 'data/berlin_sponsors.yaml',
-            berlin_venue: 'data/berlin_venue.yaml',
+            london_speakers: 'data/london_speakers.yaml',
         }))
         // Make pretty urls by moving foo.html to /foo/index.html.
         // Also, add a 'path' to global metadata for each file.
@@ -141,7 +138,7 @@ metalsmith(__dirname)
         }))
         // Log global metadata, etc., to terminal.
         .use(devonly(dump))
-    ))
+    )))
     // Output files to build dir.
     .destination('build')
     // Automatically rebuild things in the source directory when they change.

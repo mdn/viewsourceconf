@@ -2,6 +2,10 @@
 
 This is a repository for the viewsourceconf.org website source code.
 
+## 2017
+
+In 2017 we're still using a static site generator, [metalsmith](http://metalsmith.io), to generate the site.
+
 ## 2016
 
 In 2016 we're using a static site generator, [metalsmith](http://metalsmith.io), to generate the site.
@@ -10,7 +14,8 @@ In 2016 we're using a static site generator, [metalsmith](http://metalsmith.io),
 
 `/source`: Most source code for the site lives here: HTML, Stylus, JavaScript. Subdirectories:
   * `/2015`: The prior year's website (which is mostly ignored by metalsmith using [metalsmith-branch](https://github.com/ericgj/metalsmith-branch)).
-  * `/berlin-2016`: Any source code specific to the event.
+  * `/berlin-2016`: Like 2015, ignored by metalsmith
+  * `/london-2017`: Any source code specific to the event.
   * `/js` and `/stylesheets` (which are processed by [metalsmith-uglify](https://github.com/ksmithut/metalsmith-uglify) and [metalsmith-stylus](https://github.com/esundahl/metalsmith-stylus), respectively)
   * `/index.html`: the main landing page that'll live at http://viewsourceconf.org
 
