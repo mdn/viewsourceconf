@@ -1,0 +1,21 @@
+@require '../includes/extends';
+/*
+solo
+====================================================================== */
+
+.solo {
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media $media-query-680-and-up {
+    .solo {
+        max-width: cols-wide(4);
+    }
+}
+
+@media print {
+    .solo {
+        @extends $print-wide;
+    }
+}
