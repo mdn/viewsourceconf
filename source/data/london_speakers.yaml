@@ -34,9 +34,45 @@
     bio: "<p>Rachel Andrew lives in Bristol, England. She is one half of web development company <a href=\"http://edgeofmyseat.com\">edgeofmyseat.com</a>, the company behind Perch CMS (<a href=\"https://grabaperch.com\">grabaperch.com</a>).</p><p>Rachel has been working on the web since 1996 and writing about the web for almost as long. Her books include the recent Get Ready for CSS Grid Layout and HTML5 for Web Designers second edition. She is a regular columnist for A List Apart as well as other publications online and print. You can find her on Twitter as <a href=\"https://twitter.com/rachelandrew\">@rachelandrew</a> and writing about technology and business on her blog at <a href=\"https://rachelandrew.co.uk\">rachelandrew.co.uk</a>.</p>"
     sessions:
 -
+    slug: "chris-lilley"
+    first: Chris
+    last: Lilley
+    feature: true
+    twitter:
+    pic: "clilley.jpg"
+    bio: "<p>Chris Lilley is a Technical Director at the World Wide Web Consortium (W3C). Considered “the father of SVG”, he also co-authored PNG, was co-editor of CSS2, chaired the group that developed @font-face, and co-developed WOFF. Ex Technical Architecture Group. Chris is still trying to get Color Management on the Web, sigh. Currently working on CSS levels 3/4/5 (no, really), Web Audio, and WOFF2.</p>"
+    sessions:
+-
+    slug: "lea-verou"
+    first: Lea
+    last: Verou
+    feature: true
+    twitter: LeaVerou
+    pic: "lverou.jpg"
+    bio: "<p>Lea is currently busy researching how to make web programming easier at <a href=\"http://csail.mit.edu\">MIT CSAIL</a>. She is the author of bestselling advanced CSS book <a href=\"http://shop.oreilly.com/product/0636920031123.do\">CSS Secrets</a> and has worked as a Developer Advocate at <a href=\"http://w3.org\">W3C</a>. She has a long-standing passion for open web standards, and is one of the few Invited Experts in the <a href=\"http://www.w3.org/Style/CSS/members.en.php3\">CSS Working Group.</a></p>"
+    sessions:
+-
+    slug: "inayaili-de-leon-persson"
+    first: Inayaili
+    last: de León Persson
+    twitter: yaili
+    pic: "yaili.jpg"
+    bio: "<p>Inayaili de León Persson is Lead Designer at Canonical — the company behind Ubuntu — where she focuses on establishing and evangelising the brands’ visual direction online. She writes frequently for well-known online publications and on her own web design blog. She speaks regularly at local and international web conferences, and meet-ups, and currently serves on the expert panel of .net magazine, the UK's leading web design publication, and Smashing Magazine. She's the co-author of \"Pro CSS for High Traffic Websites\" (Apress, 2011), and author of \"Moving to Responsive Web Design\" (Apress, 2016). She’s Panamanian Portuguese, born in the USSR, and lives in London — her favourite city in the world.</p>"
+    sessions:
+-
+    slug: "emily-gorcenski"
+    first: Emily
+    last: Gorcenski
+    feature: true
+    twitter:
+    pic: "egorcenski.jpg"
+    bio: "<p>Emily is a data scientist, a nonbinary trans woman, and a hockey player. They are passionate about better technological citizenship and believe in ethical, inclusive technology. As a technologist and activist, Emily's work focuses on guiding innovation towards improving spaces, both online and in the physical world.</p>"
+    sessions:
+-
     slug: "dominik-kundel"
     first: Dominik
     last: Kundel
+    feature: true
     twitter: dkundel
     pic: "dominikkundel.jpg"
     bio: "<p>Dominik is a Developer Evangelist for Twilio in Berlin. He has a passion for JavaScript, hackathons, teaching and good whiskey. You will usually find him speaking at meetups and conferences, mentoring at hackathons and CoderDojos or work on open source projects.</p>"
