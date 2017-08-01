@@ -52,18 +52,11 @@ build-deploy-image:
 push-build-image:
 	docker push ${BUILD_IMAGE}
 
-push-deploy-image:
-	docker push ${IMAGE}
-
 push-latest-build-image: push-build-image
 	docker tag ${BUILD_IMAGE} ${LATEST_BUILD_IMAGE}
 	docker push ${LATEST_BUILD_IMAGE}
 
-push-latest-deploy-image: push-deploy-image
-	docker tag ${IMAGE} ${LATEST_DEPLOY_IMAGE}
-	docker push ${LATEST_DEPLOY_IMAGE}
-
-push-latest: push-latest-build-image push-latest-deploy-image
+push-latest: push-latest-build-image
 
 serve:
 	docker run ${SERVE_ARGS} ${IMAGE} || \
@@ -90,26 +83,7 @@ push-private-registry:
 deis-pull-private: push-private-registry
 	deis pull ${DEIS_APP}:${VERSION} -a ${DEIS_APP}
 
-build-deploy: build-build-image build build-deploy-image deis-pull-private
+s3-sync:
+	aws s3 sync build s3://" + bucket +" --acl public-read --delete --profile viewsourceconf --exclude 'docs/*'
 
-######################################################
-# Deis Workflow + Kubernetes
-######################################################
-
-push-registry:
-	docker tag ${IMAGE} ${IMAGE}
-	docker push ${IMAGE}
-
-workflow-build-and-push: build-build-image build build-deploy-image push-registry
-	echo "workflow-build-and-push complete"
-
-workflow-pull:
-	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} pull ${IMAGE} -a ${DEIS_APP}
-
-workflow-create:
-	DEIS_PROFILE=${DEIS_PROFILE} ${DEIS_BIN} create ${DEIS_APP} --no-remote || \
-   ${DEIS_BIN} apps | grep -q ${DEIS_APP}
-
-workflow-create-and-pull: workflow-create workflow-pull
-	echo "workflow-create-and-pull complete"
-
+build-deploy: build-build-image build s3-sync
