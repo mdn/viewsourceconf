@@ -3,9 +3,11 @@
 def buildSite() {
     stage ('build') {
       try {
-        sh 'make build-image'
+        //TODO: fix command below, currently returning exit code 2
+        //sh 'make build-image'
+        //TODO: enable command below once fix above applied
+        //sh 'make push-build-image'
         sh 'make build'
-        sh 'make push-build-image'
       } catch(err) {
           sh "bin/irc-notify.sh --stage 'build " + env.BRANCH_NAME + "' --status 'failed'"
         throw err
