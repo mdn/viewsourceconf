@@ -3,7 +3,7 @@
 def buildSite() {
     stage ('build') {
       try {
-        sh 'bin/build.sh'
+        sh 'make build'
       } catch(err) {
           sh "bin/irc-notify.sh --stage 'build " + env.BRANCH_NAME + "' --status 'failed'"
         throw err
@@ -14,7 +14,7 @@ def buildSite() {
 def syncS3(String bucket) {
     stage ('s3 sync') {
         try {
-          sh "cd release && aws s3 sync . s3://" + bucket +" --acl public-read --delete --profile irl --exclude 'docs/*'"
+          sh "cd release && aws s3 sync . s3://" + bucket +" --acl public-read --delete --profile viewsourceconf --exclude 'docs/*'"
         } catch(err) {
           sh "bin/irc-notify.sh --stage 's3 sync " + env.BRANCH_NAME + "' --status 'failed'"
           throw err
