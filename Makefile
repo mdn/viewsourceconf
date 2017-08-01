@@ -46,9 +46,6 @@ sh:
 build-build-image:
 	docker build -f Dockerfile-build -t ${BUILD_IMAGE} .
 
-build-deploy-image:
-	docker build -t ${IMAGE} .
-
 push-build-image:
 	docker push ${BUILD_IMAGE}
 
@@ -84,6 +81,6 @@ deis-pull-private: push-private-registry
 	deis pull ${DEIS_APP}:${VERSION} -a ${DEIS_APP}
 
 s3-sync:
-	aws s3 sync build s3://" + bucket +" --acl public-read --delete --profile viewsourceconf --exclude 'docs/*'
+	cd build && aws s3 sync . s3://" + bucket +" --acl public-read --delete --profile viewsourceconf --exclude 'docs/*'
 
 build-deploy: build-build-image build s3-sync
