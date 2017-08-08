@@ -30,7 +30,7 @@
     last: Andrew
     feature: true
     twitter: rachelandrew
-    pic: "rachelandrew.jpg"
+    pic: "randrew.jpg"
     bio: "<p>Rachel Andrew lives in Bristol, England. She is one half of web development company <a href=\"http://edgeofmyseat.com\">edgeofmyseat.com</a>, the company behind Perch CMS (<a href=\"https://grabaperch.com\">grabaperch.com</a>).</p><p>Rachel has been working on the web since 1996 and writing about the web for almost as long. Her books include the recent Get Ready for CSS Grid Layout and HTML5 for Web Designers second edition. She is a regular columnist for A List Apart as well as other publications online and print. You can find her on Twitter as <a href=\"https://twitter.com/rachelandrew\">@rachelandrew</a> and writing about technology and business on her blog at <a href=\"https://rachelandrew.co.uk\">rachelandrew.co.uk</a>.</p>"
     sessions:
 -
@@ -76,4 +76,12 @@
     twitter: dkundel
     pic: "dominikkundel.jpg"
     bio: "<p>Dominik is a Developer Evangelist for Twilio in Berlin. He has a passion for JavaScript, hackathons, teaching and good whiskey. You will usually find him speaking at meetups and conferences, mentoring at hackathons and CoderDojos or work on open source projects.</p>"
+    sessions:
+-
+    slug: "mariko-kosaka"
+    first: Mariko
+    last: Kosaka
+    twitter: kosamari
+    pic: "mkosaka.jpg"
+    bio: "<p>Mariko Kosaka is a Developer Advocate at Google working on the open web. In this role she helps web developers make the web better for all. Prior to joining Google, Mariko served as a Software Engineer for Scripto, an Internal Tools Developer for Percolate Inc. and as a Platform Innovations Developer for LiveIntent Inc. She’s a graduate of Temple University and resides in the greater New York City area where she serves as the co-organizer of BrooklynJS.</p>"
     sessions:
