@@ -21,14 +21,14 @@
             <div class="cols">
                 <div class="col col-2"><img src="/assets/images/speakers/{{ speaker.pic }}"></div>
                 <div class="col col-4">
-                    <h1>{{ speaker.first }} {{ speaker.last }}</h1>
+                    <h1 class="bio_name">{{ speaker.first }} {{ speaker.last }}</h1>
                     {% if speaker.bio.indexOf('<p>') === 0 %}
                         {{ speaker.bio }}
                     {% else %}
                         <p>{{ speaker.bio }}</p>
                     {% endif %}
                     {% if speaker.twitter %}
-                        <div class="speaker_social">Follow {{ speaker.first }} at <a href="http://twitter.com/@{{ speaker.twitter }}">@{{ speaker.twitter }}</a>.</div>
+                        <div class="bio_social">Follow {{ speaker.first }} at <a href="http://twitter.com/@{{ speaker.twitter }}">@{{ speaker.twitter }}</a>.</div>
                     {% endif %}
                 </div>
             </div>

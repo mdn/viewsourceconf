@@ -84,14 +84,23 @@
                 {% endfor %}
                 </ul>
             </div>
-        </section>
-        <div class="section">
-            <div class="section_body">
-                <div class="solo">
-                    <p>Check back or subscribe to our mailing list to see who we add next!</p>
+            <div class="section section-grid">
+                <div class="speakerteasers">
+                    {% for speaker in conference_speakers %}
+                        <div class="speakerteaser">
+                            <a href="speakers/{{ speaker.slug }}/">
+                                <div class="speakerteaser_name">{{ speaker.first }} {{ speaker.last }}</div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="section_body">
+                    <div class="solo">
+                        <p>Check back or subscribe to our mailing list to see who we add next!</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     {% endif %}
 
     <section id="newsletter" class="section section-dark">
