@@ -80,6 +80,7 @@ metalsmith(__dirname)
             conferences: 'data/conferences.yaml',
             navigation: 'data/navigation.yaml',
             london_speakers: 'data/london_speakers.yaml',
+            london_venue: 'data/london_venue.yaml',
         }))
         // Make pretty urls by moving foo.html to /foo/index.html.
         // Also, add a 'path' to global metadata for each file.

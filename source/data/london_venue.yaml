@@ -1,0 +1,18 @@
+"meta":
+    "name": "The RSA"
+    "address": "8 John Adam Street, London WC2N 6EZ."
+    "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.208196822567!2d-0.1249241842299585!3d51.50939627963553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c956d3a913%3A0x9dfc58443abcc46f!2sThe+RSA!5e0!3m2!1sen!2sus!4v1502907108612"
+"travel":
+    "blurb": "The RSA's main building is located just behind the Strand in central London, within easy walking distance of underground and railway stations. "
+    "modes":
+        "Mainline Trains": "<p><strong>Charing Cross</strong> is 5 minutes away on foot. <strong>Waterloo</strong> is 15-20 minutes away.</p>"
+        "Tube": "<h5>5 minute walk</h5><p class=\"indent\"><strong>Charing Cross</strong> (Northern Line, Bakerloo Line)<br> <strong>Embankment</strong> (District and Circle Lines, Northern Line, Bakerloo Line)</p><h5>10-15 minute walk</h5><p class=\"indent\"><strong>Covent Garden</strong> (Piccadilly Line)<br> <strong>Leicester Square</strong> (Piccadilly and Northern Lines)</p>"
+        "Bus": "<p>The RSA is served by bus lines 6, 9, 11, 15, 23, 87, 91, 139, and 176.</p>"
+        "Car": "<p>We strongly advise against coming to the venue by car, as parking is very difficult. We encourage you to take advantage of the comprehensive public transport system.</p>"
+"hotels":
+    "Strand Palace Hotel London":
+        "url": "http://www.hotel.info/en/ibis-berlin-ostbahnhof/hotel-118587/"
+    "The Z Hotel Piccadilly":
+        "url": "http://www.thezhotels.com/piccadilly"
+    "Hub by Premier Inn London Covent Garden Hotel":
+        "url": "http://www.premierinn.com/gb/en/hotels/england/greater-london/london/hub-london-covent-garden.html"
