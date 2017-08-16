@@ -15,7 +15,7 @@
     </section>
 
     {% if conference_data.speakers %}
-        <section>
+        <section id="speakers">
             <div class="section">
                 <div class="section_body">
                     <div class="solo">
@@ -98,6 +98,75 @@
         </section>
     {% endif %}
 
+    <section id="schedule">
+        <div class="section">
+            <div class="section_body">
+                <h2>Schedule</h2>
+                <p>Our speakers are awesome, but there’s more to View Source — we are committed to providing a comfortable place for sharing, learning, and meeting new people. Discuss and collaborate in our social spaces, chill in comfy hangout spots, see some great demos, or even give a lightning talk!  Our evening activity will provide a fun, friendly, learning-focused environment to continue conversations and start new ones.</p>
+
+                <h3 class="session_day_header">{{ conference_data.date }}</h3>
+
+                <div class="cols">
+                    <div class="col col-1"><strong>8:00am</strong></div>
+                    <div class="col col-5">
+                        <p class="session_title">Registration Opens</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="col col-1"><strong>9:00am</strong></div>
+                    <div class="col col-5">
+                        <p class="session_title">Opening keynote and talks</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="col col-1"><strong>11:00am</strong></div>
+                    <div class="col col-5">
+                        <p class="session_title">Break</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="col col-1"><strong>11:30am</strong></div>
+                    <div class="col col-5">
+                        <p class="session_title">Talks</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="col col-1"><strong>12:30pm</strong></div>
+                    <div class="col col-5">
+                        <p class="session_title">Lunch, lightning talks &amp; demos</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="col col-1"><strong>1:30pm</strong></div>
+                    <div class="col col-5">
+                        <p class="session_title">Talks</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="col col-1"><strong>3:00pm</strong></div>
+                    <div class="col col-5">
+                        <p class="session_title">Break</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="col col-1"><strong>3:30pm</strong></div>
+                    <div class="col col-5">
+                        <p class="session_title">Talks and closing keynote</p>
+                    </div>
+                </div>
+                <div class="cols">
+                    <div class="col col-1"><strong>6:00pm</strong></div>
+                    <div class="col col-5">
+                        <p class="session_title">After-conference event</p>
+                        <p class="session_details"> <a href="https://mozillafestival.org/" target="_blank" rel="noopener">Mozilla Festival</a>* Science Fair at Ravensbourne College, London (near the O2 in Greenwich)</p>
+                    </div>
+                </div>
+                <h3 class="session_day_header">28-29 October, 2017</h3>
+                <p>Your ticket to View Source also includes admission to the <a href="https://mozillafestival.org/" target="_blank" rel="noopener">Mozilla Festival</a>, October 28-29.</p>
+            </div>
+        </div>
+    </section>
+
     {% if conference_data.venue %}
         <section class="section section-grid" id="venue">
             <div class="section_body">
@@ -161,7 +230,7 @@
                         </div>
                         <div class="sidecol_body">
                             <h2>Get updates by email</h2>
-                            <p>Be first to hear about our new speakers when we announce them.</p>
+                            <p>Be the first to get View Source Conference news.</p>
                         </div>
                     </div>
                 </div>
