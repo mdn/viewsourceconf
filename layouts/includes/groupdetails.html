@@ -1,0 +1,21 @@
+<div class="session_details session_details-nopic">
+    <h5 class="session_head">
+        <span class="session_title">{{ session.title }}</span>
+    </h5>
+    {% if session.summary %}
+        <div id="{{ session.slug }}_summary" class="session_summary js-hidden">
+            {% set inside = true %}
+            {% include "groupmoderators.html" with inside %}
+            {% if session.summary.indexOf('<p>') === 0 %}
+                {% autoescape false %}{{ session.summary }}{% endautoescape %}
+            {% else %}
+                {% autoescape false %}<p>{{ session.summary }}</p>{% endautoescape %}
+            {% endif %}
+        </div>
+    {% endif %}
+    {% set inside = false %}
+    {% include "groupmoderators.html" with inside %}
+    {% if session_coords.place %}
+        <div class="session_place">@ {{ session_coords.place }}</div>
+    {% endif %}
+</div>

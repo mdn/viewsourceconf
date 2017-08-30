@@ -81,6 +81,7 @@ metalsmith(__dirname)
             navigation: 'data/navigation.yaml',
             london_speakers: 'data/london_speakers.yaml',
             london_sessions: 'data/london_sessions.yaml',
+            london_schedule: 'data/london_schedule.yaml',
             london_venue: 'data/london_venue.yaml',
         }))
         // Make pretty urls by moving foo.html to /foo/index.html.

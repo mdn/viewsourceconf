@@ -1,0 +1,44 @@
+"2017-10-27":
+    "8:00":
+        slug: "registration"
+        place:
+    "9:00":
+        slug: "building-blocks"
+        place: Main Stage
+    "9:45":
+        slug: "tba-egorcenski"
+    "10:15":
+        slug: "protect-our-users"
+        place: Main Stage
+    "10:45":
+        slug: "morning-break"
+        place:
+    "11:15":
+        slug: "html-reimagined"
+        place: Main Stage
+    "11:45":
+        slug: "solving-layout-problems"
+        place: Main Stage
+    "12:15":
+        slug: "lunch"
+        place:
+    "2:00":
+        slug: "lets-make-some-virtual-reality"
+        place: Main Stage
+    "2:30":
+        slug: "coffee-js"
+        place: Main Stage
+    "3:00":
+        slug: "tba-mkosaka"
+    "3:30":
+        slug: "afternoon-break"
+        place:
+    "4:00":
+        slug: "tba-eweyl"
+    "4:30":
+        slug: "tba-clilley"
+    "5:00":
+        slug: "tba"
+    "6:00":
+        slug: "science-festival"
+        place: Ravensbourne College (near the O2 in Greenwich) 

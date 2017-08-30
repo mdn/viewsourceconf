@@ -1,4 +1,7 @@
 -
+    slug: tba
+    title: To Be Announced
+-
     slug: registration
     title: Registration Opens
 -
@@ -10,6 +13,10 @@
 -
     slug: afternoon-break
     title: Break
+-
+    slug: science-festival
+    title: "Evening Event: Science Fair"
+    summary: "<p>Exciting demos, prototypes, networking and drinks at the <a href=\"https://mozillafestival.org/\">Mozilla Festival</a> Science Fair.</p>"
 -
     slug: "building-blocks"
     title: "Building Blocks of the Indie Web"
@@ -55,3 +62,19 @@
         - "dominik-kundel"
     title: "Coffee.js - How I hacked my coffee machine using JavaScript"
     summary: "<p>Home automation should make our lives easier, but Echo can't make me coffee. We'll look at why you would chose JavaScript to hack the machine, what you need to do to take control of a coffee machine (without too many shocks), and what other things we can do with JavaScript and hardware. As we wrap up with a look at what's next, you'll be dreaming of the gadgets in your house that you can't wait to rip open and give an API.</p>"
+-
+    slug: "tba-eweyl"
+    speakers:
+        - "estelle-weyl"
+-
+    slug: "tba-clilley"
+    speakers:
+        - "chris-lilley"
+-
+    slug: "tba-mkosaka"
+    speakers:
+        - "mariko-kosaka"
+-
+    slug: "tba-egorcenski"
+    speakers:
+        - "emily-gorcenski"

@@ -17,20 +17,16 @@
         {% endif %}
         <span class="session_title">{{ session.title }}</span>
     </h4>
-    {% if session.summary || session.video %}
+    {% if session.summary %}
         <div id="{{ session.slug }}_summary" class="session_summary js-hidden">
-            {% if session.summary %}
-                {% if session.summary.indexOf('<p>') === 0 %}
-                    {% autoescape false %}{{ session.summary }}{% endautoescape %}
-                {% else %}
-                    {% autoescape false %}<p>{{ session.summary }}</p>{% endautoescape %}
-                {% endif %}
-            {% endif %}
-            {% if session.video %}
-                <div class="intrinsic">
-                    <iframe src="{{ session.video }}" width="640" height="380" frameborder="0" allowfullscreen></iframe>
-                </div>
+            {% if session.summary.indexOf('<p>') === 0 %}
+                {% autoescape false %}{{ session.summary }}{% endautoescape %}
+            {% else %}
+                {% autoescape false %}<p>{{ session.summary }}</p>{% endautoescape %}
             {% endif %}
         </div>
+    {% endif %}
+    {% if session_coords.place %}
+        <div class="session_place">@ {{ session_coords.place }}</div>
     {% endif %}
 </div>
