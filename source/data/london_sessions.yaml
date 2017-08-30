@@ -1,0 +1,57 @@
+-
+    slug: registration
+    title: Registration Opens
+-
+    slug: morning-break
+    title: Break
+-
+    slug: lunch
+    title: Lunch and Lightning Talks
+-
+    slug: afternoon-break
+    title: Break
+-
+    slug: "building-blocks"
+    title: "Building Blocks of the Indie Web"
+    speakers:
+        - "jeremy-keith"
+    summary: "<p>In these times of centralised services like Facebook, Twitter, and Medium, having your own website is downright disruptive. If you care about the longevity of your online presence, independent publishing is the way to go. But how can you get all the benefits of those third-party services while still owning your own data? By using the building blocks of the Indie Web, that's how!</p>"
+    keynote: true
+    feature: true
+-
+    slug: "protect-our-users"
+    speakers:
+        - "rey-bango"
+    title: "Are We Doing Enough to Protect Our Users?"
+    summary: "<p>It seems like every day there’s a new hack or data leak reported on the news. And when you look at the OWASP top 10, many of the same issues make the list year on year. What are the things that we as developers should be doing to ensure our users are safe when they use our apps and services?</p>"
+-
+    slug: "html-reimagined"
+    speakers:
+        - "lea-verou"
+    title: "HTML Re-imagined for the era of web apps"
+    #summary: ""
+-
+    slug: "solving-layout-problems"
+    speakers:
+        - "rachel-andrew"
+    title: "Solving Layout Problems with CSS Grid and Friends"
+    summary: "<p>CSS Grid Layout launched into the majority of our browsers in 2017. As designers and developers have started to use Grid I’ve been answering a lot of questions about the specification. In this talk I’ll answer some of the common questions about Grid Layout in production - from dealing with old browsers to what might come next in CSS for layout. There will be plenty of practical tips for you to use in your projects today.</p>"
+-
+    slug: "solving-layout-problems"
+    speakers:
+        - "inayaili-de-leon-persson"
+    title: "Keeping your design system alive"
+    summary: "<p>Creating a design system is not an easy feat, but making sure it's implemented, maintained, and doesn't suffer a slow, painful and quiet ending can be an even less attainable achievement. How do you make sure your design system is kept alive and healthy? How  can you encourage usage and participation? Let's look at some  simple and interesting ways that you can put into practice today to make your design system flourish.</p>"
+-
+-
+    slug: "lets-make-some-virtual-reality"
+    speakers:
+        - "ada-rose-edwards"
+    title: "Lets make some Virtual Reality"
+    summary: "<p>In this talk Ada will show the fundamentals of making a WebVR scene with A-Frame. Showing how to put together an engaging scene which can be shared on the Web instantly, and viewed in any VR headset for Desktop or Mobile.</p>"
+-
+    slug: "coffee-js"
+    speakers:
+        - "dominik-kundel"
+    title: "Coffee.js - How I hacked my coffee machine using JavaScript"
+    summary: "<p>Home automation should make our lives easier, but Echo can't make me coffee. We'll look at why you would chose JavaScript to hack the machine, what you need to do to take control of a coffee machine (without too many shocks), and what other things we can do with JavaScript and hardware. As we wrap up with a look at what's next, you'll be dreaming of the gadgets in your house that you can't wait to rip open and give an API.</p>"
