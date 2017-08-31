@@ -1,4 +1,5 @@
 @require 'includes/variables'
+@require 'includes/extends';
 
 /*
 strip
@@ -26,5 +27,11 @@ strip
 @media $media-query-960-and-up {
     .strip {
         background-image: url('/assets/images/strip_1200x190.jpg');
+    }
+}
+
+@media print {
+    .strip {
+        @extends $print-no;
     }
 }
