@@ -44,12 +44,11 @@
     title: "Solving Layout Problems with CSS Grid and Friends"
     summary: "<p>CSS Grid Layout launched into the majority of our browsers in 2017. As designers and developers have started to use Grid I’ve been answering a lot of questions about the specification. In this talk I’ll answer some of the common questions about Grid Layout in production - from dealing with old browsers to what might come next in CSS for layout. There will be plenty of practical tips for you to use in your projects today.</p>"
 -
-    slug: "solving-layout-problems"
+    slug: "keeping-your-design-system-alive"
     speakers:
         - "inayaili-de-leon-persson"
     title: "Keeping your design system alive"
     summary: "<p>Creating a design system is not an easy feat, but making sure it's implemented, maintained, and doesn't suffer a slow, painful and quiet ending can be an even less attainable achievement. How do you make sure your design system is kept alive and healthy? How  can you encourage usage and participation? Let's look at some  simple and interesting ways that you can put into practice today to make your design system flourish.</p>"
--
 -
     slug: "lets-make-some-virtual-reality"
     speakers:

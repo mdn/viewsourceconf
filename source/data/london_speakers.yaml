@@ -7,6 +7,7 @@
     pic: "randrew.jpg"
     bio: "<p>Rachel Andrew lives in Bristol, England. She is one half of web development company <a href=\"http://edgeofmyseat.com\">edgeofmyseat.com</a>, the company behind Perch CMS (<a href=\"https://grabaperch.com\">grabaperch.com</a>).</p><p>Rachel has been working on the web since 1996 and writing about the web for almost as long. Her books include the recent Get Ready for CSS Grid Layout and HTML5 for Web Designers second edition. She is a regular columnist for A List Apart as well as other publications online and print. You can find her on Twitter as <a href=\"https://twitter.com/rachelandrew\">@rachelandrew</a> and writing about technology and business on her blog at <a href=\"https://rachelandrew.co.uk\">rachelandrew.co.uk</a>.</p>"
     sessions:
+        - "solving-layout-problems"
 -
     slug: "rey-bango"
     first: Rey
@@ -15,6 +16,7 @@
     pic: "rbango.jpg"
     bio: "<p>Rey Bango is a developer advocate at Microsoft focused on helping developers build awesome cross-browser experiences. He’s an ardent supporter of standards-based development and has a newly acquired interest in information security.</p>"
     sessions:
+        - "protect-our-users"
 -
     slug: "ada-rose-edwards"
     first: "Ada-Rose"
