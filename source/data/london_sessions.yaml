@@ -62,6 +62,12 @@
     title: "Coffee.js - How I hacked my coffee machine using JavaScript"
     summary: "<p>Home automation should make our lives easier, but Echo can't make me coffee. We'll look at why you would chose JavaScript to hack the machine, what you need to do to take control of a coffee machine (without too many shocks), and what other things we can do with JavaScript and hardware. As we wrap up with a look at what's next, you'll be dreaming of the gadgets in your house that you can't wait to rip open and give an API.</p>"
 -
+    slug: "building-apps"
+    speakers:
+        - "mariko-kosaka"
+    title: "Building apps that are on FIRE"
+    summary: "<p>Progressive Web App is a way to provide great experience on the web everywhere. This talk will go over 4 key aspects of PWA - Fast, Integrated, Reliable, and Engaging. Learn what kind of new capabilities are added to the web platform and start building apps that are on FIRE!</p>"
+-
     slug: "tba-eweyl"
     speakers:
         - "estelle-weyl"
@@ -69,10 +75,7 @@
     slug: "tba-clilley"
     speakers:
         - "chris-lilley"
--
-    slug: "tba-mkosaka"
-    speakers:
-        - "mariko-kosaka"
+
 -
     slug: "tba-egorcenski"
     speakers:

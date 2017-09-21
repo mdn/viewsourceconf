@@ -54,6 +54,7 @@
     pic: "mkosaka.jpg"
     bio: "<p>Mariko Kosaka is a Developer Advocate at Google working on the open web. In this role she helps web developers make the web better for all. Prior to joining Google, Mariko served as a Software Engineer for Scripto, an Internal Tools Developer for Percolate Inc. and as a Platform Innovations Developer for LiveIntent Inc. She’s a graduate of Temple University and resides in the greater New York City area where she serves as the co-organizer of BrooklynJS.</p>"
     sessions:
+        - "building-apps"
 -
     slug: "dominik-kundel"
     first: Dominik
