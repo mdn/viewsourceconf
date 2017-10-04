@@ -26,17 +26,11 @@
     keynote: true
     feature: true
 -
-    slug: "protect-our-users"
-    speakers:
-        - "rey-bango"
-    title: "Are We Doing Enough to Protect Our Users?"
-    summary: "<p>It seems like every day there’s a new hack or data leak reported on the news. And when you look at the OWASP top 10, many of the same issues make the list year on year. What are the things that we as developers should be doing to ensure our users are safe when they use our apps and services?</p>"
--
     slug: "html-reimagined"
     speakers:
         - "lea-verou"
     title: "HTML Re-imagined for the era of web apps"
-    #summary: ""
+    summary: "<p>In an age when it seems everything is developed in JavaScript, using frameworks like Angular and React, what place is there for old fashioned HTML and CSS? Lea Verou has recently released Mavo, a project in development at MIT for two years. What is Mavo?</p><p>Mavo is a language that extends HTML to describe applications that manage, store, and transform data. With it, you can build complex applications declaratively, using just HTML and CSS. The spirit of the web, for the age of web apps.</p>"
 -
     slug: "solving-layout-problems"
     speakers:
@@ -68,15 +62,20 @@
     title: "Building apps that are on FIRE"
     summary: "<p>Progressive Web App is a way to provide great experience on the web everywhere. This talk will go over 4 key aspects of PWA - Fast, Integrated, Reliable, and Engaging. Learn what kind of new capabilities are added to the web platform and start building apps that are on FIRE!</p>"
 -
-    slug: "tba-eweyl"
+    slug: "mobile-web-performance"
     speakers:
         - "estelle-weyl"
+    title: "Mobile Web Performance"
+    summary: "<p>While as developers we’re now enjoying the ubiquity of modern browsers accessing the web, it’s the devices themselves that are now creating constraints we always need to consider. The issue with mobile isn’t &quot;Old IE&quot;,  but rather battery life, latency, memory and UI responsiveness. In this session we'll discuss best practices to make sure your site performs well, no matter how your user is accessing your content.</p>"
 -
-    slug: "tba-clilley"
+    slug: "state-of-webfonts"
     speakers:
         - "chris-lilley"
-
+    title: "The State of WebFonts"
+    summary: "<p>Most websites use downloadable fonts now, at least at a basic level. But with CSS Level 3 OpenType font features, the widely adopted WOFF format, Chromatic Fonts, and more recently OpenType variable fonts - a single font file that behaves like multiple fonts - the capabilities opening up for typography on the web are extraordinary. In this session, Chris Lilley shows us what's possible today, and in the near future.</p>"
 -
-    slug: "tba-egorcenski"
+    slug: "path-to-technological-activism"
     speakers:
         - "emily-gorcenski"
+    title: "From Voting Machines to Discord: A Path to Technological Activism"
+    summary: "<p>After the 2016 US Presidential Election, the technology industry sought technological explanations—and in some case hopeful solutions—to a political situation. Right now, voting machine certification is only tested against ~100 ballots. Knowing where to find relevant data while researching this issue sent Emily down the path to becoming an accidental activist, bearing witness to the tragedy in her home city in Charlottesville, Virginia. This talk will explore that journey, without losing focus on the issue that started it all.</p>"

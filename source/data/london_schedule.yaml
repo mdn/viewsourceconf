@@ -6,9 +6,7 @@
         slug: "building-blocks"
         place: Main Stage
     "9:45":
-        slug: "tba-egorcenski"
-    "10:15":
-        slug: "protect-our-users"
+        slug: "path-to-technological-activism"
         place: Main Stage
     "10:45":
         slug: "morning-break"
@@ -38,9 +36,9 @@
         slug: "afternoon-break"
         place:
     "4:00":
-        slug: "tba-eweyl"
+        slug: "mobile-web-performance"
     "4:30":
-        slug: "tba-clilley"
+        slug: "state-of-webfonts"
     "5:00":
         slug: "tba"
     "6:00":
