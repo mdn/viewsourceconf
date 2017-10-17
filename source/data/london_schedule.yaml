@@ -8,39 +8,43 @@
     "9:45":
         slug: "path-to-technological-activism"
         place: Main Stage
+    "10:15":
+        slug: "state-of-webfonts"
+        place: Main Stage
     "10:45":
         slug: "morning-break"
         place:
     "11:15":
-        slug: "html-reimagined"
+        slug: "keeping-your-design-system-alive"
         place: Main Stage
     "11:45":
         slug: "solving-layout-problems"
         place: Main Stage
     "12:15":
-        slug: "keeping-your-design-system-alive"
+        slug: "html-reimagined"
         place: Main Stage
     "12:45":
         slug: "lunch"
-        place:
     "2:00":
-        slug: "lets-make-some-virtual-reality"
+        slug: "coffee-js"
         place: Main Stage
     "2:30":
-        slug: "coffee-js"
+        slug: "writing-secure-javaScript-code"
         place: Main Stage
     "3:00":
         slug: "building-apps"
         place: Main Stage
     "3:30":
         slug: "afternoon-break"
-        place:
     "4:00":
         slug: "mobile-web-performance"
+        place: Main Stage
     "4:30":
-        slug: "state-of-webfonts"
+        slug: "lets-make-some-virtual-reality"
+        place: Main Stage
     "5:00":
-        slug: "tba"
+        slug: "expanding-the-open-web"
+        place: Main Stage
     "6:00":
         slug: "science-festival"
         place: Ravensbourne College (near the O2 in Greenwich)
