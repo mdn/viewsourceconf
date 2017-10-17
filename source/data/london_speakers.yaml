@@ -90,9 +90,29 @@
     slug: "chris-lilley"
     first: Chris
     last: Lilley
-    feature: true
+    feature: false
     twitter: svgeesus
     pic: "clilley.jpg"
     bio: "<p>Chris Lilley is a Technical Director at the World Wide Web Consortium (W3C). Considered “the father of SVG”, he also co-authored PNG, was co-editor of CSS2, chaired the group that developed @font-face, and co-developed WOFF. Ex Technical Architecture Group. Chris is still trying to get Color Management on the Web, sigh. Currently working on CSS levels 3/4/5 (no, really), Web Audio, and WOFF2.</p>"
     sessions:
         - "state-of-webfonts"
+-
+    slug: "guy-podjarny"
+    first: Guy
+    last: Podjarny
+    feature: false
+    twitter: guypod
+    pic: "gpodjarny.jpg"
+    bio: "<p>Guy Podjarny is a cofounder at Snyk.io, focusing on securing open source code. Guy was previously CTO at Akamai following their acquisition of his startup, Blaze.io, and worked on the first web app firewall & security code analyzer. Guy is a frequent conference speaker, the author of \"Responsive & Fast\", \"High Performance Images\" and the upcoming \"Securing Open Source Code\".</p>"
+    sessions:
+        - "writing-secure-javascript-code"
+-
+    slug: "sean-white"
+    first: Sean
+    last: White
+    feature: true
+    twitter: seanwhite
+    pic: "swhite.jpg"
+    bio: "<p>Sean White is a high-tech executive, entrepreneur, inventor, and musician who has spent his career leading innovative development of the experiences, systems, and technologies that enable creative expression, connect us to each other, and enhance our understanding of the world around us. He was most recently the founder and CEO of BrightSky Labs, a company he incubated while an EIR at Greylock Partners, and is currently teaching CS377m: HCI Issues in Mixed & Augmented Reality at Stanford University. </p>"
+    sessions:
+        - "expanding-the-open-web"

@@ -79,3 +79,17 @@
         - "emily-gorcenski"
     title: "From Voting Machines to Discord: A Path to Technological Activism"
     summary: "<p>After the 2016 US Presidential Election, the technology industry sought technological explanations—and in some case hopeful solutions—to a political situation. Right now, voting machine certification is only tested against ~100 ballots. Knowing where to find relevant data while researching this issue sent Emily down the path to becoming an accidental activist, bearing witness to the tragedy in her home city in Charlottesville, Virginia. This talk will explore that journey, without losing focus on the issue that started it all.</p>"
+-
+    slug: "writing-secure-javascript-code"
+    speakers:
+        - "guy-podjarny"
+    title: "Writing Secure JavaScript Code"
+    summary: "<p>Some of the very things that make JavaScript awesome can also expose it to security risks. This talk will look at these powerful features through an attacker’s eyes, show some real world vulnerabilities caused by them, and explain how you can protect yourself.</p><p>We'll exploit the vulnerabilities on a demo application to highlight their impact, and throughout provide concrete advice about how to keep your JS code secure.</p>"
+-
+    slug: "expanding-the-open-web"
+    speakers:
+        - "sean-white"
+    title: "Expanding the Foundations of the Open Web"
+    summary: "<p>The openness and ubiquity of the web has given us the freedom to express ourselves, create and tinker. Now the web is expanding beyond the screen to VR, AR, Speech, and the Internet of Things. In the closing keynote, Sean White will discuss what signs we can look for to visualize where the web is going and what role can a developer play in the future of the open web.</p>"
+    keynote: true
+    feature: true
