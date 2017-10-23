@@ -46,7 +46,7 @@
 -
     slug: "lets-make-some-virtual-reality"
     speakers:
-        - "ada-rose-edwards"
+        - "ada-rose-cannon"
     title: "Lets make some Virtual Reality"
     summary: "<p>In this talk Ada will show the fundamentals of making a WebVR scene with A-Frame. Showing how to put together an engaging scene which can be shared on the Web instantly, and viewed in any VR headset for Desktop or Mobile.</p>"
 -
