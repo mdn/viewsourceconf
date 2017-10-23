@@ -48,13 +48,13 @@
     sessions:
         - "solving-layout-problems"
 -
-    slug: "ada-rose-edwards"
+    slug: "ada-rose-cannon"
     first: "Ada-Rose"
-    last: Edwards
+    last: Cannon
     feature: true
     twitter: lady_ada_king
     pic: "adaroseedwards.jpg"
-    bio: "Ada Rose Edwards is a Web Developer Advocate for Samsung. She writes and talks about graphics on the web, offline first web apps and front end animation performance."
+    bio: "Ada Rose Cannon is a Web Developer Advocate for Samsung. She writes and talks about graphics on the web, offline first web apps and front end animation performance."
     sessions:
         - "node-releases"
 -
