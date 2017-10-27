@@ -25,7 +25,6 @@
     "metalsmith-filenames": "^1.0.0",
     "metalsmith-fingerprint-ignore": "^1.1.2",
     "metalsmith-html-minifier": "^2.0.0",
-    "metalsmith-html-tidy": "^1.1.0",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-in-place": "^1.4.3",
     "metalsmith-json-to-files": "git+https://github.com/hoosteeno/metalsmith-json-to-files.git#7ac8d1ba836ae3b538e3e2792553cb797253f7d6",
