@@ -16,7 +16,6 @@ const models = require('metalsmith-models');
 const permalinks = require('metalsmith-permalinks');
 const serve = require('metalsmith-serve');
 const stylus = require('metalsmith-stylus');
-const tidy = require('metalsmith-html-tidy');
 const uglify = require('metalsmith-uglify');
 const watch = require('metalsmith-watch');
 
@@ -128,16 +127,6 @@ metalsmith(__dirname)
                 smartypants: true,
             },
             removeAttributeAfterwards: true,
-        }))
-        // Tidy HTML
-        .use(tidy({
-            tidyOptions: {
-                'indent-spaces': 4,
-                'quote-ampersand': false,
-                'coerce-endtags': false,
-                'drop-empty-elements': false,
-                'new-blocklevel-tags': ['svg', 'g', 'defs', 'path', 'polyline', 'line', 'polygon',],
-            },
         }))
         // Log global metadata, etc., to terminal.
         .use(devonly(dump))
