@@ -136,7 +136,7 @@ metalsmith(__dirname)
                 'quote-ampersand': false,
                 'coerce-endtags': false,
                 'drop-empty-elements': false,
-                'new-blocklevel-tags': ['svg', 'defs', 'path', 'polyline', 'line', 'polygon',],
+                'new-blocklevel-tags': ['svg', 'g', 'defs', 'path', 'polyline', 'line', 'polygon',],
             },
         }))
         // Log global metadata, etc., to terminal.
