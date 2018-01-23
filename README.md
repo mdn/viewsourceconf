@@ -27,8 +27,6 @@ In 2016 we're using a static site generator, [metalsmith](http://metalsmith.io),
 
 `build.js`: This is the node script that does the site build -- the metalsmith controller, sort of.
 
-`/test`: A growing body of tests we can run to help us be confident about changes.
-
 ### How to contribute
 
 We welcome your help making this code better! Here's how to hack on it:
@@ -47,13 +45,6 @@ We welcome your help making this code better! Here's how to hack on it:
   * build the site
   * start a web server at http://localhost:8080 using [metalsmith-serve](https://github.com/mayo/metalsmith-serve)
   * watch the source directory for changes using [metalsmith-watch](https://github.com/FWeinb/metalsmith-watch)
-
-### How to test the site
-
-* `npm test` will run tests in /test/
-* `npm run unit_test` will run tests resembling unit tests (e.g. JSON validator)
-* `npm run integration_test` will run tests requiring a built site (and will try to use Selenium by way of Firefox for functional tests)
-* adding `VS_TEST_URL=http://some.url.com` to the front of the command (as in `VS_TEST_URL=http://localhost:8080 npm test`) will point integration tests at a specific site. (By default they run against staging.)
 
 ### How to deploy the site
 
