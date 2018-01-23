@@ -1,0 +1,105 @@
+@require 'includes/variables';
+@require 'includes/extends';
+
+/*
+split
+====================================================================== */
+
+.split {
+    position: relative;
+    color: #fff;
+
+    @extends $clearfix
+
+    &::before {
+        content: '';
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        z-index: 2;
+        background: url(/assets/images/tech-greeble.svg);
+        background-size: 741px 684px;
+        background-position: 50% 160px;
+    }
+}
+
+.split_conference {
+    box-sizing: border-box;
+    padding: $grid-gutter-width;
+    text-align: center;
+
+    .split_body {
+        position: relative;
+        z-index: 10;
+        display: block;
+        max-width: $grid-max;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+        color: #fff;
+    }
+
+    &.london {
+        background-color: $london-dark;
+        background: $london-gradient;
+    }
+
+    &.berlin {
+        background-color: $berlin-dark;
+        background: $berlin-gradient;
+    }
+
+    &.portland {
+        background-color: $portland-dark;
+        background: $portland-gradient;
+    }
+
+}
+
+.split_location {
+    font-family: $heading-font-family;
+    set-font-size(28px);
+    font-weight: bold;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+
+@media $media-query-680-and-up {
+
+    .split_conference {
+        text-align: left;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: calc(50vw + 77px);
+            z-index: 1;
+        }
+    }
+}
+
+@media $media-query-960-and-up {
+    .split_conference {
+        padding: $grid-gutter-width-wide;
+    }
+
+    .split_location {
+        margin-bottom: $grid-gutter-width-wide;
+    }
+}
+
+@media $media-query-tall {
+    .split_conference {
+        padding: ($grid-gutter-width-wide * 2) $grid-gutter-width-wide;
+    }
+}

@@ -10,9 +10,9 @@ button
     min-width: $input-min-width;
     border: $input-border-width solid transparent;
     padding: $input-v-padding $input-h-padding;
-    border-color: $london-secondary;
+    border-color: $default-secondary;
     background: transparent;
-    color: $london-secondary;
+    color: $default-secondary;
     font-size: inherit;
     line-height: 1; // to match elements/forms.styl
     text-align: center;
@@ -23,7 +23,7 @@ button
     &:hover,
     &:focus,
     &:active {
-        background-color: $london-background;
+        background-color: $default-background;
     }
 
     &::after{
@@ -42,8 +42,8 @@ button
     &:focus,
     &:active {
         border-color: transparent;
-        background-color: $london-secondary;
-        color: $london-background;
+        background-color: $default-secondary;
+        color: $default-background;
     }
 }
 
@@ -53,9 +53,21 @@ button
     &:hover,
     &:focus,
     &:active {
-        border-color: transparent
-        background-color: $london-background
-        color: $london-dark;
+        border-color: transparent;
+        background-color: $default-background;
+        color: $default-dark;
+    }
+}
+
+.button-white {
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: transparent !important;
+        background-color: #fff !important;
+        color: #000 !important;
     }
 }
 

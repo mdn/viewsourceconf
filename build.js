@@ -8,7 +8,6 @@ const filenames = require('metalsmith-filenames');
 const fingerprint = require('metalsmith-fingerprint-ignore');
 const ignore = require('metalsmith-ignore');
 const inplace = require('metalsmith-in-place');
-const json_to_files = require('metalsmith-json-to-files');
 const layouts = require('metalsmith-layouts');
 const permalinks = require('metalsmith-permalinks');
 const serve = require('metalsmith-serve');
@@ -60,10 +59,6 @@ metalsmith(__dirname)
     .use(branch('!berlin-2016/**/*')
     .use(branch('!london-2017/**/*')
     .use(branch('!assets/**/*')
-        // Also put stuff from source/data into collections.
-        .use(json_to_files({
-            source_path: 'source/data/',
-        }))
         // Ignore files that we don't want to copy to build dir.
         // Must follow json_to_files
         .use(ignore([
@@ -114,7 +109,6 @@ metalsmith(__dirname)
     .use(devonly(watch, {
         paths: {
             'source/assets/**/*': true,
-            'source/*2016/**/*': true,
             'source/js/**/*': true,
             'source/stylesheets/**/*': true,
             'source/*': true,
