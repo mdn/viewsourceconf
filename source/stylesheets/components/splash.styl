@@ -1,0 +1,35 @@
+@require 'includes/variables'
+@require 'includes/extends'
+
+/*
+splash
+====================================================================== */
+
+.splash {
+    margin: 0 auto;
+    text-align: center;
+
+    svg {
+        height: 200px;
+        width: 262px;
+        fill: currentColor;
+    }
+}
+
+.splash_info {
+    margin: 0 auto;
+    text-align: center;
+    set-font-size(28px);
+}
+
+@media $media-query-680-and-up {
+    .splash_info {
+        max-width: cols-wide(4);
+    }
+}
+
+@media print {
+    .splash_info {
+        @extends $print-wide;
+    }
+}

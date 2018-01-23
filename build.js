@@ -2,17 +2,13 @@
 
 const metalsmith = require('metalsmith');
 const branch = require('metalsmith-branch');
-const data_markdown = require('metalsmith-data-markdown');
 const debug = require('metalsmith-debug');
 const define = require('metalsmith-define');
 const filenames = require('metalsmith-filenames');
 const fingerprint = require('metalsmith-fingerprint-ignore');
 const ignore = require('metalsmith-ignore');
 const inplace = require('metalsmith-in-place');
-const json_to_files = require('metalsmith-json-to-files');
 const layouts = require('metalsmith-layouts');
-const metadata = require('metalsmith-metadata');
-const models = require('metalsmith-models');
 const permalinks = require('metalsmith-permalinks');
 const serve = require('metalsmith-serve');
 const stylus = require('metalsmith-stylus');
@@ -61,11 +57,8 @@ metalsmith(__dirname)
     // Restrict the files we transform to a pattern; don't transform 2015.
     .use(branch('!2015/**/*')
     .use(branch('!berlin-2016/**/*')
+    .use(branch('!london-2017/**/*')
     .use(branch('!assets/**/*')
-        // Also put stuff from source/data into collections.
-        .use(json_to_files({
-            source_path: 'source/data/',
-        }))
         // Ignore files that we don't want to copy to build dir.
         // Must follow json_to_files
         .use(ignore([
@@ -74,15 +67,6 @@ metalsmith(__dirname)
             // At launch we may not have a seattle event. This prevents building its pages.
             // '**/seattle-2016/*',
         ]))
-        // Put yaml from source/data into global metadata. Must be above inplace.
-        .use(metadata({
-            conferences: 'data/conferences.yaml',
-            navigation: 'data/navigation.yaml',
-            london_speakers: 'data/london_speakers.yaml',
-            london_sessions: 'data/london_sessions.yaml',
-            london_schedule: 'data/london_schedule.yaml',
-            london_venue: 'data/london_venue.yaml',
-        }))
         // Make pretty urls by moving foo.html to /foo/index.html.
         // Also, add a 'path' to global metadata for each file.
         .use(permalinks({
@@ -116,28 +100,15 @@ metalsmith(__dirname)
             pattern: '**/*.html',
             autoescape: false,
         }))
-        // Convert GFM content inside tags with "data-markdown" attribute.
-        // Should be after all swig stuff.
-        .use(data_markdown({
-            marked: {
-                gfm: true,
-                breaks: true,
-                tables: false,
-                smartlists: true,
-                smartypants: true,
-            },
-            removeAttributeAfterwards: true,
-        }))
         // Log global metadata, etc., to terminal.
         .use(devonly(dump))
-    )))
+    ))))
     // Output files to build dir.
     .destination('build')
     // Automatically rebuild things in the source directory when they change.
     .use(devonly(watch, {
         paths: {
             'source/assets/**/*': true,
-            'source/*2016/**/*': true,
             'source/js/**/*': true,
             'source/stylesheets/**/*': true,
             'source/*': true,

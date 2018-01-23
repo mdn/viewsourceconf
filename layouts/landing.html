@@ -3,18 +3,133 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="refresh" content="0;url=/london-2017/">
-        <title>View Source Conference 2017</title>
+        <title>View Source Conference</title>
+{% include "includes/easteregg.html" %}
         <link rel="stylesheet" href="/{{ fingerprint['stylesheets/style.css'] }}">
 {% include "includes/meta.html" %}
+{% include "includes/js.html" %}
+{% include "includes/analytics.html" %}
   </head>
-  <body class="section section-gradient">
+  <body>
 
-    <div class="section_body">
-      <div class="solo">
-        <a href="/london-2017/">London 2017</a>
-      </div>
+    <div class="section section-grid">
+        <div class="section_body">
+          <h1 class="splash">
+              {% include "includes/svg/vs-logo-v.svg" %}
+          </h1>
+        </div>
+        <div class="section_body">
+          <p class="splash_info">View Source is a conference for developers, by developers, where we explore best practices and exciting new techniques in web development and design.</p>
+        </div>
     </div>
+    <div class="split">
+        <div class="split_conference london">
+            <div class="split_body">
+                <h2 class="split_location"><a href="/london-2017/">London 2017</a></h2>
+                <div class="cols cols-half">
+                  <div class="col">
+                    <p class="split_info">At The RSA in London, England, we covered topics from both technical and design perspectives. Focusing on open web technologies we covered everything from CSS grid and JavaScript security to technological activism and virtual reality.</p>
+                    <p><a href="/london-2017/" class="button button-white">Watch 2017 videos</a></p>
+                  </div>
+                  <div class="col">
+                    <div class="split_video">
+                      <div class="intrinsic">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/VvYK-K0jWng?list=PLo3w8EB99pqLSjeiEXajmf8BALsiv4rdz" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="split_conference berlin">
+            <div class="split_body">
+                <h2 class="split_location"><a href="/berlin-2016/">Berlin 2016</a></h2>
+                <div class="cols cols-half">
+                  <div class="col">
+                    <div class="split_video">
+                      <div class="intrinsic intrinsic-airmoz">
+                          <iframe src="https://air.mozilla.org/hadley-beeman/video/" width="640" height="380" frameborder="0" allowfullscreen=""></iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <p class="split_info">In Berlin, Germany, we talked focused the future of web design online and offline! Progressive web apps, art direction, inclusion, layout and burnout were just a few topics covered.</p>
+                    <p><a href="/berlin-2016/" class="button button-white">Watch 2016 videos</a></p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="split_conference portland">
+            <div class="split_body">
+                <h2 class="split_location"><a href="/2015/">Portland 2015</a></h2>
+                <div class="cols cols-half">
+                  <div class="col">
+                    <p class="split_info">Our first View Source Conference was held in Portland, Oregon. More than 400 front-end developers, designers, and industry leaders came together to discuss the web of today and explore the possibilities of the web of tomorrow.</p>
+                    <p><a href="/2015/" class="button button-white">Watch 2015 videos</a></p>
+                  </div>
+                  <div class="col">
+                    <div class="split_video">
+                      <div class="intrinsic intrinsic-airmoz">
+                        <iframe src="https://air.mozilla.org/paul-ford-keynote-the-web-today/video/" width="640" height="380" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="newsletter" class="section section-dark">
+      <div class="section_body">
+          <div class="cols cols-half">
+              <div class="col">
+                  <div class="sidecol sidecol-line">
+                      <div class="sidecol_side">
+                          {% set class_names = 'newsletter_icon' %}
+                          {% include "includes/svg/email.svg" %}
+                      </div>
+                      <div class="sidecol_body">
+                          <h2>Get updates by email</h2>
+                          <p>Be the first to get View Source Conference news.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col">
+                  {% set collapse = true %}
+                  {% include "includes/newsletter.html" with collapse %}
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <div class="strip section-invert"></div>
+
+    <section class="section">
+        <div class="section_body">
+            <div class="solo">
+                <h2>About Mozilla</h2>
+
+                <p>Founded in 1998, Mozilla is best known for the Firefox browser, used by hundreds of millions of Internet citizens globally, across various devices and platforms.</p>
+
+                <p>As a non-profit, Mozilla works to empower all Internet consumers to also be producers, equipping them with tools, platforms, documentation, community and other resources. We also care deeply about open standards and platforms that are accessible to everyone, no matter where they are or what browser they choose.</p>
+
+                <p>Read our <a href="https://www.mozilla.org/en-US/about/manifesto/">Manifesto</a> to learn more about the principles that guide our mission.</p>
+            </div>
+        </div>
+    </section>
+
+    {% include "includes/footer.html" %}
+
+    <!--[if gt IE 10]> <!-- -->
+    <script>
+        (function() {
+            'use strict';
+            window.vs = {};
+        })();
+    </script>
+
+    <script src="/{{ fingerprint['js/main.js'] }}" async></script>
+    <!-- <![endif]-->
 
   </body>
 </html>

@@ -4,7 +4,6 @@
 colors
 ====================================================================== */
 
-// seattle variables need to stay because other stuff uses it
 $london-text = #4D4E54;
 $london-background = #FFFFFF;
 $london-light = #72C0B0;
@@ -15,13 +14,25 @@ $london-headings = $london-dark;
 $default-border = #d2d3d5;
 $default-text = #FFFFFF;
 $default-background = #313131;
-$default-light = saturation(#72C0B0, 0%);
+$default-light = saturation($london-light, 0%);
 $default-dark = #272526;
-$default-secondary = saturation(#63C8CF, 0%);
+$default-secondary = saturation($london-secondary, 0%);
 $default-headings = $default-text;
+
+$berlin-text = #4D4E54;
+$berlin-background = #FFFFFF;
+$berlin-light = #F05556;
+$berlin-dark = #B93C5A;
+$berlin-secondary = #F79B72;
+$berlin-headings = $berlin-dark;
+
+$portland-light = #7198bf;
+$portland-dark = #104070;
 
 $default-gradient = linear-gradient(26deg, $default-light, $default-dark 50%);
 $london-gradient = linear-gradient(26deg, $london-light, $london-dark 50%);
+$berlin-gradient = linear-gradient(26deg, $berlin-light, $berlin-dark 50%);
+$portland-gradient = linear-gradient(26deg, $portland-light, $portland-dark 50%);
 
 $grid-size = 30px; // can't combine grid and grid background because stylus treats the background shorthand declaration as math
 

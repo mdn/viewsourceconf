@@ -2,28 +2,11 @@
     <div class="footer_body">
         <ul class="footer_links">
 
-            {% macro link(nav_item) %}
-                {% if nav_item.offsite %}
-                    <a href="{{ nav_item.url }}" target="_blank" rel="noopener">{{ nav_item.text }}</a>
-                {% else %}
-                    <a href="{{ conference_data.folder }}{{ nav_item.url }}">{{ nav_item.text }}</a>
-                {% endif %}
-            {% endmacro %}
-
-            {% for item in navigation.footer %}
-                {% set item.url = loop.key %}
-                <li>{{ link(item) }}</li>
-            {% endfor %}
+            <li><a href="/code-of-conduct/">Code of Conduct</a></li>
 
         </ul>
         <ul class="footer_social">
             <li class="footer_social_twitter"><a href="http://twitter.com/viewsourceconf" target="_blank" rel="noopener">@ViewSourceConf</a></li>
-            {% if conference_data.facebook %}
-                <li class="footer_social_facebook"><a href="{{conference_data.facebook}}" target="_blank" rel="noopener">Facebook</a></li>
-            {% endif %}
-            {% if conference_data %}
-                <li class="footer_social_email"><a href="{{ conference_data.folder }}/newsletter/">Stay connected</a></li>
-            {% endif %}
         </ul>
     </div>
     {{ livereload|safe }}

@@ -4,10 +4,6 @@
   "scripts": {
     "build": "node build",
     "build_dev": "node build dev",
-    "test": "node_modules/.bin/mocha test/",
-    "unit_test": "node_modules/.bin/mocha test/unit",
-    "integration_test": "node_modules/.bin/mocha test/integration",
-    "check_prod_links": "./node_modules/.bin/blc http://viewsourceconf.org --filter-level 3 --exclude /2015 -ro"
   },
   "devDependencies": {
     "broken-link-checker": "^0.7.0",
