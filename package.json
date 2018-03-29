@@ -3,7 +3,7 @@
   "version": "2016.0.1",
   "scripts": {
     "build": "node build",
-    "build_dev": "node build dev",
+    "build_dev": "node build dev"
   },
   "devDependencies": {
     "broken-link-checker": "^0.7.0",

@@ -6,10 +6,4 @@
     var html = document.documentElement;
     html.classList.add('js-site');
 
-    if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('/worker.js', {
-            scope: '/'
-        });
-    }
-
 })();
