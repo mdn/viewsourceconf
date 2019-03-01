@@ -30,4 +30,4 @@ git tag "${VSC_TAG}"
 git push origin master:prod
 
 echo "Check your prod deploy status here:"
-echo "https://ci.us-west.moz.works/blue/organizations/jenkins/viewsourceconf_deploy_k8s/activity"
+echo "https://ci.vpn1.moz.works/blue/organizations/jenkins/viewsourceconf_deploy_k8s/activity"

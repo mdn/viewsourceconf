@@ -48,7 +48,7 @@ We welcome your help making this code better! Here's how to hack on it:
 
 ### How to deploy the site
 
-* [Build status is in Jenkins](https://ci.us-west.moz.works/view/viewsourceconf/)
+* [Build status is in Jenkins](https://ci.vpn1.moz.works/view/viewsourceconf/)
 * Code merged to [https://github.com/mdn/viewsourceconf/tree/master](https://github.com/mdn/viewsourceconf/tree/master) will land on [staging](https://viewsourceconf-stage.virginia.moz.works) automatically, unless it breaks the build.
 * Don't do anything else until your code is merged to master and you have tested it in staging. Srsly.
 * Pushing a commit to the `prod` branch will trigger a deploy to [https://viewsourceconf-prod.virginia.moz.works](https://viewsourceconf-prod.virginia.moz.works)
