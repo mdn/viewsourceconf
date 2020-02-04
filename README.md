@@ -51,16 +51,16 @@ We welcome your help making this code better! Here's how to hack on it:
 * [Build status is in Jenkins](https://ci.vpn1.moz.works/view/viewsourceconf/)
 * Code merged to [https://github.com/mdn/viewsourceconf/tree/master](https://github.com/mdn/viewsourceconf/tree/master) will land on [staging](https://viewsourceconf-stage.virginia.moz.works) automatically, unless it breaks the build.
 * Don't do anything else until your code is merged to master and you have tested it in staging. Srsly.
-* Pushing a commit to the `prod` branch will trigger a deploy to [https://viewsourceconf-prod.virginia.moz.works](https://viewsourceconf-prod.virginia.moz.works)
+* Pushing a commit to the `prod` branch will trigger a deploy to [https://stage.viewsourceconf.org](https://stage.viewsourceconf.org)
 	* the `deploy_to_prod.sh` script automates this for you by generating a tag name, committing an annotated tag, merging it to prod, and pushing the prod branch to origin.
 * Watch your build in Jenkins. Verify it in production.
 
 ### Docker
 
-The site is deployed to staging and production using Docker and Deis, and you can also use Docker for local development without installing nodejs or npm dependencies. Most of the commands below will try to use an image based on the local git sha first and then fall back to the 'latest' image when appropriate, which allows you to build and test docker images with local commits when desired, or automatically use the images built by CI in the common case. All of the `make` commands make use of environment variables with defaults; see the Makefile for more details.
+The site is deployed to staging and production using [Kubernetes](https://kubernetes.io), and you can also use Docker for local development without installing nodejs or npm dependencies. Most of the commands below will try to use an image based on the local git sha first and then fall back to the 'latest' image when appropriate, which allows you to build and test docker images with local commits when desired, or automatically use the images built by CI in the common case. All of the `make` commands make use of environment variables with defaults; see the Makefile for more details.
 
 * `make build`: build the site by running `node build` in a Docker container
-* `make dev`: run the `node build dev` command described above in a docker container
+* `make dev`: run the `node build dev` command described (above) in a docker container
 * `make build-build-image`: build the image used to build the site
   * run this if you add a new dependency to package.json or Dockerfile-build
 * `make build-deploy-image`: package the built site into an nginx container for deployment
